@@ -1,0 +1,42 @@
+qa_raw:
+    catalog:
+        customer_los:
+            - l1_prepaid_customers_data
+            - l1_postpaid_customers_data
+        customer_profile:
+            - l1_cb_multidim
+        handset:
+            - l1_handset_dim_lookup
+            - l1_handset_dd
+        handset_internal:
+            - l1_handset_dd
+        internet_app_usage:
+            - l1_bcp_usage_daily
+            - l1_internet_app_competitor_monthly
+        internet_usage:
+            - l1_usage_upcc_dd
+        network:
+            - l1_prepaid_customers_data
+            - l1_postpaid_customers_data
+        outlet:
+            - l1_outlet_dim_dd
+            - l1_digipos_outlet_reference_dd
+            - l1_rech_mkios_dd
+            - l1_rech_urp_dd
+        payu_usage:
+            - l1_itdaml_dd_cdr_payu_prchse_all
+        product:
+            - l1_smy_usage_ocs_chg_dd
+            # - l1_base_ifrs_c2p  # Deprecated #
+            # - l1_base_ifrs_c2p_reject  Removed because it will not have regular data, only rejected transaction # Deprecated #
+        recharge:
+            - l1_abt_rech_daily_abt_dd
+            - l1_account_balance
+            - l1_prepaid_customers_data
+        revenue:
+            - l1_itdaml_dd_cdr_pkg_prchse_all
+            - l1_itdaml_dd_cdr_payu_prchse_all
+        text_messaging:
+            - l1_abt_usage_mss_abt_dd
+        voice_calling:
+            - l1_abt_usage_mss_abt_dd

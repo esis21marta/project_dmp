@@ -1,0 +1,7 @@
+pai_run: ""
+score_column_name: "income_prediction"
+predict_probability: False
+post_processing: "exponential"
+model_type: "income_prediction"
+
+hdfs_base_path: hdfs:///data/landing/dmp_production/ # HDFS Base Path

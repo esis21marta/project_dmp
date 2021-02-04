@@ -1,0 +1,40 @@
+#######################################################
+####################### Aggregator ####################
+#######################################################
+
+input_rejected:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: hdfs:///data/landing/gx_pnt/aggregator_downstream/logging/rejected.parquet
+    file_format: parquet
+    save_args:
+        mode: overwrite
+
+input_validated:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: hdfs:///data/landing/gx_pnt/aggregator_downstream/logging/validated.parquet
+    file_format: parquet
+    save_args:
+        mode: overwrite
+
+
+rank:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: hdfs:///data/landing/gx_pnt/aggregator_downstream/logging/rank.parquet
+    file_format: parquet
+    save_args:
+        mode: overwrite
+
+
+event_validated:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: hdfs:///data/landing/gx_pnt/aggregator_downstream/logging/event_validated.parquet
+    file_format: parquet
+    save_args:
+        mode: overwrite
+
+event_rejected:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: hdfs:///data/landing/gx_pnt/aggregator_downstream/logging/event_rejected.parquet
+    file_format: parquet
+    save_args:
+        mode: overwrite

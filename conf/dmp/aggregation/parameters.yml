@@ -1,0 +1,29 @@
+pipeline: aggregation
+hdfs_base_path: hdfs:///data/landing/gx_pnt/ # HDFS Base Path
+filter_partner_data: False
+
+# if neither "first_weekstart" nor "last_weekstart" are specified, then the pipeline will run for weekstarts = last week (last Monday) only
+# if only "first_weekstart" is specified then the pipeline will run for weekstarts between first_weekstart and last week (last Monday)
+# if only "last_weekstart" is specified then the pipeline will run for weekstart which = last_weekstart only
+# if both "first_weekstart" & "last_weekstart" are specified then the pipeline will run for weekstarts between first_weekstart and last_weekstart
+
+# first_weekstart: 2019-01-07 # should be a monday
+# last_weekstart: 2020-03-30 # should be a monday
+
+# first_month: 2020-01-01
+# last_month: 2020-01-31
+
+# LOS Parameters
+los_cb_prior_start_date: "2018-12-01"
+los_cb_prior_end_date: "2019-02-28"
+los_churn_period: 90
+
+# Configurations to Send email for timeliness check & msisnd delta check
+send_all: false # set to false if only need to send errors
+email_notif_enabled: false
+email_notif_setup:
+  smtp_relay_host: "10.2.126.85"
+  smtp_relay_port: 25
+  from_email: "cdsw@telkomsel.co.id"
+  to_emails:
+    - "arianto@telkomsel.co.id"

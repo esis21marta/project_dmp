@@ -1,0 +1,18 @@
+feature_domain_mapping:
+    fea_handset_int: handset_internal
+    fea_device_internal: handset_internal
+    fea_handset: handset
+    fea_int_app_usage: internet_app_usage
+    fea_int_usage: internet_usage
+    fea_los: customer_los
+    fea_rech: recharge
+    fea_rev: revenue
+    fea_monthly_spend: revenue
+    fea_txt_msg: text_messaging
+    fea_custprof: customer_profile
+    fea_network: network
+    fea_outlet: outlet
+    fea_payu_usage: internet_usage
+    fea_voice: voice_calling
+    fea_product: product
+    fea_allowance: product

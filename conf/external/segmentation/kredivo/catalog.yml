@@ -1,0 +1,55 @@
+exploratory_demography_cross_tabs:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/demography_cross_tabs.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+exploratory_revenue_cross_tabs:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/revenue_cross_tabs.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+exploratory_home_location_cross_tabs:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/home_location_cross_tabs.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+exploratory_work_location_cross_tabs:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/work_location_cross_tabs.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+exploratory_revenue_and_demography_cross_tabs:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/revenue_and_demography_cross_tabs.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+exploratory_revenue_and_home_location_cross_tabs:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/revenue_and_home_location_cross_tabs.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+exploratory_segmentation_msisdns:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/all_msisdns.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+exploratory_revenue_summary:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/segmentation/kredivo/revenue_summary.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite

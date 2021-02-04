@@ -1,0 +1,32 @@
+   #                                                               #
+   #              ####   #    #  #    #  #####   #    #            #
+   #             #    #  #    #  #    #  #    #  ##   #            #
+                 #       ######  #    #  #    #  # #  #
+   #             #       #    #  #    #  #####   #  # #            #
+   #             #    #  #    #  #    #  #   #   #   ##            #
+   #              ####   #    #   ####   #    #  #    #            #
+
+master:
+    type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+    database: dmp_remote
+    table: may_500k_churn_20200831
+
+pandas_df:
+    filepath: data/churn/05_model_input/july_comparison6/pandas_df.parquet
+    type: pandas.ParquetDataSet
+
+propensity_training_preprocessed:
+    filepath: data/churn/05_model_input/july_comparison6/propensity_training_preprocessed
+    type: pickle.PickleDataSet
+
+pd_features_with_target:
+    filepath: data/churn/05_model_input/july_comparison6/alldata.parquet
+    type: pandas.ParquetDataSet
+
+fold_fit_results:
+    filepath: data/churn/06_model_output/july_comparison6/model.pkl
+    type: pickle.PickleDataSet
+
+msisdn_scores:
+    filepath: data/churn/06_model_output/july_comparison6/msisdn_scores
+    type: kedro.extras.datasets.pandas.CSVDataSet

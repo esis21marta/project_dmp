@@ -1,0 +1,37 @@
+raw_recharge_per_channel:
+  rules:
+  - schema:
+      load_ts: TimestampType
+      load_user: StringType
+      mm_date: TimestampType
+      msisdn: IntegerType
+      tot_amt_atm: DoubleType
+      tot_amt_banking: DoubleType
+      tot_amt_inconvenient: DoubleType
+      tot_amt_modern_channel: DoubleType
+      tot_amt_nonbanking: DoubleType
+      tot_amt_online: DoubleType
+      tot_trx_atm: LongType
+      tot_trx_banking: LongType
+      tot_trx_modern_channel: LongType
+      tot_trx_nonbanking: LongType
+    type: defender.pyspark_rules.HasSchema
+  - columns:
+    - mm_date
+    - load_ts
+    - msisdn
+    type: defender.pyspark_rules.NotNull
+  - columns:
+    - msisdn
+    - tot_amt_modern_channel
+    - tot_trx_modern_channel
+    - tot_amt_atm
+    - tot_trx_atm
+    - tot_amt_banking
+    - tot_trx_banking
+    - tot_amt_inconvenient
+    - tot_amt_nonbanking
+    - tot_trx_nonbanking
+    - tot_amt_online
+    type: defender.pyspark_rules.NotNan
+  type: and

@@ -1,0 +1,467 @@
+category1_dict:
+  Place Of Worship: worship
+  wayside_shrine: worship
+  Waste Management: waste
+  Final Garbage Point: waste
+  waste_basket: waste
+  Drinking Water Source: utility_water
+  Drinking Water Tower: utility_water
+  Waterways: utility_water
+  Public Hydrant: utility_water
+  Drinking Water Office: utility_water
+  Culverts: utility_water
+  water_well: utility_water
+  water_mill: utility_water
+  Telephone Office: utility_telephone_radio
+  Telephone Substation: utility_telephone_radio
+  Radio Transmitter: utility_telephone_radio
+  Telecommunication Facilities: utility_telephone_radio
+  Telephone Tower: utility_telephone_radio
+  TV Transmitters: utility_telephone_radio
+  Radio Station: utility_telephone_radio
+  TV Station: utility_telephone_radio
+  Office of the Satkom Bumi: utility_telephone_radio
+  Oil Tower: utility_oil
+  Oil Well: utility_oil
+  Petrol Stations: utility_oil
+  Oil Depo: utility_oil
+  Oil Pipes: utility_oil
+  Gas Well: utility_oil
+  Gas Depot: utility_oil
+  Gas Office: utility_oil
+  Olahgas: utility_oil
+  Electricity Generator: utility_electricity
+  PLN Office: utility_electricity
+  Tidal Station: utility_electricity
+  Power House: utility_electricity
+  Power Pole: utility_electricity
+  Power Cable: utility_electricity
+  Electrical Tower: utility_electricity
+  Milestone: transport_road
+  Light: transport_road
+  Tunnel: transport_road
+  Street: transport_road
+  Bridge: transport_road
+  Taxiway: transport_road
+  Stasiun Ka: big_transport
+  Bus Station: transport_road
+  Depoka: big_transport
+  Parking: transport_road
+  Tomb: tomb
+  Sports Arena: sport
+  Pool: sport
+  Water Sports: sport
+  Sports: sport
+  hunting_stand: sport
+  beverages: soloshops
+  toy_shop: soloshops
+  bicycle_shop: soloshops
+  vending_machine: soloshops
+  car_dealership: soloshops
+  gift_shop: soloshops
+  vending_any: soloshops
+  bookshop: soloshops
+  convenience: soloshops
+  kiosk: soloshops
+  Social: social_place
+  Cultural Heritage: heritage_culture
+  Garden Tours: social_place
+  viewpoint: social_place
+  bench: social_place
+  camp_site: social_place
+  theme_park: social_place
+  park: social_place
+  Building: residential
+  Settlement: residential
+  shelter: residential
+  Post Office: post_office
+  Industry: industry_factory
+  Health: hospital_health
+  Health Services: hospital_health
+  Public Health Center: hospital_health
+  Hospital: hospital_health
+  Hydraulic Pipe: utility_water
+  doctors: hospital_health
+  veterinary: hospital_health
+  Foreign Governments: government
+  Government: government
+  embassy: government
+  public_building: government
+  Education: education
+  Defense: defence
+  battlefield: defence
+  Commerce: commercial
+  hotel: commercial
+  food_court: commercial_food
+  motel: commercial
+  supermarket: commercial
+  Port: big_transport
+  Runway: big_transport
+  Heliport: big_transport
+  Airport: big_transport
+  Rail: big_transport
+  Ferryboat: big_transport
+  Dock: big_transport
+  camera_surveillance: safety_surveillance
+  toilet: ''
+  archaeological: heritage_culture
+  courthouse: government
+  prison: prison
+  chemist: hospital_health
+  sports_shop: soloshops
+  optician: hospital_health
+  artwork: heritage_culture
+  clothes: soloshops
+  bakery: commercial_food
+  car_sharing: soloshops
+  zoo: social_place
+  community_centre: social_place
+  attraction: social_place
+  fountain: social_place
+  computer_shop: soloshops
+  ruins: heritage_culture
+  fast_food: commercial_food
+  college: education
+  university: education
+  video_shop: soloshops
+  post_box: post_office
+  beauty_shop: soloshops
+  car_rental: soloshops
+  monument: heritage_culture
+  butcher: commercial_food
+  library: education
+  comms_tower: utility_telephone_radio
+  bar: commercial_food
+  atm: finance
+  pharmacy: hospital_health
+  track: ''
+  vending_parking: transport_road
+  bicycle_rental: soloshops
+  observation_tower: social_place
+  recycling: waste
+  mall: mall
+  hostel: education
+  memorial: heritage_culture
+  mobile_phone_shop: soloshops
+  nursing_home: hospital_health
+  fort: heritage_culture
+  swimming_pool: sport
+  guesthouse: commercial
+  fire_station: fire_station
+  shoe_shop: soloshops
+  pitch: ''
+  dog_park: social_place
+  arts_centre: heritage_culture
+  museum: heritage_culture
+  tourist_info: government
+  windmill: utility_electricity
+  laundry: soloshops
+  hairdresser: soloshops
+  caravan_site: social_place
+  dentist: hospital_health
+  department_store: commercial
+  doityourself: soloshops
+  recycling_glass: waste
+  travel_agent: soloshops
+  biergarten: social_place
+  greengrocer: commercial
+  newsagent: soloshops
+  police: police
+  water_works: utility_water
+  car_wash: soloshops
+  florist: soloshops
+  golf_course: sport
+  theatre: social_place
+  water_tower: utility_water
+  playground: sport
+  recycling_paper: waste
+  cafe: commercial_food
+  pub: commercial_food
+  restaurant: commercial_food
+  jeweller: commercial
+  garden_centre: social_place
+  kindergarten: education
+  outdoor_shop: soloshops
+  nightclub: social_place
+  graveyard: tomb
+  stadium: sport
+  stationery: soloshops
+  castle: heritage_culture
+  drinking_water: utility_water
+  school: education
+  sports_centre: sport
+  furniture_shop: soloshops
+  alpine_hut: social_place
+  tower: social_place
+  picnic_site: social_place
+  lighthouse: big_transport
+  wayside_cross: worship
+  chalet: commercial
+  post_office: post_office
+  hospital: hospital_health
+  wastewater_plant: waste
+  bank: finance
+  cinema: social_place
+  telephone: utility_telephone_radio
+  town_hall: government
+category2_dict:
+  Place Of Worship: worship
+  wayside_shrine: worship
+  Waste Management: waste
+  Final Garbage Point: waste
+  waste_basket: waste
+  Drinking Water Source: utility_water
+  Drinking Water Tower: utility_water
+  Waterways: utility_water
+  Public Hydrant: utility_water
+  Drinking Water Office: utility_water
+  Culverts: utility_water
+  water_well: utility_water
+  water_mill: utility_water
+  Telephone Office: utility_telephone_radio
+  Telephone Substation: utility_telephone_radio
+  Radio Transmitter: utility_telephone_radio
+  Telecommunication Facilities: utility_telephone_radio
+  Telephone Tower: utility_telephone_radio
+  TV Transmitters: utility_telephone_radio
+  Radio Station: utility_telephone_radio
+  TV Station: utility_telephone_radio
+  Office of the Satkom Bumi: utility_telephone_radio
+  Oil Tower: utility_oil
+  Oil Well: utility_oil
+  Petrol Stations: utility_oil
+  Oil Depo: utility_oil
+  Oil Pipes: utility_oil
+  Gas Well: utility_oil
+  Gas Depot: utility_oil
+  Gas Office: utility_oil
+  Olahgas: utility_oil
+  Electricity Generator: utility_electricity
+  PLN Office: utility_electricity
+  Tidal Station: utility_electricity
+  Power House: utility_electricity
+  Power Pole: utility_electricity
+  Power Cable: utility_electricity
+  Electrical Tower: utility_electricity
+  Milestone: transport_road
+  Light: transport_road
+  Tunnel: transport_road
+  Street: transport_road
+  Bridge: transport_road
+  Taxiway: transport_road
+  Stasiun Ka: big_transport
+  Bus Station: transport_road
+  Depoka: big_transport
+  Parking: transport_road
+  Tomb: tomb
+  Sports Arena: sport
+  Pool: sport
+  Water Sports: sport
+  Sports: sport
+  hunting_stand: sport
+  beverages: soloshops
+  toy_shop: soloshops
+  bicycle_shop: commercial_travelshop
+  vending_machine: soloshops
+  car_dealership: commercial_travelshop
+  gift_shop: soloshops
+  vending_any: soloshops
+  bookshop: soloshops
+  convenience: commercial_store
+  kiosk: soloshops
+  Social: social_place
+  Cultural Heritage: heritage_culture
+  Garden Tours: commercial_entertainment
+  viewpoint: commercial_entertainment
+  bench: social_place
+  camp_site: social_place
+  theme_park: commercial_entertainment
+  park: commercial_entertainment
+  Building: residential
+  Settlement: residential
+  shelter: residential
+  Post Office: post_office
+  Industry: industry_factory
+  Health: hospital_health
+  Health Services: hospital_health
+  Public Health Center: hospital_health
+  Hospital: hospital_health
+  Hydraulic Pipe: utility_water
+  doctors: hospital_health
+  veterinary: hospital_health
+  Foreign Governments: government
+  Government: government
+  embassy: government
+  public_building: government
+  Education: education
+  Defense: defence
+  battlefield: defence
+  Commerce: commercial
+  hotel: commercial_hotel
+  food_court: commercial_food
+  motel: commercial_hotel
+  supermarket: commercial_store
+  Port: big_transport
+  Runway: big_transport
+  Heliport: big_transport
+  Airport: big_transport
+  Rail: big_transport
+  Ferryboat: big_transport
+  Dock: big_transport
+  camera_surveillance: safety_surveillance
+  toilet: ''
+  archaeological: heritage_culture
+  courthouse: government
+  prison: prison
+  chemist: hospital_health
+  sports_shop: soloshops
+  optician: hospital_health
+  artwork: heritage_culture
+  clothes: soloshops
+  bakery: commercial_food
+  car_sharing: commercial_travelshop
+  zoo: commercial_entertainment
+  community_centre: social_place
+  attraction: commercial_entertainment
+  fountain: social_place
+  computer_shop: soloshops
+  ruins: heritage_culture
+  fast_food: commercial_food
+  college: education
+  university: education
+  video_shop: soloshops
+  post_box: post_office
+  beauty_shop: soloshops
+  car_rental: commercial_travelshop
+  monument: heritage_culture
+  butcher: commercial_food
+  library: education
+  comms_tower: utility_telephone_radio
+  bar: commercial_food
+  atm: finance
+  pharmacy: hospital_health
+  track: ''
+  vending_parking: transport_road
+  bicycle_rental: commercial_travelshop
+  observation_tower: commercial_entertainment
+  recycling: waste
+  mall: commercial_store
+  hostel: education
+  memorial: heritage_culture
+  mobile_phone_shop: soloshops
+  nursing_home: hospital_health
+  fort: heritage_culture
+  swimming_pool: sport
+  guesthouse: commercial_hotel
+  fire_station: fire_station
+  shoe_shop: soloshops
+  pitch: ''
+  dog_park: social_place
+  arts_centre: heritage_culture
+  museum: heritage_culture
+  tourist_info: government
+  windmill: utility_electricity
+  laundry: soloshops
+  hairdresser: soloshops
+  caravan_site: commercial_entertainment
+  dentist: hospital_health
+  department_store: commercial_store
+  doityourself: soloshops
+  recycling_glass: waste
+  travel_agent: commercial_travelshop
+  biergarten: commercial_entertainment
+  greengrocer: commercial_store
+  newsagent: soloshops
+  police: police
+  water_works: utility_water
+  car_wash: soloshops
+  florist: soloshops
+  golf_course: sport
+  theatre: commercial_entertainment
+  water_tower: utility_water
+  playground: sport
+  recycling_paper: waste
+  cafe: commercial_food
+  pub: commercial_food
+  restaurant: commercial_food
+  jeweller: commercial
+  garden_centre: social_place
+  kindergarten: education
+  outdoor_shop: soloshops
+  nightclub: commercial_entertainment
+  graveyard: tomb
+  stadium: sport
+  stationery: soloshops
+  castle: heritage_culture
+  drinking_water: utility_water
+  school: education
+  sports_centre: sport
+  furniture_shop: soloshops
+  alpine_hut: commercial_entertainment
+  tower: commercial_entertainment
+  picnic_site: commercial_entertainment
+  lighthouse: big_transport
+  wayside_cross: worship
+  chalet: commercial_hotel
+  post_office: post_office
+  hospital: hospital_health
+  wastewater_plant: waste
+  bank: finance
+  cinema: commercial_entertainment
+  telephone: utility_telephone_radio
+  town_hall: government
+month_dt_dict:
+  2019-07: '2000-01-14'
+  2019-08: '2000-01-15'
+  2019-09: '2000-01-16'
+  2019-10: '2000-01-17'
+  2019-11: '2000-01-18'
+  2019-12: '2000-01-19'
+  2020-01: '2000-01-20'
+  2020-02: '2000-01-21'
+  2020-03: '2000-01-22'
+  2020-04: '2000-01-23'
+  2020-05: '2000-01-24'
+  2020-06: '2000-01-25'
+  2020-07: '2000-01-26'
+  2020-08: '2000-01-27'
+  2020-09: '2000-01-28'
+  2020-10: '2000-01-29'
+  2020-11: '2000-01-30'
+  2020-12: '2000-01-31'
+  2021-01: '2000-02-01'
+  2021-02: '2000-02-02'
+  2021-03: '2000-02-03'
+  2021-04: '2000-02-04'
+  2021-05: '2000-02-05'
+  2021-06: '2000-02-06'
+  2021-07: '2000-02-07'
+  2021-08: '2000-02-08'
+  2021-09: '2000-02-09'
+  2021-10: '2000-02-10'
+  2021-11: '2000-02-11'
+  2021-12: '2000-02-12'
+  2022-01: '2000-02-13'
+  2022-02: '2000-02-14'
+  2022-03: '2000-02-15'
+  2022-04: '2000-02-16'
+  2022-05: '2000-02-17'
+  2022-06: '2000-02-18'
+  2022-07: '2000-02-19'
+  2022-08: '2000-02-20'
+  2022-09: '2000-02-21'
+  2022-10: '2000-02-22'
+  2022-11: '2000-02-23'
+  2022-12: '2000-02-24'
+  2023-01: '2000-02-25'
+  2023-02: '2000-02-26'
+  2023-03: '2000-02-27'
+  2023-04: '2000-02-28'
+  2023-05: '2000-02-29'
+  2023-06: '2000-03-01'
+  2023-07: '2000-03-02'
+  2023-08: '2000-03-03'
+  2023-09: '2000-03-04'
+  2023-10: '2000-03-05'
+  2023-11: '2000-03-06'
+  2023-12: '2000-03-07'

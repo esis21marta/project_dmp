@@ -1,0 +1,13 @@
+[Artifactory]
+name=Artifactory
+sslverify=0
+baseurl=https://cicd-jfrog.telkomsel.co.id/artifactory/centos/7/updates/x86_64
+enabled=1
+gpgcheck=0
+
+[ArtifactoryOS]
+name=ArtifactoryOS
+sslverify=0
+baseurl=https://cicd-jfrog.telkomsel.co.id/artifactory/centos/7/os/x86_64
+enabled=1
+gpgcheck=0

@@ -1,0 +1,2 @@
+PAI_RUN_NAME: feature_selection
+PAI_RUNS: hdfs:///data/landing/dmp_remote/model_factory/feature_selected_20201007/pai

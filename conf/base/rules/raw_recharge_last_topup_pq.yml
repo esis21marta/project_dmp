@@ -1,0 +1,20 @@
+raw_recharge_last_topup_pq:
+  rules:
+  - schema:
+      last_rcg_channel: StringType
+      last_rcg_denom: DoubleType
+      load_ts: TimestampType
+      load_user: StringType
+      mm_date: TimestampType
+      msisdn: IntegerType
+    type: defender.pyspark_rules.HasSchema
+  - columns:
+    - mm_date
+    - msisdn
+    - load_ts
+    type: defender.pyspark_rules.NotNull
+  - columns:
+    - msisdn
+    - last_rcg_denom
+    type: defender.pyspark_rules.NotNan
+  type: and

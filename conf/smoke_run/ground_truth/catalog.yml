@@ -1,0 +1,261 @@
+########################################################################################################################
+############################################  Internet Apps Usage Aggregation  #########################################
+########################################################################################################################
+l1_content_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/content_mapping.parquet
+l1_segment_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/segment_mapping.parquet
+l1_category_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/category_mapping.parquet
+l1_internet_app_feature_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/bcp_feature_category_mapping.parquet
+l1_fintech_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/fintech_mapping.parquet
+l1_app_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_mapping.parquet
+# l2_bcp_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/bcp_usage_weekly.parquet
+# l2_bcp_feature_weekly_aggregation: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/bcp_feature_weekly_aggregation.parquet
+
+#########################################################################################################################
+###################################################  Revenue Aggregation  ###############################################
+#########################################################################################################################
+l2_revenue_weekly_data: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/revenue/revenue_weekly.parquet
+
+#########################################################################################################################
+###################################################  Recharge Aggregation  ##############################################
+#########################################################################################################################
+l1_rech_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/recharge/rech_weekly.parquet
+l2_account_balance_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/recharge/acc_bal_weekly.parquet
+l1_chg_pkg_prchse_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+
+#########################################################################################################################
+###################################################  Handset Aggregation  ###############################################
+#########################################################################################################################
+l1_handset_lookup_data: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/handset/device_dim_single_rec_per_imei.parquet
+l2_handset_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/handset/device_data_weekly.parquet
+# l2_first_2_handset: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/handset/first_2_handset.parquet
+
+########################################################################################################################
+##################################################  Handset Features  - Internal Aggregation  ##########################
+########################################################################################################################
+l1_device_dbi_imei_single_rec_per_imei: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/handset_internal/device_dbi_imei_single_rec_per_imei.parquet
+l2_device_internal_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/handset_internal/internal_device_data_weekly.parquet
+l2_device_internal_man_counts: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset_internal/man_counts.parquet
+l2_device_internal_tac_counts: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset_internal/tac_counts.parquet
+
+########################################################################################################################
+#################################################  Voice Calls Aggregation  ############################################
+########################################################################################################################
+l2_voice_calling_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+
+########################################################################################################################
+#################################################  Airtime Loan Aggregation  ###########################################
+########################################################################################################################
+#l1_airtime_loan_takers: smoke_basecoe_atl_takers_database
+#l1_airtime_loan_payment: smoke_basecoe_atl_payment_database
+# l1_airtime_loan_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/airtime/airtime_weekly.parquet
+
+########################################################################################################################
+###############################################  Internet Usage Aggregation  ###########################################
+########################################################################################################################
+l1_internet_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_usage/internet_usage_weekly.parquet
+# l1_internet_usage_payu_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_usage_payu/internet_usage_payu.parquet
+
+########################################################################################################################
+#################################################  Text Messaging Aggregation  #########################################
+########################################################################################################################
+l1_commercial_text_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_common/kedro/02_primary/text_messaging_mapping/sms_sender_mapping.parquet
+l2_text_messaging_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/sms/text_messaging_weekly.parquet
+l2_commercial_text_messaging_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+
+########################################################################################################################
+###################################################  Customer Profile  Aggregation  ####################################
+########################################################################################################################
+l1_cb_multidim_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/customer_profile/customer_profile_weekly.parquet
+
+########################################################################################################################
+#################################### Scaffold and Partner MSISDN Setup #################################################
+########################################################################################################################
+# partner_msisdns: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/partner_msisdns.parquet
+l1_weekly_scaffold: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/scaffold_weekly.parquet
+l1_weekly_scaffold_lac: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/scaffold_lac_weekly.parquet
+l1_weekly_scaffold_lacci: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/scaffold_lacci_weekly.parquet
+
+########################################################################################################################
+############################################  Internet Apps Usage Features  ############################################
+########################################################################################################################
+l2_app_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/app_usage_weekly_aggregation.parquet
+l2_internet_app_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/internet_app_usage_weekly_aggregation.parquet
+l3_app_usage_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/internet_apps_usage/app_usage_weekly_partner.parquet
+l4_app_usage_weekly_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/internet_apps_usage/app_usage_weekly_final.parquet
+l3_internet_app_usage_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/internet_apps_usage/internet_app_usage_weekly_partner.parquet
+l4_internet_app_usage_weekly_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/internet_apps_usage/internet_app_usage_weekly_final.parquet
+l5_fea_internet_connection: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/internet_apps_usage/fea_internet_connection.parquet
+l5_internet_usage: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/internet_apps_usage/fea_internet_apps_usage.parquet
+l5_pivoted_internet_usage: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/internet_apps_usage/fea_internet_usage.parquet
+l5_fea_internet_usage: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/internet_apps_usage/fea_internet_usage_2.parquet
+l5_fea_social_media: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/internet_apps_usage/fea_social_media.parquet
+
+
+########################################################################################################################
+##################################################  Revenue Features  ##################################################
+########################################################################################################################
+l2_revenue_weekly_data_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/revenue/revenue_weekly_partner.parquet
+l2_revenue_weekly_data_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/revenue/revenue_weekly_final.parquet
+
+l4_fea_revenue_weekend: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/revenue/fea_revenue_weekend.parquet
+l4_fea_revenue_base_payu_pkg: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/revenue/fea_revenue_base_payu_pkg.parquet
+l4_fea_revenue_spend_pattern:  hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/revenue/fea_revenue_spend_pattern.parquet
+l4_fea_revenue_monthly_spend:  hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/revenue/fea_revenue_monthly_spend.parquet
+l4_fea_revenue_salary:  hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/revenue/fea_revenue_salary.parquet
+l4_fea_revenue_threshold_voice_data: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/revenue/fea_revenue_threshold_voice_data.parquet
+l4_fea_revenue_threshold_sms_dls_roam: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/revenue/fea_revenue_threshold_sms_dls_roam.parquet
+
+
+########################################################################################################################
+##################################################  Recharge Features  #################################################
+########################################################################################################################
+l1_rech_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/recharge/rech_weely_partner.parquet
+l1_acc_bal_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/recharge/acc_bal_weekly_partner.parquet
+l1_chg_pkg_prchse_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/recharge/chg_pkg_prchse_weekly_partner.parquet
+l1_rech_weekly_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/recharge/rech_weekly_final.parquet
+l1_acc_bal_weekly_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/recharge/acc_bal_weekly_final.parquet
+l1_chg_pkg_prchse_weekly_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/recharge/chg_pkg_prchse_weekly_final.parquet
+l2_fea_rech_full_topup_behav: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/recharge/fea_rech_full_topup_behav.parquet
+l2_fea_rech_full_chg_pck_prchse: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/recharge/fea_rech_full_chg_pck_prchse.parquet
+l2_fea_rech_topup_behav_full_acc_bal_neg_or_zero: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/recharge/fea_topup_behav_full_acc_bal_neg_or_zero.parquet
+# l2_fea_rech_full_topup_activity: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/recharge/fea_rech_full_topup_activity.parquet
+
+########################################################################################################################
+##################################################  Handset Features  ##################################################
+########################################################################################################################
+l2_handset_weekly_aggregated_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/handset/device_data_weekly_partner.parquet
+# l2_first_2_handset_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/handset/first_2_handset_partner.parquet
+l2_handset_time_series_filled: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/handset/handset_time_series_filled.parquet
+l2_fea_handset: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset/fea_device.parquet
+
+########################################################################################################################
+################################################  Voice Calls Features  ################################################
+########################################################################################################################
+l2_voice_calling_weekly_aggregated_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/voice_calls/usage_mss_dd_subselected_partner_partner.parquet
+l2_voice_calling_time_series_filled: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/voice_calls/voice_calling_time_series_filled.parquet
+l4_fea_voice_calling: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/voice_calls/fea_inc_out_uniq_bnums.parquet
+# l2_mck_top5_outg_to_total: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/voice_calls/fea_top5_outg_to_total.parquet
+
+########################################################################################################################
+################################################  Airtime Loan Features  ################################################
+########################################################################################################################
+# l1_airtime_loan_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/airtime/airtime_loan_all_weekly_partner.parquet
+# l1_airtime_loan_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/airtime/scaffolding_airtime_loan_all_weekly.parquet
+# l2_airtime_loan: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/airtime/fea_airtime_loan.parquet
+
+########################################################################################################################
+##############################################  Internet Usage Features  ###############################################
+########################################################################################################################
+l1_internet_usage_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/internet_usage/internet_usage_weekly_partner_data.parquet
+l1_internet_usage_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/internet_usage/internet_usage_weekly_time_series_filled.parquet
+l2_internet_usage: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/internet_usage/fea_internet_usage_2.parquet
+l2_internet_usage_prep: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/internet_usage/fea_internet_usage_consumption_prep.parquet
+
+########################################################################################################################
+#########################################################  LOS  ########################################################
+########################################################################################################################
+l1_customer_los_validated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/customer_los/validated_activated_date.parquet
+l1_customer_prepost_migration_old: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/customer_los/pre_to_post_migration.parquet
+l1_customer_prepost_migration_new: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/customer_los/pre_to_post_migration_new.parquet
+l1_customer_prepost_migration: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/customer_los/pre_to_post_migration_all.parquet
+l1_customer_los_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/customer_los/customer_los_weekly.parquet
+l2_customer_los_weekly_data_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/customer_los/customer_los_weekly_final.parquet
+l4_fea_customer_los: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/customer_los/fea_customer_los.parquet
+l2_kredivo_los: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/customer_los/fea_customer_los.parquet
+
+########################################################################################################################
+##################################################  Customer Profile  ##################################################
+########################################################################################################################
+l2_customer_profile: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/customer_profile/customer_profile_all_weekly_partner_2.parquet
+
+########################################################################################################################
+##################################################  Network  ###########################################################
+########################################################################################################################
+
+l1_lacci_msisdn_mapping_jan_oct_2019: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/network_mapping/msisdn_to_lacci_jan_oct_2019.parquet
+
+l1_network_lacci_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/network/network_lacci_weekly.parquet
+l1_network_lac_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/network/network_lac_weekly.parquet
+l1_network_msisdn_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/network/network_msisdn_weekly.parquet
+l2_network_msisdn_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/network/network_msisdn_weekly_partner.parquet
+l2_network_msisdn_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/network/scaffolding_network_msisdn_weekly.parquet
+l2_network_lacci_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/network/scaffolding_network_lacci_weekly.parquet
+l2_network_lac_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/network/scaffolding_network_lac_weekly.parquet
+l4_fea_network_msisdn_weekly1: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_msisdn_weekly1.parquet
+l4_fea_network_msisdn_weekly2: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_msisdn_weekly2.parquet
+l4_fea_network_msisdn_weekly3: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_msisdn_weekly3.parquet
+l4_fea_network_msisdn_weekly4: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_msisdn_weekly4.parquet
+l4_fea_network_msisdn_weekly5: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_msisdn_weekly5.parquet
+l4_fea_network_msisdn: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_msisdn.parquet
+l4_fea_network_lacci_weekly1: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lacci_weekly1.parquet
+l4_fea_network_lacci_weekly2: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lacci_weekly2.parquet
+l4_fea_network_lacci_weekly3: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lacci_weekly3.parquet
+l4_fea_network_lacci_weekly4: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lacci_weekly4.parquet
+l4_fea_network_lacci_weekly5: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lacci_weekly5.parquet
+l4_fea_network_lacci: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lacci.parquet
+l4_fea_network_lac_weekly1: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lac_weekly1.parquet
+l4_fea_network_lac_weekly2: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lac_weekly2.parquet
+l4_fea_network_lac_weekly3: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lac_weekly3.parquet
+l4_fea_network_lac_weekly4: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lac_weekly4.parquet
+l4_fea_network_lac_weekly5: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lac_weekly5.parquet
+l4_fea_network_lac: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/network/fea_network_lac.parquet
+
+########################################################################################################################
+############################################  Text Messaging Features  #################################################
+########################################################################################################################
+l2_text_messaging_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/sms_2/text_messaging_weekly_partner.parquet
+l2_commercial_text_messaging_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/sms_2/commercial_text_messaging_weekly_partner.parquet
+l2_text_messaging_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/sms_2/text_messaging_weekly_final.parquet
+l2_commercial_text_messaging_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/sms_2/commercial_text_messaging_weekly_final.parquet
+l4_fea_text_messaging: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/sms_2/fea_text_messaging.parquet
+l4_fea_commercial_text_messaging: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/sms_2/fea_commercial_text_messaging.parquet
+
+########################################################################################################################
+##################################################  Handset Features - Internal ########################################
+########################################################################################################################
+l2_device_internal_weekly_aggregated_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/handset_internal/internal_device_data_weekly_partner.parquet
+l2_internal_handset_time_series_filled: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/handset_internal/internal_handset_time_series_filled.parquet
+l2_device_internal_rolling_windows_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset_internal/device_internal_weekly_rolling_windows_weekly.parquet
+l2_device_internal_rolling_windows_monthly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset_internal/device_internal_weekly_rolling_windows_monthly.parquet
+l2_device_internal_mode_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset_internal/device_internal_weekly_mode_weekly.parquet
+l2_device_internal_mode_monthly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset_internal/device_internal_weekly_mode_monthly.parquet
+l2_fea_device_internal: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/handset_internal/fea_device_internal.parquet
+
+########################################################################################################################
+####################################################  Master Table  ####################################################
+########################################################################################################################
+# l3_scaffolding_kredivo: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/kredivo_badflags.parquet
+l4_master_dimension: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/master_dimension.parquet
+l3_master: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/master_20200228.parquet
+l3_lac_master_static: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/lac/master.parquet
+l3_lacci_master_static: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/lac_ci/master.parquet
+# l3_profiled_prm: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/profile/profiled_prm.parquet
+# l3_profiled_master: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/profile/profiled_master.parquet
+# l3_profiled_all: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/05_model_input/profile/profiled_all.parquet
+# l2_mck_customer_demography_lynx: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/customer_demography_lynx.parquet
+# l2_mck_customer_loyalty: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/customer_loyalty.parquet
+
+########################################################################################################################
+##################################################  PAYU Usage  ########################################################
+########################################################################################################################
+l2_payu_usage_weekly_aggregation: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/payu_usage/payu_usage_weekly.parquet
+l2_payu_usage_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/payu_usage/payu_usage_weekly_partner_data.parquet
+l2_payu_usage_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/payu_usage/payu_usage_weekly_time_series_filled.parquet
+l4_fea_payu_usage: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/payu_usage/fea_payu_usage.parquet
+
+########################################################################################################################
+############################################  Product  #################################################################
+########################################################################################################################
+l1_macroproduct_map_new: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/product/bid_macroproduct_mapping_new.parquet
+l2_macroproduct_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/product/product_macro_weekly.parquet
+l1_nonmacro_product_weekly_data: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/product/nonmacro_product_weekly.parquet
+l1_nonmacro_product_weekly_data_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/product/nonmacro_product_weekly_partner.parquet
+l1_nonmacro_product_weekly_data_final: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/product/nonmacro_product_weekly_final.parquet
+l2_macroproduct_scaffold_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/product/product_macro_weekly_time_series_filled.parquet
+l2_macroproduct_weekly_filtered: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/02_primary/product/product_macro_weekly_partner_data.parquet
+l4_fea_macroproduct: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/product/fea_product_macro.parquet
+l4_fea_macroproduct_explode: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/product/fea_product_macro_explode.parquet
+l4_fea_macroproduct_monthly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/product/fea_product_macro_monthly.parquet
+l4_fea_macroproduct_quarterly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/product/fea_product_macro_quarterly.parquet
+l4_fea_nonmacro_product: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/04_features/product/fea_nonmacro_product.parquet
+

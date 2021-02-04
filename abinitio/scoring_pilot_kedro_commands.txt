@@ -1,0 +1,67 @@
+#---Start Primary Layer Step 1
+LoopConcurent:True
+kedro run --env dmp/scoring --node create_partner_msisdns --desc pilot-create_partner_msisdns<params>
+#---End Primary Layer Step 1
+
+#---Start Primary Layer Step 2
+LoopConcurent:False
+kedro run --env dmp/scoring --node create_scaffold --desc pilot-create_scaffold<params>
+kedro run --env dmp/scoring --node create_scaffold_3m_4m --desc pilot-create_scaffold_3m_4m<params>
+#---End Primary Layer Step 2
+
+#---Start Primary Layer Step 3
+LoopConcurent:True
+kedro run --env dmp/scoring --tag prm_customer_los --desc pilot-prm_customer_los<params>
+kedro run --env dmp/scoring --tag prm_customer_profile --desc pilot-prm_customer_profile<params>
+kedro run --env dmp/scoring --node filter_partner_data_handset --desc pilot-filter_partner_data_handset<params>
+kedro run --env dmp/scoring --node filter_partner_data_handset_internal --desc pilot-filter_partner_data_handset_internal<params>
+kedro run --env dmp/scoring --node filter_partner_data_internet_app_usage --desc pilot-filter_partner_data_internet_app_usage<params>
+kedro run --env dmp/scoring --node filter_partner_data_internet_connection --desc pilot-filter_partner_data_internet_connection<params>
+kedro run --env dmp/scoring --node filter_partner_data_internet_usage --desc pilot-filter_partner_data_internet_usage<params>
+kedro run --env dmp/scoring --node filter_partner_data_recharge --desc pilot-filter_partner_data_recharge<params>
+kedro run --env dmp/scoring --node filter_partner_data_digi_recharge --desc pilot-filter_partner_data_digi_recharge<params>
+kedro run --env dmp/scoring --node filter_partner_data_recharge_account_balance --desc pilot-filter_partner_data_recharge_account_balance<params>
+kedro run --env dmp/scoring --node filter_partner_data_recharge_package_purchase --desc pilot-filter_partner_data_recharge_package_purchase<params>
+kedro run --env dmp/scoring --node filter_partner_data_revenue,filter_partner_data_revenue_alt --desc pilot-filter_partner_data_revenue<params>
+kedro run --env dmp/scoring --node filter_partner_data_text_messaging --desc pilot-filter_partner_data_text_messaging<params>
+kedro run --env dmp/scoring --node filter_partner_data_commercial_text_messaging --desc pilot-filter_partner_data_commercial_text_messaging<params>
+kedro run --env dmp/scoring --node filter_partner_data_voice_calling --desc pilot-filter_partner_data_voice_calling<params>
+#---End Primary Layer Step 3
+
+#---Start Primary Layer Step 4
+LoopConcurent:True
+kedro run --env dmp/scoring --node fill_time_series_handset --desc pilot-fill_time_series_handset<params>
+kedro run --env dmp/scoring --node fill_time_series_handset_internal --desc pilot-fill_time_series_handset_internal<params>
+kedro run --env dmp/scoring --node fill_time_series_internet_app_usage --desc pilot-fill_time_series_internet_app_usage<params>
+kedro run --env dmp/scoring --node fill_time_series_internet_connection --desc pilot-fill_time_series_internet_connection<params>
+kedro run --env dmp/scoring --node fill_time_series_internet_usage --desc pilot-fill_time_series_internet_usage<params>
+kedro run --env dmp/scoring --node fill_time_series_recharge --desc pilot-fill_time_series_recharge<params>
+kedro run --env dmp/scoring --node fill_time_series_digi_recharge --desc pilot-fill_time_series_digi_recharge<params>
+kedro run --env dmp/scoring --node fill_time_series_recharge_account_balance --desc pilot-fill_time_series_recharge_account_balance<params>
+kedro run --env dmp/scoring --node fill_time_series_recharge_package_purchase --desc pilot-fill_time_series_recharge_package_purchase<params>
+kedro run --env dmp/scoring --node fill_time_series_revenue,fill_time_series_revenue_alt --desc pilot-fill_time_series_revenue<params>
+kedro run --env dmp/scoring --node fill_time_series_text_messaging --desc pilot-fill_time_series_text_messaging<params>
+kedro run --env dmp/scoring --node fill_time_series_commercial_text_messaging --desc pilot-fill_time_series_commercial_text_messaging<params>
+kedro run --env dmp/scoring --node fill_time_series_voice_calling --desc pilot-fill_time_series_voice_calling<params>
+#---End Primary Layer Step 4
+
+#---Start Feature Layer
+LoopConcurent:True
+kedro run --env dmp/scoring --tag fea_customer_los --desc pilot-fea_customer_los<params>
+kedro run --env dmp/scoring --tag fea_customer_profile --desc pilot-fea_customer_profile<params>
+kedro run --env dmp/scoring --tag fea_handset --desc pilot-fea_handset<params>
+kedro run --env dmp/scoring --tag fea_handset_internal --desc pilot-fea_handset_internal<params>
+kedro run --env dmp/scoring --node fea_internet_connection,fea_internet_app_usage,fea_internet_app_usage_pivot,fea_social_media --desc pilot-fea_internet_apps_usage<params>
+kedro run --env dmp/scoring --node feat_internet_data_usage,fea_internet_usage --desc pilot-fea_internet_usage<params>
+kedro run --env dmp/scoring --node fea_recharge --desc pilot-fea_recharge<params>
+kedro run --env dmp/scoring --node fea_revenue_weekend --desc pilot-fea_revenue_weekend<params>
+kedro run --env dmp/scoring --node fea_text_messaging,fea_commercial_text_messaging --desc pilot-text_messaging<params>
+kedro run --env dmp/scoring --node fea_voice_calling --desc pilot-fea_voice_calling<params>
+#---End Feature Layer
+
+#---Start Master Layer
+LoopConcurent:False
+kedro run --env dmp/scoring --node build_master_table_dimension --desc pilot-build_master_table_dimension<params>
+kedro run --env dmp/scoring --node build_scoring_master_table --desc pilot-build_scoring_master_table<params>
+kedro run --env dmp/scoring --node build_master_hive_table_msisdn --desc pilot-build_master_hive_table_msisdn<params>
+#---End Master Layer

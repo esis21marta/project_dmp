@@ -1,0 +1,4 @@
+to_score:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/hcid/output/hcid_test_dataset_20200227_los.parquet
+  file_format: parquet

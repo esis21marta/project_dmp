@@ -1,0 +1,42 @@
+low_los_threshold: 90
+high_los_threshold: 8_000
+num_random_samples: 800_000
+
+brand_to_include:
+  - "kartuas"
+  - "simpati"
+  - "loop"
+
+columns_to_include:
+  - "msisdn"
+  - "default_probability_prediction"
+  - "training_set_similarity_prediction"
+  - "income_prediction"
+  - "home1_lat"
+  - "home1_lon"
+  - "home2_lat"
+  - "home2_lon"
+  - "home3_lat"
+  - "home3_lon"
+  - "home4_lat"
+  - "home4_lon"
+
+columns_to_rename:
+  msisdn: 'MSISDN'
+  home1_lat: 'home1_latitude'
+  home1_lon: 'home1_longitude'
+  home2_lat: 'home2_latitude'
+  home2_lon: 'home2_longitude'
+  home3_lat: 'home3_latitude'
+  home3_lon: 'home3_longitude'
+  home4_lat: 'home4_latitude'
+  home4_lon: 'home4_longitude'
+
+apple_devices:
+  - "apple"
+  - "iphone"
+  - "ipad"
+
+apple_manufacturer: "apple"
+
+final_sample_number_files: 5

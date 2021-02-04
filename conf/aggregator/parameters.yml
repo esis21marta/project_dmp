@@ -1,0 +1,30 @@
+list_push_channel:
+  - sms
+  - push_notification
+  - inapp_banner
+  - facebook
+  
+input_list_columns:
+  - msisdn
+  - keyword
+  - push_channel
+  - criteria_1
+  - criteria_2
+  - criteria_3
+  - criteria_4
+  - criteria_5 
+       
+pes_whitelist_path: "hdfs:///data/landing/gx_pnt/aggregator_downstream/outputs/pes/whitelist"
+pes_eventfile_path: "hdfs:///data/landing/gx_pnt/aggregator_downstream/outputs/pes/event"
+cms_whitelist_path: "hdfs:///data/landing/gx_pnt/aggregator_downstream/outputs/cms/whitelist"
+
+top_rank: 2
+
+limit_push_channel:
+  sms: 10000000
+  inapp_banner: 3500000
+  push_notification: 350000
+  facebook: 350000
+
+domains_to_end_at_whitelist:
+  - cms

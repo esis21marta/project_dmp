@@ -1,0 +1,12 @@
+pai_run_ids:
+  - "921c51ae66344949bc849dd32de5293d"
+  - "43c4da28389840d989e28a4b574fcdb5"
+  
+score_threshold: 0
+
+msisdn_col: "msisdn"
+campaign_name_col: "campaign_name"
+
+pai_campaign_name: "campaign_name"
+
+output_path: "hdfs:///data/landing/gx_pnt/camp_config_mgmt/tests"

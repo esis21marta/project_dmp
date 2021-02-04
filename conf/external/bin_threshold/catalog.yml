@@ -1,0 +1,13 @@
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+master:
+  <<: *parquet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/partner_msisdn/unpacked_tables/kredivo_june/kredivo_default_probability_june_update_handset_corrected_score51.parquet
+
+bin_threshold:
+  type: kedro.extras.datasets.yaml.YAMLDataSet
+  filepath: /home/cdsw/bin_threshold_10.yml

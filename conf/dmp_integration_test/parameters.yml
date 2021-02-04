@@ -1,0 +1,27 @@
+pipeline: scoring
+hdfs_base_path: hdfs:///data/landing/dmp_remote/dmp_integration_test/ # HDFS Base Path
+filter_partner_data: True
+
+# LOS Parameters
+los_cb_prior_start_date: "2018-12-01"
+los_cb_prior_end_date: "2019-02-28"
+los_churn_period: 90
+
+first_weekstart: 2019-10-28 # should be a monday
+last_weekstart: 2020-10-26 # should be a monday
+
+pii_level_columns:
+    - msisdn
+    - anumber
+    - bnumber
+
+shuffle_partitions.10k: 10
+
+# Configurations to Send email for timeliness check & msisnd delta check
+email_notif_enabled: false
+email_notif_setup:
+  smtp_relay_host: "smtprelay.telkomsel.co.id"
+  smtp_relay_port: 25
+  from_email: "cdsw@telkomsel.co.id"
+  to_emails:
+    - "arianto@telkomsel.co.id"

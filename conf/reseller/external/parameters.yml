@@ -1,0 +1,191 @@
+ext_data_dir: "/Users/limjiaxiang/Desktop/qb/project-thanatos/data/reseller/external/"
+
+nodes:
+  Admin_boundaries_HDX: 1
+  Cellphone_Signal_OpenCellID: 1
+  Demographics_GAR: 1
+  Demographics_WorldPop: 1
+  Elevation_WorldPop: 0
+  GDP_and_HDI_Dryad: 1
+  POIs_OSM: 1
+  Rainfall_NASA: 1
+  Roads_OSM: 1
+  Security_ACLED: 1
+  Urbanicity_GHS: 1
+  4g_bts_share: 1
+  big_poi: 1
+  fb_pop: 1
+  fb_share: 1
+  opensignal: 1
+  city_archetype: 1
+
+Admin_boundaries_HDX:
+  p_input_shp: 01_input/Admin_boundaries_HDX/idn_admbnda_adm4_bps_20200401.shp
+  p_input_2_shp: 01_input/Other/WorldPop 1km grid.shp
+  p_out_csv: 03_output/Admin_boundaries_HDX/
+
+Cellphone_Signal_OpenCellID:
+  p_input_WP_shp: 01_input/Other/WorldPop 1km grid.shp
+  p_input_OCI_csv: 01_input/Cellphone_Signal_OpenCellID/510.csv
+  p_out_csv: 03_output/Cellphone_Signal_OpenCellID/
+
+Demographics_GAR:
+  p_input_shp: 01_input/Demographics_GAR/gar_exp_IDN.shp
+  p_out_csv: 03_output/Demographics_GAR/
+
+Demographics_WorldPop:
+  p_dependency_ratio_raster: 01_input/Demographics_WorldPop/ASIA_2010_SubNat_DepRatio.tif
+  p_de_temp: 02_intermediate/Demographics_WorldPop/de_temp.csv
+  p_dependency_ratio_csv: 02_intermediate/Demographics_WorldPop/
+  p_births_raster: 01_input/Demographics_WorldPop/IDN_births_pp_v2_2015.tif
+  p_bi_temp: 02_intermediate/Demographics_WorldPop/bi_temp.csv
+  p_births_csv: 02_intermediate/Demographics_WorldPop/
+  p_pregnancies_raster: 01_input/Demographics_WorldPop/IDN_pregs_pp_v2_2015.tif
+  p_pr_temp: 02_intermediate/Demographics_WorldPop/pr_temp.csv
+  p_pregnancies_csv: 02_intermediate/Demographics_WorldPop/
+  p_merged_data_csv: 03_output/Demographics_WorldPop/
+
+Elevation_WorldPop:
+  p_input_raster: 01_input/Elevation_WorldPop/idn_srtm_topo_100m.tif
+  p_temp_csv: 02_intermediate/Elevation_WorldPop/Temp.csv
+  p_out_csv: 03_output/Elevation_WorldPop/
+
+GDP_and_HDI_Dryad:
+  p_input_1_nc: 01_input/GDP_and_HDI_Dryad/HDI_1990_2015_v2.nc
+  p_input_2_nc: 01_input/GDP_and_HDI_Dryad/GDP_PPP_30arcsec_v3.nc
+  p_input_3_nc: 01_input/GDP_and_HDI_Dryad/GDP_per_capita_PPP_1990_2015_v2.nc
+  p_out_1_csv: 03_output/GDP_and_HDI_Dryad/
+  p_out_2_csv: 03_output/GDP_and_HDI_Dryad/
+  p_out_3_csv: 03_output/GDP_and_HDI_Dryad/
+
+POIs_OSM:
+  p_input_shp: 01_input/POIs_OSM/gis_osm_pois_free_1.shp
+  p_out_csv: 03_output/POIs_OSM/
+
+Rainfall_NASA:
+  p_input_template: 01_input/Rainfall_NASA/2013/TRMM_3B43M_2013-01-01_gs_1440x720.TIFF
+  p_data_dir: 01_input/Rainfall_NASA/
+  p_input_raster: 02_intermediate/Rainfall_NASA/Precipitation monthly average 2013-2015.TIFF
+  p_temp_csv: 02_intermediate/Rainfall_NASA/Precipitation index for 2013-2015.csv
+  p_out_csv: 03_output/Rainfall_NASA/
+
+Roads_OSM:
+  p_input_shp: 01_input/Roads_OSM/gis_osm_roads_free_1.shp
+  p_out_csv: 03_output/Roads_OSM/
+
+Security_ACLED:
+  p_input_xlsx: 01_input/Security_ACLED/Asia_2010_2020_Feb29.xlsx
+  p_out_csv: 03_output/Security_ACLED/
+
+Urbanicity_GHS:
+  p_input_tif: 01_input/Urbanicity_GHS/GHS_SMOD_POP2015_GLOBE_R2019A_54009_1K_V1_0.tif
+  p_temp_csv: 02_intermediate/Urbanicity_GHS/Indonesia_Urbanicity_points.csv
+  p_out_csv: 03_output/Urbanicity_GHS/
+
+4g_bts_share:
+  input_dir_path: 01_input/4g_bts_share
+  input_excel_filename: 4G BTS Share - June 2019.xlsx
+  output_csv_filename: ../../03_output/4g_bts_share/mck.ext_4g_bts_share
+
+big_poi:
+  big_poi_dir_path: 01_input/big_poi
+  kwargs:
+    categories:
+      - Transportation (Transportasi)
+      - Built Environment (Lingkungan Terbangun)
+      - Utilities (Utilitas)
+    folder_prefixes:
+      - Transportasi25K
+      - Transportasi50K
+      - LingkunganTerbangun25K
+      - LingkunganTerbangun50K
+      - Utilitas25K
+      - Utilitas50K
+    extensions_to_extract:
+      - .shp
+      - .shx
+    shp_folders:
+      - shp files 25K
+      - shp files 50K
+    output_csv_filename: ../../03_output/big_poi/big_poi
+    googletrans: False
+    translation_dict:
+      CAGARBUDAYA: Cultural Heritage
+      BANGUNAN: Building
+      PUSKESMAS: Public Health Center
+      NIAGA: Commerce
+      TAMANWISATA: Garden Tours
+      KESEHATAN: Health
+      MAKAM: Tomb
+      PEMERINTAHAN: Government
+      LAYANANKESEHATAN: Health Services
+      INDUSTRI: Industry
+      RUMAHSAKIT: Hospital
+      PEMERINTAHASING: Foreign Governments
+      PENDIDIKAN: Education
+      ARENAOLAHRAGA: Sports Arena
+      HANKAM: Defense
+      PEMUKIMAN: Settlement
+      SOSIAL: Social
+      SARANAIBADAH: Place Of Worship
+      SARPASLINGKUNGAN: Environmental Infrastructure
+      TEMPATSAMPAHAKHIR: Final Garbage Point
+      MENARAEKSPLOITMINYAK: Oil Tower
+      MENARALISTRIK: Electrical Tower
+      GARDUTELPON: Telephone Substation
+      KANTORPLN: PLN Office
+      KANTORSTASKOMBUMI: Office of the Satkom Bumi
+      STASIUNTV: TV Station
+      DEPOGAS: Gas Depot
+      OLAHMINYAK: Sports
+      PANCARTV: TV Transmitters
+      PIPAHIDROKARBON: Hydraulic Pipe
+      OLAHAIRMINUM: Water Sports
+      KANTORAIRMINUM: Drinking Water Office
+      KANTORKIRIMPAKET: Post Office
+      PIPAMINYAK: Oil Pipes
+      SUMBERAIRMINUM: Drinking Water Source
+      HIDRANUMUM: Public Hydrant
+      SARANATELKOM: Telecommunication Facilities
+      GENLISTRIK: Electricity Generator
+      MENARATELPON: Telephone Tower
+      PANCARRADIO: Radio Transmitter
+      SUMURGAS: Gas Well
+      SUMURMINYAK: Oil Well
+      DEPOMINYAK: Oil Depo
+      KANTORGAS: Gas Office
+      KANTORTELPON: Telephone Office
+      KELOLALIMBAH: Waste Management
+      MENARAAIRMINUM: Drinking Water Tower
+      STASIUNPASUT: Tidal Station
+      TONGGAKKM: Milestone
+      TAXIWY: Taxiway
+      RELKA: Rail
+      STASIUNKA: Stasiun Ka
+
+fb_pop:
+  filenames:
+    population_idn_2018-10-01.csv: ''
+    IDN_elderly_60_plus_2019-06-01.csv: elderly_60_plus
+    IDN_children_under_five_2019-06-01.csv: children_under_5
+    IDN_men_2019-06-01.csv: men
+    IDN_women_2019-06-01.csv: women
+    IDN_women_of_reproductive_age_15_49_2019-06-01.csv: women_reproductive_age_15_49
+    IDN_youth_15_24_2019-06-01.csv: youth_15_24
+  input_dir_path: 01_input/fb_pop
+  output_csv_filename: ../../03_output/fb_pop/mck.ext_fb_pop
+
+fb_share:
+  input_dir_path: 01_input/fb_share
+  input_excel_filename: All Cities_Competitor_share_all.xlsx
+  output_csv_filename: ../../03_output/fb_share/mck.ext_fb_share
+
+opensignal:
+  input_dir_path: 01_input/opensignal
+  input_excel_filename: Throughput Downlink Busy Hour BH Latency - Jan-Jun-Jul2019.xlsx
+  output_csv_filename: ../../03_output/opensignal/mck.ext_opensignal
+
+city_archetype:
+  input_dir_path: 01_input/city_archetype
+  input_excel_filename: city_archetype_2020.xlsx
+  output_csv_filename: ../../03_output/city_archetype/mck.city_archetypes_2020

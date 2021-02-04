@@ -1,0 +1,53 @@
+   #                                                               #
+   #              ####   #    #  #    #  #####   #    #            #
+   #             #    #  #    #  #    #  #    #  ##   #            #
+                 #       ######  #    #  #    #  # #  #
+   #             #       #    #  #    #  #####   #  # #            #
+   #             #    #  #    #  #    #  #   #   #   ##            #
+   #              ####   #    #   ####   #    #  #    #            #
+
+master:
+    type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+    database: dmp_remote
+    table: may_500k_churn_20200831
+
+scoring_master:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  database: dmp_remote
+  table: aug_500k_blacklist_churn_20200914
+
+pandas_df:
+    filepath: data/churn/05_model_input/pilot_scoring/pandas_df.parquet
+    type: pandas.ParquetDataSet
+
+propensity_training_preprocessed:
+    filepath: data/churn/05_model_input/pilot_scoring/propensity_training_preprocessed
+    type: pickle.PickleDataSet
+
+pd_features_with_target:
+    filepath: data/churn/05_model_input/pilot_scoring/alldata.parquet
+    type: pandas.ParquetDataSet
+
+fold_fit_results:
+    filepath: data/churn/06_model_output/pilot_scoring/model.pkl
+    type: pickle.PickleDataSet
+
+msisdn_scores:
+    filepath: data/churn/06_model_output/pilot_scoring/msisdn_scores
+    type: kedro.extras.datasets.pandas.CSVDataSet
+
+pilot_mapping_base:
+  filepath: data/churn/06_model_output/pilot_scoring/pilot_mapping_base.csv
+  type: kedro.extras.datasets.pandas.CSVDataSet
+
+pilot_bids:
+  filepath: data/churn/06_model_output/pilot_scoring/pilot_mapped.csv
+  type: kedro.extras.datasets.pandas.CSVDataSet
+
+clusters:
+  filepath: data/churn/06_model_output/pilot_scoring/clusters.csv
+  type: kedro.extras.datasets.pandas.CSVDataSet
+
+clusters_summary:
+  filepath: data/churn/06_model_output/pilot_scoring/clusters_summary.csv
+  type: kedro.extras.datasets.pandas.CSVDataSet

@@ -1,0 +1,11 @@
+pai_run: "91cf05bb4fa641e5aa8db652d9fc3b5d"
+score_column_name: "default_probability_score"
+predict_probability: True
+post_processing: "identity"
+model_type: ""
+binned: False
+binned_score_column_name: ""
+bin_thresholds: {}
+
+hdfs_base_path: hdfs:///data/landing/dmp_staging/pilot/external/ # HDFS Base Path
+

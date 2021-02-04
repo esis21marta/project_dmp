@@ -1,0 +1,158 @@
+########################################################################################################################
+############################################  Internet Apps Usage Features  ############################################
+########################################################################################################################
+l1_content_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/content_mapping.parquet
+l1_segment_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/segment_mapping.parquet
+l1_category_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/category_mapping.parquet
+l1_fintech_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/fintech_mapping.parquet
+l1_app_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_mapping.parquet
+l1_internet_app_feature_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/01_aggregation/internet_apps_usage/internet_app_feature_category_mapping.parquet
+l2_bcp_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/internet_apps_usage/bcp_usage_weekly.parquet
+l2_app_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/internet_apps_usage/app_usage_weekly_aggregation.parquet
+l2_internet_app_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/internet_apps_usage/internet_app_usage_weekly_aggregation.parquet
+l1_bcp_usage_daily: smoke_smy_bcp_usage_dd
+
+
+#########################################################################################################################
+###################################################  Revenue Features  ##################################################
+#########################################################################################################################
+l1_itdaml_dd_cdr_pkg_prchse_all: smoke_usage_chg_pkg_prchse_abt_dd
+l1_itdaml_dd_cdr_payu_prchse_all: smoke_usage_chg_payu_abt_dd
+l2_revenue_weekly_data: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/revenue/revenue_weekly.parquet
+
+#########################################################################################################################
+###################################################  Recharge Features  #################################################
+#########################################################################################################################
+l1_abt_rech_daily_abt_dd: smoke_rech_daily_abt_dd
+l1_account_balance: smoke_ocs_bal
+l1_cb_pre_dd: smoke_cb_pre_dd
+l1_pkg_purchase_dd: smoke_usage_chg_pkg_prchse_abt_dd
+l1_rech_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/recharge/rech_weekly.parquet
+l2_account_balance_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/recharge/acc_bal_weekly.parquet
+l1_chg_pkg_prchse_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+
+#########################################################################################################################
+###################################################  Handset Features  ##################################################
+#########################################################################################################################
+l1_handset_dim_lookup: smoke_device_dim
+l1_handset_dd: smoke_device_dd
+l1_handset_mm: smoke_device_mm
+l1_handset_lookup_data: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/handset/device_dim_single_rec_per_imei.parquet
+l2_handset_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/handset/device_data_weekly.parquet
+# l2_first_2_handset: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/handset/first_2_handset.parquet
+
+########################################################################################################################
+##################################################  Handset Features  - Internal #######################################
+########################################################################################################################
+l1_device_dbi_imei_handset_full: smoke_imei_handset
+l1_device_dbi_imei_single_rec_per_imei: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/handset_internal/device_dbi_imei_single_rec_per_imei.parquet
+l2_device_internal_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/handset_internal/internal_device_data_weekly.parquet
+
+#########################################################################################################################
+#################################################  Voice Calls Features  ################################################
+#########################################################################################################################
+l1_voice_calling_daily: smoke_usage_mss_abt_dd
+l2_voice_calling_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+
+#########################################################################################################################
+#################################################  Airtime Loan Features  ###############################################
+#########################################################################################################################
+l1_airtime_loan_takers: smoke_basecoe_atl_takers_database
+l1_airtime_loan_payment: smoke_basecoe_atl_payment_database
+l1_airtime_loan_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/airtime/airtime_weekly.parquet
+
+#########################################################################################################################
+###############################################  Internet Usage Features  ###############################################
+#########################################################################################################################
+l1_usage_upcc_dd: smoke_usage_upcc_abt_dd
+l1_internet_usage_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/internet_usage/internet_usage_weekly.parquet
+
+#########################################################################################################################
+#################################################  Text Messaging Features ##############################################
+#########################################################################################################################
+l1_abt_usage_mss_abt_dd: smoke_usage_mss_abt_dd
+l1_commercial_text_mapping: hdfs:///data/landing/gx_pnt/mck_dmp_common/kedro/02_primary/text_messaging_mapping/sms_sender_mapping.parquet
+l1_broken_bnumber: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/broken_bnumber.parquet
+l2_text_messaging_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/sms/text_messaging_weekly.parquet
+l2_commercial_text_messaging_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+
+#########################################################################################################################
+###################################################  Customer Profile  ##################################################
+#########################################################################################################################
+l1_cb_multidim: smoke_cb_multidim
+l1_cb_multidim_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/customer_profile/customer_profile_weekly.parquet
+
+########################################################################################################################
+##################################################  Network  ###########################################################
+########################################################################################################################
+
+l1_mck_sales_dnkm_dd: smoke_sales_dnkm_dd
+1l_dbi_cr_cb_prepaid_postpaid: smoke_cb_prepaid_postpaid
+l1_lacci_msisdn_mapping_jan_oct_2019: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/02_primary/network_mapping/msisdn_to_lacci_jan_oct_2019.parquet
+l1_network_lacci_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/network/network_lacci_weekly.parquet
+l1_network_lac_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/network/network_lac_weekly.parquet
+l1_network_msisdn_weekly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/network/network_msisdn_weekly.parquet
+
+########################################################################################################################
+########################################################  Outlets  #####################################################
+########################################################################################################################
+
+## Outlet catalog will only be temporary since the datapipeline won't be executed
+
+# l1_outlet_dim_dd: smoke_outlet_dim_dd
+# l1_digipos_outlet_reference_dd: smoke_digipos_outlet_reference_dd
+# l1_rech_mkios_dd: smoke_rech_mkios_dd
+# l1_rech_urp_dd: smoke_rech_urp_dd
+# l1_poi: smoke_ext_poi_big
+# l1_fb_pop: smoke_ext_pop_fb
+# l1_fb_share: smoke_ext_fb_share
+# l1_4g_bts_share: smoke_ext_4g_bts_share
+# l1_unique_outlets: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/unique_outlets.parquet
+# l1_unique_pois: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/unique_pois.parquet
+# l1_outlets_with_neighbours: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/outlets_with_neighbours.parquet
+# l1_pois_with_neighbours: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/pois_with_neighbours.parquet
+# l1_fb_points_with_neighbours: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/fb_points_with_neighbours.parquet
+# l1_dfj_outlet_fb_pop: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/dfj_outlet_fb_pop.parquet
+# l1_dfj_poi_outlet: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/dfj_poi_outlet.parquet
+# l1_outlet_digipos_monthly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/outlet_digipos_monthly_agg.parquet
+# l1_outlet_digipos_monthly_mode: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/outlet_digipos_monthly_mod.parquet
+# l1_mkios_recharge_monthly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/mkios_recharge_monthly_agg.parquet
+# l1_mkios_recharge_monthly_mode_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/mkios_recharge_monthly_mode_agg.parquet
+# l1_modern_monthly_aggregated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/outlets/modern_monthly_agg.parquet
+
+
+########################################################################################################################
+##################################################  PAYU Usage  ########################################################
+########################################################################################################################
+
+l1_usage_chg_payu_abt_dd: smoke_usage_chg_payu_abt_dd
+l2_payu_usage_weekly_aggregation: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/payu_usage/payu_usage_weekly.parquet
+
+########################################################################################################################
+##################################################  Customer LOS #######################################################
+########################################################################################################################
+
+l1_t_profile_full_hist: smoke_t_profile_full_hist
+l1_pre_paid_mck_customer_base_dd_3m: smoke_cb_pre_dd
+l1_post_paid_mck_customer_base_dd_3m: smoke_cb_post_dd
+l1_pre_paid_mck_customer_base_dd_1w: smoke_cb_pre_dd
+l1_post_paid_mck_customer_base_dd_1w: smoke_cb_post_dd
+l1_customer_los_validated: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/customer_los/validated_activated_date.parquet
+l1_customer_prepost_migration_old: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/pre_to_post_migration.parquet
+l1_customer_prepost_migration_new: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/customer_los/pre_to_post_migration_new.parquet
+l1_customer_prepost_migration: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/customer_los/pre_to_post_migration_all.parquet
+l1_customer_los_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/customer_los/customer_los_weekly.parquet
+
+########################################################################################################################
+##################################################  Product ############################################################
+########################################################################################################################
+
+l1_smy_usage_ocs_chg_dd: smoke_usage_ocs_chg_dd
+l1_mck_sku_bucket_pivot: smoke_sku_bucket_pivot
+l1_psm_sku_reff_tmp_v: smoke_sku_reff_tmp_v
+l1_macroproduct_map_base: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/product/bid_macroproduct_mapping.parquet
+l1_macroproduct_map_new: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/product/bid_macroproduct_mapping_new.parquet
+l1_base_ifrs_c2p: smoke_ifrs_c2p
+l1_base_ifrs_c2p_reject: smoke_ifrs_c2p_reject
+l2_macroproduct_weekly: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/product/product_macro_weekly.parquet
+l1_nonmacro_product_weekly_data: hdfs:///data/landing/gx_pnt/mck_dmp_smoke/smoke_output/01_aggregation/product/nonmacro_product_weekly.parquet

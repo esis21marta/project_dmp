@@ -1,0 +1,3 @@
+master:
+  type: pandas.ParquetDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/input/kredivo_default_probability.parquet

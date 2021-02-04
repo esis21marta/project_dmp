@@ -1,0 +1,23 @@
+raw_recharge_top_denomination:
+  rules:
+  - schema:
+      load_ts: TimestampType
+      load_user: StringType
+      max_denom_all: DoubleType
+      mm_date: TimestampType
+      msisdn: IntegerType
+      top1_denom: DoubleType
+      top2_denom: DoubleType
+    type: defender.pyspark_rules.HasSchema
+  - columns:
+    - mm_date
+    - load_ts
+    - msisdn
+    type: defender.pyspark_rules.NotNull
+  - columns:
+    - msisdn
+    - top1_denom
+    - top2_denom
+    - max_denom_all
+    type: defender.pyspark_rules.NotNan
+  type: and

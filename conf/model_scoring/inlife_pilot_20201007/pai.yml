@@ -1,0 +1,2 @@
+PAI_RUNS: hdfs:///data/landing/dmp_remote/model_factory/feature_selection/pai
+PAI_RUN_NAME: scoring_pipeline

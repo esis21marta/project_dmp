@@ -1,0 +1,15 @@
+pai_run_ids:
+  - "5b0fe65993094bc2ab0a4df926d3d1cd"
+  - "862eb2480b2f497a904af7680d15de2c"
+  - "68a71c1acbfe4ce1abcc959dd17df59a"
+  - "7ba8c62d3ba4458385584dba4e5ebf3b"
+  - "f3f28890cb9d438d85f772384285d2fa"
+  - "6705c34a33a8416792bf998416410467"
+  - "0851716ac8464ab8b2f643512fb8275b"
+
+score_threshold: 0
+
+msisdn_col: "msisdn"
+campaign_name_col: "campaign_name"
+
+pai_campaign_name: "campaign_name"

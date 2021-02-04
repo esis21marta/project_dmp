@@ -1,0 +1,1349 @@
+cb_post_dd:
+  path: ''
+  schema: cb
+  table: cb_post_dd
+  catalog: ["l1_post_paid_mck_customer_base_dd_1w","l1_post_paid_mck_customer_base_dd_3m"]
+  part_size: 281 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated customer base for postpaid
+  bizgroup: ["LOS"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg:
+  time_agg:
+cb_pre_dd:
+  path: ''
+  schema: cb
+  table: cb_pre_dd
+  catalog: ["l1_cb_pre_dd","l1_pre_paid_mck_customer_base_dd_3m","l1_pre_paid_mck_customer_base_dd_1w"]
+  part_size: 8.2 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated customer base for prepaid
+  bizgroup: ["LOS","Recharge"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cb_multidim:
+  path: ''
+  schema: cb
+  table: cb_multidim
+  catalog: ["l1_cb_multidim"]
+  part_size: 42.5 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: contain personal information for customer
+  bizgroup: ["Customer Profile"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cb_pre_mm:
+  path: ''
+  schema: cb
+  table: cb_pre_mm
+  catalog: ["xxx_cb_pre_mm"]
+  part_size: 10.5 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Monthly aggregated customer base for prepaid
+  bizgroup: ["Network"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cb_post_mm:
+  path: ''
+  schema: cb
+  table: cb_post_mm
+  catalog: ["xxx_cb_post_mm"]
+  part_size: 340.0 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Monthly aggregated customer base for postpaid
+  bizgroup: ["Network"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+outlet_dim_dd:
+  path:
+  schema: sch
+  table: outlet_dim_dd
+  catalog: ["l1_outlet_dim_dd"]
+  part_size: 59.0 M
+  part_col: load_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily snapshot and aggregation of outlet transaction revenue and recharge
+  bizgroup: ["Outlets"]
+  architecture_layer:
+  pii_level: personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+digipos_outlet_reference_dd:
+  path:
+  schema: sch
+  table: digipos_outlet_reference_dd
+  catalog: ["l1_digipos_outlet_reference_dd"]
+  part_size: 85.8 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily snapshot and data reference of outlet which used for build the table sch.outlet_dim_dd
+  bizgroup: ["Outlets"]
+  architecture_layer:
+  pii_level: personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+outlet_dealer_reff:
+  path:
+  schema: sch
+  table: outlet_dealer_reff
+  catalog: ["xxx_outlet_dealer_reff"]
+  part_size: 54.0 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Provides mapping of dealers to outlets
+  bizgroup: ["Outlets"]
+  architecture_layer:
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+digistar_sellout_sp:
+  path:
+  schema: "sch"
+  table: digistar_sellout_sp
+  catalog: ["xxx_digistar_sellout_sp"]
+  part_size: 8.4 M
+  part_col: load_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Captures digistar sell out for starter packs on transaction level
+  bizgroup: ["Outlets"]
+  architecture_layer:
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+digistar_sellout_vf:
+  path:
+  schema: sch
+  table: digistar_sellout_vf
+  catalog: ["xxx_digistar_sellout_vf"]
+  part_size: 1.9 M
+  part_col: load_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Captures digistar sell out for physical vouchers on transaction level
+  bizgroup: ["Outlets"]
+  architecture_layer:
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+digistar_sellthru_det:
+  path:
+  schema: sch
+  table: digistar_sellthru_det
+  catalog: ["xxx_digistar_sellthru_det"]
+  part_size: 60.3 M
+  part_col: load_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Captures digistar sell through on transaction level
+  bizgroup: ["Outlets"]
+  architecture_layer:
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+digistar_vasrecharge:
+  path:
+  schema: sch
+  table: digistar_vasrecharge
+  catalog: ["xxx_digistar_vasrecharge"]
+  part_size: 185.6 K
+  part_col: load_date
+  part_col_dt_format:
+  description: Captures digistar value-added services recharge on transaction level
+  bizgroup: ["Outlets"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+smy_bcp_categorisation_dd:
+  path:
+  schema: mig
+  table: smy_bcp_categorisation_dd
+  catalog: ["xxx_smy_bcp_categorisation_dd"]
+  part_size: 325.6 G
+  part_col: trx_date"
+  part_col_dt_format: '%Y%m%d'
+  description: ''
+  bizgroup: ["Internet Apps Usage"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+smy_bcp_usage_dd:
+  path:
+  schema: mig
+  table: smy_bcp_usage_dd
+  catalog: ["l1_bcp_usage_daily"]
+  part_size: 924.2 G
+  part_col: trx_date
+  part_col_dt_format: '%Y%m%d'
+  description: ''
+  bizgroup: ["Internet App Usage"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+itdaml_dd_cdr_pkg_prchse_all:
+  path:
+  schema: mig
+  table: itdaml_dd_cdr_pkg_prchse_all
+  catalog: ["xxx_itdaml_dd_cdr_pkg_prchse_all"]
+  part_size: 62.8 M
+  part_col: dt_dt
+  part_col_dt_format: '%Y-%m-%d'
+  description: ''
+  bizgroup: ["Outlets"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg:
+  time_agg:
+ifrs_c2p:
+  path:
+  schema: base
+  table: ifrs_c2p
+  catalog: ["xxx_ifrs_c2p"]
+  part_size: 348.8 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Base table for all package transaction
+  bizgroup: ["Product"]
+  architecture_layer: Stage
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ocs_bal:
+  path:
+  schema: base
+  table: ocs_bal
+  catalog: ["l1_account_balance"]
+  part_size: 4.7 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["Recharge"]
+  architecture_layer: Stage
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+mkios_evcvas:
+  path:
+  schema: base
+  table: mkios_evcvas
+  catalog: ["xxx_mkios_evcvas"]
+  part_size: 173 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["Outlets"]
+  architecture_layer: Stage
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_ocs_chg:
+  path:
+  schema: base
+  table: usage_ocs_chg
+  catalog: ["usage_ocs_chg"]
+  part_size: 67.5 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["International Roaming"]
+  architecture_layer: Stage
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_upcc:
+  path:
+  schema: base
+  table: usage_upcc
+  catalog: ["xxx_usage_upcc"]
+  part_size: 2.2 T
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["International Roaming"]
+  architecture_layer: Stage
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+network_mss:
+  path:
+  schema: base
+  table: network_mss
+  catalog: ["xxx_network_mss"]
+  part_size: 18.6 T
+  part_col: src
+  part_col_dt_format:
+  description: Base table for all mobile network activity, taken from MSS
+  bizgroup: ["International Roaming"]
+  architecture_layer: Stage
+  pii_level: pseudonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cms_definition_contact:
+  path:
+  schema: base
+  table: cms_definition_contact
+  catalog: ["xxx_cms_definition_contact"]
+  part_size: 960.4 K
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["4G use case"]
+  architecture_layer: Stage
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cms_definition_identification:
+  path:
+  schema: base
+  table: cms_definition_identification
+  catalog: ["xxx_cms_definition_identification"]
+  part_size: 506.6 K
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["4G use case"]
+  architecture_layer: Stage
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cms_tracking_stream:
+  path:
+  schema: base
+  table: cms_tracking_stream
+  catalog: ["xxx_cms_tracking_stream"]
+  part_size: 10 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["4G use case"]
+  architecture_layer: Stage
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cms_definition_keyvalues:
+  path:
+  schema: base
+  table: cms_definition_keyvalues
+  catalog: ["xxx_cms_definition_keyvalues"]
+  part_size: 154.4 K
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["Inlife Stimulation"]
+  architecture_layer: Stage
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cms_definition_offer:
+  path:
+  schema: base
+  table: cms_definition_offer
+  catalog: ["xxx_cms_definition_offer"]
+  part_size: 163.5 K
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["Inlife Stimulation"]
+  architecture_layer: Stage
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cms_definition_rules:
+  path:
+  schema: base
+  table: cms_definition_rules
+  catalog: ["xxx_cms_definition_rules"]
+  part_size: 400.0 K
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description:
+  bizgroup: ["Inlife Stimulation"]
+  architecture_layer: Stage
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_chg_pkg_prchse_abt_dd:
+  path:
+  schema: abt
+  table: usage_chg_pkg_prchse_abt_dd
+  catalog: ["l1_itdaml_dd_cdr_pkg_prchse_all","l1_pkg_purchase_dd"]
+  part_size: 82.5 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated package purchase revenue broken down per service (V/S/D/IR/DLS)
+  bizgroup: ["Revenue","Recharge"]
+  architecture_layer: ISG
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+rech_daily_abt_dd:
+  path:
+  schema: abt
+  table: rech_daily_abt_dd
+  catalog: ["l1_abt_rech_daily_abt_dd"]
+  part_size: 582.2 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated of trx and amount of recharge
+  bizgroup: ["Recharge"]
+  architecture_layer: ISG
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_mss_abt_dd:
+  path:
+  schema: abt
+  table: usage_mss_abt_dd
+  catalog: ["l1_voice_calling_daily","l1_abt_usage_mss_abt_dd"]
+  part_size: 17.9 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated of all mobile network activity
+  bizgroup: ["Voice Calls","SMS"]
+  architecture_layer: ISG
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_upcc_abt_dd:
+  path:
+  schema: abt
+  table: usage_upcc_abt_dd
+  catalog: ["l1_usage_upcc_dd"]
+  part_size: 7.7 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated data package consumption of subscribers
+  bizgroup: ["Internet Usage"]
+  architecture_layer: ISG
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_chg_payu_abt_dd:
+  path:
+  schema: abt
+  table: usage_chg_payu_abt_dd
+  catalog: ["l1_usage_chg_payu_abt_dd","l1_itdaml_dd_cdr_payu_prchse_all"]
+  part_size: 1.86 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated PAYU revenue of subscribers broken down per service (V/S/D/IR/DLS) consists of trx, rev and mins. of use
+  bizgroup: ["Internet Usage","l1_itdaml_dd_cdr_payu_prchse_all"]
+  architecture_layer: ISG
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_chg_pkg_abt_dd:
+  path:
+  schema: abt
+  table: usage_chg_pkg_abt_dd
+  catalog: ["xxx_usage_chg_pkg_abt_dd"]
+  part_size: 811.2 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated non-charged and package usage contains trx and mins. of used broken down per service (V/S/D/IR/DLS)
+  bizgroup:
+  architecture_layer: ISG
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+rech_mkios_dd:
+  path:
+  schema: smy
+  table: rech_mkios_dd
+  catalog: ["l1_rech_mkios_dd"]
+  part_size: 491.1 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregation detail of transaction recharge from outlet mkios
+  bizgroup: ["Outlets"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+rech_urp_dd:
+  path:
+  schema: smy
+  table: rech_urp_dd
+  catalog: ["l1_rech_urp_dd"]
+  part_size: 270.7 M
+  part_col: load_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregation detail of transaction recharge from outlet modern channel
+  bizgroup: ["Outlets"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+device_dd:
+  path:
+  schema: smy
+  table: device_dd
+  catalog: ["l1_handset_dd"]
+  part_size: 13.6 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated table on handset device information
+  bizgroup: ["Handset"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_upcc_dd:
+  path:
+  schema: smy
+  table: usage_upcc_dd
+  catalog: ["xxx_usage_upcc_dd"]
+  part_size: 68.1 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated table on internet usage consumption
+  bizgroup: ["Internet Usage"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+device_mm:
+  path:
+  schema: smy
+  table: device_mm
+  catalog: ["l1_handset_mm"]
+  part_size: 24.1 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Monthly aggregated table on handset device information
+  bizgroup: ["Handset"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+usage_ocs_chg_dd:
+  path:
+  schema: smy
+  table: usage_ocs_chg_dd
+  catalog: ["xxx_usage_ocs_chg_dd"]
+  part_size: 11 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Daily aggregated package activation contains trx, revenue, bid (content_id), sku (pack_id), cp_name, and service_type
+  bizgroup: ["Inlife Stimulation"]
+  architecture_layer: Foundation
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+imei_handset:
+  path:
+  schema: dbi
+  table: imei_handset
+  catalog: ["l1_device_dbi_imei_handset_full"]
+  part_size: 54.3 G
+  part_col: Month
+  part_col_dt_format: '%Y%m'
+  description: Table used to generate TAC look-up table for internal use-case
+  bizgroup: ['Handset']
+  architecture_layer:
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+lte_map:
+  path:
+  schema: dbi
+  table: lte_map
+  catalog: ["xxx_lte_map"]
+  part_size: 1.8 G
+  part_col: Month
+  part_col_dt_format: '%Y%m'
+  description: ''
+  bizgroup: ["4G use case"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+sku_reff_tmp_v:
+  path:
+  schema: psm
+  table: sku_reff_tmp_v
+  catalog: ["xxx_sku_reff_tmp_v"]
+  part_size: 128.0 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: mapping table of bid and sku of reflex package to get allowance
+  bizgroup: ["Inlife Stimulation"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+coe_atl_exposed_database:
+  path:
+  schema: dis
+  table: coe_atl_exposed_database
+  catalog: ["xxx_coe_atl_exposed_database"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: ''
+  bizgroup: ["Airtime"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+coe_atl_takers_database:
+  path:
+  schema: dis
+  table: coe_atl_takers_database
+  catalog: ["xxx_coe_atl_takers_database"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Deprecated - Table with all airtime loan recipients/takers
+  bizgroup: ["Airtime"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+coe_atl_payment_database:
+  path:
+  schema: dis
+  table: coe_atl_payment_database
+  catalog: ["xxx_coe_atl_payment_database"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Deprecated - Table with all airtime loan paybacks
+  bizgroup: ["Airtime"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+svoc_dynamic_mm:
+  path:
+  schema: rna
+  table: svoc_dynamic_mm
+  catalog: ["xxx_svoc_dynamic_mm"]
+  part_size: 12 G
+  part_col: run_month_m0
+  part_col_dt_format: '%Y%m'
+  description: ''
+  bizgroup: ["Handset Internal"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+device_dim:
+  path:
+  schema: dim
+  table: device_dim
+  catalog: ["l1_handset_dim_lookup"]
+  part_size: 21.3 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Look-up table for TAC information used for external use-case
+  bizgroup: ["Handset"]
+  architecture_layer: ''
+  pii_level: pseudonymous data
+  impact_tier: medium
+  user_agg:
+  time_agg:
+syn_iab_segmentation_all:
+  path:
+  schema: dav
+  table: syn_iab_segmentation_all
+  catalog: ["xxx_syn_iab_segmentation_all"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: ''
+  bizgroup: ["Internet Apps Usage"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+cb_prepaid_postpaid_201910_ucg_samples:
+  path:
+  schema: mck
+  table: cb_prepaid_postpaid_201910_ucg_samples
+  catalog: ["xxx_cb_prepaid_postpaid_201910_ucg_samples"]
+  part_size: 7.4 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: ''
+  bizgroup: ["Internal packing"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+mck_int_random_sample:
+  path:
+  schema: mck
+  table: mck_int_random_sample
+  catalog: ["xxx_mck_int_random_sample"]
+  part_size: 13.3 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: ''
+  bizgroup: ["Internal packing"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+int_mck_hvc:
+  path:
+  schema: mck
+  table: int_mck_hvc
+  catalog: ["xxx_int_mck_hvc"]
+  part_size: 14.3 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: ''
+  bizgroup: ["Internal packing"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+kr_badflags_sample_20200106:
+  path:
+  schema: mck
+  table: kr_badflags_sample_20200106
+  catalog: ["xxx_kr_badflags_sample_20200106"]
+  part_size: 1.2 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Kredivo MSISDN list with badflag
+  bizgroup: ["External packing"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+kr_ts_sample_20200113:
+  path:
+  schema: mck
+  table: kr_ts_sample_20200113
+  catalog: ["xxx_kr_ts_sample_20200113"]
+  part_size: 111.9 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Kredivo MSISDN sample
+  bizgroup: ["External packing"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+kr_random_lookalike_20200121:
+  path:
+  schema: mck
+  table: kr_random_lookalike_20200121
+  catalog: ["xxx_kr_random_lookalike_20200121"]
+  part_size: 4.0 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Kredivo MSISDN random lookalike
+  bizgroup: ["External packing"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_pop_fb:
+  path:
+  schema: mck
+  table: ext_pop_fb
+  catalog: ["l1_fb_pop"]
+  part_size: 103.2 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Population and other demographics from Facebook at 30 meter resolution
+  bizgroup: ["Outlets"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_poi_big:
+  path:
+  schema: mck
+  table: ext_poi_big
+  catalog: ["l1_poi"]
+  part_size: 41.5 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Points of Interest (restaurantes, schools, hospitals, etc.) produced by BIG
+  bizgroup: ["Reseller source"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_fb_share:
+  path:
+  schema: mck
+  table: ext_fb_share
+  catalog: ["l1_fb_share"]
+  part_size: 98.6 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Share of facebook usage amongst the 5 Indonesia telcos on a city level
+  bizgroup: ["Outlets"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_4g_bts_share:
+  path:
+  schema: mck
+  table: ext_4g_bts_share
+  catalog: ["l1_4g_bts_share"]
+  part_size: 14.0 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Share of 4G BTS traffic amongst the 5 Indonesia telcos on a city level
+  bizgroup: ["Reseller source"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+t_profile_full_hist:
+  path:
+  schema: mck
+  table: t_profile_full_hist
+  catalog: ["l1_t_profile_full_hist"]
+  part_size: 2.1 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: Old table from secprod to record customer base for prepaid & postpaid user
+  bizgroup: ["LOS"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+t_rech_mkios_dd:
+  path:
+  schema: mck
+  table: t_rech_mkios_dd
+  catalog: ["t_rech_mkios_dd"]
+  part_size: 85.0 M
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: ''
+  bizgroup: ["Recharge"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+t_rech_urp_dd:
+  path:
+  schema: mck
+  table: t_rech_urp_dd
+  catalog: ["xxx_t_rech_urp_dd"]
+  part_size: 63.6 M
+  part_col: load_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: ''
+  bizgroup: ["Recharge"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_wp_demographics:
+  path:
+  schema: mck
+  table: ext_wp_demographics
+  catalog: ["xxx_ext_wp_demographics"]
+  part_size: 124 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Population demographics grid at 100m resolution produced by WorldPop
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_acled_conflict_events:
+  path:
+  schema: mck
+  table: ext_acled_conflict_events
+  catalog: ["xxx_ext_acled_conflict_events"]
+  part_size: 155.8 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Locations of conflict and insecurity events produced by ACLED
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_hdx_administrative_divisions:
+  path:
+  schema: mck
+  table: ext_hdx_administrative_divisions
+  catalog: ["xxx_ext_hdx_administrative_divisions"]
+  part_size: 137.5 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Grid of administrative divisions in levels 1 to 4. Raw data from UNOCHA
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_ghs_urbanicity:
+  path:
+  schema: mck
+  table: ext_ghs_urbanicity
+  catalog: ["xxx_ext_ghs_urbanicity"]
+  part_size: 43.1 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Urbanicity grid that classifies land in a scale from very rural to very urban, produced by GHS
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_itos_distance_nearest_city:
+  path:
+  schema: mck
+  table: "ext_itos_distance_nearest_city"
+  catalog: ["xxx_ext_itos_distance_nearest_city"]
+  part_size: 73.6 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Distance to nearest main administrative level 2 city. Raw data about cities from ITOS
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_gar_demographics:
+  path:
+  schema: mck
+  table: "ext_gar_demographics"
+  catalog: ["xxx_ext_gar_demographics"]
+  part_size: 6.1 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Grid of data about employment, capital stock and income groups, produced by UN GAR
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_wp_elevation:
+  path:
+  schema: mck
+  table: ext_wp_elevation
+  catalog: ["xxx_ext_wp_elevation"]
+  part_size: 55.3 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Elevation above sea level grid produced by WorldPop
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_neo_rainfall_index:
+  path:
+  schema: mck
+  table: ext_neo_rainfall_index
+  catalog: ["xxx_ext_neo_rainfall_index"]
+  part_size: 23.0 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Rainfall index grid produced by NASA NEO
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_hdx_coast_points:
+  path:
+  schema: mck
+  table: ext_hdx_coast_points
+  catalog: ["ext_hdx_coast_points"]
+  part_size: 72.1 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Coastal points produced from admin level 1 polygon from UNOCHA
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_osm_primary_roads:
+  path:
+  schema: mck
+  table: ext_osm_primary_roads
+  catalog: ["xxx_ext_osm_primary_roads"]
+  part_size: 32.6 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Sample points from Open Street Maps primary roads (include trunk and motorway)
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_osm_primary_and_secondary_roads:
+  path:
+  schema: mck
+  table: ext_osm_primary_and_secondary_roads
+  catalog: ["xxx_ext_osm_primary_and_secondary_roads"]
+  part_size: 77.2 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Sample points from Open Street Maps primary and secondary roads (include trunk and motorway as part of primary roads)
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_osm_railways:
+  path:
+  schema: mck
+  table: ext_osm_railways
+  catalog: ["xxx_ext_osm_railways"]
+  part_size: 1.1 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Sample points from Open Street Maps railways
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_bps_extreme_poverty_percentages:
+  path:
+  schema: mck
+  table: ext_bps_extreme_poverty_percentages
+  catalog : ["xxx_ext_bps_extreme_poverty_percentages"]
+  part_size: 1.0 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Extreme poverty percentages by province, produced by BPS
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+city_archetypes_2020:
+  path:
+  schema: mck
+  table: city_archetypes_2020
+  catalog: ["xxx_city_archetypes_2020"]
+  part_size: "0.000001"
+  part_col: 1.0 K
+  part_col_dt_format: ''
+  description: City archetypes used by TSEL to determine competition intensity
+  bizgroup: ["Source tables"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_Dryad_GDP:
+  path:
+  schema: mck
+  table: ext_Dryad_GDP
+  catalog: ["xxx_ext_Dryad_GDP"]
+  part_size: 7.5 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Grid of total GDP, downloaded from Dryad
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_Dryad_GDP_per_capita:
+  path:
+  schema: mck
+  table: ext_Dryad_GDP_per_capita
+  catalog: ["xxx_ext_Dryad_GDP_per_capita"]
+  part_size: 611.4 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Grid of GDP per capita, downloaded from Dryad
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_Dryad_HDI:
+  path:
+  schema: mck
+  table: ext_Dryad_HDI
+  catalog: ["xxx_ext_Dryad_HDI"]
+  part_size: 627.9 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: Grid of Human Development Index, downloaded from Dryad
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_OCiD_cell_towers:
+  path:
+  schema: mck
+  table: ext_OCiD_cell_towers
+  catalog: ["xxx_ext_OCiD_cell_towers"]
+  part_size: 171.7 M
+  part_col: ''
+  part_col_dt_format: ''
+  description: Locations of places where cell phones detected signals from 4 telco technologies. Raw data from Open Cell ID
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+sku_bucket_pivot:
+  path:
+  schema: mck
+  table: "sku_bucket_pivot"
+  catalog: ["xxx_sku_bucket_pivot"]
+  part_size: 195.7 K
+  part_col: ''
+  part_col_dt_format: ''
+  description: mapping table of bid and sku of digicore package to get allowance
+  bizgroup: ["Inlife Stimulation"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+cb_prepaid_postpaid_201910_ucg:
+  path:
+  schema: mck
+  table: cb_prepaid_postpaid_201910_ucg
+  catalog: ["cb_prepaid_postpaid_201910_ucg"]
+  part_size: 2.5 G
+  part_col: ''
+  part_col_dt_format: ''
+  description: ''
+  bizgroup: ["Inlife Stimulation"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+t_cb_multidim:
+  path:
+  schema: mck
+  table: t_cb_multidim
+  catalog: ["xxx_t_cb_multidim"]
+  part_size: 41.6 G
+  part_col: event_date
+  part_col_dt_format: '%Y-%m-%d'
+  description: ''
+  bizgroup: ["recurring campaigns use case"]
+  architecture_layer: ''
+  pii_level: sensitive personal data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+sales_DNKM_dd:
+  path:
+  schema: mck
+  table: sales_DNKM_dd
+  catalog: ["l1_mck_sales_dnkm_dd"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Daily aggregated for network quality, in lac_ci level
+  bizgroup: ["Network"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+sales_DNKM_ww:
+  path:
+  schema: mck
+  table: sales_DNKM_ww
+  catalog: ["xxx_sales_DNKM_ww"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Weekly aggregated for network quality, in lac_ci level
+  bizgroup: ["Network"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+sales_DNKM_mm:
+  path:
+  schema: mck
+  table: sales_DNKM_mm
+  catalog: ["xxx_sales_DNKM_mm"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Monthly aggregated for network quality, in lac_ci level
+  bizgroup: ["Network"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_osm_pois:
+  path:
+  schema: mck
+  table: ext_osm_pois
+  catalog: ["xxx_ext_osm_pois"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Points of Interest (restaurantes, schools, hospitals, etc.) from Open Street Maps
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_bps_podes:
+  path:
+  schema: mck
+  table: ext_bps_podes
+  catalog: ["xxx_ext_bps_podes"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Village potentials statistics at province level, produced by BPS
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_factual_poi:
+  path:
+  schema: mck
+  table: ext_factual_poi
+  catalog: ["xxx_ext_factual_poi"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Points of Interest (restaurantes, schools, hospitals, etc.) from Factual
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_bps_sakernas:
+  path:
+  schema: mck
+  table: ext_bps_sakernas
+  catalog: ["xxx_ext_bps_sakernas"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Data at province level about labor force, produced by BPS
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''
+ext_bps_susenas:
+  path:
+  schema: mck
+  table: ext_bps_susenas
+  catalog: ["xxx_ext_bps_susenas"]
+  part_size: ''
+  part_col: ''
+  part_col_dt_format: ''
+  description: Welfare statistics at province level, produced by BPS
+  bizgroup: ["New ingesitons"]
+  architecture_layer: ''
+  pii_level: anonymous data
+  impact_tier: medium
+  user_agg: ''
+  time_agg: ''

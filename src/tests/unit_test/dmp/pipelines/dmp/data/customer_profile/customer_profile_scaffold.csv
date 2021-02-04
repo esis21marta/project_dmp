@@ -1,0 +1,13 @@
+msisdn,fea_custprof_lte_usim_user_flag,fea_custprof_area_sales,fea_custprof_region_sales,fea_custprof_bill_responsibility_type,fea_custprof_segment_data_user,fea_custprof_los,fea_custprof_status,fea_custprof_brand,fea_custprof_price_plan,fea_custprof_cust_type_desc,fea_custprof_cust_subtype_desc,fea_custprof_segment_hvc_mtd,fea_custprof_segment_hvc_m1,fea_custprof_loyalty_tier,fea_custprof_nik_gender,fea_custprof_nik_age,fea_custprof_bill_cycle,fea_custprof_persona_los,fea_custprof_prsna_quadrant,fea_custprof_arpu_segment_name,fea_custprof_mytsel_user_flag,fea_custprof_kecamatan,fea_custprof_kabupaten,persona_id,custprof_tsel_poin_avg,custprof_tsel_poin_min,custprof_tsel_poin_max,weekstart
+111,YES,AREA 2,JABAR,null,N,313,A,simPATI,PP Enterprise SimPATI,B2B,CORPORATE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,21,21,21,2020-05-11
+111,YES,AREA 2,JABAR,null,N,327,A,simPATI,PP Enterprise SimPATI,B2B,CORPORATE,0,0,Silver,N,42,null,0,null,HIGH,null,MARGAHAYU,BANDUNG,null,28,28,28,2020-05-25
+111,YES,AREA 2,JABAR,null,N,320,A,simPATI,PP Enterprise SimPATI,B2B,CORPORATE,0,0,Silver,N,42,null,0,null,HIGH,null,MARGAHAYU,BANDUNG,null,21,21,21,2020-05-18
+111,YES,AREA 2,JABAR,null,N,299,A,simPATI,PP Enterprise SimPATI,B2B,CORPORATE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,21,21,21,2020-04-27
+111,YES,AREA 2,JABAR,null,N,306,A,simPATI,PP Enterprise SimPATI,B2B,CORPORATE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,21,21,21,2020-05-04
+111,YES,AREA 2,JABAR,null,N,292,A,simPATI,PP Enterprise SimPATI,B2B,LE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,21,21,21,2020-04-20
+111,YES,AREA 2,JABAR,null,N,285,A,simPATI,PP Enterprise SimPATI,B2B,LE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,21,21,21,2020-04-13
+111,YES,AREA 2,JABAR,null,N,278,A,simPATI,PP Enterprise SimPATI,B2B,LE,0,0,Silver,N,42,null,1612,LVP,HIGH,null,MARGAHAYU,BANDUNG,2.01901E+16,14,14,14,2020-04-06
+222,YES,AREA 2,JABAR,null,N,306,A,simPATI,PP Enterprise SimPATI,B2B,CORPORATE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,21,21,21,2020-06-01
+222,YES,AREA 2,JABAR,null,N,292,A,simPATI,PP Enterprise SimPATI,B2B,LE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,10,21,21,2020-06-08
+222,YES,AREA 2,JABAR,null,N,285,A,simPATI,PP Enterprise SimPATI,B2B,LE,0,0,Silver,N,42,null,null,null,HIGH,null,MARGAHAYU,BANDUNG,null,10,21,21,2020-06-15
+222,YES,AREA 2,JABAR,null,N,278,A,simPATI,PP Enterprise SimPATI,B2B,LE,0,0,Silver,N,42,null,1612,LVP,HIGH,null,MARGAHAYU,BANDUNG,2.01901E+16,14,14,14,2020-06-22

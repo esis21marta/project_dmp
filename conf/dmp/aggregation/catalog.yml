@@ -1,0 +1,1614 @@
+_jdbc_oracle_qa_db: &jdbc_oracle_qa_db
+  type: spark.SparkJDBCDataSet
+  url: jdbc:oracle:thin:@10.53.71.164:1521:OPTOIPIMC2
+  credentials: qa_credentials_user_pass
+  load_args:
+    properties:
+      driver: "oracle.jdbc.driver.OracleDriver"
+  save_args:
+    mode: "append"
+    properties:
+      driver: "oracle.jdbc.driver.OracleDriver"
+
+_hive: &hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  write_mode: overwrite
+
+_hive_trx_date_1w: &hive_trx_date_1w
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_hive_event_date_1w: &hive_event_date_1w
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_hive_event_date_1cm: &hive_event_date_1cm
+  <<: *hive_event_date_1w
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_hive_trx_date_1cm: &hive_trx_date_1cm
+  <<: *hive_event_date_1w
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_hive_mo_id_6cm: &hive_mo_id_6cm
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 6cm
+    partition_column: mo_id
+    partition_date_format: "%Y-%m"
+
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+_parquet_event_date_1w: &parquet_event_date_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: event_date
+  load_args:
+    partition_filter_period: 1w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_weekstart_1w: &parquet_weekstart_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  load_args:
+    partition_filter_period: 1w
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_weekstart_3m: &parquet_weekstart_3m
+  <<: *parquet_weekstart_1w
+  load_args:
+    partition_filter_period: 3m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_trx_date_1w: &parquet_trx_date_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: trx_date
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet_trx_date_1cm: &parquet_trx_date_1cm
+  <<: *parquet_trx_date_1w
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet_event_date_1cm: &parquet_event_date_1cm
+  <<: *parquet_event_date_1w
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_trx_date_3m: &parquet_trx_date_3m
+  <<: *parquet_trx_date_1w
+  load_args:
+    partition_filter_period: 3m
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet_mo_id_6cm: &parquet_mo_id_6cm
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: mo_id
+  load_args:
+    partition_filter_period: 6cm
+    partition_column: mo_id
+    partition_date_format: "%Y-%m"
+
+_parquet_mo_id_3cm: &parquet_mo_id_3cm
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: mo_id
+  load_args:
+    partition_filter_period: 3cm
+    partition_column: mo_id
+    partition_date_format: "%Y-%m"
+
+_hive_month_3cm: &hive_month_3cm
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 3cm
+    partition_column: month
+    partition_date_format: "%Y%m"
+
+_parquet_weekstart_6m: &parquet_weekstart_6m
+  <<: *parquet_weekstart_1w
+  load_args:
+    partition_filter_period: 6m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_hive_yearweek_1w: &hive_yearweek_1w
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1w
+    partition_column: yearweek_partition
+    partition_date_format: "%Y%W"
+
+########################################################################################################################
+############################################  Internet Apps Usage Features  ############################################
+########################################################################################################################
+
+# Mappings for BCP Data to Apps Categories
+l1_content_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/content_mapping.parquet
+  partitions: 1
+
+l1_segment_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/segment_mapping.parquet
+  partitions: 1
+
+l1_category_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/category_mapping.parquet
+  partitions: 1
+
+l1_fintech_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/fintech_mapping.parquet
+  partitions: 1
+
+l1_app_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_mapping.parquet
+  partitions: 1
+
+# Final Mapping of BCP Data to Features
+l1_internet_app_feature_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_app_feature_category_mapping.parquet
+  partitions: 1
+
+## Original BCP Data
+l1_bcp_usage_daily:
+  <<: *hive_trx_date_1w
+  layer: raw
+  database: mig
+  table: smy_bcp_usage_dd
+  sla_interval:
+    period: 2d
+    date: 1
+    time: "10:00"
+    start_date: "2019-01-01"
+
+# Weekly Aggregated Data for the Internet Usage for apps
+l2_internet_app_usage_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet
+  partitions: 600
+
+# Weekly Aggregated Data for the Internet Usage from bcp
+l2_internet_connection_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet
+  partitions: 100
+
+l1_internet_app_competitor_monthly:
+  <<: *hive_month_3cm
+  layer: raw
+  database: rna
+  table: bcpusg_appscat_apps_comp
+  load_args:
+    partition_filter_period: 3cm
+    partition_column: month
+    partition_date_format: "%Y%m"
+  sla_interval:
+    period: 2d
+    date: 1
+    time: "10:00"
+    start_date: "2019-01-01"
+
+l2_internet_app_usage_competitor_monthly:
+  <<: *parquet_mo_id_3cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_competitor_monthly.parquet
+  partitions: 20
+
+########################################################################################################################
+##################################################  Revenue Features  ##################################################
+########################################################################################################################
+
+# Original Revenue Data
+l1_itdaml_dd_cdr_pkg_prchse_all:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: abt
+  table: usage_chg_pkg_prchse_abt_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "03:00"
+    start_date: "2019-01-01"
+
+l1_itdaml_dd_cdr_payu_prchse_all:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: abt
+  table: usage_chg_payu_abt_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "05:00"
+    start_date: "2019-01-01"
+
+l1_usage_rcg_prchse_abt_dd:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: abt
+  table: usage_rcg_prchse_abt_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "05:00"
+    start_date: "2019-05-31"
+
+l1_merge_revenue_dd:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: mck
+  table: merge_revenue_dd
+
+l1_mck_mytsel_pack:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: dd_mytsel_pack
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 2
+    time: "09:00"
+    start_date: "2020-01-01"
+
+# Weekly Aggregated Revenue Data
+l2_revenue_weekly_data:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet
+  partitions: 50
+
+l2_revenue_alt_weekly_data:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet
+  partitions: 50
+
+# Weekly MyTSel Revenue Aggregate
+l2_revenue_mytsel_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_mytsel_weekly.parquet
+  partitions: 1
+
+########################################################################################################################
+##################################################  Recharge Features  #################################################
+########################################################################################################################
+
+# Original Recharge Data
+l1_abt_rech_daily_abt_dd:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: abt
+  table: rech_daily_abt_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "03:00"
+    start_date: "2019-01-01"
+
+l1_account_balance:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: base
+  table: ocs_bal
+  load_args:
+    partition_filter_period: 2w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "00:00"
+    start_date: "2019-01-01"
+
+l1_prepaid_customers_data_2w:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_pre_dd
+  load_args:
+    partition_filter_period: 2w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "11:00"
+    start_date: "2019-01-01"
+
+l1_smy_rech_urp_dd:
+  <<: *hive
+  layer: raw
+  database: smy
+  table: rech_urp_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "02:30"
+    column_reference: "event_date"
+    date_format: "%Y-%m-%d"
+
+## MyTsel
+l1_mytsel_rech_dd:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: dd_mytsel_rech
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 2
+    time: "09:00"
+    start_date: "2020-01-01"
+
+# Weekly Aggregated Recharge Data
+l1_rech_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet
+  partitions: 10
+
+l2_account_balance_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet
+  partitions: 25
+
+l1_chg_pkg_prchse_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+  partitions: 10
+
+l1_digi_rech_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet
+  partitions: 2
+
+## MyTsel
+l1_mytsel_rech_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/mytsel_rech_weekly.parquet
+  partitions: 1
+
+########################################################################################################################
+##################################################  Handset Features  ##################################################
+########################################################################################################################
+
+# Original Handset Data
+l1_handset_dim_lookup:
+  <<: *hive
+  layer: raw
+  database: dim
+  table: device_dim
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "07:00"
+    column_reference: "event_date"
+    date_format: "%Y-%m-%d"
+    start_date: "2019-01-01"
+
+l1_handset_dd:
+  <<: *hive
+  layer: raw
+  database: smy
+  table: device_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "14:00"
+    column_reference: "event_date"
+    date_format: "%Y-%m-%d"
+    start_date: "2019-01-01"
+
+l1_handset_mm:
+  <<: *hive
+  layer: raw
+  database: smy
+  table: device_mm
+
+# Filtered Data per IMEI
+l1_handset_lookup_data:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/handset/device_dim_single_rec_per_imei.parquet
+  partitions: 1
+
+# Weekly Aggregated Handset Data
+l2_handset_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet
+  partitions: 50
+
+# Monthly Aggregated Handset Data
+# l2_first_2_handset:
+#   <<: *parquet_weekstart_3m
+#  layer: aggregation
+#   filepath: mck_dmp_pipeline/01_aggregation/handset/first_2_handset.parquet
+#   save_args:
+#     mode: overwrite
+#     partitionBy: month
+#   load_args:
+#     partition_column: month
+#     partition_filter_period: 6m
+#     partition_date_format: "%Y-%m-%d"
+
+########################################################################################################################
+##################################################  Handset Features  - Internal #######################################
+########################################################################################################################
+l1_device_dbi_imei_handset_full:
+  <<: *hive
+  layer: raw
+  database: dbi
+  table: imei_handset
+
+# Filtered Data per IMEI
+l1_device_dbi_imei_single_rec_per_imei:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/handset_internal/device_dbi_imei_single_rec_per_imei.parquet
+  partitions: 1
+
+# Weekly Aggregated Handset Data
+l2_device_internal_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/handset_internal/internal_device_data_weekly.parquet
+  partitions: 450
+
+########################################################################################################################
+################################################  Voice Calls Features  ################################################
+########################################################################################################################
+
+# Weekly Aggregated Voice Calls Data
+l2_voice_calling_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+  partitions: 500
+
+########################################################################################################################
+################################################  Airtime Loan Features  ################################################
+########################################################################################################################
+
+# Original Airtime Loan Data
+# ToDo: Check the partition "date_id" relation
+#l1_airtime_loan_takers:
+#  <<: *hive_event_date_1w
+#  layer: raw
+#  database: dis
+#  table: basecoe_atl_takers_database
+#  load_args:
+#    partition_filter_period: 1w
+#    partition_column: date_id
+#    partition_date_format: "%Y%m%d"
+
+# ToDo: Check the partition "date_id" relation
+#l1_airtime_loan_payment:
+#  <<: *hive_event_date_1w
+#  layer: raw
+#  database: dis
+#  table: basecoe_atl_payment_database
+#  load_args:
+#    partition_filter_period: 1w
+#    partition_column: date_id
+#    partition_date_format: "%Y%m%d"
+
+l1_cms_data:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: base
+  table: cms_tracking_stream
+
+l1_airtime_loan_id:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/00_reference/airtime/airtime_loan_content_ids.parquet
+  partitions: 1
+
+# Weekly Aggregated Airtime Loan Data
+l2_airtime_loan_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/airtime/airtime_loan_weekly.parquet
+  partitions: 50
+
+########################################################################################################################
+##############################################  Internet Usage Features  ###############################################
+########################################################################################################################
+
+# Original Internet Usage Data
+# After august 2019, abt table used
+# Before august 2019, smy.usage_upcc_dd
+l1_usage_upcc_dd:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: abt
+  table: usage_upcc_abt_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "07:00"
+    start_date: "2019-01-01"
+
+# Weekly Aggregated Internet Usage Data
+l1_internet_usage_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet
+  partitions: 100
+
+########################################################################################################################
+################################################  Text Messaging Features ##############################################
+########################################################################################################################
+
+# Original ABT Usage MSS Data
+l1_abt_usage_mss_abt_dd:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: abt
+  table: usage_mss_abt_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "08:00"
+    start_date: "2019-01-01"
+
+# SMS A2P Mapping
+l1_commercial_text_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/sms/sms_sender_mapping.parquet
+  partitions: 5
+
+# Broken Bnumber mapping
+l1_broken_bnumber:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/sms/broken_bnumber.parquet
+  partitions: 1
+
+# Text Messaging Weekly Aggregation
+l2_text_messaging_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet
+  partitions: 50
+
+# Commercial Text Messaging Weekly Aggregation
+l2_commercial_text_messaging_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+  partitions: 50
+
+# Kredivo sms recipients
+l2_kredivo_sms_recipients:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/sms/kredivo_sms_recipients.parquet
+  partitions: 1
+
+########################################################################################################################
+##################################################  Customer Profile  ##################################################
+########################################################################################################################
+
+l1_cb_multidim:
+  <<: *hive
+  layer: raw
+  database: cb
+  table: cb_multidim
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "18:00"
+    column_reference: "event_date"
+    date_format: "%Y-%m-%d"
+    start_date: "2019-01-01"
+
+# Weekly Aggregated Customer Profile data
+l2_customer_profile_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet
+  partitions: 60
+
+l1_subs_ocs_sse:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: base
+  table: subs_ocs_sse
+
+l2_customer_expiry_weekly:
+  <<: *parquet_weekstart_1w
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_expiry_weekly.parquet
+  partitions: 40
+
+l1_base_nsb:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: base
+  table: digipos_nsb
+
+l2_customer_profile_nsb_weekly:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_nsb_weekly.parquet
+  partitions: 60
+
+l1_dbi_redeem_poin:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: dbi_dc
+  table: all_redeem_poin
+
+l2_customer_profile_points_redeemed_weekly:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_points_redeemed_weekly.parquet
+  partitions: 2
+
+l1_digipos_sp_migration:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: base
+  table: digipos_sp_migration
+
+l2_customer_profile_sellthru_weekly:
+  <<: *parquet_weekstart_1w
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_sellthru_weekly.parquet
+  partitions: 1
+
+l2_outlet_weekly:
+  <<: *parquet_weekstart_1w
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/outlet_weekly.parquet
+  partitions: 1
+
+########################################################################################################################
+##################################################  Network  ###########################################################
+########################################################################################################################
+
+l1_mck_sales_dnkm_dd:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: mck
+  table: sales_dnkm_dd
+
+# lacci to msisdn mapping Jan 2019 - Oct 2019
+l1_lacci_msisdn_mapping_jan_oct_2019:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_common/kedro/02_primary/network_mapping/msisdn_to_lacci_jan_oct_2019.parquet
+  partitions: 5
+
+# Weekly Aggregated Network Lac_ci data
+l1_network_lacci_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_lacci_weekly.parquet
+  partitions: 5
+
+# Weekly Aggregated Network Lac data
+l1_network_lac_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_lac_weekly.parquet
+  partitions: 1
+
+# Weekly Aggregated Network MSISDN data
+l1_network_msisdn_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet
+  partitions: 500
+
+l1_network_tutela_weekly:
+  <<: *hive_yearweek_1w
+  layer: raw
+  database: nwa_exr
+  table: tutela_border_ww
+
+l2_network_tutela_location_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_tutela_weekly.parquet
+  partitions: 1
+
+########################################################################################################################
+########################################################  Outlets  #####################################################
+########################################################################################################################
+
+############################################## Geospatial Aggregation  #################################################
+
+l1_outlet_dim_dd:
+  <<: *hive_trx_date_1cm
+  layer: raw
+  database: sch
+  table: outlet_dim_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "09:00"
+    column_reference: "trx_date"
+    date_format: "%Y-%m-%d"
+    start_date: "2019-01-01"
+
+l1_digipos_outlet_reference_dd:
+  <<: *hive
+  layer: raw
+  database: sch
+  table: digipos_outlet_reference_dd
+  load_args:
+    partition_filter_period: 1w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "04:00"
+    column_reference: "event_date"
+    date_format: "%Y-%m-%d"
+    start_date: "2019-01-01"
+
+l1_rech_mkios_dd:
+  <<: *hive
+  layer: raw
+  database: smy
+  table: rech_mkios_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "02:30"
+    column_reference: "event_date"
+    date_format: "%Y-%m-%d"
+    start_date: "2019-01-01"
+
+l1_rech_urp_dd:
+  <<: *hive
+  layer: raw
+  database: smy
+  table: rech_urp_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "02:30"
+    column_reference: "event_date"
+    date_format: "%Y-%m-%d"
+    start_date: "2019-01-01"
+
+l1_big_poi:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_poi_big
+
+l1_ext_HDX_coast_points:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_hdx_coast_points
+
+l1_ext_OSM_primary_roads:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_osm_primary_roads
+
+l1_ext_OSM_primary_and_secondary_roads:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_osm_primary_and_secondary_roads_20200713 # ext_osm_primary_and_secondary_roads
+
+l1_ext_OSM_railways:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_osm_railways
+
+l1_ext_ACLED_conflict_events:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_acled_conflict_events_20200713 # ext_acled_conflict_events
+
+l1_ext_OSM_POIs:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_osm_pois
+
+l1_claudia_enable:
+  <<: *hive
+  layer: raw
+  database: base
+  table: claudia_enable
+
+l1_claudia_daily_used:
+  <<: *hive_event_date_1cm
+  layer: raw
+  database: base
+  table: claudia_daily_used
+
+l1_dnkm:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: sales_dnkm_dd
+
+l1_fb_pop:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_pop_fb
+
+l1_dnkm_paritioned_by_trx_date:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dnkm_paritioned_by_trx_date.parquet
+  save_args:
+    mode: overwrite
+    partitionBy: trx_date
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_unique_outlets:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_outlets.parquet
+  partitions: 25
+
+l1_outlets_with_most_recent_classf:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/outlets_with_most_recent_classf.parquet
+
+l1_unique_big_pois:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_big_pois.parquet
+  partitions: 25
+
+l1_unique_ext_HDX_coast_points:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_HDX_coast_points.parquet
+  partitions: 25
+
+l1_unique_ext_OSM_primary_roads:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_OSM_primary_roads.parquet
+  partitions: 25
+
+l1_unique_ext_OSM_primary_and_secondary_roads:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_OSM_primary_and_secondary_roads.parquet
+  partitions: 25
+
+l1_unique_ext_OSM_railways:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_OSM_railways.parquet
+  partitions: 25
+
+l1_unique_ext_OSM_POIs:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_OSM_POIs.parquet
+  partitions: 25
+
+l1_outlets_with_neighbours:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/outlets_with_neighbours.parquet
+  partitions: 25
+
+l1_big_pois_with_neighbours:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/big_pois_with_neighbours.parquet
+  partitions: 25
+
+l1_osm_pois_with_neighbours:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/osm_pois_with_neighbours.parquet
+  partitions: 25
+
+l1_conflict_pois_with_neighbours:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/conflict_pois_with_neighbours.parquet
+  partitions: 25
+
+l1_dfj_big_poi_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_big_poi_outlet.parquet
+  partitions: 1000
+
+l1_dfj_osm_poi_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_osm_poi_outlet.parquet
+  partitions: 1000
+
+l1_dfj_conflict_poi_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_conflict_poi_outlet.parquet
+  partitions: 1000
+
+l1_dfj_outlets_near_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_outlets_near_outlet.parquet
+  partitions: 1000
+
+l1_mkios_neighb_uniq:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_neighb_uniq.parquet
+
+l1_urp_neighb_uniq:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/urp_neighb_uniq.parquet
+
+l1_fb_points_with_neighbours:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/fb_points_with_neighbours.parquet
+  partitions: 500
+
+l1_dfj_outlet_fb_pop:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_outlet_fb_pop.parquet
+  partitions: 5000
+
+##################################### Daily Level Aggregation For Outlet Revenue #######################################
+
+l1_mkios_cleaned:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_cleaned.parquet
+  save_args:
+    mode: overwrite
+    partitionBy: event_date
+
+l1_urp_cleaned:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/urp_cleaned.parquet
+  save_args:
+    mode: overwrite
+    partitionBy: event_date
+
+l1_mkios_cleaned_rev:
+  <<: *parquet_event_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_cleaned.parquet
+
+l1_urp_cleaned_rev:
+  <<: *parquet_event_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/urp_cleaned.parquet
+
+l1_outlet_digipos_daily_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/outlet_digipos_daily_agg.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_outlet_id_msisdn_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/outlet_id_msisdn_mapping.parquet
+  partitions: 1
+
+l1_all_filters:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/all_filters.parquet
+  partitions: 5
+
+l1_dfj_digipos_mkios:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_mkios_outlet_id_to_rs_msisdn.parquet
+  partitions: 100
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_mkios_recharge_daily_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_recharge_daily_agg.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_mkios_recharge_daily_mode_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_recharge_daily_mode_agg.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_modern_daily_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/modern_daily_agg.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_dnkm_agg_by_lacci:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dnkm_agg_by_lacci.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_total_modern_channel_recharges:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/total_modern_channel_recharges.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_inj_lacci_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_inj_lacci_outlet_stats.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_inj_city_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_inj_city_stats.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_inj_rs_msisdn_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_inj_rs_msisdn_outlet_stats.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_red_lacci_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_red_lacci_outlet_stats.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_red_city_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_red_city_stats.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_red_rs_msisdn_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_red_rs_msisdn_outlet_stats.parquet
+  partitions: 7
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+###################################################### QA Results ######################################################
+
+qa_outlet_dim_dd:
+  <<: *hive
+  layer: raw
+  database: sch
+  table: outlet_dim_dd
+
+qa_join_accuracies_results:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  layer: raw
+  database: mck
+  table: qa_join_accuracies
+  write_mode: upsert
+  table_pk:
+    - left_table
+    - right_table
+    - run_date_time
+
+qa_time_series_continuity_results:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  layer: raw
+  database: mck
+  table: qa_time_series_continuity
+  write_mode: upsert
+  table_pk:
+    - outlet_id
+    - run_date_time
+
+qa_de_reseller_outlet_filtering:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  layer: raw
+  database: mck
+  table: reseller_de_filtered_outlets
+  write_mode: upsert
+  table_pk:
+    - outlet_id
+    - start_date
+    - end_date
+    - run_date_time
+
+l1_additional_outlet_counts:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/additional_outlet_counts.parquet
+  save_args:
+    mode: append
+
+########################################################################################################################
+##################################################  PAYU Usage  ########################################################
+########################################################################################################################
+
+# Weekly Aggregated Customer Profile data
+l2_payu_usage_weekly_aggregation:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet
+  partitions: 25
+
+########################################################################################################################
+##################################################  Customer LOS #######################################################
+########################################################################################################################
+
+l1_t_profile_full_hist:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: t_profile_full_hist
+
+l1_postpaid_customers_data:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_post_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "09:00"
+    start_date: "2019-01-01"
+
+l1_prepaid_customers_data:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_pre_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "11:00"
+    start_date: "2019-01-01"
+
+l1_customer_los_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet
+  partitions: 50
+
+########################################################################################################################
+##################################################### Product ##########################################################
+########################################################################################################################
+
+l1_smy_usage_ocs_chg_dd:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: smy
+  table: usage_ocs_chg_dd
+  sla_interval:
+    period: 1d
+    date: 1
+    time: "02:30"
+    start_date: "2019-01-01"
+
+l1_mck_sku_bucket_pivot:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: sku_bucket_pivot
+
+# Weekly Aggregated Product Data
+
+##############
+# Deprecated #
+##############
+
+# l1_smy_product_catalogue_sku_c2c_dd:
+#   <<: *hive_event_date_1w
+#   layer: raw
+#   database: smy
+#   table: product_catalogue_sku_c2c_dd
+
+# l1_macroproduct_map_base:
+#   <<: *parquet
+#   layer: static
+#   filepath: mck_dmp_pipeline/01_aggregation/product/bid_macroproduct_mapping.parquet
+#   partitions: 10
+
+# l1_macroproduct_map_new:
+#   <<: *parquet_weekstart_3m
+#   layer: static
+#   filepath: mck_dmp_pipeline/01_aggregation/product/bid_macroproduct_mapping_new.parquet
+#   partitions: 1
+
+# l1_base_ifrs_c2p:
+#   <<: *hive_event_date_1w
+#   layer: raw
+#   database: base
+#   table: ifrs_c2p
+#   sla_interval:
+#     period: 1d
+#     date: 1
+#     time: "12:30"
+#     start_date: "2019-01-01"
+
+# l1_base_ifrs_c2p_reject:
+#   <<: *hive_event_date_1w
+#   layer: raw
+#   database: base
+#   table: ifrs_c2p_reject
+#   sla_interval:
+#     period: 1d
+#     date: 1
+#     time: "12:30"
+#     start_date: "2019-01-01"
+
+# l2_macroproduct_weekly:
+#   <<: *parquet_weekstart_3m
+#   layer: aggregation
+#   filepath: mck_dmp_pipeline/01_aggregation/product/product_macro_weekly.parquet
+#   partitions: 10
+
+##############
+# Deprecated #
+##############
+
+# Weekly Aggregated Non-Macro Product Data
+l1_nonmacro_product_weekly_data:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/product/nonmacro_product_weekly.parquet
+  partitions: 20
+
+########################################################################################################################
+##################################################    MyTSel Domain   ##################################################
+########################################################################################################################
+
+##################################
+#######  Source TSEL Data  #######
+##################################
+
+l1_mck_mytsel_daily_user:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: dd_mytsel_daily_user
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 2
+    time: "09:00"
+    start_date: "2020-01-01"
+
+###################################
+#######  AGGREGATION LAYER  #######
+###################################
+
+l2_mytsel_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mytsel/mytsel_weekly.parquet
+  partitions: 1
+
+########################################################################################################################
+############################################ Mobility features  ############################################
+########################################################################################################################
+
+l1_external_big_poi:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_poi_big
+  # layer: raw
+
+l1_external_osm_pois:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_osm_pois
+  # layer: raw
+
+l2_external_poi:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/poi.parquet
+  partitions: 5
+  # layer: static
+
+l1_external_covid:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: covid_jakarta
+  # layer: raw
+
+l2_external_covid:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/covid.parquet
+  partitions: 1
+  # layer: static
+
+l1_external_village_cordinate:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: village_coord_data
+  # layer: raw
+
+l1_home_stay:
+  <<: *hive_mo_id_6cm
+  layer: raw
+  database: mig
+  table: home_staypoint_mm
+  # layer: raw
+
+l2_home_stay:
+  <<: *parquet_mo_id_6cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/home_stay.parquet
+  partitions: 100
+  # layer: aggregation
+
+l1_work_stay:
+  <<: *hive_mo_id_6cm
+  layer: raw
+  database: mig
+  table: work_staypoint_mm
+  # layer: raw
+
+l2_work_stay:
+  <<: *parquet_mo_id_6cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/work_stay.parquet
+  partitions: 100
+  # layer: aggregation
+
+l1_staypoint:
+  <<: *hive
+  layer: raw
+  database: mig
+  table: staypoint_113_dd
+  # layer: raw
+
+l2_staypoint:
+  <<: *parquet_mo_id_6cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/staypoint.parquet
+  partitions: 150
+  # layer: aggregation
+
+l1_external_gar_demographics:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: ext_gar_demographics
+  # layer: raw
+
+l2_external_gar_demographics:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_gar_demographics.parquet
+  partitions: 1
+  # layer: static
+
+l1_external_ghs_urbancity:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: ext_ghs_urbanicity
+  # layer: raw
+
+l2_external_ghs_urbancity:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_ghs_urbancity.parquet
+  partitions: 1
+  # layer: static
+
+l1_external_fb_pop:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_pop_fb
+  # layer: raw
+
+l2_external_fb_pop:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_fb_pop.parquet
+  partitions: 1
+  # layer: static
+
+l1_external_dryad_gdp_per_capita:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: ext_dryad_gdp_per_capita
+  # layer: raw
+
+l2_external_dryad_gdp_per_capita:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_dryad_gdp_per_capita.parquet
+  partitions: 1
+  # layer: static
+
+l1_external_dryad_gdp:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: ext_dryad_gdp
+  # layer: raw
+
+l2_external_dryad_gdp:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_dryad_gdp.parquet
+  partitions: 1
+  # layer: static
+
+l1_external_dryad_hdi:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: ext_dryad_hdi
+  # layer: raw
+
+l2_external_dryad_hdi:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_dryad_hdi.parquet
+  partitions: 1
+  # layer: static
+
+l1_external_bps:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: ext_bps_extreme_poverty_percentages
+  # layer: raw
+
+###########################################    QA Availability   ################################################
+
+l1_qa_availability_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_availability
+
+l1_qa_availability_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg

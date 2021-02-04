@@ -1,0 +1,10 @@
+pai_run: "4084dafe64d04f8c9b3f99b097131e2d"
+score_column_name: "loan_propensity"
+predict_probability: True
+post_processing: "identity"
+model_type: ""
+binned: False
+binned_score_column_name: ""
+bin_thresholds: {}
+
+hdfs_base_path: hdfs:///data/landing/dmp_production/ # HDFS Base Path

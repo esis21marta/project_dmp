@@ -1,0 +1,11 @@
+home_location:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: "/data/landing/gx_pnt/mck_dmp_score/home_location_filtering/home_113_transform/mo_id=2020-01"
+  file_format: parquet
+
+user_filter_territory:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: "/data/landing/gx_pnt/mck_dmp_score/home_location_filtering/jabodetabek_january_2020.parquet"
+  file_format: parquet
+  save_args:
+    mode: overwrite

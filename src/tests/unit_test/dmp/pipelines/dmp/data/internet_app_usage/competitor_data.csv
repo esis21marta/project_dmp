@@ -1,0 +1,15 @@
+msisdn,appscategory,apps,component,trx,payload,month
+1,Ads,InterlinkAds,,10,500,202006
+1,DeviceServices,Roku,,20,500,202006
+1,Enterprise,SunStorageTek,,30,500,202006
+1,FileSharing,YourFileLink,,6,500,202006
+1,Finance,Robinhood,,50,500,202006
+1,Finance,indihome,,1,1000,202007
+1,Finance,myrepublicindonesia,,2,1000,202007
+1,Finance,myooredoo,,3,1000,202007
+1,Finance,indosatmyim3,,4,1000,202007
+2,Ads,InterlinkAds,,10,2000,202007
+2,DeviceServices,xlaxiata,,20,2000,202007
+2,Enterprise,myxlpostpaid,,30,2000,202007
+2,FileSharing,myrepublicindonesia,,6,2000,202007
+2,Finance,indihome,,50,2000,202007

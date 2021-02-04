@@ -1,0 +1,1299 @@
+packing_unpacking:
+  dmp_msisdn_column: msisdn
+  dmp_output_date_column: weekstart
+  packing_msisdn_count_limit: 10000000
+  output_directory: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/partner_msisdn/unpacked_tables/
+  files_to_pack:
+    campaign_eval_inlife_20200913_202001013_filedate_20201102:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_inlife_20200913_202001013_filedate_20201102.parquet
+        other_columns_of_interest:
+          - campaignid
+          - campaign_name
+          - start_date
+          - end_date
+          - iscontrolgroup
+          - flag_delivered
+          - input_date
+          - is_taker
+        partitionBy:
+          - weekstart
+    inlife_bau_ssm_drgb_seg2_seg3_sample:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/inlife_bau_ssm_drgb_seg2_seg3_sample.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaign_id
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+          - take_date
+        partitionBy:
+          - weekstart
+    inlife_bau_hvc_combo_non_taker_modeling_4_oct:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/inlife_bau_hvc_combo_non_taker_modeling_4_oct.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaign_id
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+          - take_date
+        partitionBy:
+          - weekstart
+    campaign_eval_dmp_churn__uplift_nuclear_202009_1_M:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_dmp_churn__uplift_nuclear_202009_1_M.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaign_id
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+          - take_date
+        partitionBy:
+          - weekstart
+    campaign_eval_churn_prevention_202009_1_5_M:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_churn_prevention_202009_1_5_M.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaign_id
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+          - take_date
+        partitionBy:
+          - weekstart
+    tnl3_model_subset_201110:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/tnl3_model_subset_201110.parquet
+        other_columns_of_interest:
+          - remark
+          - segment
+          - segmentid
+          - productid
+          - campaignnm_v2
+        partitionBy:
+          - weekstart
+    tnl2_str_201110:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/tnl2_str_201110.parquet
+        other_columns_of_interest:
+          - campaignid
+          - campaign_name
+          - start_date
+          - end_date
+          - is_control
+          - is_taker
+          - take_date
+        partitionBy:
+          - weekstart
+    dmp_mytsel_20201110_pilot_model:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_mytsel_20201110_pilot_model.parquet
+        partitionBy:
+          - weekstart
+    dmp_mytsel_20201110_pilot_lcg:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_mytsel_20201110_pilot_lcg.parquet
+        partitionBy:
+          - weekstart
+    dmp_mytsel_20201110_pilot_random:
+      msisdn_column: msisdn
+      move_to_remote: true
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_mytsel_20201110_pilot_random.parquet
+        partitionBy:
+          - weekstart
+#     campaign_eval_4g_pilot3nd:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_4g_pilot3nd_stratified_cg_20200923_202001023_filedate_20201026.parquet
+#         other_columns_of_interest:
+#           - campaign_name
+#           - start_date
+#           - end_date
+#           - flag_delivered
+#           - flag_model
+#           - flag_4g_create_wl
+#           - flag_4g_d_1
+#           - input_date
+#           - campaignid
+#           - is_taker
+#         partitionBy:
+#           - weekstart
+#     churn_sep_6_M:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/churn_sep_6_M.parquet
+#         other_columns_of_interest:
+#           - brand
+#           - smartphone
+#           - los
+#           - rev_all
+#           - rev_data
+#           - payload
+#           - combo_tkr
+#         partitionBy:
+#           - weekstart
+#     campaign_eval_dmp_churn__uplift_nuclear_202009_1_M:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_dmp_churn__uplift_nuclear_202009_1_M.parquet
+#         other_columns_of_interest:
+#           - campaign_group
+#           - campaign_id
+#           - campaign_name
+#           - is_control
+#           - is_taker
+#           - start_date
+#           - end_date
+#           - take_date
+#         partitionBy:
+#           - weekstart
+#     airtime_model_driven_202010_20201021:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/airtime_model_driven_202010_20201021.parquet
+#         other_columns_of_interest:
+#           - suggested_campaign_name
+#         partitionBy:
+#           - weekstart
+#     dmp_mytsel_20201027_training:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_mytsel_20201027_training.parquet
+#         other_columns_of_interest:
+#           - campaign_group
+#           - campaignid
+#           - campaign_name
+#           - is_control
+#           - is_taker
+#           - start_date
+#           - end_date
+#           - take_date
+#         partitionBy:
+#           - weekstart
+#     inlife_model_pilot_1:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/inlife_model_pilot_1.parquet
+#         other_columns_of_interest:
+#           - campaign_group
+#           - campaignid
+#           - campaign_name
+#           - is_control
+#           - is_taker
+#           - start_date
+#           - end_date
+#           - take_date
+#         partitionBy:
+#           - weekstart
+#     airtime_loan_highrisk_2006:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/high_risk_2006_20201007.parquet
+#         other_columns_of_interest:
+#           - f_test
+#           - psm
+#           - propensity
+#           - arpu_3
+#           - rev_payu_3
+#           - rev_pkg_3
+#           - amt_rcg_3
+#           - trx_rcg_3
+#           - los
+#           - risk_segment
+#           - new_exp
+#           - f_rec_trx
+#           - seg_test
+#           - seg_offer
+#           - group
+#         partitionBy:
+#           - weekstart
+#     airtime_loan_highrisk_2007:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/high_risk_2007_20201007.parquet
+#         other_columns_of_interest:
+#           - f_test
+#           - psm
+#           - propensity
+#           - arpu_3
+#           - rev_payu_3
+#           - rev_pkg_3
+#           - amt_rcg_3
+#           - trx_rcg_3
+#           - los
+#           - risk_segment
+#           - new_exp
+#           - f_rec_trx
+#           - f_rec_amt
+#           - seg_test
+#           - seg_offer
+#           - group
+#         partitionBy:
+#           - weekstart
+#     airtime_loan_medrisk_2007_20201007:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/wahyu/med_risk_2007_20201007.parquet
+#         other_columns_of_interest:
+#           - f_test
+#           - psm
+#           - propensity
+#           - arpu_3
+#           - rev_payu_3
+#           - rev_pkg_3
+#           - amt_rcg_3
+#           - trx_rcg_3
+#           - los
+#           - risk_segment
+#           - new_exp
+#           - f_rec_trx
+#           - f_rec_amt
+#           - seg_test
+#           - seg_offer
+#           - group
+#         partitionBy:
+#           - weekstart
+#     airtime_loan_highrisk_2006_20201007:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/wahyu/high_risk_2006_20201007.parquet
+#         other_columns_of_interest:
+#           - f_test
+#           - psm
+#           - propensity
+#           - arpu_3
+#           - rev_payu_3
+#           - rev_pkg_3
+#           - amt_rcg_3
+#           - trx_rcg_3
+#           - los
+#           - risk_segment
+#           - new_exp
+#           - f_rec_trx
+#           - seg_test
+#           - seg_offer
+#           - group
+#         partitionBy:
+#           - weekstart
+#     airtime_loan_highrisk_2007_20201007:
+#       msisdn_column: msisdn
+#       move_to_remote: true
+#       input:
+#         filepath: hdfs:///data/landing/gx_pnt/wahyu/high_risk_2007_20201007.parquet
+#         other_columns_of_interest:
+#           - f_test
+#           - psm
+#           - propensity
+#           - arpu_3
+#           - rev_payu_3
+#           - rev_pkg_3
+#           - amt_rcg_3
+#           - trx_rcg_3
+#           - los
+#           - risk_segment
+#           - new_exp
+#           - f_rec_trx
+#           - f_rec_amt
+#           - seg_test
+#           - seg_offer
+#           - group
+#         partitionBy:
+#           - weekstart
+    thrifty_jun_high:
+      msisdn_column: msisdn
+      move_to_remote: false
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/mck_int_campaign_eval_thrifty_high_population.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaignid
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+          - take_date
+        partitionBy:
+          - weekstart
+    disc_hunter_jun_high:
+      msisdn_column: msisdn
+      move_to_remote: false
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/mck_int_campaign_eval_disc_hunter_high_population.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaignid
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+          - take_date
+        partitionBy:
+          - weekstart
+    # scoring_inlife_score_20200928:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_inlife_pilot_20200928_score.parquet
+    #     other_columns_of_interest:
+    #       - rev_all
+    #       - rev_data
+    #       - rev_voice
+    #       - rev_sms
+    #       - payload_all
+    #       - payload_4g
+    #     partitionBy:
+    #       - weekstart
+    # scoring_inlife_random_20200928:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_inlife_pilot_20200928_random.parquet
+    #     other_columns_of_interest:
+    #       - rev_all
+    #       - rev_data
+    #       - rev_voice
+    #       - rev_sms
+    #       - payload_all
+    #       - payload_4g
+    #     partitionBy:
+    #       - weekstart
+    # scoring_inlife_control_20200928:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_inlife_pilot_20200928_control.parquet
+    #     other_columns_of_interest:
+    #       - rev_all
+    #       - rev_data
+    #       - rev_voice
+    #       - rev_sms
+    #       - payload_all
+    #       - payload_4g
+    #     partitionBy:
+    #       - weekstart
+    # fg_pilot_2nd:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_4g_pilot2nd_stratified_cg_20200823_20200923_filedate_20200927.parquet
+    #     other_columns_of_interest:
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     partitionBy:
+    #       - weekstart
+    # churn_prop_train_jun_1m:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_churn_prop_train_jun_1M.parquet
+    #     other_columns_of_interest:
+    #       - brand
+    #       - status
+    #       - activation_date
+    #       - is_churn
+    #       - deactivation_date
+    #     partitionBy:
+    #       - weekstart
+    # churn_uplift_train_jun_1_5m:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_churn_prevention_202006_1_5_M.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaign_id
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     partitionBy:
+    #       - weekstart
+    # 4g_lapser_20200915:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_4g_lapser_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     partitionBy:
+    #       - weekstart
+    # ssm_thrifty_20200915:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_ssm_thrifty_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     partitionBy:
+    #       - weekstart
+    # ssm_4gscaleup_pathtochurn_20200915:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_ssm_4gscaleup_pathtochurn_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     partitionBy:
+    #       - weekstart
+    # churn_3m:
+    #   msisdn_column: msisdn
+    #   move_to_remote: true
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/aug_3M_churn_blacklist.parquet
+    #     other_columns_of_interest:
+    #       - status
+    #       - activation_date
+    #       - brand
+    #       - is_rgb
+    #     partitionBy:
+    #       - weekstart
+    # acq:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_acq_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     output_partitions: 1
+    #     partitionBy:
+    #       - weekstart
+    #       - campaign_name
+    # drgb:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_drgb_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     output_partitions: 1
+    #     partitionBy:
+    #       - weekstart
+    #       - campaign_name
+    # fg_scale_up_samples:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_fg_scale_up_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     output_partitions: 500
+    #     partitionBy:
+    #       - weekstart
+    # loan:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_loan_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     output_partitions: 400
+    #     partitionBy:
+    #       - weekstart
+    # gamers_samples:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_gamers_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     output_partitions: 1
+    #     partitionBy:
+    #       - weekstart
+    #       - campaign_name
+    # home_credit_default_probability:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/hcid/dataset/hcid_training_20200225.parquet
+    #     date_column:
+    #       format: yyyy-MM-dd HH:mm:ss
+    #       name: application_date
+    #     other_columns_of_interest:
+    #     - product_type
+    #     - flag_approved
+    #     - flag_fpd30
+    #     - flag_fsdp30
+    #     - flag_fstpd30
+    #     - flag_fstqpd30
+    #     output_partitions: 10
+    # home_credit_default_probability_validation:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/hcid/dataset/hcid_test_20200225.parquet
+    #     date_column:
+    #       format: yyyy-MM-dd HH:mm:ss
+    #       name: application_date
+    #     other_columns_of_interest:
+    #     - product_type
+    #     - flag_approved
+    #     output_partitions: 10
+    # hvc_prop:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_hvc_prop_stratified.parquet
+    #     other_columns_of_interest:
+    #     - campaign_group
+    #     - campaignid
+    #     - campaign_name
+    #     - is_control
+    #     - is_taker
+    #     - start_date
+    #     - end_date
+    #     - take_date
+    #     output_partitions: 100
+    # internal_hvc:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/internal_hvc_input.parquet
+    #     output_partitions: 180
+    #     partitionBy:
+    #         - weekstart
+    # internal_hvc_may:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/internal_hvc_may_input.parquet
+    #     output_partitions: 300
+    #     partitionBy:
+    #         - weekstart
+    # internal_ucg_201910:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/internal_ucg_201910_input.parquet
+    #     output_partitions: 150
+    #     partitionBy:
+    #         - weekstart
+    # kredivo_default_probability:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/kredivo_default_probability_input.parquet
+    #     date_column:
+    #       format: yyyy-MM-dd
+    #       name: application_date
+    #     other_columns_of_interest:
+    #     - flag_bad_61
+    #     output_partitions: 10
+    # kredivo_default_probability_validation:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/kredivo_default_probability_validation_input.parquet
+    #     date_column:
+    #       format: yyyy-MM-dd
+    #       name: application_date
+    #     other_columns_of_interest:
+    #     - flag_bad_31
+    #     output_partitions: 10
+    # kredivo_income:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/income_dataset/kr_income_compare_unhashed_20200117.parquet
+    #     date_column:
+    #       format: yyyy-MM-dd HH:mm:ss
+    #       name: creation_time
+    #     other_columns_of_interest:
+    #     - income_predicted
+    #     output_partitions: 10
+    # kredivo_poc:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/output/kredivo_scored_filtered_sampled_01.parquet
+    #     output_partitions: 10
+    # kredivo_precampaign:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/campaign/precampaign_msisdn.parquet
+    #     other_columns_of_interest:
+    #     - sms_response
+    #     output_partitions: 10
+    # multisim_4g:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/mck_int_campaign_eval_multisim_4g.parquet
+    #     other_columns_of_interest:
+    #     - campaign_group
+    #     - campaignid
+    #     - campaign_name
+    #     - is_control
+    #     - is_taker
+    #     - start_date
+    #     - end_date
+    #     - take_date
+    #     output_partitions: 10
+
+    # kredivo_default_probability_june_update:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/kredivo_training_dataset_20200630.parquet
+    #     date_column:
+    #       format: "yyyy-MM-dd HH:mm:ss"
+    #       name: application_date
+    #     other_columns_of_interest:
+    #       - application_type
+    #       - application_date
+    #       - flag_bad_31
+    #       - flag_bad_61
+    #       - flag_fraud
+    #       - application_group
+    #     output_partitions: 20
+
+    # kredivo_validation_mature_2020:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/kredivo_evaluation_dataset_mature_20200719.parquet
+    #     date_column:
+    #       format: "yyyy-MM-dd HH:mm:ss"
+    #       name: application_date
+    #     other_columns_of_interest:
+    #       - application_type
+    #       - application_date
+    #       - flag_bad_31
+    #       - flag_bad_61
+    #       - application_group
+    #       - ts_score
+    #     output_partitions: 10
+
+    # kredivo_validation_recent_2020:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/kredivo_evaluation_dataset_recent_20200719.parquet
+    #     date_column:
+    #       format: "yyyy-MM-dd HH:mm:ss"
+    #       name: application_date
+    #     other_columns_of_interest:
+    #       - application_type
+    #       - application_date
+    #       - flag_bad_31
+    #       - flag_bad_61
+    #       - application_group
+    #       - ts_score
+    #     output_partitions: 20
+
+    # kredivo_validation_mature_20200903:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/klop_modelvalidation_mature_20200903.parquet
+    #     date_column:
+    #       format: "yyyy-MM-dd HH:mm:ss"
+    #       name: application_date
+    #     other_columns_of_interest:
+    #       - application_type
+    #       - application_date
+    #       - flag_bad_31
+    #       - flag_bad_61
+    #       - application_group
+    #       - ts_score
+    #     output_partitions: 20
+
+    # kredivo_basic_threshold_20200810:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/telkomsel_basicthreshold_20200810.parquet
+    #     date_column:
+    #       format: "yyyy-MM-dd HH:mm:ss"
+    #       name: application_date
+    #     other_columns_of_interest:
+    #       - application_type
+    #       - application_date
+    #       - application_group
+    #     output_partitions: 10
+
+    # kredivo_premium_threshold_20200810:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/telkomsel_premiumthreshold_20200810.parquet
+    #     date_column:
+    #       format: "yyyy-MM-dd HH:mm:ss"
+    #       name: application_date
+    #     other_columns_of_interest:
+    #       - application_type
+    #       - application_date
+    #       - application_group
+    #     output_partitions: 10
+
+    #kredivo_loan_propensity:
+    #  msisdn_column: msisdn
+    #  move_to_remote: false
+    #  input:
+    #    filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/klop_campaign_kredivo.parquet
+    #    date_column:
+    #      format: "yyyy-MM-dd"
+    #      name: campaign_date
+    #    other_columns_of_interest:
+    #      - campaign_date
+    #      - klop_verification
+    #      - verification_date
+
+    #klop_lookalike:
+    #  msisdn_column: msisdn
+    #  move_to_remote: false
+    #  input:
+    #    filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/klop_lookalike_train.parquet
+    #    date_column:
+    #      format: "yyyy-MM-dd"
+    #      name: dummy_date
+    #    other_columns_of_interest:
+    #      - home1_kabupaten_name
+    #      - home1_province_name
+    #      - hit_api
+
+    # multisim_non_4g_samples:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/mck_int_campaign_eval_multisim_non4g_samples.parquet
+    #     other_columns_of_interest:
+    #     - campaign_group
+    #     - campaignid
+    #     - campaign_name
+    #     - is_control
+    #     - is_taker
+    #     - start_date
+    #     - end_date
+    #     - take_date
+    #     output_partitions: 2
+    #     partitionBy:
+    #       - weekstart
+
+    # campaign_eval_tnl_grabngo_stratified:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_tnl_grabngo_stratified.parquet
+    #     other_columns_of_interest:
+    #       - "campaign_group"
+    #       - "campaignid"
+    #       - "campaign_name"
+    #       - "is_control"
+    #       - "is_taker"
+    #       - "start_date"
+    #       - "end_date"
+    #       - "take_date"
+    #     output_partitions: 10
+    # campaign_eval_tnl_pathtochurn_stratified:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_tnl_pathtochurn_stratified.parquet
+    #     other_columns_of_interest:
+    #       - "campaign_group"
+    #       - "campaignid"
+    #       - "campaign_name"
+    #       - "is_control"
+    #       - "is_taker"
+    #       - "start_date"
+    #       - "end_date"
+    #       - "take_date"
+    #     output_partitions: 10
+    # dmp_4g_test_score_20200701:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/dmp_4g_test_score_20200701.parquet
+    #     output_partitions: 100
+    #     partitionBy:
+    #         - weekstart
+    # dmp_4g_test_control_20200701:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/dmp_4g_test_control_20200701.parquet
+    #     output_partitions: 100
+    #     partitionBy:
+    #         - weekstart
+    # dmp_4g_test_random_20200701:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/dmp_4g_test_random_20200701.parquet
+    #     output_partitions: 100
+    #     partitionBy:
+    #         - weekstart
+
+    # Final Tables
+    # hvc_lapser_a:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_hvc_lapser_a_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     output_partitions: 60
+    #     partitionBy:
+    #       - weekstart
+    # hvc_lapser_b:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_hvc_lapser_b_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - take_date
+    #     output_partitions: 15
+    #     partitionBy:
+    #       - weekstart
+    # may_500k_churn:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/may_500k_churn.parquet
+    #     other_columns_of_interest:
+    #       - is_churn
+    #       - activation_date
+    #       - deactivation_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+    # aug_500k_blacklist_churn:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/aug_500k_churn_blacklist.parquet
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+    # churn:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_churn_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #       - deactivation_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+    # churn_501k:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/mck_int_random_sample_jan_prepaid_500K.parquet
+    #     other_columns_of_interest:
+    #       - deactivation_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+    # airtime_loan:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/airtime_loans_20200909.parquet
+    #     other_columns_of_interest:
+    #       - whitelist_month
+    #       - remark
+    #       - risk_segment
+    #       - new_exp
+    #       - los
+    #       - seg_offer
+    #       - odds_risk
+    #       - odd_risk_group
+    #       - avg_rev
+    #       - rev_group
+    #       - prev_offer
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+    # campaign_eval_multisim_stratified:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_multisim_stratified.parquet
+    #     other_columns_of_interest:
+    #       - "campaign_group"
+    #       - "campaignid"
+    #       - "campaign_name"
+    #       - "is_control"
+    #       - "is_taker"
+    #       - "take_date"
+    #     output_partitions: 70
+    #     partitionBy:
+    #       - weekstart
+    # 4g_lapser:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_4g_lapser_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     output_partitions: 40
+    #     partitionBy:
+    #       - weekstart
+    # rgb_a_samples:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_rgb_a_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #       - take_date
+    #     output_partitions: 35
+    #     partitionBy:
+    #       - weekstart
+    june_thrifty:
+      msisdn_column: msisdn
+      move_to_remote: false
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_ssm_thrifty_stratified.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaignid
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+        output_partitions: 25
+        partitionBy:
+          - weekstart
+    # july_thrifty: # Low Priority
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/uplift_samples/campaign_eval_aagm_thrifty_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+    june_4gscaleup_pathtochurn:
+      msisdn_column: msisdn
+      move_to_remote: false
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_ssm_4gscaleup_pathtochurn_stratified.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaignid
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+        output_partitions: 25
+        partitionBy:
+          - weekstart
+    june_4gscaleup_grabngo:
+      msisdn_column: msisdn
+      move_to_remote: false
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_ssm_4gscaleup_grabngo_stratified.parquet
+        other_columns_of_interest:
+          - campaign_group
+          - campaignid
+          - campaign_name
+          - is_control
+          - is_taker
+          - start_date
+          - end_date
+        output_partitions: 25
+        partitionBy:
+          - weekstart
+    # june_4gscaleup_voice:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_ssm_4gscaleup_voice_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+    # multisim_4g:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_multisim_4g_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+
+    # 4g_lapser_june:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_4g_lapser_june_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+
+    # multisimnon_4g:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_multisimnon_4g_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+
+    # rgb_scaleup:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/campaign_eval_rgb_scaleup_stratified.parquet
+    #     other_columns_of_interest:
+    #       - campaign_group
+    #       - campaignid
+    #       - campaign_name
+    #       - is_control
+    #       - is_taker
+    #       - start_date
+    #       - end_date
+    #     output_partitions: 25
+    #     partitionBy:
+    #       - weekstart
+
+    # dmp_4g_test_score_20200909:
+    #   msisdn_column: msisdn
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/dmp_4g_test_score_20200909.parquet
+    #     partitionBy:
+    #         - weekstart
+
+    # airtime_loan_cpg_20191201_20200301:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/airtime_loan_cpg_20191201_20200301.parquet
+    #     date_column:
+    #       format: "yyyyMMdd"
+    #       name: start_cpg
+    #     other_columns_of_interest:
+    #       - 'dev_risk'
+    #       - 'msisdn'
+    #       - 'start_cpg'
+    #       - 'taker_dt'
+    #       - 'f_rcg_45'
+    #       - 'f_rcg_90'
+    #       - 'device_risk'
+    #       - 'LastAmtPaid'
+    #       - 'Payu_Bal005k'
+    #       - 'amt_trx_rcg'
+    #       - 'amt_rcg_exp'
+    #       - 'Arpu_rcg_cpg'
+    #       - 'rcg_trend'
+    #       - 'UserType'
+    #       - 'tot_trx'
+    #       - 'tot_amt'
+    #       - 'bal_005k'
+    #       - 'bal_020k'
+    #       - 'bal_060k'
+    #       - 'bal_120k'
+    #       - 'bal_121k'
+    #       - 'cpg_to_exp'
+    #       - 'rcg_to_cpg'
+    #       - 'rev_total'
+    #       - 'RPM'
+    #       - 'RPMB'
+    #       - 'rev_payu'
+    #       - 'rev_voice'
+    #       - 'rev_sms'
+    #       - 'rev_data'
+    #       - 'rev_roaming'
+    #       - 'dur_voice'
+    #       - 'vol_data_kb'
+    #       - 'dur_voice_day'
+    #       - 'vol_data_day_kb'
+    #       - 'dur_voice_night'
+    #       - 'vol_data_night_kb'
+    #       - 'trx_roam_voice_o'
+    #       - 'trx_roam_voice_i'
+    #       - 'trx_pkg_prchse'
+    #       - 'rev_pkg_prchse'
+    #       - 'trx_voice_pkg_prchs'
+    #       - 'trx_data_pkg_prchs'
+    #       - 'rev_voice_pkg_prchs'
+    #       - 'rev_data_pkg_prchs'
+    #       - 'rev_roam_pkg_prchs'
+    #       - 'trx_voice_pkg'
+    #       - 'trx_data_pkg'
+    #       - 'trx_roaming_pkg'
+    #       - 'trx_dls_pkg'
+    #       - 'dur_voice_pkg'
+    #       - 'vol_data_kb_pkg'
+    #       - 'dur_voice_day_pkg'
+    #       - 'vol_data_day_kb_pkg'
+    #       - 'dur_voice_night_pkg'
+    #       - 'vol_data_night_kb_pkg'
+    #       - 'trx_roam_voice_pkg'
+
+    # airtime_loan_cpg_20200715_20200729:
+    #   msisdn_column: msisdn
+    #   move_to_remote: false
+    #   input:
+    #     filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/airtime_loan_cpg_20200715_20200729.parquet
+    #     date_column:
+    #       format: "yyyyMMdd"
+    #       name: first_dt
+    #     other_columns_of_interest:
+    #       - 'first_dt'
+    #       - 'msisdn'
+    #       - 'taker_dt'
+    #       - 'pay_dt'
+    #       - 'pay_days'
+    #       - 'rcg_dt'
+    #       - 'rcg_days'
+    #       - 'odds_risk'
+    #       - 'risk_binn'
+    #       - 'credit_policy'
+
+    kredivo_basic_202001_202009:
+      msisdn_column: msisdn
+      move_to_remote: false
+      input:
+        filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/packing_unpacking_input/kredivo_basic_202001_202009.parquet
+        date_column:
+          format: yyyy-MM-dd HH:mm:ss
+          name: submit_timestamp
+        other_columns_of_interest:
+          - application_type
+          - submit_timestamp
+          - flag_bad_31
+          - flag_bad_61
+          - application_group
+          - msisdn

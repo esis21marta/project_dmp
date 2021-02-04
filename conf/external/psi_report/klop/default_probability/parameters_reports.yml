@@ -1,0 +1,27 @@
+reporting_email_setup:
+  email_notif_enabled: true
+  email_notif_setup:
+    smtp_relay_host: "smtprelay.telkomsel.co.id"
+    smtp_relay_port: 25
+    from_email: "dmp@telkomsel.co.id"
+    to_emails:
+      - "aryo_s_erlangga@telkomsel.co.id"
+      - "fransiscus_au_w@telkomsel.co.id"
+      - "reza_a_permadi@telkomsel.co.id"
+  email_components:
+    subject: "Weekly Klop PSI Report - Default Probability"
+    subject_with_weekstart: true
+    body: |
+      Hi,
+
+      Please find attached the weekly Klop PSI Report for Default Probability Model.
+
+      Thank you.
+    body_type: "plain"  # plain or html, pick html only if you want to use html tag on your body email
+    attachments:
+      - file_reference: "with_psi_send" # can be either HDFS path or catalog name on catalog.yml
+        time_column: "weekstart"
+        only_pick_latest: false
+        attachment_format: "csv"  # csv or xlsx
+        attachment_name: "Weekly_PSI_Report_Klop_Default_Probability" # without file extensions
+        

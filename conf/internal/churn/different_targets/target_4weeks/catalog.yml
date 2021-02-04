@@ -1,0 +1,24 @@
+   #                                                               #
+   #              ####   #    #  #    #  #####   #    #            #
+   #             #    #  #    #  #    #  #    #  ##   #            #
+                 #       ######  #    #  #    #  # #  #
+   #             #       #    #  #    #  #####   #  # #            #
+   #             #    #  #    #  #    #  #   #   #   ##            #
+   #              ####   #    #   ####   #    #  #    #            #
+
+master:
+    type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+    database: dmp_remote
+    table: may_500k_churn_20200831
+
+pandas_df:
+    filepath: data/churn/05_model_input/example/pandas_df.parquet
+    type: pandas.ParquetDataSet
+
+pd_features_with_target:
+    filepath: data/churn/05_model_input/example/alldata.parquet
+    type: pandas.ParquetDataSet
+
+fold_fit_results:
+    filepath: data/churn/06_model_output/example/model.pkl
+    type: pickle.PickleDataSet

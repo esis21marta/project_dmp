@@ -1,0 +1,67 @@
+columns_to_include:
+  default_probability_table:
+    - msisdn
+    - default_probability_score
+    - fea_los
+    - fea_int_usage_non_zero_usage_days_03m
+    - fea_int_app_usage_facebook_data_vol_03m
+    - fea_int_app_usage_instagram_data_vol_03m
+
+  income_prediction_table:
+    - msisdn
+    - income_prediction
+  propensity_table:
+    - msisdn
+    - loan_propensity
+
+low_los_threshold: 90
+high_los_threshold: 9000
+
+default_postgres_columns:
+  incorrectotptrials: 0
+  otpcount: 0
+  otptimestamp: None
+  blacklistreason: None
+
+columns_to_rename:
+  default_probability_score: pdscore
+  loan_propensity: similarityscore
+  income_prediction: predictedincome
+  home1_lat: latitude1
+  home1_lon: longitude1
+  home2_lat: latitude2
+  home2_lon: longitude2
+  home3_lat: latitude3
+  home3_lon: longitude3
+  home4_lat: latitude4
+  home4_lon: longitude4
+
+columns_to_klop_address_db:
+  - msisdn
+  - latitude1
+  - longitude1
+  - latitude2
+  - longitude2
+  - latitude3
+  - longitude3
+  - latitude4
+  - longitude4
+  - refresh_date
+
+columns_to_klop_db:
+  - msisdn
+  - pdscore
+  - similarityscore
+  - predictedincome
+  - incorrectotptrials
+  - otpcount
+  - otptimestamp
+  - blacklistreason
+  - refresh_date
+
+features_flags:
+  fea_int_usage_non_zero_usage_days_03m: "flag_data"
+  fea_int_app_usage_facebook_data_vol_03m: "flag_fb"
+  fea_int_app_usage_instagram_data_vol_03m: "flag_ig"
+
+hdfs_base_path: hdfs:///data/landing/dmp_staging/pilot/external/ # HDFS Base Path

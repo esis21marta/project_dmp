@@ -1,0 +1,4 @@
+score_column_name: "score51"
+score_num_of_bins: 10
+
+filter_query: 'weekstart >= "2019-12-09" and weekstart <= "2020-02-24" and flag_bad_61 IS NOT NULL AND application_group = "basic"'

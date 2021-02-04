@@ -1,0 +1,44 @@
+
+  #####  #     # #     # ######  #     #    #######    #    ######   #####  ####### #######  #####
+ #     # #     # #     # #     # ##    #       #      # #   #     # #     # #          #    #     #
+ #       #     # #     # #     # # #   #       #     #   #  #     # #       #          #    #
+ #       ####### #     # ######  #  #  #       #    #     # ######  #  #### #####      #     #####
+ #       #     # #     # #   #   #   # #       #    ####### #   #   #     # #          #          #
+ #     # #     # #     # #    #  #    ##       #    #     # #    #  #     # #          #    #     #
+  #####  #     #  #####  #     # #     #       #    #     # #     #  #####  #######    #     #####
+
+target_calibration_column_sources:
+  - [fea_voice_weeks_since_last_incoming_call]
+  - [fea_voice_weeks_since_last_outgoing_call]
+  - [fea_txt_msg_weeks_since_last_outgoing_msg]
+  - [fea_txt_msg_weeks_since_last_incoming_msg]
+  - [fea_recharge_weeks_since_last_recharge]
+  - [fea_rev_weeks_since_last_rev_total]
+  - [fea_rev_weeks_since_last_rev_payu_tot]
+  - [fea_rev_weeks_since_last_rev_pkg_tot]
+  - [fea_int_usage_weeks_since_last_internet_usage]
+  - [fea_int_usage_weeks_since_last_internet_usage,
+     fea_recharge_weeks_since_last_recharge,
+     fea_rev_weeks_since_last_rev_total,
+     fea_rev_weeks_since_last_rev_pkg_tot,
+     fea_rev_weeks_since_last_rev_payu_tot,
+     fea_txt_msg_weeks_since_last_outgoing_msg,
+     fea_txt_msg_weeks_since_last_incoming_msg,
+     fea_voice_weeks_since_last_outgoing_call,
+     fea_voice_weeks_since_last_incoming_call]
+
+# Kedro/PAI settings
+use_spark: True
+use_pai_logging: True
+pai_run_name: "explore_targets"
+pai_tags:
+    - "Churn"
+    - "Analysis"
+
+pai_experiment: "Churn Analysis"
+pai_username: "Test"
+pai_personal_runs: "hdfs:///data/landing/dmp_remote/model-factory/{USER}"
+
+# Column names
+msisdn_column: "msisdn"
+weekstart_column: "weekstart"

@@ -1,0 +1,32 @@
+master_input_income:
+  type: pandas.ParquetDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/dataset/kredivo/income_dataset/kredivo_income_corrected_los_final_20200922.parquet 
+  load_args:
+    columns:
+      - "msisdn"
+      - "weekstart"
+      - "income_predicted"
+      - "fea_int_usage_2g_kb_data_usage_03m"
+      - "fea_int_usage_3g_kb_data_usage_03m"
+      - "fea_int_usage_4g_kb_data_usage_03m"
+      - "fea_voice_inc_to_tot_calls_dur_03m"
+      - "fea_int_app_usage_credit_lending_company_data_vol_03m"
+      - "fea_los"
+      - "fea_rech_tot_amt_avg_03m"
+      - "fea_rech_tot_trx_sum_02m"
+      - "fea_rev_voice_tot_sum_03m"
+      - "fea_voice_tot_dur_12_5_am_03m"
+      - "fea_voice_tot_uniq_out_calls_02m"
+      - "fea_rech_trx_pkg_prchse_sum_03m"
+      - "fea_txt_msg_banks_incoming_count_03m"
+      - "fea_txt_msg_count_02m"
+      - "fea_txt_msg_multifinance_incoming_count_02m"
+      - "fea_txt_msg_other_online_services_incoming_count_02m"
+      - "fea_txt_msg_outgoing_count_02m"
+      - "fea_txt_msg_travel_company_unique_senders_count_02m"
+      - "fea_txt_msg_voice_ratio_01m"
+      - "fea_int_app_usage_mobile_wallets_data_vol_03m"
+      - "fea_rech_tot_amt_sum_02m"
+      - "fea_rev_sms_tot_sum_03m"
+      - "fea_int_app_usage_social_media_sites_data_vol_02m"
+      - "fea_txt_msg_mobile_wallets_incoming_count_03m"      

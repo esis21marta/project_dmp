@@ -1,0 +1,31 @@
+master:
+  type: pandas.ParquetDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/unpacking_master_table/hcid_unpacking/home_credit_default_probability_los_corrected_20200618.parquet
+  load_args:
+    columns:
+      - msisdn
+      - weekstart
+      - flag_approved
+      - flag_fstqpd30
+      - flag_fpd30
+      - fea_handset_count_04m
+      - fea_int_app_usage_credit_lending_company_accessed_apps_03m
+      - fea_int_app_usage_credit_lending_company_data_vol_03m
+      - fea_int_app_usage_ecommerce_data_vol_03m
+      - fea_int_app_usage_gambling_data_vol_03m
+      - fea_int_app_usage_mobile_wallets_data_vol_03m
+      - fea_int_app_usage_multifinance_accessed_apps_03m
+      - fea_int_usage_non_zero_usage_days_03m
+      - fea_int_usage_num_days_with_total_data_usage_above_2mb_03m
+      - fea_los
+      - fea_rech_tot_amt_avg_03m
+      - fea_rech_tot_trx_sum_03m
+      - fea_rev_tot_sum_02m
+      - fea_rev_voice_tot_sum_03m
+      - fea_txt_msg_banks_incoming_count_03m
+      - fea_txt_msg_credit_lending_companies_unique_senders_count_03m
+      - fea_txt_msg_incoming_count_03m
+      - fea_txt_msg_multifinance_incoming_count_03m
+      - fea_txt_msg_outgoing_count_03m
+      - fea_voice_tot_dur_12_5_am_03m
+      - fea_voice_tot_uniq_out_calls_03m

@@ -1,0 +1,21 @@
+raw_top_up_daily_recharge_pq:
+  rules:
+  - schema:
+      load_ts: TimestampType
+      load_user: StringType
+      msisdn: IntegerType
+      tot_amt: DoubleType
+      tot_trx: LongType
+      trx_date: TimestampType
+    type: defender.pyspark_rules.HasSchema
+  - columns:
+    - trx_date
+    - load_ts
+    - msisdn
+    type: defender.pyspark_rules.NotNull
+  - columns:
+    - msisdn
+    - tot_trx
+    - tot_amt
+    type: defender.pyspark_rules.NotNan
+  type: and

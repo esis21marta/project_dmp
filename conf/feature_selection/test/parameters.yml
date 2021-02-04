@@ -1,0 +1,8 @@
+pai_runs_load: hdfs:///data/landing/dmp_remote/model_factory/yuxuan/pai # Put the PAI_RUNS location that the below runs are stored.
+pai_run_ids:
+  - 5a71ae5297c04c2fb27fa4cefe38c79a
+  - 4728554708dc4ff28872ca990944bf35
+  - 6a078b21d08347beb3ef579209f16247
+  - c83e6ce6b6e9454f9ef588fa6bfa4ae0
+
+top_n: 50

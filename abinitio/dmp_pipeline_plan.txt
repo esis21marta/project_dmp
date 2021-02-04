@@ -1,0 +1,87 @@
+#----Start Stage 1: Common Pipeline
+LoopConcurrent:False
+--pipeline de_pipeline_pre_processing --desc preprocess_scoring_pipeline<params>,
+--pipeline msisdn_list_pipeline --desc prm_msisdn_list<params>,
+--pipeline scaffold_pipeline --desc prm_scaffold<params>
+#----End Stage 1: Common Pipeline
+
+#----Start Stage 2: Domain Pipelines
+LoopConcurrent:True
+Customer LOS Pipeline,
+--pipeline customer_los_pipeline --tag agg_customer_los --desc agg_customer_los<params>,
+--pipeline customer_los_pipeline --tag prm_customer_los --desc prm_customer_los<params>,
+--pipeline customer_los_pipeline --tag fea_customer_los --desc fea_customer_los<params>
+
+Customer Profile Pipeline,
+--pipeline customer_profile_pipeline --tag agg_customer_profile --desc agg_customer_profile<params>,
+--pipeline customer_profile_pipeline --tag prm_customer_profile --desc prm_customer_profile<params>,
+--pipeline customer_profile_pipeline --tag fea_customer_profile --desc fea_customer_profile<params>
+
+Handset Pipeline,
+--pipeline handset_pipeline --tag agg_handset --desc agg_handset<params>,
+--pipeline handset_pipeline --tag prm_handset --desc prm_handset<params>,
+--pipeline handset_pipeline --tag fea_handset --desc fea_handset<params>
+
+Internet App Usage Pipeline,
+--pipeline internet_app_usage_pipeline --tag agg_internet_app_usage --desc agg_internet_app_usage<params>,
+--pipeline internet_app_usage_pipeline --tag prm_internet_app_usage --desc prm_internet_app_usage<params>,
+--pipeline internet_app_usage_pipeline --tag fea_internet_app_usage --desc fea_internet_app_usage<params>
+
+Internet Usage Pipeline,
+--pipeline internet_usage_pipeline --tag agg_internet_usage --desc agg_internet_usage<params>,
+--pipeline internet_usage_pipeline --tag prm_internet_usage --desc prm_internet_usage<params>,
+--pipeline internet_usage_pipeline --tag fea_internet_usage --desc fea_internet_usage<params>
+
+Network Pipeline,
+--pipeline network_pipeline --tag agg_network --desc agg_network<params>,
+--pipeline network_pipeline --tag prm_network --desc prm_network<params>,
+--pipeline network_pipeline --tag fea_network --desc fea_network<params>
+
+PayU Pipeline,
+--pipeline payu_usage_pipeline --tag agg_payu_usage --desc agg_payu<params>,
+--pipeline payu_usage_pipeline --tag prm_payu_usage --desc prm_payu<params>,
+--pipeline payu_usage_pipeline --tag fea_payu_usage --desc fea_payu<params>
+
+Recharge Pipeline,
+--pipeline recharge_pipeline --tag agg_recharge --desc agg_recharge<params>,
+--pipeline recharge_pipeline --tag prm_recharge --desc prm_recharge<params>,
+--pipeline recharge_pipeline --tag fea_recharge --desc fea_recharge<params>
+
+Revenue Pipeline,
+--pipeline revenue_pipeline --tag agg_revenue --desc agg_revenue<params>,
+--pipeline revenue_pipeline --tag prm_revenue --desc prm_revenue<params>,
+--pipeline revenue_pipeline --tag fea_revenue --desc fea_revenue<params>
+
+SMS Pipeline,
+--pipeline text_messaging_pipeline --tag agg_text_messaging --desc agg_text_messaging<params>,
+--pipeline text_messaging_pipeline --tag prm_text_messaging --desc prm_text_messaging<params>,
+--pipeline text_messaging_pipeline --tag fea_text_messaging --desc fea_text_messaging<params>
+
+Voice Call Pipeline,
+--pipeline voice_calling_pipeline --tag agg_voice_calls --desc agg_voice_calling<params>,
+--pipeline voice_calling_pipeline --tag prm_voice_calls --desc prm_voice_calling<params>,
+--pipeline voice_calling_pipeline --tag fea_voice_calling --desc fea_voice_calling<params>
+
+MyTSEL Pipeline,
+--pipeline voice_calling_pipeline --tag agg_mytsel --desc agg_mytsel<params>,
+--pipeline voice_calling_pipeline --tag prm_mytsel --desc prm_mytsel<params>,
+--pipeline voice_calling_pipeline --tag fea_mytsel --desc fea_mytsel<params>
+
+Airtime Pipeline,
+--pipeline voice_calling_pipeline --tag agg_airtime_loan --desc agg_airtime_loan<params>,
+--pipeline voice_calling_pipeline --tag prm_airtime_loan --desc prm_airtime_loan<params>,
+--pipeline voice_calling_pipeline --tag fea_airtime_loan --desc fea_airtime_loan<params>
+#----End Stage 2: Domain Pipelines
+
+#----Start Stage 3: Model Input Pipeline
+LoopConcurrent:False
+--pipeline de_pipeline_master --node build_master_table_dimension --desc build_master_table_dimension<params>,
+--pipeline de_pipeline_master --node build_scoring_master_table --desc build_scoring_master_table<params>,
+--pipeline de_pipeline_master --node build_master_hive_table_msisdn --desc build_master_hive_table_msisdn<params>
+#----End Stage 3: Model Input Pipeline
+
+#----Start Stage 4: QA Pipeline
+LoopConcurrent:False
+--pipeline de_pipeline_qa --tag de_qa_master_master  --desc de_qa_master<params>,
+--pipeline de_pipeline_qa --node de_qa_timeliness_master --desc de_qa_timeliness_master<params>
+#----End Stage 4: QA Pipeline

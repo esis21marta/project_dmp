@@ -1,0 +1,11 @@
+master:
+  type: pandas.ParquetDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/input/kredivo_default_probability.parquet
+
+formatted_features_list:
+  type: TextLocalDataSet
+  filepath: /home/cdsw/features_list.txt
+
+formatted_longest_features_list:
+  type: TextLocalDataSet
+  filepath: /home/cdsw/longest_features_list.txt

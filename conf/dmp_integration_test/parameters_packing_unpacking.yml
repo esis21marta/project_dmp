@@ -1,0 +1,11 @@
+dmp_msisdn_column: msisdn
+dmp_output_date_column: weekstart
+output_directory: hdfs:///data/landing/dmp_remote/dmp_integration_test/mck_dmp_pipeline/partner_msisdn/unpacked_tables/
+files_to_pack:
+  test_msisdn:
+    msisdn_column: msisdn
+    input:
+      filepath: hdfs:///data/landing/dmp_remote/dmp_integration_test/mck_dmp_training/02_primary/msisdn_list.parquet
+      output_partitions: 1
+      partitionBy:
+        - weekstart

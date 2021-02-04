@@ -1,0 +1,12 @@
+date_format_training: "%Y-%m-%d %H:%M:%S"
+
+date_column: "submit_timestamp"
+msisdn_column: "msisdn"
+
+column_mapping_training:
+  first_user_number: "msisdn"
+  submit_timestamp: "application_date"
+  flag_31in61: "flag_bad_31"
+  flag_61in121: "flag_bad_61"
+
+use_spark: False

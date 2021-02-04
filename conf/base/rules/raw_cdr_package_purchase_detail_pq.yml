@@ -1,0 +1,30 @@
+raw_cdr_package_purchase_detail_pq:
+  rules:
+  - schema:
+      content_id: StringType
+      costband_mapp: StringType
+      cpname: StringType
+      l1_name: StringType
+      l2_name: StringType
+      l3_name: StringType
+      load_ts: TimestampType
+      load_user: StringType
+      msisdn: IntegerType
+      phase3costband: StringType
+      tot_rev: DoubleType
+      trx_ctn: LongType
+      trx_date: TimestampType
+      vas_code: StringType
+      yearmonth: IntegerType
+    type: defender.pyspark_rules.HasSchema
+  - columns:
+    - trx_date
+    - msisdn
+    type: defender.pyspark_rules.NotNull
+  - columns:
+    - msisdn
+    - yearmonth
+    - trx_ctn
+    - tot_rev
+    type: defender.pyspark_rules.NotNan
+  type: and

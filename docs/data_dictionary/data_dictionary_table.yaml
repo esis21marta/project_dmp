@@ -1,0 +1,2074 @@
+l1_acc_bal_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: recharge
+  catalog_table_name: l1_acc_bal_weekly_filtered
+  columns: []
+  description: primary filtered layer for recharge account balance
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly.parquet
+    training: mck_dmp_training/02_primary/recharge/acc_bal_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_acc_bal_weekly_final:
+  architecture_layer: primary
+  bizgroup: recharge
+  catalog_table_name: l1_acc_bal_weekly_final
+  columns: []
+  description: primary scaffold layer for recharge account balance
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/recharge/acc_bal_weekly_final.parquet
+    training: mck_dmp_training/02_primary/recharge/acc_bal_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_airtime_loan_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: airtime
+  catalog_table_name: l1_airtime_loan_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for airtime
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/airtime/scaffolding_airtime_loan_all_weekly.parquet
+    training: mck_dmp_training/02_primary/airtime/scaffolding_airtime_loan_all_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_airtime_loan_weekly:
+  architecture_layer: aggregation
+  bizgroup: airtime
+  catalog_table_name: l1_airtime_loan_weekly
+  columns: []
+  description: aggregation  layer for airtime
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/airtime/airtime_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_airtime_loan_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: airtime
+  catalog_table_name: l1_airtime_loan_weekly_filtered
+  columns: []
+  description: primary filtered layer for airtime
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/airtime/airtime_weekly.parquet
+    training: mck_dmp_training/02_primary/airtime/airtime_loan_all_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_cb_multidim_weekly:
+  architecture_layer: aggregation
+  bizgroup: customer_profile
+  catalog_table_name: l1_cb_multidim_weekly
+  columns: []
+  description: aggregation layer for customer_profile
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_chg_pkg_prchse_weekly:
+  architecture_layer: aggregation
+  bizgroup: recharge
+  catalog_table_name: l1_chg_pkg_prchse_weekly
+  columns: []
+  description: aggregation layer for recharge package purchase
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_chg_pkg_prchse_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: recharge
+  catalog_table_name: l1_chg_pkg_prchse_weekly_filtered
+  columns: []
+  description: primary filtered layer for recharge package purchase
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+    training: mck_dmp_training/02_primary/recharge/chg_pkg_prchse_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_chg_pkg_prchse_weekly_final:
+  architecture_layer: primary
+  bizgroup: recharge
+  catalog_table_name: l1_chg_pkg_prchse_weekly_final
+  columns: []
+  description: primary scaffold layer for recharge package purchase
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_final.parquet
+    training: mck_dmp_training/02_primary/recharge/chg_pkg_prchse_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_commercial_text_mapping:
+  architecture_layer: primary
+  bizgroup: text_messaging_mapping
+  catalog_table_name: l1_commercial_text_mapping
+  columns: []
+  description: primary  layer for text_messaging_mapping
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    scoring: mck_dmp_common/kedro/02_primary/text_messaging_mapping/sms_sender_mapping.parquet
+    training: mck_dmp_common/kedro/02_primary/text_messaging_mapping/sms_sender_mapping.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_customer_los_weekly:
+  architecture_layer: aggregation
+  bizgroup: customer_los
+  catalog_table_name: l1_customer_los_weekly
+  columns: []
+  description: aggregation layer for customer_los
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_dfj_outlet_fb_pop:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_dfj_outlet_fb_pop
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/dfj_outlet_fb_pop.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_dfj_poi_outlet:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_dfj_poi_outlet
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/dfj_poi_outlet.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_fb_points_with_neighbours:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_fb_points_with_neighbours
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/fb_points_with_neighbours.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_handset_lookup_data:
+  architecture_layer: aggregation
+  bizgroup: handset
+  catalog_table_name: l1_handset_lookup_data
+  columns: []
+  description: aggregation  layer for handset
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/handset/device_dim_single_rec_per_imei.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_internet_usage_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: internet_usage
+  catalog_table_name: l1_internet_usage_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for internet_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/internet_usage/internet_usage_weekly_final.parquet
+    training: mck_dmp_training/02_primary/internet_usage/internet_usage_weekly_time_series_filled.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_internet_usage_weekly:
+  architecture_layer: aggregation
+  bizgroup: internet_usage
+  catalog_table_name: l1_internet_usage_weekly
+  columns: []
+  description: aggregation  layer for internet_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_internet_usage_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: internet_usage
+  catalog_table_name: l1_internet_usage_weekly_filtered
+  columns: []
+  description: primary filtered layer for internet_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet
+    training: mck_dmp_training/02_primary/internet_usage/internet_usage_weekly_partner_data.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_mkios_recharge_monthly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_mkios_recharge_monthly_aggregated
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/mkios_recharge_monthly_agg.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_mkios_recharge_monthly_mode_aggregated:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_mkios_recharge_monthly_mode_aggregated
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/mkios_recharge_monthly_mode_agg.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_modern_monthly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_modern_monthly_aggregated
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/modern_monthly_agg.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_network_lac_weekly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: network
+  catalog_table_name: l1_network_lac_weekly_aggregated
+  columns: []
+  description: aggregation  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/network/network_lac_weekly.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l1_network_lacci_weekly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: network
+  catalog_table_name: l1_network_lacci_weekly_aggregated
+  columns: []
+  description: aggregation  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/network/network_lacci_weekly.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l1_network_msisdn_weekly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: network
+  catalog_table_name: l1_network_msisdn_weekly_aggregated
+  columns: []
+  description: aggregation  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_nonmacro_product_weekly_data:
+  architecture_layer: aggregation
+  bizgroup: product
+  catalog_table_name: l1_nonmacro_product_weekly_data
+  columns: []
+  description: aggregation  layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: null
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_nonmacro_product_weekly_data_filtered:
+  architecture_layer: primary
+  bizgroup: product
+  catalog_table_name: l1_nonmacro_product_weekly_data_filtered
+  columns: []
+  description: primary filtered layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/product/nonmacro_product_weekly_partner.parquet
+    training: mck_dmp_training/02_primary/product/nonmacro_product_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_nonmacro_product_weekly_data_final:
+  architecture_layer: primary
+  bizgroup: product
+  catalog_table_name: l1_nonmacro_product_weekly_data_final
+  columns: []
+  description: primary scaffold layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/product/nonmacro_product_weekly_final.parquet
+    training: mck_dmp_training/02_primary/product/nonmacro_product_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_outlet_digipos_monthly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_outlet_digipos_monthly_aggregated
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/outlet_digipos_monthly_agg.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_outlet_digipos_monthly_mode:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_outlet_digipos_monthly_mode
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/outlet_digipos_monthly_mod.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_outlets_with_neighbours:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_outlets_with_neighbours
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/outlets_with_neighbours.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_pois_with_neighbours:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_pois_with_neighbours
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/pois_with_neighbours.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_rech_weekly:
+  architecture_layer: aggregation
+  bizgroup: recharge
+  catalog_table_name: l1_rech_weekly
+  columns: []
+  description: aggregation layer for recharge
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_rech_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: recharge
+  catalog_table_name: l1_rech_weekly_filtered
+  columns: []
+  description: primary filtered layer for recharge
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet
+    training: mck_dmp_training/02_primary/recharge/rech_weely_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_rech_weekly_final:
+  architecture_layer: primary
+  bizgroup: recharge
+  catalog_table_name: l1_rech_weekly_final
+  columns: []
+  description: primary scaffold layer for recharge
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/recharge/rech_weekly_final.parquet
+    training: mck_dmp_training/02_primary/recharge/rech_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_unique_outlets:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_unique_outlets
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/unique_outlets.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_unique_pois:
+  architecture_layer: aggregation
+  bizgroup: outlets
+  catalog_table_name: l1_unique_pois
+  columns: []
+  description: aggregation  layer for outlets
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/outlets/unique_pois.parquet
+  pii_level: null
+  time_agg: null
+  user_agg: null
+l1_weekly_scaffold:
+  architecture_layer: primary
+  bizgroup: null
+  catalog_table_name: l1_weekly_scaffold
+  columns: []
+  description: primary scaffold layer for None
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/scaffold_weekly.parquet
+    training: mck_dmp_training/02_primary/scaffold_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l1_weekly_scaffold_lac:
+  architecture_layer: primary
+  bizgroup: null
+  catalog_table_name: l1_weekly_scaffold_lac
+  columns: []
+  description: primary scaffold layer for None
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/scaffold_lac_weekly.parquet
+    training: mck_dmp_training/02_primary/scaffold_lac_weekly.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l1_weekly_scaffold_lacci:
+  architecture_layer: primary
+  bizgroup: null
+  catalog_table_name: l1_weekly_scaffold_lacci
+  columns: []
+  description: primary scaffold layer for None
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/scaffold_lacci_weekly.parquet
+    training: mck_dmp_training/02_primary/scaffold_lacci_weekly.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l2_account_balance_weekly:
+  architecture_layer: aggregation
+  bizgroup: recharge
+  catalog_table_name: l2_account_balance_weekly
+  columns: []
+  description: aggregation layer for recharge account balance
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_app_usage_weekly:
+  architecture_layer: aggregation
+  bizgroup: internet_apps_usage
+  catalog_table_name: l2_app_usage_weekly
+  columns: []
+  description: aggregation layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_commercial_text_messaging_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: sms_2
+  catalog_table_name: l2_commercial_text_messaging_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for commercial text messaging
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/sms/commercial_text_messaging_weekly_final.parquet
+    training: mck_dmp_training/02_primary/sms_2/commercial_text_messaging_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_commercial_text_messaging_weekly:
+  architecture_layer: aggregation
+  bizgroup: sms
+  catalog_table_name: l2_commercial_text_messaging_weekly
+  columns: []
+  description: aggregation layer for commercial text messaging
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_commercial_text_messaging_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: sms_2
+  catalog_table_name: l2_commercial_text_messaging_weekly_filtered
+  columns: []
+  description: primary filtered layer for commercial text messaging
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+    training: mck_dmp_training/02_primary/sms_2/commercial_text_messaging_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_customer_los_weekly_data_final:
+  architecture_layer: primary
+  bizgroup: customer_los
+  catalog_table_name: l2_customer_los_weekly_data_final
+  columns: []
+  description: primary scaffold layer for customer_los
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/customer_los/customer_los_weekly_final.parquet
+    training: mck_dmp_training/02_primary/customer_los/customer_los_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_customer_profile:
+  architecture_layer: feature
+  bizgroup: customer_profile
+  catalog_table_name: l2_customer_profile
+  columns: []
+  description: feature layer for customer_profile
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet
+    training: mck_dmp_training/04_features/customer_profile/customer_profile_all_weekly_partner_2.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_device_internal_man_counts:
+  architecture_layer: feature
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_man_counts
+  columns: []
+  description: feature  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/handset_internal/man_counts.parquet
+    training: mck_dmp_training/04_features/handset_internal/man_counts.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l2_device_internal_mode_monthly:
+  architecture_layer: feature
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_mode_monthly
+  columns: []
+  description: feature  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/handset_internal/device_internal_weekly_mode_monthly.parquet
+    training: mck_dmp_training/04_features/handset_internal/device_internal_weekly_mode_monthly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_device_internal_mode_weekly:
+  architecture_layer: feature
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_mode_weekly
+  columns: []
+  description: feature  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/handset_internal/device_internal_weekly_mode_weekly.parquet
+    training: mck_dmp_training/04_features/handset_internal/device_internal_weekly_mode_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_device_internal_rolling_windows_monthly:
+  architecture_layer: feature
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_rolling_windows_monthly
+  columns: []
+  description: feature  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/handset_internal/device_internal_weekly_rolling_windows_monthly.parquet
+    training: mck_dmp_training/04_features/handset_internal/device_internal_weekly_rolling_windows_monthly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_device_internal_rolling_windows_weekly:
+  architecture_layer: feature
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_rolling_windows_weekly
+  columns: []
+  description: feature  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/handset_internal/device_internal_weekly_rolling_windows_weekly.parquet
+    training: mck_dmp_training/04_features/handset_internal/device_internal_weekly_rolling_windows_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_device_internal_tac_counts:
+  architecture_layer: feature
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_tac_counts
+  columns: []
+  description: feature  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/handset_internal/tac_counts.parquet
+    training: mck_dmp_training/04_features/handset_internal/tac_counts.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l2_device_internal_weekly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_weekly_aggregated
+  columns: []
+  description: aggregation  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/handset_internal/internal_device_data_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_device_internal_weekly_aggregated_filtered:
+  architecture_layer: primary
+  bizgroup: handset_internal
+  catalog_table_name: l2_device_internal_weekly_aggregated_filtered
+  columns: []
+  description: primary filtered layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/02_primary/handset_internal/internal_device_data_weekly_partner.parquet
+    training: mck_dmp_training/02_primary/handset_internal/internal_device_data_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_fea_device_internal:
+  architecture_layer: feature
+  bizgroup: handset_internal
+  catalog_table_name: l2_fea_device_internal
+  columns: []
+  description: feature  layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/handset_internal/fea_device_internal.parquet
+    training: mck_dmp_training/04_features/handset_internal/fea_device_internal.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_fea_handset:
+  architecture_layer: feature
+  bizgroup: handset
+  catalog_table_name: l2_fea_handset
+  columns: []
+  description: feature  layer for handset
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/handset/fea_device.parquet
+    training: mck_dmp_training/04_features/handset/fea_device.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_fea_rech_full_chg_pck_prchse:
+  architecture_layer: feature
+  bizgroup: recharge
+  catalog_table_name: l2_fea_rech_full_chg_pck_prchse
+  columns: []
+  description: feature layer for recharge purchase
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/recharge/fea_rech_full_chg_pck_prchse.parquet
+    training: mck_dmp_training/04_features/recharge/fea_rech_full_chg_pck_prchse.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_fea_rech_full_topup_behav:
+  architecture_layer: feature
+  bizgroup: recharge
+  catalog_table_name: l2_fea_rech_full_topup_behav
+  columns: []
+  description: feature layer for recharge top up
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/recharge/fea_rech_full_topup_behav.parquet
+    training: mck_dmp_training/04_features/recharge/fea_rech_full_topup_behav.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_fea_rech_topup_behav_full_acc_bal_neg_or_zero:
+  architecture_layer: feature
+  bizgroup: recharge
+  catalog_table_name: l2_fea_rech_topup_behav_full_acc_bal_neg_or_zero
+  columns: []
+  description: feature layer for recharge balance
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/recharge/fea_topup_behav_full_acc_bal_neg_or_zero.parquet
+    training: mck_dmp_training/04_features/recharge/fea_topup_behav_full_acc_bal_neg_or_zero.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_handset_time_series_filled:
+  architecture_layer: primary
+  bizgroup: handset
+  catalog_table_name: l2_handset_time_series_filled
+  columns: []
+  description: primary scaffold layer for handset
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/handset/handset_time_series_filled.parquet
+    training: mck_dmp_training/02_primary/handset/handset_time_series_filled.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_handset_weekly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: handset
+  catalog_table_name: l2_handset_weekly_aggregated
+  columns: []
+  description: aggregation  layer for handset
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_handset_weekly_aggregated_filtered:
+  architecture_layer: primary
+  bizgroup: handset
+  catalog_table_name: l2_handset_weekly_aggregated_filtered
+  columns: []
+  description: primary filtered layer for handset
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet
+    training: mck_dmp_training/02_primary/handset/device_data_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_internal_handset_time_series_filled:
+  architecture_layer: primary
+  bizgroup: handset_internal
+  catalog_table_name: l2_internal_handset_time_series_filled
+  columns: []
+  description: primary scaffold layer for handset_internal
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/02_primary/handset_internal/internal_handset_time_series_filled.parquet
+    training: mck_dmp_training/02_primary/handset_internal/internal_handset_time_series_filled.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_internet_app_usage_weekly:
+  architecture_layer: aggregation
+  bizgroup: internet_apps_usage
+  catalog_table_name: l2_internet_app_usage_weekly
+  columns: []
+  description: aggregation layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_internet_usage:
+  architecture_layer: feature
+  bizgroup: internet_usage
+  catalog_table_name: l2_internet_usage
+  columns: []
+  description: feature  layer for internet_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/internet_usage/fea_internet_usage_consumption.parquet
+    training: mck_dmp_training/04_features/internet_usage/fea_internet_usage_consumption.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_internet_usage_prep:
+  architecture_layer: feature
+  bizgroup: internet_usage
+  catalog_table_name: l2_internet_usage_prep
+  columns: []
+  description: feature  layer for internet_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/internet_usage/fea_internet_usage_consumption_prep.parquet
+    training: mck_dmp_training/04_features/internet_usage/fea_internet_usage_consumption_prep.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_macroproduct_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: product
+  catalog_table_name: l2_macroproduct_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/product/product_macro_weekly_time_series_filled.parquet
+    training: mck_dmp_training/02_primary/product/product_macro_weekly_time_series_filled.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_macroproduct_weekly:
+  architecture_layer: aggregation
+  bizgroup: product
+  catalog_table_name: l2_macroproduct_weekly
+  columns: []
+  description: aggregation  layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/product/product_macro_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_macroproduct_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: product
+  catalog_table_name: l2_macroproduct_weekly_filtered
+  columns: []
+  description: primary filtered layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/product/product_macro_weekly.parquet
+    training: mck_dmp_training/02_primary/product/product_macro_weekly_partner_data.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_network_lac_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: network
+  catalog_table_name: l2_network_lac_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/network/scaffolding_network_lac_weekly.parquet
+    training: mck_dmp_training/02_primary/network/scaffolding_network_lac_weekly.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l2_network_lacci_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: network
+  catalog_table_name: l2_network_lacci_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/network/scaffolding_network_lacci_weekly.parquet
+    training: mck_dmp_training/02_primary/network/scaffolding_network_lacci_weekly.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l2_network_msisdn_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: network
+  catalog_table_name: l2_network_msisdn_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/network/scaffolding_network_msisdn_weekly.parquet
+    training: mck_dmp_training/02_primary/network/scaffolding_network_msisdn_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_network_msisdn_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: network
+  catalog_table_name: l2_network_msisdn_weekly_filtered
+  columns: []
+  description: primary filtered layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/network/network_msisdn_weekly_partner.parquet
+    training: mck_dmp_training/02_primary/network/network_msisdn_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_payu_usage_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: payu_usage
+  catalog_table_name: l2_payu_usage_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for payu_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/02_primary/payu_usage/payu_usage_weekly_time_series_filled.parquet
+    training: mck_dmp_training/02_primary/payu_usage/payu_usage_weekly_time_series_filled.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_payu_usage_weekly_aggregation:
+  architecture_layer: aggregation
+  bizgroup: payu_usage
+  catalog_table_name: l2_payu_usage_weekly_aggregation
+  columns: []
+  description: aggregation  layer for payu_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_payu_usage_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: payu_usage
+  catalog_table_name: l2_payu_usage_weekly_filtered
+  columns: []
+  description: primary filtered layer for payu_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/02_primary/payu_usage/payu_usage_weekly_partner_data.parquet
+    training: mck_dmp_training/02_primary/payu_usage/payu_usage_weekly_partner_data.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_revenue_weekly_data:
+  architecture_layer: aggregation
+  bizgroup: revenue
+  catalog_table_name: l2_revenue_weekly_data
+  columns: []
+  description: aggregation layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_revenue_weekly_data_filtered:
+  architecture_layer: primary
+  bizgroup: revenue
+  catalog_table_name: l2_revenue_weekly_data_filtered
+  columns: []
+  description: primary filtered layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly.parquet
+    training: mck_dmp_training/02_primary/revenue/revenue_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_revenue_weekly_data_final:
+  architecture_layer: primary
+  bizgroup: revenue
+  catalog_table_name: l2_revenue_weekly_data_final
+  columns: []
+  description: primary scaffold layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/revenue/revenue_weekly_final.parquet
+    training: mck_dmp_training/02_primary/revenue/revenue_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_text_messaging_scaffold_weekly:
+  architecture_layer: primary
+  bizgroup: sms_2
+  catalog_table_name: l2_text_messaging_scaffold_weekly
+  columns: []
+  description: primary scaffold layer for text messaging
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/sms/text_messaging_weekly_final.parquet
+    training: mck_dmp_training/02_primary/sms_2/text_messaging_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_text_messaging_weekly:
+  architecture_layer: aggregation
+  bizgroup: sms
+  catalog_table_name: l2_text_messaging_weekly
+  columns: []
+  description: aggregation layer for sms
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_text_messaging_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: sms_2
+  catalog_table_name: l2_text_messaging_weekly_filtered
+  columns: []
+  description: primary filtered layer for text messaging
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet
+    training: mck_dmp_training/02_primary/sms_2/text_messaging_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_voice_calling_time_series_filled:
+  architecture_layer: primary
+  bizgroup: voice_calls
+  catalog_table_name: l2_voice_calling_time_series_filled
+  columns: []
+  description: primary scaffold layer for voice_calls
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/voice_calls/voice_calling_time_series_filled.parquet
+    training: mck_dmp_training/02_primary/voice_calls/voice_calling_time_series_filled.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_voice_calling_weekly_aggregated:
+  architecture_layer: aggregation
+  bizgroup: voice_calls
+  catalog_table_name: l2_voice_calling_weekly_aggregated
+  columns: []
+  description: aggregation layer for voice_calls
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    aggregation: mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l2_voice_calling_weekly_aggregated_filtered:
+  architecture_layer: primary
+  bizgroup: voice_calls
+  catalog_table_name: l2_voice_calling_weekly_aggregated_filtered
+  columns: []
+  description: primary filtered layer for voice_calls
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+    training: mck_dmp_training/02_primary/voice_calls/usage_mss_dd_subselected_partner_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l3_app_usage_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: internet_apps_usage
+  catalog_table_name: l3_app_usage_weekly_filtered
+  columns: []
+  description: primary filtered layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly_aggregation.parquet
+    training: mck_dmp_training/02_primary/internet_apps_usage/app_usage_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l3_internet_app_usage_weekly_filtered:
+  architecture_layer: primary
+  bizgroup: internet_apps_usage
+  catalog_table_name: l3_internet_app_usage_weekly_filtered
+  columns: []
+  description: primary filtered layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_app_usage_weekly_aggregation.parquet
+    training: mck_dmp_training/02_primary/internet_apps_usage/internet_app_usage_weekly_partner.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_app_usage_weekly_final:
+  architecture_layer: primary
+  bizgroup: internet_apps_usage
+  catalog_table_name: l4_app_usage_weekly_final
+  columns: []
+  description: primary scaffold layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_final.parquet
+    training: mck_dmp_training/02_primary/internet_apps_usage/app_usage_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_commercial_text_messaging:
+  architecture_layer: feature
+  bizgroup: sms_2
+  catalog_table_name: l4_fea_commercial_text_messaging
+  columns: []
+  description: feature layer for commercial text messaging
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/sms/fea_commercial_text_messaging.parquet
+    training: mck_dmp_training/04_features/sms_2/fea_commercial_text_messaging.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_customer_los:
+  architecture_layer: feature
+  bizgroup: customer_los
+  catalog_table_name: l4_fea_customer_los
+  columns: []
+  description: feature layer for customer_los
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/customer_los/fea_customer_los.parquet
+    training: mck_dmp_training/04_features/customer_los/fea_customer_los.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_macroproduct:
+  architecture_layer: feature
+  bizgroup: product
+  catalog_table_name: l4_fea_macroproduct
+  columns: []
+  description: feature  layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/product/fea_product_macro.parquet
+    training: mck_dmp_training/04_features/product/fea_product_macro.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_macroproduct_explode:
+  architecture_layer: feature
+  bizgroup: product
+  catalog_table_name: l4_fea_macroproduct_explode
+  columns: []
+  description: feature  layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/product/fea_product_macro_explode.parquet
+    training: mck_dmp_training/04_features/product/fea_product_macro_explode.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_macroproduct_monthly:
+  architecture_layer: feature
+  bizgroup: product
+  catalog_table_name: l4_fea_macroproduct_monthly
+  columns: []
+  description: feature  layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/product/fea_product_macro_monthly.parquet
+    training: mck_dmp_training/04_features/product/fea_product_macro_monthly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_macroproduct_quarterly:
+  architecture_layer: feature
+  bizgroup: product
+  catalog_table_name: l4_fea_macroproduct_quarterly
+  columns: []
+  description: feature  layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/product/fea_product_macro_quarterly.parquet
+    training: mck_dmp_training/04_features/product/fea_product_macro_quarterly.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_network_lac:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lac
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lac.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lac.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_lac_weekly1:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lac_weekly1
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lac_weekly1.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lac_weekly1.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_lac_weekly2:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lac_weekly2
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lac_weekly2.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lac_weekly2.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_lac_weekly3:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lac_weekly3
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lac_weekly3.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lac_weekly3.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_lacci:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lacci
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lacci.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lacci.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_lacci_weekly1:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lacci_weekly1
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lacci_weekly1.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lacci_weekly1.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_lacci_weekly2:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lacci_weekly2
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lacci_weekly2.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lacci_weekly2.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_lacci_weekly3:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_lacci_weekly3
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_lacci_weekly3.parquet
+    training: mck_dmp_training/04_features/network/fea_network_lacci_weekly3.parquet
+  pii_level: null
+  time_agg: weekstart
+  user_agg: null
+l4_fea_network_msisdn:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_msisdn
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_msisdn.parquet
+    training: mck_dmp_training/04_features/network/fea_network_msisdn.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_network_msisdn_weekly1:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_msisdn_weekly1
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_msisdn_weekly1.parquet
+    training: mck_dmp_training/04_features/network/fea_network_msisdn_weekly1.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_network_msisdn_weekly2:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_msisdn_weekly2
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_msisdn_weekly2.parquet
+    training: mck_dmp_training/04_features/network/fea_network_msisdn_weekly2.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_network_msisdn_weekly3:
+  architecture_layer: feature
+  bizgroup: network
+  catalog_table_name: l4_fea_network_msisdn_weekly3
+  columns: []
+  description: feature  layer for network
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/network/fea_network_msisdn_weekly3.parquet
+    training: mck_dmp_training/04_features/network/fea_network_msisdn_weekly3.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_nonmacro_product:
+  architecture_layer: feature
+  bizgroup: product
+  catalog_table_name: l4_fea_nonmacro_product
+  columns: []
+  description: feature  layer for product
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/product/fea_nonmacro_product.parquet
+    training: mck_dmp_training/04_features/product/fea_nonmacro_product.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_payu_usage:
+  architecture_layer: feature
+  bizgroup: payu_usage
+  catalog_table_name: l4_fea_payu_usage
+  columns: []
+  description: feature  layer for payu_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_scoring/04_features/payu_usage/fea_payu_usage.parquet
+    training: mck_dmp_training/04_features/payu_usage/fea_payu_usage.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_revenue_base_payu_pkg:
+  architecture_layer: feature
+  bizgroup: revenue
+  catalog_table_name: l4_fea_revenue_base_payu_pkg
+  columns: []
+  description: feature  layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/revenue/fea_revenue_base_payu_pkg.parquet
+    training: mck_dmp_training/04_features/revenue/fea_revenue_base_payu_pkg.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_revenue_monthly_spend:
+  architecture_layer: feature
+  bizgroup: revenue
+  catalog_table_name: l4_fea_revenue_monthly_spend
+  columns: []
+  description: feature  layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/revenue/fea_revenue_monthly_spend.parquet
+    training: mck_dmp_training/04_features/revenue/fea_revenue_monthly_spend.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_revenue_salary:
+  architecture_layer: feature
+  bizgroup: revenue
+  catalog_table_name: l4_fea_revenue_salary
+  columns: []
+  description: feature  layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/revenue/fea_revenue_salary.parquet
+    training: mck_dmp_training/04_features/revenue/fea_revenue_salary.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_revenue_spend_pattern:
+  architecture_layer: feature
+  bizgroup: revenue
+  catalog_table_name: l4_fea_revenue_spend_pattern
+  columns: []
+  description: feature  layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/revenue/fea_revenue_spend_pattern.parquet
+    training: mck_dmp_training/04_features/revenue/fea_revenue_spend_pattern.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_revenue_threshold_sms_dls_roam:
+  architecture_layer: feature
+  bizgroup: revenue
+  catalog_table_name: l4_fea_revenue_threshold_sms_dls_roam
+  columns: []
+  description: feature  layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/revenue/fea_revenue_threshold_sms_dls_roam.parquet
+    training: mck_dmp_training/04_features/revenue/fea_revenue_threshold_sms_dls_roam.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_revenue_threshold_voice_data:
+  architecture_layer: feature
+  bizgroup: revenue
+  catalog_table_name: l4_fea_revenue_threshold_voice_data
+  columns: []
+  description: feature  layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/revenue/fea_revenue_threshold_voice_data.parquet
+    training: mck_dmp_training/04_features/revenue/fea_revenue_threshold_voice_data.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_revenue_weekend:
+  architecture_layer: feature
+  bizgroup: revenue
+  catalog_table_name: l4_fea_revenue_weekend
+  columns: []
+  description: feature  layer for revenue
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/revenue/fea_revenue_weekend.parquet
+    training: mck_dmp_training/04_features/revenue/fea_revenue_weekend.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_text_messaging:
+  architecture_layer: feature
+  bizgroup: sms_2
+  catalog_table_name: l4_fea_text_messaging
+  columns: []
+  description: feature layer for text messaging
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/sms/fea_text_messaging.parquet
+    training: mck_dmp_training/04_features/sms_2/fea_text_messaging.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_fea_voice_calling:
+  architecture_layer: feature
+  bizgroup: voice_calls
+  catalog_table_name: l4_fea_voice_calling
+  columns: []
+  description: feature layer for voice_calls
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/voice_calls/fea_inc_out_uniq_bnums.parquet
+    training: mck_dmp_training/04_features/voice_calls/fea_inc_out_uniq_bnums.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l4_internet_app_usage_weekly_final:
+  architecture_layer: primary
+  bizgroup: internet_apps_usage
+  catalog_table_name: l4_internet_app_usage_weekly_final
+  columns: []
+  description: primary scaffold layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_training/02_primary/internet_apps_usage/internet_app_usage_weekly_final.parquet
+    training: mck_dmp_training/02_primary/internet_apps_usage/internet_app_usage_weekly_final.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l5_fea_internet_connection:
+  architecture_layer: feature
+  bizgroup: internet_apps_usage
+  catalog_table_name: l5_fea_internet_connection
+  columns: []
+  description: feature  layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/internet_apps_usage/fea_internet_connection.parquet
+    training: mck_dmp_training/04_features/internet_apps_usage/fea_internet_connection.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l5_fea_internet_usage:
+  architecture_layer: feature
+  bizgroup: internet_apps_usage
+  catalog_table_name: l5_fea_internet_usage
+  columns: []
+  description: feature  layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/internet_apps_usage/fea_internet_usage.parquet
+    training: mck_dmp_training/04_features/internet_apps_usage/fea_internet_usage_2.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l5_fea_social_media:
+  architecture_layer: feature
+  bizgroup: internet_apps_usage
+  catalog_table_name: l5_fea_social_media
+  columns: []
+  description: feature  layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/internet_apps_usage/fea_social_media.parquet
+    training: mck_dmp_training/04_features/internet_apps_usage/fea_social_media.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l5_internet_usage:
+  architecture_layer: feature
+  bizgroup: internet_apps_usage
+  catalog_table_name: l5_internet_usage
+  columns: []
+  description: feature  layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/internet_apps_usage/internet_usage.parquet
+    training: mck_dmp_training/04_features/internet_apps_usage/fea_internet_apps_usage.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+l5_pivoted_internet_usage:
+  architecture_layer: feature
+  bizgroup: internet_apps_usage
+  catalog_table_name: l5_pivoted_internet_usage
+  columns: []
+  description: feature  layer for internet_apps_usage
+  file_format: parquet
+  impact_tier: low
+  part_col: weekstart
+  part_col_dt_format: '%Y-%m-%d'
+  part_size: 0
+  path:
+    scoring: mck_dmp_score/04_features/internet_apps_usage/pivoted_internet_usage.parquet
+    training: mck_dmp_training/04_features/internet_apps_usage/fea_internet_usage.parquet
+  pii_level: sensitive personal data
+  time_agg: weekstart
+  user_agg: msisdn
+partner_msisdns:
+  architecture_layer: primary
+  bizgroup: null
+  catalog_table_name: partner_msisdns
+  columns: []
+  description: primary  layer for None
+  file_format: parquet
+  impact_tier: low
+  part_col: null
+  part_col_dt_format: null
+  part_size: 0
+  path:
+    scoring: mck_dmp_training/02_primary/partner_msisdns.parquet
+    training: mck_dmp_training/02_primary/partner_msisdns.parquet
+  pii_level: sensitive personal data
+  time_agg: null
+  user_agg: msisdn

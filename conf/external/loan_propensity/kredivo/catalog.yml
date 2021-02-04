@@ -1,0 +1,26 @@
+master:
+  type: pandas.ParquetDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/dataset/kredivo/kredivo_poc.parquet
+  load_args:
+    columns:
+      - 'msisdn'
+      - 'weekstart'
+      - 'klop_verification'
+      - "fea_los"
+      - "fea_txt_msg_credit_lending_companies_unique_senders_count_03m"
+      - "fea_rech_tot_amt_avg_03m"
+      - "fea_int_usage_non_zero_usage_days_03m"
+      - "fea_voice_tot_uniq_out_calls_03m"
+      - "fea_handset_count_05m"
+      - "fea_rech_tot_trx_sum_03m"
+      - "fea_rev_voice_tot_sum_03m"
+      - "fea_voice_tot_dur_12_5_am_03m"
+      - "fea_voice_tot_uniq_inc_calls_03m"
+      - "fea_txt_msg_banks_unique_senders_count_03m"
+      - "fea_txt_msg_credit_lending_companies_incoming_count_03m"
+      - "fea_txt_msg_ecommerce_shopping_incoming_count_03m"
+      - "fea_txt_msg_mobile_wallets_incoming_count_03m"
+      - "fea_txt_msg_outgoing_count_03m"
+      - "fea_txt_msg_voice_ratio_incoming_03m"
+      - "fea_txt_msg_incoming_count_03m"
+      - "fea_int_usage_weekend_kb_usage_03m"

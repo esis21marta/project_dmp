@@ -1,0 +1,16 @@
+income_data:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/income_dataset/kr_income_compare_unhashed_20200117.parquet
+  file_format: parquet
+
+feature_data:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/input/kredivo_default_probability.parquet
+  file_format: parquet
+
+joined_income_features:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/input/kredivo_income.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite

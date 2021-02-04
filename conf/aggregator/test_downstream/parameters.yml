@@ -1,0 +1,31 @@
+list_push_channel:
+  - sms
+  - push_notification
+  - inapp_banner
+  - facebook
+  
+input_list_columns:
+  - msisdn
+  - keyword
+  - push_channel
+  - criteria_1
+  - criteria_2
+  - criteria_3
+  - criteria_4
+  - criteria_5 
+       
+pes_whitelist_path: "hdfs:///data/landing/gx_pnt/aggregator_downstream/tests/outputs/pes/whitelist"
+pes_eventfile_path: "hdfs:///data/landing/gx_pnt/aggregator_downstream/tests/outputs/pes/event"
+cms_whitelist_path: "hdfs:///data/landing/gx_pnt/aggregator_downstream/tests/outputs/cms/whitelist"
+
+
+top_rank: 2
+
+limit_push_channel:
+  sms: 10
+  inapp_banner: 5
+  push_notification: 5
+  facebook: 5
+
+domains_to_end_at_whitelist:
+  - cms

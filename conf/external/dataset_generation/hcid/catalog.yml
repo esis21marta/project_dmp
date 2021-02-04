@@ -1,0 +1,15 @@
+hcid_training:
+  type: pandas.ParquetDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/hcid/dataset/hcid_telkomsel_modelling_sample.parquet"
+
+hcid_test:
+  type: pandas.ParquetDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/hcid/dataset/TSA_SAMPLE_OOT_HOOT.parquet"
+
+hcid_training_processed:
+  type: pandas.ParquetDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/hcid/dataset/hcid_training_20200225.parquet"
+
+hcid_test_processed:
+  type: pandas.ParquetDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/hcid/dataset/hcid_test_20200225.parquet"

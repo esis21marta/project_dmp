@@ -1,0 +1,698 @@
+l1_chg_pkg_prchse_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l1_customer_los_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l1_digi_rech_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l1_internet_usage_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l1_network_msisdn_weekly_aggregated_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l1_rech_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_account_balance_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v2.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_commercial_text_messaging_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_customer_profile_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_handset_weekly_aggregated_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_internet_app_usage_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_internet_connection_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_payu_usage_weekly_aggregation_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_revenue_weekly_data_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_text_messaging_weekly_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l2_voice_calling_weekly_aggregated_qa_1w:
+  file_format: parquet
+  filepath: mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+  load_args:
+    partition_column: weekstart
+    partition_date_format: '%Y-%m-%d'
+    partition_filter_period: 1w
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_account_balance_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/account_balance_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_account_balance_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/account_balance_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_account_balance_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/account_balance_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_app_usage_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/app_usage_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_app_usage_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/app_usage_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_app_usage_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/app_usage_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_chg_pkg_prchse_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/chg_pkg_prchse_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_chg_pkg_prchse_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/chg_pkg_prchse_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_chg_pkg_prchse_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/chg_pkg_prchse_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_commercial_text_messaging_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/commercial_text_messaging_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_commercial_text_messaging_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/commercial_text_messaging_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_commercial_text_messaging_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/commercial_text_messaging_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_customer_los_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/customer_los_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_customer_los_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/customer_los_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_customer_los_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/customer_los_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_customer_profile_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/customer_profile_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_customer_profile_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/customer_profile_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_customer_profile_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/customer_profile_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_digi_rech_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/digi_rech_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_digi_rech_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/digi_rech_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_digi_rech_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/digi_rech_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_handset_weekly_aggregated_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/handset_weekly_aggregated_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_handset_weekly_aggregated_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/handset_weekly_aggregated_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_handset_weekly_aggregated_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/handset_weekly_aggregated_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_internet_connection_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/internet_connection_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_internet_connection_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/internet_connection_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_internet_connection_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/internet_connection_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_internet_usage_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/internet_usage_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_internet_usage_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/internet_usage_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_internet_usage_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/internet_usage_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_network_msisdn_weekly_aggregated_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/network_msisdn_weekly_aggregated_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_network_msisdn_weekly_aggregated_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/network_msisdn_weekly_aggregated_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_network_msisdn_weekly_aggregated_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/network_msisdn_weekly_aggregated_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_payu_usage_weekly_aggregation_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/payu_usage_weekly_aggregation_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_payu_usage_weekly_aggregation_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/payu_usage_weekly_aggregation_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_payu_usage_weekly_aggregation_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/payu_usage_weekly_aggregation_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_rech_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/rech_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_rech_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/rech_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_rech_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/rech_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_revenue_weekly_data_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/revenue_weekly_data_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_revenue_weekly_data_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/revenue_weekly_data_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_revenue_weekly_data_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/revenue_weekly_data_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_text_messaging_weekly_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/text_messaging_weekly_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_text_messaging_weekly_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/text_messaging_weekly_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_text_messaging_weekly_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/text_messaging_weekly_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_voice_calling_weekly_aggregated_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/voice_calling_weekly_aggregated_aggregation/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_voice_calling_weekly_aggregated_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/voice_calling_weekly_aggregated_aggregation/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_aggregation_voice_calling_weekly_aggregated_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/aggregation/voice_calling_weekly_aggregated_aggregation/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_commercial_text_messaging_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/commercial_text_messaging_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_commercial_text_messaging_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/commercial_text_messaging_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_commercial_text_messaging_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/commercial_text_messaging_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_customer_los_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_customer_los_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_customer_los_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_customer_los_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_customer_los_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_customer_los_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_internet_app_usage_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_internet_app_usage_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_internet_app_usage_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_internet_app_usage_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_internet_app_usage_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_internet_app_usage_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_revenue_base_payu_pkg_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_revenue_base_payu_pkg_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_revenue_base_payu_pkg_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_revenue_base_payu_pkg_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_revenue_base_payu_pkg_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_revenue_base_payu_pkg_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_revenue_weekend_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_revenue_weekend_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_revenue_weekend_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_revenue_weekend_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_fea_revenue_weekend_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/fea_revenue_weekend_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_handset_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/handset_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_handset_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/handset_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_handset_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/handset_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_internet_usage_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/internet_usage_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_internet_usage_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/internet_usage_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_internet_usage_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/internet_usage_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_recharge_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/recharge_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_recharge_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/recharge_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_recharge_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/recharge_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_text_messaging_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/text_messaging_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_text_messaging_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/text_messaging_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_text_messaging_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/text_messaging_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_voice_calling_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/voice_calling_feature/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_voice_calling_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/voice_calling_feature/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_feature_voice_calling_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/feature/voice_calling_feature/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_master_metrics:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/master/metrics.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_master_monthly_unique_msisdn:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/master/monthly_unique_msisdn.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet
+l4_qa_master_outliers:
+  file_format: parquet
+  filepath: mck_dmp_score/06_qa_check/master/outliers.parquet
+  save_args:
+    mode: overwrite
+  type: src.dmp.io.spark_data_set.SparkDataSet

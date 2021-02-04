@@ -1,0 +1,25 @@
+_hive: &hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  write_mode: overwrite
+
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+_parquet_weekstart_1w: &parquet_weekstart_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: report_date
+
+api_requests:
+  <<: *hive
+  database: base
+  table: api_requests
+
+partner_api_hit_report:
+  <<: *parquet
+  filepath: mck_dmp_score/07_model_scoring/external/home_credit/partner_api_hit_report.parquet
+  partitions: 1

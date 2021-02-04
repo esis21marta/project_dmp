@@ -1,0 +1,11 @@
+pai_run: "f45f1ce4c6d4445ebdd3ce0d2410ce84"
+score_column_name: "raw_default_probability_score"
+binned: False
+binned_score_column_name: ""
+predict_probability: True
+post_processing: "identity"
+model_type: ""
+
+hdfs_base_path: hdfs:///data/landing/dmp_production/ # HDFS Base Path
+
+bin_thresholds: {}

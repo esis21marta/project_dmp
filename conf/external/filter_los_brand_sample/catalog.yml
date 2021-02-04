@@ -1,0 +1,22 @@
+scoring_table:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/output/kredivo_14m_scored.parquet"
+  file_format: parquet
+
+previous_campaign_table:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/input/precampaign_msisdn.parquet"
+  file_format: parquet
+
+partner_existing_customers:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/input/kredivo_default_probability.parquet"
+  file_format: parquet
+
+scoring_filtered_sampled:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/poc/output/kredivo_scored_filtered_sampled.csv"
+  file_format: csv
+  save_args:
+    header: true
+    mode: overwrite

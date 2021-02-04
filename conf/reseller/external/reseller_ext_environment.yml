@@ -1,0 +1,26 @@
+name: reseller_ext_env
+channels:
+  - conda-forge
+  - anaconda
+  - defaults
+dependencies:
+  - pip=20.1.1
+  - fiona=1.8.13
+  - gdal=3.0.2
+  - geopandas=0.8.0
+  - numpy-base=1.18.5
+  - numpydoc=1.0.0
+  - rasterio=1.1.0
+  - scipy=1.5.0
+  - shapely=1.7.0
+  - openblas=0.3.10
+  - pip:
+    - netcdf4==1.5.3
+    - numpy==1.19.0
+    - pandas==1.0.3
+    - pygeodesy==20.4.28
+    - pygeohash==1.2.0
+    - PyYAML==5.3.1
+    - raster2xyz==0.1.3
+    - xlrd==1.2.0
+    - googletrans==3.0.0

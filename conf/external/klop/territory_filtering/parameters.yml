@@ -1,0 +1,26 @@
+territory_name: "kabupaten"
+territory_filter:
+  - "kota jakarta barat"
+  - "kota jakarta pusat"
+  - "kota jakarta selatan"
+  - "kota jakarta timur"
+  - "kota jakarta utara"
+  - "bogor"
+  - "kota bogor"
+  - "kota tangerang"
+  - "kota tangerang selatan"
+  - "tangerang"
+  - "kota depok"
+  - "bekasi"
+  - "kota bekasi"
+  - "kepulauan seribu"
+  - "bandung"
+  - "kota bandung"
+  - "kota surabaya"
+
+home_location_month_filter: "2020-08"
+
+home_days_threshold: 15
+max_home_count: 4
+
+hdfs_base_path: hdfs:///data/landing/dmp_staging/pilot/external/ # HDFS Base Path

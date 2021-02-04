@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>DQ Availability Report - {{ environment }}</title>
+    <style>
+        table,
+        th,
+        td {
+            border: 1px solid black;
+            border-collapse: collapse;
+            padding: 8px
+        }
+
+        .issue {
+            background-color: #FFA6A6;
+        }
+    </style>
+</head>
+
+<body>
+    <p>Hi all,</p>
+    <p>The availability check runs every week and checks for data availability from the start date to one day before the
+        current weekstart.</p>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Domain</th>
+                <th>Table</th>
+                <th>Status</th>
+                <th>Missing Days</th>
+            </tr>
+            {% for row in rows -%}
+            <tr {% if row.number_of_missing_days > 0 %} class="issue" {% endif %}>
+                <td>{{ row.domain }}</td>
+                <td>{{ row.table_name }}</td>
+                {% if row.number_of_missing_days == 0 %}
+                <td>No Issues</td>
+                {% else %}
+                <td> {{ row.number_of_missing_days }} days missing</td>
+                {% endif %}
+                <td>{{ row.missing_days }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <p><small>Note: This email is auto generated and does not need reply.</small></p>
+</body>
+
+</html>

@@ -1,0 +1,4 @@
+TARGET_PROPOSITION_COL = "target_proposition"
+TARGET_PROPOSITION_CAP = 16
+WEEKSTART_COL = "weekstart"
+MSISDN_COL = "msisdn"

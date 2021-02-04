@@ -1,0 +1,4 @@
+to_score:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_score/05_model_input/master_20200225.parquet/weekstart=2020-02-10
+  file_format: parquet

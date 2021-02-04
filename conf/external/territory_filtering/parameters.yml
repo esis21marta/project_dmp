@@ -1,0 +1,19 @@
+territory_name: "kabupaten"
+territory_filter:
+  - "kota jakarta barat"
+  - "kota jakarta pusat"
+  - "kota jakarta selatan"
+  - "kota jakarta timur"
+  - "kota jakarta utara"
+  - "bogor"
+  - "kota bogor"
+  - "kota tangerang"
+  - "kota tangerang selatan"
+  - "tangerang"
+  - "kota depok"
+  - "bekasi"
+  - "kota bekasi"
+  - "kepulauan seribu"
+
+home_days_threshold: 15
+max_home_count: 4

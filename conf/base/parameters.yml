@@ -1,0 +1,35 @@
+# hdfs_base_path: hdfs:///data/landing/gx_pnt/ # HDFS Base Path
+
+# if neither "first_weekstart" nor "last_weekstart" are specified, then the pipeline will run for weekstarts = last week (last Monday) only
+# if only "first_weekstart" is specified then the pipeline will run for weekstarts between first_weekstart and last week (last Monday)
+# if only "last_weekstart" is specified then the pipeline will run for weekstart which = last_weekstart only
+# if both "first_weekstart" & "last_weekstart" are specified then the pipeline will run for weekstarts between first_weekstart and last_weekstart
+
+# first_weekstart: 2019-01-07 # should be a monday
+# last_weekstart: 2020-03-30 # should be a monday
+
+log_node_runtime: False
+
+factory_feature_selection_config:
+  - artifact_path: "hdfs:///data/landing/dmp_remote/model-factory/20336568/mlruns/bb35acd70a1f4b79b9414008be33db58/456fc16b7be44a4b904b1b7e0bfe6448/artifacts/feature_importances_all_features.csv"
+    loadmethod: csv
+    model_value: 1
+    model_name: scaleup-2a
+    use_case: fourg
+  - artifact_path: "hdfs:///data/landing/dmp_remote/model-factory/20336568/mlruns/bb35acd70a1f4b79b9414008be33db58/0b6461b7e21443509d17017550a8e0e0/artifacts/feature_importances_all_features.csv"
+    loadmethod: csv
+    model_value: 10
+    model_name: scaleup-8b
+    use_case: fourg
+  - artifact_path: "hdfs:///data/landing/dmp_remote/model-factory/20336568/mlruns/bb35acd70a1f4b79b9414008be33db58/df1d54532f7142bf9d5d551a005cee36/artifacts/feature_importances_all_features.csv"
+    loadmethod: csv
+    model_value: 10
+    model_name: ssm-mltsm-non4g
+    use_case: fourg
+
+shuffle_partitions_10k : 10000
+shuffle_partitions_2k : 2000
+
+log_dataset_pipeline:
+  enable_log: False
+  table_name: "pipeline_datasource_log"

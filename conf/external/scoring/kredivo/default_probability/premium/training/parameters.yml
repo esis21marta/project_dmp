@@ -1,0 +1,7 @@
+pai_run: "d096726c97a041c39e1748910943b919"
+score_column_name: "score51"
+predict_probability: True
+post_processing: "identity"
+model_type: ""
+
+hdfs_base_path: hdfs:///data/landing/dmp_production/ # HDFS Base Path

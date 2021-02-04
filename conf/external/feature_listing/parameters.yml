@@ -1,0 +1,2 @@
+use_spark: False
+feature_column_prefix: "fea_"

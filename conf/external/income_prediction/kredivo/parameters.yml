@@ -1,0 +1,60 @@
+features_used:
+    - "fea_int_usage_2g_kb_data_usage_03m"
+    - "fea_int_usage_3g_kb_data_usage_03m"
+    - "fea_int_usage_4g_kb_data_usage_03m"
+    - "fea_voice_inc_to_tot_calls_dur_03m"
+    - "fea_int_app_usage_credit_lending_company_data_vol_03m"
+    - "fea_los"
+    - "fea_rech_tot_amt_avg_03m"
+    - "fea_rech_tot_trx_sum_02m"
+    - "fea_rev_voice_tot_sum_03m"
+    - "fea_voice_tot_dur_12_5_am_03m"
+    - "fea_voice_tot_uniq_out_calls_02m"
+    - "fea_rech_trx_pkg_prchse_sum_03m"
+    - "fea_txt_msg_banks_incoming_count_03m"
+    - "fea_txt_msg_count_02m"
+    - "fea_txt_msg_multifinance_incoming_count_02m"
+    - "fea_txt_msg_other_online_services_incoming_count_02m"
+    - "fea_txt_msg_outgoing_count_02m"
+    - "fea_txt_msg_travel_company_unique_senders_count_02m"
+    - "fea_txt_msg_voice_ratio_01m"
+    - "fea_int_app_usage_mobile_wallets_data_vol_03m"
+    - "fea_rech_tot_amt_sum_02m"
+    - "fea_rev_sms_tot_sum_03m"
+    - "fea_int_app_usage_social_media_sites_data_vol_02m"
+    - "fea_txt_msg_mobile_wallets_incoming_count_03m"
+
+categorical_features: []
+
+# Feature cleaning parameters
+replace_targets_above: 10_000_000
+
+# Number of folds used in cross-validations
+num_folds: 4
+
+# Parameters used for Catboost
+catboost_params:
+    iterations: 500
+    l2_leaf_reg: 100
+    depth: 6
+    rsm: 0.5
+    learning_rate: 0.05
+    loss_function: "RMSE"
+    verbose: False
+
+# Number of Quantiles (used to plot Confusion Matrices)
+num_quantiles: 5
+
+# Do not modify parameters below, except for username at setup
+use_spark: False
+
+pai_tags:
+    - "Kredivo"
+
+target_column_name : "income_predicted"
+los_column_name: "fea_los"
+
+filter_query: "income_predicted <= 20_000_000 &\
+fea_los < 10_000 &\
+weekstart >= datetime.date(2019,4,1) &\
+fea_los.notnull()"

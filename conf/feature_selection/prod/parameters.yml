@@ -1,0 +1,18 @@
+# Put the PAI_RUNS location that the below runs are stored.
+pai_runs_load: hdfs:///data/landing/dmp_remote/model_factory/feature_selection/pai
+pai_run_ids:
+  - '6c265ee3e77c4a179f8013ae971cc71a'  # fourg
+  - 'ae29d7d01eec4422a7217be990733034'  # fourg
+  - 'c08a628cf28448dabb0364b129fb381f'  # fourg
+  - 'ce528489a6eb414495ea3e9afd7ef1d1'  # fourg
+  - '20543b5d1d17426e9c51836b0c3d454f'  # fourg
+  - 'fc183fcea2b148e3b49eef918b37c903'  # fourg
+  - '03c2fa4beae14c46a9febc9da71b43e9'  # fourg
+  - '759a771b864249a7ac92fd61e1246fce'  # fourg
+  - '5b0fe65993094bc2ab0a4df926d3d1cd'  # inlife
+  - '862eb2480b2f497a904af7680d15de2c'  # inlife
+  - '68a71c1acbfe4ce1abcc959dd17df59a'  # inlife
+  - '7ba8c62d3ba4458385584dba4e5ebf3b'  # inlife
+  - 'f3f28890cb9d438d85f772384285d2fa'  # inlife
+  - '6705c34a33a8416792bf998416410467'  # inlife
+top_n: 400

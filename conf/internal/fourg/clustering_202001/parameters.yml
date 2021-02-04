@@ -1,0 +1,1376 @@
+# #####################################################################################################################################
+# ############################################## 4G Stimulation ##############################################################
+# #####################################################################################################################################
+# ######## dynamic #########
+4g_weekstart: 2020-12-28 # changes this dates to be the end of monday of respective months
+4g_downsample_fraction: .1
+4g_segment: SEGMENT_2
+4g_method: median # or mean
+4g_threshold: 0.3 #up to users
+4g_num_unique: 5 #up to users
+# ######## static #########
+4g_path_to_save_hist: /home/cdsw/project_dmp/data/4g/train_table/histogram_202012.pdf
+4g_path_to_save_corr_matrix_plot_pca: /home/cdsw/project_dmp/data/4g/train_table/corr_matrix_pca_202012.pdf
+4g_path_to_save_corr_matrix_plot_mca: /home/cdsw/project_dmp/data/4g/train_table/corr_matrix_mca_202012.pdf
+4g_path_to_save_corr_matrix_plot_famd: /home/cdsw/project_dmp/data/4g/train_table/corr_matrix_famd_202012.pdf
+4g_path_to_save_summary_famd: /home/cdsw/project_dmp/data/4g/train_table/summary_famd_202012.csv
+4g_path_to_save_summary_pca: /home/cdsw/project_dmp/data/4g/train_table/summary_pca_202012.csv
+4g_path_to_save_summary_mca: /home/cdsw/project_dmp/data/4g/train_table/summary_mca_202012.csv
+4g_path_to_save_summary_pca_mca: /home/cdsw/project_dmp/data/4g/train_table/summary_pca_mca_202012.csv
+4g_x_axis_scatter: 0
+4g_y_axis_scatter: 1
+4g_path_to_save_scatter: /home/cdsw/project_dmp/data/4g/train_table/cluster_plot_202012.pdf
+4g_clustering_imputation_method: zero
+4g_clustering_limit_manuf: 10
+4G_dimension_reduction_parameter:
+    n_components_reduction: 10
+    n_iter_reduction: 3
+    copy_reduction: True
+    check_input_reduction: True
+    engine_reduction: 'auto'
+    random_state_reduction: 42
+4G_clustering_parameter:
+    n_clusters: 20
+    n_init_clusters: 30
+    max_iter_clusters: 1500
+    n_jobs_clusters: -1
+    random_state_clustering: 42
+4g_downsampled_or_train_tag: downsampled
+4g_train_tag: train
+4g_score_tag: score
+4g_sample_size_to_compute_stats: 500000
+4g_lte_map_cols:
+  - msisdn
+  - segment
+  - device4g
+  - usim
+  - sdn
+  - payload_4g_kb
+4g_cb_prepaid_postpaid_cols:
+  - msisdn
+  - lac
+  - ci
+4g_imeidb_cols:
+  - msisdn
+  - imei
+  - tac
+  - manufacture
+  - design_type
+  - device_type
+  - data_capable
+  - os
+  - network
+  - multisim
+  - volte
+4g_clustering_unit_of_analysis:
+    - lac_ci
+    - weekstart
+    - msisdn
+4g_clustering_features_to_select:
+    - lac_ci
+    - weekstart
+    - msisdn
+    - fea_custprof_segment_data_user
+    - fea_los
+    - fea_custprof_status
+    - fea_custprof_brand
+    - fea_custprof_segment_hvc_mtd
+    - fea_custprof_segment_hvc_m1
+    - fea_custprof_loyalty_tier
+    - fea_custprof_nik_age
+    - fea_custprof_arpu_segment_name
+    - fea_handset_imeis
+    - fea_handset_count_01m
+    - fea_handset_count_02m
+    - fea_handset_count_03m
+    - fea_handset_count_04m
+    - fea_handset_count_05m
+    - fea_handset_changed_count_01m
+    - fea_handset_changed_count_02m
+    - fea_handset_changed_count_03m
+    - fea_handset_changed_count_04m
+    - fea_handset_changed_count_05m
+    - fea_int_app_usage_onlinebanking_data_vol_01w
+    - fea_int_app_usage_onlinebanking_data_vol_02w
+    - fea_int_app_usage_onlinebanking_data_vol_03w
+    - fea_int_app_usage_onlinebanking_data_vol_01m
+    - fea_int_app_usage_onlinebanking_data_vol_02m
+    - fea_int_app_usage_onlinebanking_data_vol_03m
+    - fea_int_app_usage_onlinebanking_accessed_apps_01w
+    - fea_int_app_usage_onlinebanking_accessed_apps_02w
+    - fea_int_app_usage_onlinebanking_accessed_apps_03w
+    - fea_int_app_usage_onlinebanking_accessed_apps_01m
+    - fea_int_app_usage_onlinebanking_accessed_apps_02m
+    - fea_int_app_usage_onlinebanking_accessed_apps_03m
+    - fea_int_app_usage_education_data_vol_01w
+    - fea_int_app_usage_education_data_vol_02w
+    - fea_int_app_usage_education_data_vol_03w
+    - fea_int_app_usage_education_data_vol_01m
+    - fea_int_app_usage_education_data_vol_02m
+    - fea_int_app_usage_education_data_vol_03m
+    - fea_int_app_usage_education_accessed_apps_01w
+    - fea_int_app_usage_education_accessed_apps_02w
+    - fea_int_app_usage_education_accessed_apps_03w
+    - fea_int_app_usage_education_accessed_apps_01m
+    - fea_int_app_usage_education_accessed_apps_02m
+    - fea_int_app_usage_education_accessed_apps_03m
+    - fea_int_app_usage_gaming_data_vol_01w
+    - fea_int_app_usage_gaming_data_vol_02w
+    - fea_int_app_usage_gaming_data_vol_03w
+    - fea_int_app_usage_gaming_data_vol_01m
+    - fea_int_app_usage_gaming_data_vol_02m
+    - fea_int_app_usage_gaming_data_vol_03m
+    - fea_int_app_usage_gaming_accessed_apps_01w
+    - fea_int_app_usage_gaming_accessed_apps_02w
+    - fea_int_app_usage_gaming_accessed_apps_03w
+    - fea_int_app_usage_gaming_accessed_apps_01m
+    - fea_int_app_usage_gaming_accessed_apps_02m
+    - fea_int_app_usage_gaming_accessed_apps_03m
+    - fea_int_app_usage_finance_sites_data_vol_01w
+    - fea_int_app_usage_finance_sites_data_vol_02w
+    - fea_int_app_usage_finance_sites_data_vol_03w
+    - fea_int_app_usage_finance_sites_data_vol_01m
+    - fea_int_app_usage_finance_sites_data_vol_02m
+    - fea_int_app_usage_finance_sites_data_vol_03m
+    - fea_int_app_usage_finance_sites_accessed_apps_01w
+    - fea_int_app_usage_finance_sites_accessed_apps_02w
+    - fea_int_app_usage_finance_sites_accessed_apps_03w
+    - fea_int_app_usage_finance_sites_accessed_apps_01m
+    - fea_int_app_usage_finance_sites_accessed_apps_02m
+    - fea_int_app_usage_finance_sites_accessed_apps_03m
+    - fea_int_app_usage_social_media_sites_data_vol_01w
+    - fea_int_app_usage_social_media_sites_data_vol_02w
+    - fea_int_app_usage_social_media_sites_data_vol_03w
+    - fea_int_app_usage_social_media_sites_data_vol_01m
+    - fea_int_app_usage_social_media_sites_data_vol_02m
+    - fea_int_app_usage_social_media_sites_data_vol_03m
+    - fea_int_app_usage_social_media_sites_accessed_apps_01w
+    - fea_int_app_usage_social_media_sites_accessed_apps_02w
+    - fea_int_app_usage_social_media_sites_accessed_apps_03w
+    - fea_int_app_usage_social_media_sites_accessed_apps_01m
+    - fea_int_app_usage_social_media_sites_accessed_apps_02m
+    - fea_int_app_usage_social_media_sites_accessed_apps_03m
+    - fea_int_app_usage_social_media_sites_days_since_first_usage
+    - fea_int_app_usage_social_media_sites_days_since_last_usage
+    - fea_int_app_usage_payments_data_vol_01w
+    - fea_int_app_usage_payments_data_vol_02w
+    - fea_int_app_usage_payments_data_vol_03w
+    - fea_int_app_usage_payments_data_vol_01m
+    - fea_int_app_usage_payments_data_vol_02m
+    - fea_int_app_usage_payments_data_vol_03m
+    - fea_int_app_usage_payments_accessed_apps_01w
+    - fea_int_app_usage_payments_accessed_apps_02w
+    - fea_int_app_usage_payments_accessed_apps_03w
+    - fea_int_app_usage_payments_accessed_apps_01m
+    - fea_int_app_usage_payments_accessed_apps_02m
+    - fea_int_app_usage_payments_accessed_apps_03m
+    - fea_int_usage_non_zero_usage_days_03m
+    - fea_int_usage_zero_usage_count_to_usage_count_ratio_03m
+    - fea_int_usage_tot_kb_data_usage_03m
+    - fea_int_usage_daily_avg_kb_data_usage_03m
+    - fea_int_usage_2g_kb_data_usage_03m
+    - fea_int_usage_3g_kb_data_usage_03m
+    - fea_int_usage_4g_kb_data_usage_03m
+    - fea_int_usage_4g_kb_data_usage_01m
+    - fea_int_usage_weekday_kb_usage_03m
+    - fea_int_usage_weekend_kb_usage_03m
+    - fea_rech_tot_amt_sum_02m
+    - fea_rech_tot_amt_sum_03m
+    - fea_rech_tot_trx_sum_02m
+    - fea_rech_tot_trx_sum_03m
+    - fea_rech_tot_amt_avg_02m
+    - fea_rech_tot_amt_avg_03m
+    - fea_rech_tot_amt_stddev_03m
+    - fea_rech_tot_days_no_bal_sum_01w
+    - fea_rech_tot_days_no_bal_sum_02w
+    - fea_rech_tot_days_no_bal_sum_03w
+    - fea_rech_tot_days_no_bal_sum_01m
+    - fea_rech_tot_days_no_bal_sum_02m
+    - fea_rech_tot_days_no_bal_sum_03m
+    - fea_rech_tot_days_no_bal_avg_03m
+    - fea_rech_tot_days_no_bal_avg_02m
+    - fea_rech_annualize_factor
+    - fea_rev_voice_tot_sum_01m
+    - fea_rev_voice_tot_sum_02m
+    - fea_rev_voice_tot_sum_03m
+    - fea_rev_data_tot_sum_01m
+    - fea_rev_data_tot_sum_02m
+    - fea_rev_data_tot_sum_03m
+    - fea_rev_sms_tot_sum_01m
+    - fea_rev_sms_tot_sum_02m
+    - fea_rev_sms_tot_sum_03m
+    - fea_rev_data_sms_tot_sum_01m
+    - fea_rev_data_sms_tot_sum_02m
+    - fea_rev_data_sms_tot_sum_03m
+    - fea_rev_voice_weekend_tot_sum_03m
+    - fea_rev_data_weekend_tot_sum_03m
+    - fea_rev_sms_weekend_tot_sum_03m
+    - fea_rev_data_sms_weekend_tot_sum_03m
+    - fea_rev_voice_sms_weekend_tot_sum_03m
+    - fea_rev_voice_data_weekend_tot_sum_03m
+    - segment
+    - device4g
+    - usim
+    - sdn
+    - payload_4g_kb
+    - manufacture
+    - device_type
+    - data_capable
+    - os
+    - network
+    - multisim
+    - volte
+    - fea_network_broadband_revenue_avg_6m
+    - fea_network_ccsr_cs_avg_6m
+    - fea_network_ccsr_ps_avg_6m
+    - fea_network_cssr_cs_avg_6m
+    - fea_network_cssr_ps_avg_6m
+    - fea_network_downlink_traffic_volume_mb_avg_6m
+    - fea_network_edge_mbyte_avg_6m
+    - fea_network_gprs_mbyte_avg_6m
+    - fea_network_hosr_num_sum_avg_6m
+    - fea_network_hsdpa_accesability_avg_6m
+    - fea_network_hsupa_accesability_avg_6m
+    - fea_network_hsupa_mean_user_avg_6m
+    - fea_network_ifhosr_avg_6m
+    - fea_network_payload_hspa_mbyte_avg_6m
+    - fea_network_payload_psr99_mbyte_avg_6m
+    - fea_network_total_payload_mb_avg_6m
+    - fea_network_total_throughput_kbps_avg_6m
+    - fea_network_voice_revenue_avg_6m
+    - fea_network_volume_voice_traffic_erl_avg_6m
+    - fea_network_hosr_avg_6m
+    - fea_network_hosr_denum_sum_avg_6m
+
+4g_clustering_cols_to_log:
+    - fea_handset_imeis
+    - fea_handset_count_01m
+    - fea_handset_count_02m
+    - fea_handset_count_03m
+    - fea_handset_count_04m
+    - fea_handset_count_05m
+    - fea_handset_changed_count_01m
+    - fea_handset_changed_count_02m
+    - fea_handset_changed_count_03m
+    - fea_handset_changed_count_04m
+    - fea_handset_changed_count_05m
+    - fea_rev_voice_tot_sum_01m
+    - fea_rev_voice_tot_sum_02m
+    - fea_rev_voice_tot_sum_03m
+    - fea_rev_data_tot_sum_01m
+    - fea_rev_data_tot_sum_02m
+    - fea_rev_data_tot_sum_03m
+    - fea_rev_sms_tot_sum_01m
+    - fea_rev_sms_tot_sum_02m
+    - fea_rev_sms_tot_sum_03m
+    - fea_rev_data_sms_tot_sum_01m
+    - fea_rev_data_sms_tot_sum_02m
+    - fea_rev_data_sms_tot_sum_03m
+    - fea_rev_voice_weekend_tot_sum_03m
+    - fea_rev_data_weekend_tot_sum_03m
+    - fea_rev_sms_weekend_tot_sum_03m
+    - fea_rev_data_sms_weekend_tot_sum_03m
+    - fea_rev_voice_sms_weekend_tot_sum_03m
+    - fea_rev_voice_data_weekend_tot_sum_03m
+
+
+# # ############# psi ###############
+# columns_to_include:
+#   - "dimension"
+#   - "bins"
+#   - "proportion_baseline"
+#   - "proportion_current"
+#   - "psi"
+# # #### baseline #####
+# features_binning:
+#  fea_custprof_nik_age:
+#     0:
+#       max: 30
+#       min: -inf
+#       proportion: 0.2104
+#     1:
+#       max: 39
+#       min: 31
+#       proportion: 0.1831
+#     2:
+#       max: 90
+#       min: 51
+#       proportion: 0.2042
+#     3:
+#       max: 18
+#       min: -9
+#       proportion: 0.1905
+#     4:
+#       max: inf
+#       min: 40
+#       proportion: 0.2118
+#  fea_handset_count_01m:
+#     0:
+#       max: 1
+#       min: -inf
+#       proportion: 0.5064
+#     1:
+#       max: 28
+#       min: 2
+#       proportion: 0.4795
+#     2:
+#       max: inf
+#       min: 0
+#       proportion: 0.014
+#  fea_handset_count_02m:
+#     0:
+#       max: 1
+#       min: -inf
+#       proportion: 0.4219
+#     1:
+#       max: 2
+#       min: 2
+#       proportion: 0.3444
+#     2:
+#       max: 0
+#       min: 0
+#       proportion: 0.0116
+#     3:
+#       max: inf
+#       min: 3
+#       proportion: 0.2222
+#  fea_handset_count_03m:
+#     0:
+#       max: 1
+#       min: -inf
+#       proportion: 0.3343
+#     1:
+#       max: 2
+#       min: 2
+#       proportion: 0.3183
+#     2:
+#       max: 0
+#       min: 0
+#       proportion: 0.0092
+#     3:
+#       max: inf
+#       min: 3
+#       proportion: 0.3382
+#  fea_handset_count_04m:
+#     0:
+#       max: 1
+#       min: -inf
+#       proportion: 0.3039
+#     1:
+#       max: 3
+#       min: 2
+#       proportion: 0.4879
+#     2:
+#       max: 0
+#       min: 0
+#       proportion: 0.0083
+#     3:
+#       max: inf
+#       min: 4
+#       proportion: 0.1998
+#  fea_handset_count_05m:
+#     0:
+#       max: 1
+#       min: -inf
+#       proportion: 0.2784
+#     1:
+#       max: 2
+#       min: 2
+#       proportion: 0.304
+#     2:
+#       max: 150
+#       min: 4
+#       proportion: 0.2346
+#     3:
+#       max: 0
+#       min: 0
+#       proportion: 0.0076
+#     4:
+#       max: inf
+#       min: 3
+#       proportion: 0.1754
+#  fea_handset_changed_count_01m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.5205
+#     1:
+#       max: inf
+#       min: 1
+#       proportion: 0.4795
+#  fea_handset_changed_count_02m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.4335
+#     1:
+#       max: 1
+#       min: 1
+#       proportion: 0.3444
+#     2:
+#       max: inf
+#       min: 2
+#       proportion: 0.2222
+#  fea_handset_changed_count_03m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.3435
+#     1:
+#       max: 1
+#       min: 1
+#       proportion: 0.3183
+#     2:
+#       max: inf
+#       min: 2
+#       proportion: 0.3382
+#  fea_handset_changed_count_04m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.3122
+#     1:
+#       max: 2
+#       min: 1
+#       proportion: 0.4879
+#     2:
+#       max: inf
+#       min: 3
+#       proportion: 0.1998
+#  fea_handset_changed_count_05m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.286
+#     1:
+#       max: 1
+#       min: 1
+#       proportion: 0.304
+#     2:
+#       max: 149
+#       min: 3
+#       proportion: 0.2346
+#     3:
+#       max: inf
+#       min: 2
+#       proportion: 0.1754
+#  fea_los:
+#     0:
+#       max: 341
+#       min: -inf
+#       proportion: 0.2002
+#     1:
+#       max: 827
+#       min: 342
+#       proportion: 0.1988
+#     2:
+#       max: 332045
+#       min: 2038
+#       proportion: 0.1985
+#     3:
+#       max: 110
+#       min: 0
+#       proportion: 0.2033
+#     4:
+#       max: inf
+#       min: 828
+#       proportion: 0.1992
+#  fea_int_usage_non_zero_usage_days_03m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.3997
+#     1:
+#       max: 4
+#       min: 1
+#       proportion: 0.1829
+#     2:
+#       max: 13
+#       min: 13
+#       proportion: 0.2363
+#     3:
+#       max: inf
+#       min: 5
+#       proportion: 0.1811
+#  fea_int_usage_tot_kb_data_usage_03m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.4025
+#     1:
+#       max: 2891663
+#       min: 1
+#       proportion: 0.199
+#     2:
+#       max: 6865761133
+#       min: 17110269
+#       proportion: 0.1983
+#     3:
+#       max: inf
+#       min: 2891664
+#       proportion: 0.2002
+#  fea_int_usage_avg_kb_data_usage_03m:
+#     0:
+#       max: 0.0
+#       min: -inf
+#       proportion: 0.4025
+#     1:
+#       max: 32079.0
+#       min: 0.01098901098901099
+#       proportion: 0.1996
+#     2:
+#       max: 75447924.53846154
+#       min: 187499.96703296702
+#       proportion: 0.1986
+#     3:
+#       max: inf
+#       min: 32079.01098901099
+#       proportion: 0.1994
+#  fea_int_usage_2g_kb_data_usage_03m:
+#     0:
+#       max: 56
+#       min: -inf
+#       proportion: 0.6017
+#     1:
+#       max: 67605
+#       min: 57
+#       proportion: 0.1995
+#     2:
+#       max: inf
+#       min: 67606
+#       proportion: 0.1988
+#  fea_int_usage_3g_kb_data_usage_03m:
+#     0:
+#       max: 128189
+#       min: -inf
+#       proportion: 0.6018
+#     1:
+#       max: 2345602
+#       min: 128190
+#       proportion: 0.2004
+#     2:
+#       max: inf
+#       min: 2345603
+#       proportion: 0.1977
+#  fea_int_usage_4g_kb_data_usage_03m:
+#     0:
+#       max: 2653
+#       min: -inf
+#       proportion: 0.6012
+#     1:
+#       max: 10540709
+#       min: 2654
+#       proportion: 0.2004
+#     2:
+#       max: inf
+#       min: 10540710
+#       proportion: 0.1984
+#  fea_int_usage_4g_kb_data_usage_01m:
+#     0:
+#       max: 2860163
+#       min: -inf
+#       proportion: 0.8018
+#     1:
+#       max: inf
+#       min: 2860164
+#       proportion: 0.1982
+#  fea_int_usage_weekday_kb_usage_03m:
+#     0:
+#       max: 1954820
+#       min: -inf
+#       proportion: 0.6036
+#     1:
+#       max: 12046976
+#       min: 1954821
+#       proportion: 0.1979
+#     2:
+#       max: inf
+#       min: 12046977
+#       proportion: 0.1985
+#  fea_int_usage_weekend_kb_usage_03m:
+#     0:
+#       max: 676117
+#       min: -inf
+#       proportion: 0.6023
+#     1:
+#       max: 5150347
+#       min: 676118
+#       proportion: 0.1996
+#     2:
+#       max: inf
+#       min: 5150348
+#       proportion: 0.1981
+#  fea_rech_tot_amt_sum_02m:
+#     0:
+#       max: 14000.0
+#       min: -inf
+#       proportion: 0.4005
+#     1:
+#       max: 49000.0
+#       min: 15000.0
+#       proportion: 0.199
+#     2:
+#       max: 344849984.0
+#       min: 141000.0
+#       proportion: 0.1963
+#     3:
+#       max: inf
+#       min: 50000.0
+#       proportion: 0.2042
+#  fea_rech_tot_amt_sum_03m:
+#     0:
+#       max: 24000.0
+#       min: -inf
+#       proportion: 0.3904
+#     1:
+#       max: 79000.0
+#       min: 25000.0
+#       proportion: 0.2026
+#     2:
+#       max: 382550016.0
+#       min: 224000.0
+#       proportion: 0.1988
+#     3:
+#       max: inf
+#       min: 80000.0
+#       proportion: 0.2082
+#  fea_rech_tot_trx_sum_02m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.3004
+#     1:
+#       max: 2
+#       min: 1
+#       proportion: 0.3023
+#     2:
+#       max: 2552
+#       min: 5
+#       proportion: 0.2296
+#     3:
+#       max: inf
+#       min: 3
+#       proportion: 0.1676
+#  fea_rech_tot_trx_sum_03m:
+#     0:
+#       max: 1
+#       min: -inf
+#       proportion: 0.3325
+#     1:
+#       max: 3
+#       min: 2
+#       proportion: 0.2056
+#     2:
+#       max: 5199
+#       min: 8
+#       proportion: 0.2135
+#     3:
+#       max: inf
+#       min: 4
+#       proportion: 0.2484
+#  fea_rech_tot_amt_avg_02m:
+#     0:
+#       max: 6662.650390625
+#       min: -inf
+#       proportion: 0.399
+#     1:
+#       max: 14372.548828125
+#       min: 6666.66650390625
+#       proportion: 0.2018
+#     2:
+#       max: 6000000.0
+#       min: 35000.0
+#       proportion: 0.1999
+#     3:
+#       max: inf
+#       min: 14375.0
+#       proportion: 0.1993
+#  fea_rech_tot_amt_avg_03m:
+#     0:
+#       max: 9782.177734375
+#       min: -inf
+#       proportion: 0.402
+#     1:
+#       max: 17306.666015625
+#       min: 9782.6083984375
+#       proportion: 0.1994
+#     2:
+#       max: 6000000.0
+#       min: 37333.33203125
+#       proportion: 0.1978
+#     3:
+#       max: inf
+#       min: 17307.69140625
+#       proportion: 0.2008
+#  fea_rech_tot_amt_stddev_03m:
+#     0:
+#       max: 999.9999999999999
+#       min: -inf
+#       proportion: 0.603
+#     1:
+#       max: 4291.072087698668
+#       min: 1000.0
+#       proportion: 0.1996
+#     2:
+#       max: inf
+#       min: 4291.072087698669
+#       proportion: 0.1974
+#  fea_rech_tot_days_no_bal_sum_01w:
+#     0:
+#       max: 1
+#       min: -inf
+#       proportion: 0.6021
+#     1:
+#       max: 6
+#       min: 2
+#       proportion: 0.071
+#     2:
+#       max: inf
+#       min: 7
+#       proportion: 0.3268
+#  fea_rech_tot_days_no_bal_sum_02w:
+#     0:
+#       max: 4
+#       min: -inf
+#       proportion: 0.6016
+#     1:
+#       max: 13
+#       min: 5
+#       proportion: 0.1064
+#     2:
+#       max: inf
+#       min: 14
+#       proportion: 0.292
+#  fea_rech_tot_days_no_bal_sum_03w:
+#     0:
+#       max: 5
+#       min: -inf
+#       proportion: 0.6001
+#     1:
+#       max: 16
+#       min: 6
+#       proportion: 0.1323
+#     2:
+#       max: inf
+#       min: 17
+#       proportion: 0.2676
+#  fea_rech_tot_days_no_bal_sum_01m:
+#     0:
+#       max: 8
+#       min: -inf
+#       proportion: 0.5975
+#     1:
+#       max: 23
+#       min: 9
+#       proportion: 0.1608
+#     2:
+#       max: inf
+#       min: 24
+#       proportion: 0.2417
+#  fea_rech_tot_days_no_bal_sum_02m:
+#     0:
+#       max: 16
+#       min: -inf
+#       proportion: 0.6023
+#     1:
+#       max: 48
+#       min: 17
+#       proportion: 0.1958
+#     2:
+#       max: inf
+#       min: 49
+#       proportion: 0.2019
+#  fea_rech_tot_days_no_bal_sum_03m:
+#     0:
+#       max: 25
+#       min: -inf
+#       proportion: 0.6011
+#     1:
+#       max: 68
+#       min: 26
+#       proportion: 0.1988
+#     2:
+#       max: inf
+#       min: 69
+#       proportion: 0.2001
+#  fea_rech_tot_days_no_bal_avg_03m:
+#     0:
+#       max: 0.3333333333333333
+#       min: -inf
+#       proportion: 0.6021
+#     1:
+#       max: 2.0
+#       min: 0.6666666666666666
+#       proportion: 0.071
+#     2:
+#       max: inf
+#       min: 2.3333333333333335
+#       proportion: 0.3268
+#  fea_rech_tot_days_no_bal_avg_02m:
+#     0:
+#       max: 0.5
+#       min: -inf
+#       proportion: 0.6021
+#     1:
+#       max: 3.0
+#       min: 1.0
+#       proportion: 0.071
+#     2:
+#       max: inf
+#       min: 3.5
+#       proportion: 0.3268
+#  payload_4g_kb:
+#     0:
+#       max: 3381587.0
+#       min: -inf
+#       proportion: 0.8022
+#     1:
+#       max: inf
+#       min: 3381588.0
+#       proportion: 0.1978
+#  fea_network_broadband_revenue_avg_21to0w:
+#     0:
+#       max: 2670.091796875
+#       min: -inf
+#       proportion: 0.1996
+#     1:
+#       max: 29847.623046875
+#       min: 2670.183349609375
+#       proportion: 0.2015
+#     2:
+#       max: 11188409.0
+#       min: 76670.3203125
+#       proportion: 0.1982
+#     3:
+#       max: 614.2661743164062
+#       min: 0.0
+#       proportion: 0.2012
+#     4:
+#       max: inf
+#       min: 29848.220703125
+#       proportion: 0.1995
+#  fea_network_ccsr_cs_avg_21to0w:
+#     0:
+#       max: 0.6177047415451313
+#       min: -inf
+#       proportion: 0.8012
+#     1:
+#       max: inf
+#       min: 0.6177047472348023
+#       proportion: 0.1988
+#  fea_network_ccsr_ps_avg_21to0w:
+#     0:
+#       max: 0.9997793707261567
+#       min: -inf
+#       proportion: 0.8034
+#     1:
+#       max: inf
+#       min: 0.9997793719019507
+#       proportion: 0.1966
+#  fea_network_cssr_cs_avg_21to0w:
+#     0:
+#       max: 0.6180830466074158
+#       min: -inf
+#       proportion: 0.8036
+#     1:
+#       max: inf
+#       min: 0.6180830588665621
+#       proportion: 0.1964
+#  fea_network_cssr_ps_avg_21to0w:
+#     0:
+#       max: 0.9917159784853989
+#       min: -inf
+#       proportion: 0.8029
+#     1:
+#       max: inf
+#       min: 0.9917160554208336
+#       proportion: 0.1971
+#  fea_network_downlink_traffic_volume_mb_avg_21to0w:
+#     0:
+#       max: inf
+#       min: -inf
+#       proportion: 1.0
+#  fea_network_edge_mbyte_avg_21to0w:
+#     0:
+#       max: 58.3753008161272
+#       min: -inf
+#       proportion: 0.6018
+#     1:
+#       max: 259.99557590484625
+#       min: 58.37715984526138
+#       proportion: 0.2007
+#     2:
+#       max: inf
+#       min: 260.0022297813778
+#       proportion: 0.1975
+#  fea_network_gprs_mbyte_avg_21to0w:
+#     0:
+#       max: 2.498256774175734
+#       min: -inf
+#       proportion: 0.6022
+#     1:
+#       max: 8.589573088146395
+#       min: 2.498259135654995
+#       proportion: 0.2006
+#     2:
+#       max: inf
+#       min: 8.589981714884443
+#       proportion: 0.1972
+#  fea_network_hosr_num_sum_avg_21to0w:
+#     0:
+#       max: 721.1428571428572
+#       min: -inf
+#       proportion: 0.6021
+#     1:
+#       max: 2631.6190476190477
+#       min: 721.1904761904761
+#       proportion: 0.2004
+#     2:
+#       max: inf
+#       min: 2631.6666666666665
+#       proportion: 0.1975
+#  fea_network_hsdpa_accesability_avg_21to0w:
+#     0:
+#       max: 0.9978627961377718
+#       min: -inf
+#       proportion: 0.8051
+#     1:
+#       max: inf
+#       min: 0.997862798048763
+#       proportion: 0.1949
+#  fea_network_hsupa_accesability_avg_21to0w:
+#     0:
+#       max: 0.9979510618232359
+#       min: -inf
+#       proportion: 0.8042
+#     1:
+#       max: inf
+#       min: 0.9979510766291743
+#       proportion: 0.1958
+#  fea_network_hsupa_mean_user_avg_21to0w:
+#     0:
+#       max: 9.66739417989418
+#       min: -inf
+#       proportion: 0.8024
+#     1:
+#       max: inf
+#       min: 9.667428571428573
+#       proportion: 0.1976
+#  fea_network_ifhosr_avg_21to0w:
+#     0:
+#       max: 0.9523809523809522
+#       min: -inf
+#       proportion: 0.8014
+#     1:
+#       max: inf
+#       min: 0.9523809523809524
+#       proportion: 0.1986
+#  fea_network_payload_hspa_mbyte_avg_21to0w:
+#     0:
+#       max: 9592.664026078715
+#       min: -inf
+#       proportion: 0.8021
+#     1:
+#       max: inf
+#       min: 9592.689347130907
+#       proportion: 0.1979
+#  fea_network_payload_psr99_mbyte_avg_21to0w:
+#     0:
+#       max: 22.848347936357783
+#       min: -inf
+#       proportion: 0.8017
+#     1:
+#       max: inf
+#       min: 22.84841310410273
+#       proportion: 0.1983
+#  fea_network_total_payload_mb_avg_21to0w:
+#     0:
+#       max: inf
+#       min: -inf
+#       proportion: 1.0
+#  fea_network_total_throughput_kbps_avg_21to0w:
+#     0:
+#       max: inf
+#       min: -inf
+#       proportion: 1.0
+#  fea_network_voice_revenue_avg_21to0w:
+#     0:
+#       max: 44238.86328125
+#       min: -inf
+#       proportion: 0.1998
+#     1:
+#       max: 91359.0234375
+#       min: 44238.9140625
+#       proportion: 0.1999
+#     2:
+#       max: 11079107.0
+#       min: 182161.5625
+#       proportion: 0.1981
+#     3:
+#       max: 13601.5419921875
+#       min: 0.0
+#       proportion: 0.202
+#     4:
+#       max: inf
+#       min: 91359.125
+#       proportion: 0.2002
+#  fea_network_volume_voice_traffic_erl_avg_21to0w:
+#     0:
+#       max: 14.439238095238096
+#       min: -inf
+#       proportion: 0.8026
+#     1:
+#       max: inf
+#       min: 14.439285714285715
+#       proportion: 0.1974
+#  fea_network_hosr_avg_21to0w:
+#     0:
+#       max: 96.79233831819245
+#       min: -inf
+#       proportion: 0.6027
+#     1:
+#       max: 98.89514567540793
+#       min: 96.79235353959162
+#       proportion: 0.1986
+#     2:
+#       max: inf
+#       min: 98.89518105064006
+#       proportion: 0.1988
+#  fea_network_hosr_denum_sum_avg_21to0w:
+#     0:
+#       max: 741.4285714285714
+#       min: -inf
+#       proportion: 0.6025
+#     1:
+#       max: 2700.3333333333335
+#       min: 741.4761904761905
+#       proportion: 0.2004
+#     2:
+#       max: inf
+#       min: 2700.3809523809523
+#       proportion: 0.1971
+#  fea_rev_voice_tot_sum_01m:
+#     0:
+#       max: 519
+#       min: -inf
+#       proportion: 0.6014
+#     1:
+#       max: 10499
+#       min: 520
+#       proportion: 0.2016
+#     2:
+#       max: inf
+#       min: 10500
+#       proportion: 0.197
+#  fea_rev_voice_tot_sum_02m:
+#     0:
+#       max: 4650
+#       min: -inf
+#       proportion: 0.6017
+#     1:
+#       max: 24223
+#       min: 4651
+#       proportion: 0.2007
+#     2:
+#       max: inf
+#       min: 24224
+#       proportion: 0.1975
+#  fea_rev_voice_tot_sum_03m:
+#     0:
+#       max: 9948
+#       min: -inf
+#       proportion: 0.6027
+#     1:
+#       max: 41922
+#       min: 9949
+#       proportion: 0.1988
+#     2:
+#       max: inf
+#       min: 41923
+#       proportion: 0.1986
+#  fea_rev_data_tot_sum_01m:
+#     0:
+#       max: 18079
+#       min: -inf
+#       proportion: 0.8016
+#     1:
+#       max: inf
+#       min: 18080
+#       proportion: 0.1984
+#  fea_rev_data_tot_sum_02m:
+#     0:
+#       max: 1183
+#       min: -inf
+#       proportion: 0.6019
+#     1:
+#       max: 54079
+#       min: 1184
+#       proportion: 0.2015
+#     2:
+#       max: inf
+#       min: 54080
+#       proportion: 0.1966
+#  fea_rev_data_tot_sum_03m:
+#     0:
+#       max: 12791
+#       min: -inf
+#       proportion: 0.6018
+#     1:
+#       max: 81199
+#       min: 12792
+#       proportion: 0.2003
+#     2:
+#       max: inf
+#       min: 81200
+#       proportion: 0.1979
+#  fea_rev_sms_tot_sum_01m:
+#     0:
+#       max: 659
+#       min: -inf
+#       proportion: 0.8039
+#     1:
+#       max: inf
+#       min: 660
+#       proportion: 0.1961
+#  fea_rev_sms_tot_sum_02m:
+#     0:
+#       max: 1699
+#       min: -inf
+#       proportion: 0.8019
+#     1:
+#       max: inf
+#       min: 1700
+#       proportion: 0.1981
+#  fea_rev_sms_tot_sum_03m:
+#     0:
+#       max: 384
+#       min: -inf
+#       proportion: 0.6021
+#     1:
+#       max: 3149
+#       min: 385
+#       proportion: 0.1976
+#     2:
+#       max: inf
+#       min: 3150
+#       proportion: 0.2003
+#  fea_rev_data_sms_tot_sum_01m:
+#     0:
+#       max: 974
+#       min: -inf
+#       proportion: 0.6
+#     1:
+#       max: 24738
+#       min: 975
+#       proportion: 0.2012
+#     2:
+#       max: inf
+#       min: 24739
+#       proportion: 0.1988
+#  fea_rev_data_sms_tot_sum_02m:
+#     0:
+#       max: 349
+#       min: -inf
+#       proportion: 0.3995
+#     1:
+#       max: 6859
+#       min: 350
+#       proportion: 0.2025
+#     2:
+#       max: 550000000
+#       min: 58015
+#       proportion: 0.1989
+#     3:
+#       max: inf
+#       min: 6860
+#       proportion: 0.1991
+#  fea_rev_data_sms_tot_sum_03m:
+#     0:
+#       max: 2455
+#       min: -inf
+#       proportion: 0.4023
+#     1:
+#       max: 24999
+#       min: 2456
+#       proportion: 0.1982
+#     2:
+#       max: 550100300
+#       min: 91985
+#       proportion: 0.1973
+#     3:
+#       max: inf
+#       min: 25000
+#       proportion: 0.2022
+#  fea_rev_voice_weekend_tot_sum_03m:
+#     0:
+#       max: 1597
+#       min: -inf
+#       proportion: 0.6021
+#     1:
+#       max: 10841
+#       min: 1598
+#       proportion: 0.1992
+#     2:
+#       max: inf
+#       min: 10842
+#       proportion: 0.1987
+#  fea_rev_data_weekend_tot_sum_03m:
+#     0:
+#       max: 12719
+#       min: -inf
+#       proportion: 0.8034
+#     1:
+#       max: inf
+#       min: 12720
+#       proportion: 0.1966
+#  fea_rev_sms_weekend_tot_sum_03m:
+#     0:
+#       max: 699
+#       min: -inf
+#       proportion: 0.789
+#     1:
+#       max: inf
+#       min: 700
+#       proportion: 0.211
+#  fea_rev_data_sms_weekend_tot_sum_03m:
+#     0:
+#       max: 1053
+#       min: -inf
+#       proportion: 0.603
+#     1:
+#       max: 18299
+#       min: 1054
+#       proportion: 0.1987
+#     2:
+#       max: inf
+#       min: 18300
+#       proportion: 0.1983
+#  fea_rev_voice_sms_weekend_tot_sum_03m:
+#     0:
+#       max: 2495
+#       min: -inf
+#       proportion: 0.6018
+#     1:
+#       max: 12940
+#       min: 2496
+#       proportion: 0.2004
+#     2:
+#       max: inf
+#       min: 12941
+#       proportion: 0.1978
+#  fea_rev_voice_data_weekend_tot_sum_03m:
+#     0:
+#       max: 163
+#       min: -inf
+#       proportion: 0.401
+#     1:
+#       max: 8999
+#       min: 164
+#       proportion: 0.2007
+#     2:
+#       max: 275000000
+#       min: 35781
+#       proportion: 0.1984
+#     3:
+#       max: inf
+#       min: 9000
+#       proportion: 0.1999
+#  fea_int_usage_non_zero_usage_days_03m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.3997
+#     1:
+#       max: 4
+#       min: 1
+#       proportion: 0.1829
+#     2:
+#       max: 13
+#       min: 13
+#       proportion: 0.2363
+#     3:
+#       max: inf
+#       min: 5
+#       proportion: 0.1811
+#  fea_int_usage_tot_kb_data_usage_03m:
+#     0:
+#       max: 0
+#       min: -inf
+#       proportion: 0.4025
+#     1:
+#       max: 2929501
+#       min: 1
+#       proportion: 0.1998
+#     2:
+#       max: 6865761133
+#       min: 17117105
+#       proportion: 0.1983
+#     3:
+#       max: inf
+#       min: 2929502
+#       proportion: 0.1995
+#  fea_int_usage_avg_kb_data_usage_03m:
+#     0:
+#       max: 0.0
+#       min: -inf
+#       proportion: 0.4025
+#     1:
+#       max: 32648.32967032967
+#       min: 0.01098901098901099
+#       proportion: 0.2006
+#     2:
+#       max: 75447924.53846154
+#       min: 187463.0879120879
+#       proportion: 0.1986
+#     3:
+#       max: inf
+#       min: 32648.340659340658
+#       proportion: 0.1983
+#  fea_int_usage_2g_kb_data_usage_03m:
+#     0:
+#       max: 58
+#       min: -inf
+#       proportion: 0.6021
+#     1:
+#       max: 67699
+#       min: 59
+#       proportion: 0.1992
+#     2:
+#       max: inf
+#       min: 67700
+#       proportion: 0.1987
+#  fea_int_usage_3g_kb_data_usage_03m:
+#     0:
+#       max: 125360
+#       min: -inf
+#       proportion: 0.6008
+#     1:
+#       max: 2364158
+#       min: 125361
+#       proportion: 0.2021
+#     2:
+#       max: inf
+#       min: 2364159
+#       proportion: 0.1971
+#  fea_int_usage_4g_kb_data_usage_03m:
+#     0:
+#       max: 3910
+#       min: -inf
+#       proportion: 0.6027
+#     1:
+#       max: 10598408
+#       min: 3911
+#       proportion: 0.1994
+#     2:
+#       max: inf
+#       min: 10598409
+#       proportion: 0.1979
+#  fea_int_usage_4g_kb_data_usage_01m:
+#     0:
+#       max: 2888478
+#       min: -inf
+#       proportion: 0.8023
+#     1:
+#       max: inf
+#       min: 2888479
+#       proportion: 0.1977

@@ -1,0 +1,26 @@
+stages:
+  - install
+  - test
+  - integration-test
+  - deploy
+
+package-install:
+  stage: install
+  script:
+    - kedro install
+  only:
+    - develop
+
+unit-test:
+  stage: test
+  script:
+    - kedro test
+  only:
+    - develop
+
+integration-test:
+  stage: test
+  script:
+    - kedro integration-test
+  only:
+    - develop

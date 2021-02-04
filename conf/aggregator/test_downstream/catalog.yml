@@ -1,0 +1,45 @@
+#######################################################
+####################### Aggregator ####################
+#######################################################
+
+input_rejected:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: "hdfs:///data/landing/dmp_remote/users/siangang/agg/tests/data/intermediate/rejected.parquet"
+    file_format: parquet
+    save_args:
+        index: False
+        mode: overwrite
+
+input_validated:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: "hdfs:///data/landing/dmp_remote/users/siangang/agg/tests/data/intermediate/validated.parquet"
+    file_format: parquet
+    save_args:
+        index: False
+        mode: overwrite
+
+
+rank:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: "hdfs:///data/landing/dmp_remote/users/siangang/agg/tests/data/intermediate/rank.parquet"
+    file_format: parquet
+    save_args:
+        index: False
+        mode: overwrite
+
+
+event_validated:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: "hdfs:///data/landing/dmp_remote/users/siangang/agg/tests/data/intermediate/event_validated.parquet"
+    file_format: parquet
+    save_args:
+        index: False
+        mode: overwrite
+
+event_rejected:
+    type: kedro.extras.datasets.spark.SparkDataSet
+    filepath: "hdfs:///data/landing/dmp_remote/users/siangang/agg/tests/data/intermediate/event_rejected.parquet"
+    file_format: parquet
+    save_args:
+        index: False
+        mode: overwrite

@@ -1,0 +1,484 @@
+hdfs_base_path: hdfs:///data/landing/dmp_production/ # HDFS Base Path
+
+features_binning:
+  fea_handset_count_05m:
+    0:
+      max: 1.5
+      min: -inf
+      proportion: 0.5817
+    1:
+      max: 2.5
+      min: 1.5
+      proportion: 0.2584
+    2:
+      max: 3.5
+      min: 2.5
+      proportion: 0.0972
+    3:
+      max: 4.5
+      min: 3.5
+      proportion: 0.0357
+    4:
+      max: inf
+      min: 4.5
+      proportion: 0.027
+  fea_int_app_usage_credit_lending_company_accessed_apps_03m:
+    0:
+      max: 0.5
+      min: -inf
+      proportion: 0.9691
+    1:
+      max: 1.5
+      min: 0.5
+      proportion: 0.0245
+    2:
+      max: 3.5
+      min: 1.5
+      proportion: 0.0045
+    3:
+      max: inf
+      min: 3.5
+      proportion: 0.0019
+  fea_int_app_usage_credit_lending_company_data_vol_03m:
+    0:
+      max: 63906.0
+      min: -inf
+      proportion: 0.9763
+    1:
+      max: 1354203.0
+      min: 63906.0
+      proportion: 0.0107
+    2:
+      max: 2576771.0
+      min: 1354203.0
+      proportion: 0.0042
+    3:
+      max: 9004698.0
+      min: 2576771.0
+      proportion: 0.0047
+    4:
+      max: inf
+      min: 9004698.0
+      proportion: 0.004
+  fea_int_app_usage_ecommerce_data_vol_03m:
+    0:
+      max: 67644980.0
+      min: -inf
+      proportion: 0.9086
+    1:
+      max: 212143912.0
+      min: 67644980.0
+      proportion: 0.0409
+    2:
+      max: 428612112.0
+      min: 212143912.0
+      proportion: 0.0201
+    3:
+      max: 1071103200.0
+      min: 428612112.0
+      proportion: 0.0183
+    4:
+      max: inf
+      min: 1071103200.0
+      proportion: 0.0121
+  fea_int_app_usage_facebook_data_vol_03m:
+    0:
+      max: 74668876.0
+      min: -inf
+      proportion: 0.6311
+    1:
+      max: 746167072.0
+      min: 74668876.0
+      proportion: 0.1455
+    2:
+      max: 4192578688.0
+      min: 746167072.0
+      proportion: 0.1428
+    3:
+      max: 17847186432.0
+      min: 4192578688.0
+      proportion: 0.0672
+    4:
+      max: inf
+      min: 17847186432.0
+      proportion: 0.0134
+  fea_int_app_usage_gambling_data_vol_03m:
+    0:
+      max: 552.0
+      min: -inf
+      proportion: 0.8644
+    1:
+      max: 188092.0
+      min: 552.0
+      proportion: 0.0733
+    2:
+      max: 511827.5
+      min: 188092.0
+      proportion: 0.0223
+    3:
+      max: 3477633.0
+      min: 511827.5
+      proportion: 0.0248
+    4:
+      max: inf
+      min: 3477633.0
+      proportion: 0.0152
+  fea_int_app_usage_mobile_wallets_data_vol_03m:
+    0:
+      max: 22718.5
+      min: -inf
+      proportion: 0.8359
+    1:
+      max: 399201.0
+      min: 22718.5
+      proportion: 0.0858
+    2:
+      max: 4655860.5
+      min: 399201.0
+      proportion: 0.0485
+    3:
+      max: 39737900.0
+      min: 4655860.5
+      proportion: 0.0231
+    4:
+      max: inf
+      min: 39737900.0
+      proportion: 0.0067
+  fea_int_usage_non_zero_usage_days_03m:
+    0:
+      max: 4.5
+      min: -inf
+      proportion: 0.4936
+    1:
+      max: 62.5
+      min: 4.5
+      proportion: 0.2549
+    2:
+      max: 86.5
+      min: 62.5
+      proportion: 0.0877
+    3:
+      max: 90.5
+      min: 86.5
+      proportion: 0.0464
+    4:
+      max: inf
+      min: 90.5
+      proportion: 0.1174
+  fea_los:
+    0:
+      max: 173.5
+      min: -inf
+      proportion: 0.2849
+    1:
+      max: 311.5
+      min: 173.5
+      proportion: 0.1142
+    2:
+      max: 512.5
+      min: 311.5
+      proportion: 0.0954
+    3:
+      max: 1403.5
+      min: 512.5
+      proportion: 0.2236
+    4:
+      max: inf
+      min: 1403.5
+      proportion: 0.2819
+  fea_rech_tot_amt_avg_03m:
+    0:
+      max: 24934.4091796875
+      min: -inf
+      proportion: 0.7195
+    1:
+      max: 43101.724609375
+      min: 24934.4091796875
+      proportion: 0.1223
+    2:
+      max: 64942.30859375
+      min: 43101.724609375
+      proportion: 0.0799
+    3:
+      max: 77752.52734375
+      min: 64942.30859375
+      proportion: 0.0282
+    4:
+      max: inf
+      min: 77752.52734375
+      proportion: 0.05
+  fea_rech_tot_trx_sum_03m:
+    0:
+      max: 0.5
+      min: -inf
+      proportion: 0.2251
+    1:
+      max: 12.5
+      min: 0.5
+      proportion: 0.6787
+    2:
+      max: 18.5
+      min: 12.5
+      proportion: 0.051
+    3:
+      max: 25.5
+      min: 18.5
+      proportion: 0.0234
+    4:
+      max: inf
+      min: 25.5
+      proportion: 0.0218
+  fea_rev_voice_tot_sum_03m:
+    0:
+      max: 152.5
+      min: -inf
+      proportion: 0.4403
+    1:
+      max: 2061.5
+      min: 152.5
+      proportion: 0.0485
+    2:
+      max: 100871.0
+      min: 2061.5
+      proportion: 0.426
+    3:
+      max: 168237.5
+      min: 100871.0
+      proportion: 0.0425
+    4:
+      max: inf
+      min: 168237.5
+      proportion: 0.0427
+  fea_txt_msg_banks_unique_senders_count_03m:
+    0:
+      max: 0.5
+      min: -inf
+      proportion: 0.9071
+    1:
+      max: 1.5
+      min: 0.5
+      proportion: 0.0611
+    2:
+      max: 2.5
+      min: 1.5
+      proportion: 0.0188
+    3:
+      max: inf
+      min: 2.5
+      proportion: 0.013
+  fea_txt_msg_credit_lending_companies_incoming_count_03m:
+    0:
+      max: 1.5
+      min: -inf
+      proportion: 0.9786
+    1:
+      max: 3.5
+      min: 1.5
+      proportion: 0.0066
+    2:
+      max: 32.5
+      min: 3.5
+      proportion: 0.0114
+    3:
+      max: 55.5
+      min: 32.5
+      proportion: 0.0015
+    4:
+      max: inf
+      min: 55.5
+      proportion: 0.0019
+  fea_txt_msg_credit_lending_companies_unique_senders_count_03m:
+    0:
+      max: 1.5
+      min: -inf
+      proportion: 0.9907
+    1:
+      max: 2.5
+      min: 1.5
+      proportion: 0.0042
+    2:
+      max: 3.5
+      min: 2.5
+      proportion: 0.0016
+    3:
+      max: 5.5
+      min: 3.5
+      proportion: 0.0015
+    4:
+      max: inf
+      min: 5.5
+      proportion: 0.002
+  fea_txt_msg_ecommerce_shopping_incoming_count_03m:
+    0:
+      max: 0.5
+      min: -inf
+      proportion: 0.8796
+    1:
+      max: 1.5
+      min: 0.5
+      proportion: 0.0513
+    2:
+      max: 6.5
+      min: 1.5
+      proportion: 0.0519
+    3:
+      max: 13.5
+      min: 6.5
+      proportion: 0.0109
+    4:
+      max: inf
+      min: 13.5
+      proportion: 0.0064
+  fea_txt_msg_incoming_count_03m:
+    0:
+      max: 124.5
+      min: -inf
+      proportion: 0.4597
+    1:
+      max: 470.5
+      min: 124.5
+      proportion: 0.392
+    2:
+      max: 687.5
+      min: 470.5
+      proportion: 0.0695
+    3:
+      max: 1099.5
+      min: 687.5
+      proportion: 0.0448
+    4:
+      max: inf
+      min: 1099.5
+      proportion: 0.034
+  fea_voice_tot_dur_12_5_am_03m:
+    0:
+      max: 7.5
+      min: -inf
+      proportion: 0.3515
+    1:
+      max: 39.5
+      min: 7.5
+      proportion: 0.261
+    2:
+      max: 84.5
+      min: 39.5
+      proportion: 0.1128
+    3:
+      max: 200.5
+      min: 84.5
+      proportion: 0.0998
+    4:
+      max: inf
+      min: 200.5
+      proportion: 0.1749
+  fea_voice_tot_uniq_inc_calls_03m:
+    0:
+      max: 2.5
+      min: -inf
+      proportion: 0.3992
+    1:
+      max: 21.5
+      min: 2.5
+      proportion: 0.3517
+    2:
+      max: 34.5
+      min: 21.5
+      proportion: 0.0994
+    3:
+      max: 100.5
+      min: 34.5
+      proportion: 0.1288
+    4:
+      max: inf
+      min: 100.5
+      proportion: 0.0209
+  fea_voice_tot_uniq_out_calls_03m:
+    0:
+      max: 0.5
+      min: -inf
+      proportion: 0.3326
+    1:
+      max: 2.5
+      min: 0.5
+      proportion: 0.0953
+    2:
+      max: 10.5
+      min: 2.5
+      proportion: 0.2072
+    3:
+      max: 71.5
+      min: 10.5
+      proportion: 0.3112
+    4:
+      max: inf
+      min: 71.5
+      proportion: 0.0537
+  raw_default_probability_score:
+    0:
+      count: 972
+      max: 0.04117090237265955
+      mean: 0.0264
+      min: -inf
+      proportion: 0.0216
+    1:
+      count: 972
+      max: 0.06782827313451203
+      mean: 0.0542
+      min: 0.04117090237265955
+      proportion: 0.0311
+    2:
+      count: 972
+      max: 0.0990509958360713
+      mean: 0.0833
+      min: 0.06782827313451203
+      proportion: 0.0502
+    3:
+      count: 972
+      max: 0.1344338768649594
+      mean: 0.116
+      min: 0.0990509958360713
+      proportion: 0.0627
+    4:
+      count: 972
+      max: 0.18059562800400558
+      mean: 0.1567
+      min: 0.1344338768649594
+      proportion: 0.0861
+    5:
+      count: 972
+      max: 0.23476861014784106
+      mean: 0.2072
+      min: 0.18059562800400558
+      proportion: 0.0961
+    6:
+      count: 972
+      max: 0.3045953984739458
+      mean: 0.2674
+      min: 0.23476861014784106
+      proportion: 0.1026
+    7:
+      count: 972
+      max: 0.3942719697389325
+      mean: 0.3469
+      min: 0.3045953984739458
+      proportion: 0.125
+    8:
+      count: 972
+      max: 0.5244905060697753
+      mean: 0.4555
+      min: 0.3942719697389325
+      proportion: 0.2994
+    9:
+      count: 971
+      max: inf
+      mean: 0.6433
+      min: 0.5244905060697753
+      proportion: 0.1253
+
+columns_to_include:
+  - "weekstart"
+  - "dimension"
+  - "bins"
+  - "proportion_baseline"
+  - "proportion_current"
+  - "psi"

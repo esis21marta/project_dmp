@@ -1,0 +1,29 @@
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+_parquet_weekstart_1w: &parquet_weekstart_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  load_args:
+    partition_filter_period: 1w
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_hive: &hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  write_mode: insert
+
+with_score:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_score/07_model_scoring/external/kredivo/default_probability_score.parquet
+  create_versions: True
+
+hive_scoring_table:
+  <<: *hive
+  database: dmp_production
+  table: production_kredivo_scoring

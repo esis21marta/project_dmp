@@ -1,0 +1,9 @@
+partner_id: ka7o00tf
+columns_to_include:
+  - partner_id
+  - requested_at
+  - msisdn
+  - refresh_date
+
+hdfs_base_path: hdfs:///data/landing/dmp_production/
+

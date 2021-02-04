@@ -1,0 +1,17 @@
+pai_experiment: "Home Credit"
+pai_run_name: "Please fill in"
+
+pai_run: "Please fill in"
+
+sample_size: 100_000
+score_filter_query: "flag_approved == 'Approved'"
+plot_feature_distributions: True
+
+# Do not modify parameters below, except for username at setup
+use_pai_logging: True
+
+pai_username: "Please fill in"
+pai_runs: "hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/pai/test"
+
+pai_tags:
+    - "Feature stability"

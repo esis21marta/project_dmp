@@ -1,0 +1,280 @@
+#####################################################################################################################################
+############################################## ses Stimulation ##############################################################
+#####################################################################################################################################
+### dynamic ###
+ses_method: median # median or mean
+ses_threshold: 0.3 #up to users
+ses_train_score: train # score or train
+ses_downsample_fraction: .1
+ses_weekstart: 2020-11-30
+ses_year: 202011
+ses_network_dates:
+    - 2020-37
+    - 2020-40
+ses_low_path_to_save_hist: /home/cdsw/project_dmp/data/ses/train_table/silhoutte_low_202011.pdf
+ses_medium_path_to_save_hist: /home/cdsw/project_dmp/data/ses/train_table/silhoutte_medium_202011.pdf
+ses_high_path_to_save_hist: /home/cdsw/project_dmp/data/ses/train_table/silhoutte_high_202011.pdf
+count_table: 3
+
+ses_clustering_parameter_low:
+    n_clusters: 5
+    n_init_clusters: 8
+    max_iter_clusters: 20
+    n_jobs_clusters: -1
+    random_state_clustering: 42
+
+ses_clustering_parameter_medium:
+    n_clusters: 5
+    n_init_clusters: 8
+    max_iter_clusters: 20
+    n_jobs_clusters: -1
+    random_state_clustering: 42
+
+ses_clustering_parameter_high:
+    n_clusters: 5
+    n_init_clusters: 8
+    max_iter_clusters: 20
+    n_jobs_clusters: -1
+    random_state_clustering: 42
+
+### static ###
+ses_segment_low: low
+ses_segment_medium: medium
+ses_segment_high: high
+agg_cols_to_select:
+    - msisdn
+    - trx_pkg_prchse
+    - rev_pkg_prchse
+    - trx_voice_pkg_prchs
+    - trx_sms_pkg_prchs
+    - trx_data_pkg_prchs
+    - trx_roam_pkg_prchs
+    - rev_voice_pkg_prchs
+    - rev_sms_pkg_prchs
+    - rev_data_pkg_prchs
+    - rev_roam_pkg_prchs
+ses_cols_rfm:
+    - msisdn
+    - tot_freq_recharge
+    - avg_recharge_trx
+    - rev_l3m_max
+    - ses_segmentation
+ses_cols_to_select:
+    - msisdn
+    - fea_handset_count_01m
+    - fea_handset_count_02m
+    - fea_handset_count_03m
+    - fea_handset_changed_count_01m
+    - fea_handset_changed_count_02m
+    - fea_handset_changed_count_03m
+    - fea_int_app_usage_onlinebanking_data_vol_01m
+    - fea_int_app_usage_onlinebanking_data_vol_02m
+    - fea_int_app_usage_onlinebanking_data_vol_03m
+    - fea_int_app_usage_onlinebanking_accessed_apps_01m
+    - fea_int_app_usage_onlinebanking_accessed_apps_02m
+    - fea_int_app_usage_onlinebanking_accessed_apps_03m
+    - fea_int_app_usage_education_accessed_apps_01m
+    - fea_int_app_usage_education_accessed_apps_02m
+    - fea_int_app_usage_education_accessed_apps_03m
+    - fea_int_app_usage_gaming_data_vol_01m
+    - fea_int_app_usage_gaming_data_vol_02m
+    - fea_int_app_usage_gaming_data_vol_03m
+    - fea_int_app_usage_gaming_accessed_apps_01m
+    - fea_int_app_usage_gaming_accessed_apps_02m
+    - fea_int_app_usage_gaming_accessed_apps_03m
+    - fea_int_app_usage_social_media_sites_data_vol_01m
+    - fea_int_app_usage_social_media_sites_data_vol_02m
+    - fea_int_app_usage_social_media_sites_data_vol_03m
+    - fea_int_app_usage_social_media_sites_accessed_apps_01m
+    - fea_int_app_usage_social_media_sites_accessed_apps_02m
+    - fea_int_app_usage_social_media_sites_accessed_apps_03m
+    - fea_int_app_usage_payments_data_vol_01m
+    - fea_int_app_usage_payments_data_vol_02m
+    - fea_int_app_usage_payments_data_vol_03m
+    - fea_int_app_usage_payments_accessed_apps_01m
+    - fea_int_app_usage_payments_accessed_apps_02m
+    - fea_int_app_usage_payments_accessed_apps_03m
+    - fea_int_usage_zero_usage_days_03m
+    - fea_int_usage_non_zero_usage_days_03m
+    - fea_int_usage_tot_kb_data_usage_01m
+    - fea_int_usage_tot_kb_data_usage_02m
+    - fea_int_usage_tot_kb_data_usage_03m
+    - fea_int_usage_2g_kb_data_usage_01m
+    - fea_int_usage_2g_kb_data_usage_02m
+    - fea_int_usage_2g_kb_data_usage_03m
+    - fea_int_usage_3g_kb_data_usage_01m
+    - fea_int_usage_3g_kb_data_usage_02m
+    - fea_int_usage_3g_kb_data_usage_03m
+    - fea_int_usage_4g_kb_data_usage_01m
+    - fea_int_usage_4g_kb_data_usage_02m
+    - fea_int_usage_4g_kb_data_usage_03m
+    - fea_int_usage_weekday_kb_usage_01m
+    - fea_int_usage_weekend_kb_usage_01m
+    - fea_int_usage_weekday_kb_usage_02m
+    - fea_int_usage_weekend_kb_usage_02m
+    - fea_int_usage_weekday_kb_usage_03m
+    - fea_int_usage_weekend_kb_usage_03m
+    - fea_rech_tot_amt_sum_01m
+    - fea_rech_tot_amt_sum_02m
+    - fea_rech_tot_amt_sum_03m
+    - fea_rech_tot_trx_sum_01m
+    - fea_rech_tot_trx_sum_02m
+    - fea_rech_tot_trx_sum_03m
+    - fea_rech_tot_amt_avg_02m
+    - fea_rech_tot_amt_avg_03m
+    - fea_rech_tot_trx_trd_03m
+    - fea_rech_tot_amt_stddev_03m
+    - trx_pkg_prchse
+    - rev_pkg_prchse
+    - trx_voice_pkg_prchs
+    - trx_sms_pkg_prchs
+    - trx_data_pkg_prchs
+    - trx_roam_pkg_prchs
+    - rev_voice_pkg_prchs
+    - rev_sms_pkg_prchs
+    - rev_data_pkg_prchs
+    - rev_roam_pkg_prchs
+    - fea_rech_trx_pkg_prchse_sum_01m
+    - fea_rech_trx_pkg_prchse_sum_02m
+    - fea_rech_trx_pkg_prchse_sum_03m
+    - fea_rech_trx_pkg_prchse_avg_03m
+    - fea_rech_trx_pkg_prchse_avg_02m
+    - fea_rech_rev_pkg_prchse_sum_01m
+    - fea_rech_rev_pkg_prchse_sum_02m
+    - fea_rech_rev_pkg_prchse_sum_03m
+    - fea_rech_rev_pkg_prchse_avg_03m
+    - fea_rech_rev_pkg_prchse_avg_02m
+    - fea_rech_tot_days_no_bal_sum_01m
+    - fea_rech_tot_days_no_bal_sum_02m
+    - fea_rech_tot_days_no_bal_sum_03m
+    - fea_rech_tot_days_no_bal_avg_03m
+    - fea_rech_tot_days_no_bal_avg_02m
+    - fea_rev_voice_tot_sum_01m
+    - fea_rev_voice_tot_sum_02m
+    - fea_rev_voice_tot_sum_03m
+    - fea_rev_data_tot_sum_01m
+    - fea_rev_data_tot_sum_02m
+    - fea_rev_data_tot_sum_03m
+    - fea_rev_sms_tot_sum_01m
+    - fea_rev_sms_tot_sum_02m
+    - fea_rev_sms_tot_sum_03m
+    - fea_rev_data_sms_tot_sum_01m
+    - fea_rev_data_sms_tot_sum_02m
+    - fea_rev_data_sms_tot_sum_03m
+    - fea_rev_voice_weekend_tot_sum_01m
+    - fea_rev_voice_weekend_tot_sum_02m
+    - fea_rev_voice_weekend_tot_sum_03m
+    - fea_rev_data_weekend_tot_sum_01m
+    - fea_rev_data_weekend_tot_sum_02m
+    - fea_rev_data_weekend_tot_sum_03m
+    - fea_rev_sms_weekend_tot_sum_01m
+    - fea_rev_sms_weekend_tot_sum_02m
+    - fea_rev_sms_weekend_tot_sum_03m
+    - fea_rev_data_sms_weekend_tot_sum_01m
+    - fea_rev_data_sms_weekend_tot_sum_02m
+    - fea_rev_data_sms_weekend_tot_sum_03m
+    - fea_rev_voice_sms_weekend_tot_sum_01m
+    - fea_rev_voice_sms_weekend_tot_sum_02m
+    - fea_rev_voice_sms_weekend_tot_sum_03m
+    - fea_rev_voice_data_weekend_tot_sum_01m
+    - fea_rev_voice_data_weekend_tot_sum_02m
+    - fea_rev_voice_data_weekend_tot_sum_03m
+    - fea_txt_msg_incoming_count_01m
+    - fea_txt_msg_incoming_count_02m
+    - fea_txt_msg_incoming_count_03m
+    - fea_txt_msg_outgoing_count_01m
+    - fea_txt_msg_outgoing_count_02m
+    - fea_txt_msg_outgoing_count_03m
+    - fea_txt_msg_count_01m
+    - fea_txt_msg_count_02m
+    - fea_txt_msg_count_03m
+    - fea_txt_msg_voice_ratio_01m
+    - fea_txt_msg_voice_ratio_02m
+    - fea_txt_msg_voice_ratio_incoming_01m
+    - fea_txt_msg_voice_ratio_incoming_02m
+    - fea_txt_msg_voice_ratio_incoming_03m
+    - fea_txt_msg_voice_ratio_outgoing_01m
+    - fea_txt_msg_voice_ratio_outgoing_02m
+    - fea_txt_msg_voice_ratio_outgoing_03m
+    - fea_txt_msg_banks_incoming_count_03m
+    - fea_txt_msg_credit_lending_companies_incoming_count_03m
+    - fea_txt_msg_ecommerce_shopping_incoming_count_03m
+    - fea_txt_msg_mobile_wallets_incoming_count_03m
+    - fea_txt_msg_other_online_services_incoming_count_02m
+    - fea_txt_msg_multifinance_incoming_count_02m
+    - fea_txt_msg_banks_unique_senders_count_03m
+    - fea_txt_msg_credit_lending_companies_unique_senders_count_03m
+    - fea_txt_msg_travel_company_unique_senders_count_02m
+    - fea_voice_inc_call_dur_01m
+    - fea_voice_inc_call_dur_02m
+    - fea_voice_inc_call_dur_03m
+    - fea_voice_out_call_dur_01m
+    - fea_voice_out_call_dur_02m
+    - fea_voice_out_call_dur_03m
+    - fea_voice_tot_call_dur_01m
+    - fea_voice_tot_call_dur_02m
+    - fea_voice_tot_call_dur_03m
+    - fea_voice_tot_inc_calls_01m
+    - fea_voice_tot_inc_calls_02m
+    - fea_voice_tot_inc_calls_03m
+    - fea_voice_tot_out_calls_01m
+    - fea_voice_tot_out_calls_02m
+    - fea_voice_tot_out_calls_03m
+    - fea_voice_tot_calls_01m
+    - fea_voice_tot_calls_02m
+    - fea_voice_tot_calls_03m
+    - fea_voice_inc_to_tot_calls_num_03m
+    - fea_voice_inc_to_tot_calls_dur_03m
+    - fea_voice_tot_uniq_inc_calls_01m
+    - fea_voice_tot_uniq_inc_calls_02m
+    - fea_voice_tot_uniq_inc_calls_03m
+    - fea_voice_tot_uniq_out_calls_01m
+    - fea_voice_tot_uniq_out_calls_02m
+    - fea_voice_tot_uniq_out_calls_03m
+    - fea_voice_tot_uniq_calls_01m
+    - fea_voice_tot_uniq_calls_02m
+    - fea_voice_tot_uniq_calls_03m
+    - fea_voice_avg_uniq_inc_call_03m
+    - fea_voice_avg_uniq_out_call_03m
+    - fea_voice_avg_uniq_tot_call_03m
+    - fea_voice_tot_dur_12_5_am_03m
+    - fea_custprof_segment_data_user
+    - fea_los
+    - fea_custprof_status
+    - fea_custprof_brand
+    - fea_custprof_segment_hvc_mtd
+    - fea_custprof_segment_hvc_m1
+    - fea_custprof_loyalty_tier
+    - fea_custprof_nik_age
+    - fea_custprof_arpu_segment_name
+ses_cols_to_select_log:
+    - fea_handset_count_01m
+    - fea_handset_count_02m
+    - fea_handset_count_03m
+    - fea_handset_changed_count_01m
+    - fea_handset_changed_count_02m
+    - fea_handset_changed_count_03m
+    - fea_rev_voice_tot_sum_01m
+    - fea_rev_voice_tot_sum_02m
+    - fea_rev_voice_tot_sum_03m
+    - fea_rev_data_tot_sum_01m
+    - fea_rev_data_tot_sum_02m
+    - fea_rev_data_tot_sum_03m
+    - fea_rev_sms_tot_sum_01m
+    - fea_rev_sms_tot_sum_02m
+    - fea_rev_sms_tot_sum_03m
+    - fea_rev_data_sms_tot_sum_01m
+    - fea_rev_data_sms_tot_sum_02m
+    - fea_rev_data_sms_tot_sum_03m
+    - fea_rev_voice_weekend_tot_sum_03m
+    - fea_rev_data_weekend_tot_sum_03m
+    - fea_rev_sms_weekend_tot_sum_03m
+    - fea_rev_data_sms_weekend_tot_sum_03m
+    - fea_rev_voice_sms_weekend_tot_sum_03m
+    - fea_rev_voice_data_weekend_tot_sum_03m
+ses_cols_to_drop:
+    - fea_rech_tot_amt_sum_01m
+    - fea_rech_tot_amt_sum_02m
+    - fea_rech_tot_amt_sum_03m
+    - fea_rech_tot_amt_avg_02m
+    - fea_rech_tot_amt_avg_03m

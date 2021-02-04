@@ -1,0 +1,25 @@
+date_format_training: "%d-%b-%y 00:00:00"
+date_format_test: "%d-%b-%y"
+
+date_column: 'DATE_DECISION'
+msisdn_column: 'msisdn'
+
+column_mapping_training:
+  SKP: "skp"
+  PHONE: "msisdn"
+  DATE_DECISION: "application_date"
+  PRODUCT_TYPE: "product_type"
+  FLAG_APPROVED: "flag_approved"
+  FPD30: "flag_fpd30"
+  FSDP30: "flag_fsdp30"
+  FSTPD30: "flag_fstpd30"
+  FSTQPD30: "flag_fstqpd30"
+
+column_mapping_test:
+  SKP: "skp"
+  PHONE: "msisdn"
+  DATE_DECISION: "application_date"
+  PRODUCT: "product_type"
+  FLAG_APPROVED: "flag_approved"
+
+use_spark: False

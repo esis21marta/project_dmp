@@ -1,0 +1,4 @@
+score_column_name: "raw_default_probability_score"
+score_num_of_bins: 10
+
+filter_query: ''

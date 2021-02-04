@@ -1,0 +1,91 @@
+#---Start Aggregation Layer
+LoopConcurent:True
+--tag agg_customer_los --desc agg_customer_los<params>
+--tag agg_customer_profile --from-nodes customer_profile_aggregation --desc agg_customer_profile<params>
+--tag agg_handset --desc agg_handset<params>
+--tag agg_internet_app_usage --from-nodes bcp_feature_mapping,weekly_aggregation_internet_app_usage,internet_app_usage_weekly_aggregation --desc agg_internet_app_usage<params>
+--tag agg_internet_usage --desc agg_internet_usage<params>
+--tag agg_network --from-nodes create_network_weekly --desc agg_network<params>
+--tag agg_payu_usage --desc agg_payu_usage<params>
+--tag agg_recharge --desc agg_recharge<params>
+--tag agg_revenue --desc agg_revenue<params>
+--tag agg_text_messaging --desc agg_text_messaging<params>
+--tag agg_voice_calls --desc agg_voice_calls<params>
+#---End Aggregation Layer
+
+
+
+#---Start Primary Layer Step 1
+LoopConcurent:True
+--node create_partner_msisdns --desc create_partner_msisdns<params>
+#---End Primary Layer Step 1
+
+
+#---Start Primary Layer Step 2
+LoopConcurent:True
+--node filter_partner_data_customer_los --desc filter_partner_data_customer_los<params>
+--node customer_profile_filtered_data --desc customer_profile_filtered_data<params>
+--node filter_partner_data_handset --desc filter_partner_data_handset<params>
+--node filter_partner_data_internet_app_usage --desc filter_partner_data_internet_app_usage<params>
+--node filter_partner_data_internet_connection --desc filter_partner_data_internet_connection<params>
+--node filter_partner_data_internet_usage --desc filter_partner_data_internet_usage<params>
+--node filter_partner_data_network_msisdn --desc filter_partner_data_network_msisdn<params>
+--node filter_partner_data_payu_usage --desc filter_partner_data_payu_usage<params>
+--node filter_partner_data_digi_recharge --desc filter_partner_data_digi_recharge<params>
+--node filter_partner_data_recharge --desc filter_partner_data_recharge<params>
+--node filter_partner_data_recharge_account_balance --desc filter_partner_data_recharge_account_balance<params>
+--node filter_partner_data_recharge_package_purchase --desc filter_partner_data_recharge_package_purchase<params>
+--node filter_partner_data_revenue --desc filter_partner_data_revenue<params>
+--node filter_partner_data_text_messaging --desc filter_partner_data_text_messaging<params>
+--node filter_partner_data_commercial_text_messaging --desc filter_partner_data_commercial_text_messaging<params>
+--node filter_partner_data_voice_calling --desc filter_partner_data_voice_calling<params>
+#---End Primary Layer Step 2
+
+
+#---Start Primary Layer Step 3
+LoopConcurent:True
+--tag prm_scaffold --from-nodes=create_scaffold --desc prm_scaffold<params>
+#---End Primary Layer Step 3
+
+
+#---Start Primary Layer Step 4
+LoopConcurent:True
+--node fill_time_series_handset --desc fill_time_series_handset<params>
+--node fill_time_series_internet_app_usage --desc fill_time_series_internet_app_usage<params>
+--node fill_time_series_internet_connection --desc fill_time_series_internet_connection<params>
+--node fill_time_series_internet_usage --desc fill_time_series_internet_usage<params>
+--node fill_time_series_network_msisdn --desc fill_time_series_network_msisdn<params>
+--node fill_time_series_payu_usage --desc fill_time_series_payu_usage<params>
+--node fill_time_series_recharge --desc fill_time_series_recharge<params>
+--node fill_time_series_digi_recharge --desc fill_time_series_digi_recharge<params>
+--node fill_time_series_recharge_account_balance --desc fill_time_series_recharge_account_balance<params>
+--node fill_time_series_recharge_package_purchase --desc fill_time_series_recharge_package_purchase<params>
+--node fill_time_series_revenue --desc fill_time_series_revenue<params>
+--node fill_time_series_text_messaging --desc fill_time_series_text_messaging<params>
+--node fill_time_series_commercial_text_messaging --desc fill_time_series_commercial_text_messaging<params>
+--node fill_time_series_voice_calling --desc fill_time_series_voice_calling<params>
+#---End Primary Layer Step 4
+
+
+#---Start Feature Layer
+LoopConcurent:True
+--tag fea_customer_los --desc fea_customer_los<params>
+--node fea_customer_profile --desc fea_customer_profile<params>
+--tag fea_handset --desc fea_handset<params>
+--node fea_internet_connection,fea_internet_app_usage,fea_internet_app_usage_pivot,fea_internet_app_usage_rename,fea_social_media --desc fea_internet_app_usage<params>
+--tag fea_internet_usage --desc fea_internet_usage<params>
+--node fea_network_msisdn --desc fea_network_msisdn<params>
+--tag fea_payu_usage --desc fea_payu_usage<params>
+--node fea_recharge --desc fea_recharge<params>
+--tag fea_text_messaging --desc fea_text_messaging<params>
+--tag fea_voice_calling --desc fea_voice_calling<params>
+--tag fea_revenue --desc fea_revenue<params>
+#---End Feature Layer
+
+
+#---Start Master Layer
+LoopConcurent:False
+--node build_master_table_dimension --desc build_master_table_dimension<params>
+--node build_scoring_master_table --desc build_scoring_master_table<params>
+--node build_master_hive_table_msisdn --desc build_master_hive_table_msisdn<params>
+#---End Master Layer

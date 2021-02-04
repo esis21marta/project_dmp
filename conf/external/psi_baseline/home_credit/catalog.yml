@@ -1,0 +1,17 @@
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+master:
+  <<: *parquet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/unpacking_master_table/hcid_unpacking/home_credit_default_probability_los_corrected_20200618_with_score.parquet
+
+psi_baseline:
+  type: kedro.extras.datasets.yaml.YAMLDataSet
+  filepath: /home/cdsw/psi_baseline.yml
+
+csi_baseline:
+  type: kedro.extras.datasets.yaml.YAMLDataSet
+  filepath: /home/cdsw/csi_baseline.yml

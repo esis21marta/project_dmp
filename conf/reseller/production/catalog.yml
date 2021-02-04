@@ -1,0 +1,48 @@
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+
+_hive_ra_dashboard: &hive_ra_dashboard
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  database: dmp_production
+  write_mode: upsert
+  table_pk:
+    - outlet_id
+    - month
+
+#######################################################
+####################### Layer 4 #######################
+#######################################################
+
+ra_mck_int_dmp_static_master_table:
+  <<: *parquet
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_geo.parquet
+
+ra_mck_int_dmp_dynamic_master_table:
+  <<: *parquet
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_revenue_daily_scoring_tsf.parquet
+
+ra_mck_int_master_dynamic_non_tsf:
+  <<: *parquet
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_revenue_daily_scoring.parquet
+
+#######################################################
+####################### Layer 7 #######################
+#######################################################
+
+ra_mck_int_dashboard_main_input:
+  <<: *hive_ra_dashboard
+  table: dashboard_outlet_main_input
+
+ra_mck_int_dashboard_performance_plot:
+  <<: *hive_ra_dashboard
+  table: dashboard_outlet_performance_plot
+
+ra_mck_int_filtered_outlets:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  database: dmp_production
+  table: reseller_ds_filtered_outlets
+  write_mode: upsert
+  table_pk:
+    - outlet_id
+    - run_date_time

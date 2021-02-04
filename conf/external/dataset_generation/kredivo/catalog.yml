@@ -1,0 +1,7 @@
+kredivo_training:
+  type: pandas.ParquetDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/dataset/kredivo/telkomsel_modelmonitoringandvalidation_20200629.parquet"
+
+kredivo_training_processed:
+  type: pandas.ParquetDataSet
+  filepath: "hdfs:///data/landing/gx_pnt/mck_dmp_ext/data_science/dataset/kredivo/kredivo_training_dataset_20200630.parquet"

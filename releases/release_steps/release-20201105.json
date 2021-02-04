@@ -1,0 +1,1675 @@
+{
+    "partner_msisdns": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_score/02_primary/partner_msisdns.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_score/02_primary/partner_msisdns.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_score/02_primary/partner_msisdns.parquet",
+        "stage": false,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l1_customer_los_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_customer_profile_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-06-15": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-15",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-15",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-15",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-06-22": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-22",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-22",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-22",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-06-29": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-29",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-29",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-06-29",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-07-06": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-06",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-06",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-06",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-07-13": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-13",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-13",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-13",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-07-20": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-20",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-20",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-20",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-07-27": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-27",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-27",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-07-27",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-08-03": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-03",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-03",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-03",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_handset_weekly_aggregated_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_content_mapping": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/content_mapping.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/content_mapping.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/content_mapping.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l1_segment_mapping": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/segment_mapping.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/segment_mapping.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/segment_mapping.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l1_category_mapping": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/category_mapping.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/category_mapping.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/category_mapping.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l1_fintech_mapping": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/fintech_mapping.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/fintech_mapping.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/fintech_mapping.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l1_app_mapping": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_mapping.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_mapping.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_mapping.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_app_feature_mapping": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_app_feature_category_mapping.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_app_feature_category_mapping.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_app_feature_category_mapping.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_app_usage_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_internet_connection_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l1_internet_usage_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l1_network_msisdn_weekly_aggregated_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_payu_usage_weekly_aggregation_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l1_rech_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_account_balance_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l1_chg_pkg_prchse_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l1_digi_rech_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_airtime_loan_id": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/00_reference/airtime/airtime_loan_content_ids.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/00_reference/airtime/airtime_loan_content_ids.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/00_reference/airtime/airtime_loan_content_ids.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_weekly_data_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_revenue_alt_weekly_data_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l1_commercial_text_mapping": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/sms_sender_mapping.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/sms_sender_mapping.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/sms_sender_mapping.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l1_broken_bnumber": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/broken_bnumber.parquet",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/broken_bnumber.parquet",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/broken_bnumber.parquet",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_text_messaging_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_commercial_text_messaging_weekly_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-08-10": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-10",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-10",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-10",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-08-17": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-17",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-17",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-17",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-08-24": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-24",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-24",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-24",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-08-31": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-31",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-31",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-08-31",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-09-07": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-07",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-07",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-07",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-09-14": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-14",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-14",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-14",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-09-21": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-21",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-21",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-21",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-09-28": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-28",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-28",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-09-28",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-10-05": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-05",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-05",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-05",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-10-12": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-12",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-12",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-12",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-10-19": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-19",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-19",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-19",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-10-26": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-26",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-26",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-10-26",
+        "stage": true,
+        "prod": false
+    },
+    "l2_voice_calling_weekly_aggregated_weekstart=2020-11-02": {
+        "dev_file_path": "hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-11-02",
+        "stage_file_path": "hdfs:///data/landing/dmp_staging/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-11-02",
+        "prod_file_path": "hdfs:///data/landing/dmp_production/release-20201105/mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet/weekstart=2020-11-02",
+        "stage": true,
+        "prod": false
+    }
+}

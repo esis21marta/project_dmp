@@ -1,0 +1,466 @@
+schema:
+  # Internet App Usage Domain
+  l1_content_mapping:
+    accessed_app: string
+    component: string
+    iab_content_channel: string
+    iab_content_media_format: string
+    iab_content_type: string
+    iab_tier1: string
+    iab_tier2: string
+
+  l1_segment_mapping:
+    accessed_app: string
+    iab_content_channel: string
+    iab_content_media_format: string
+    iab_content_type: string
+    iab_tier1: string
+    iab_tier2: string
+    segment: string
+
+  l1_category_mapping:
+    category: string
+    segment: string
+
+  l1_fintech_mapping:
+    accessed_app: string
+    category: string
+
+  l1_app_mapping:
+    accessed_app: string
+    category: string
+
+  l1_internet_app_feature_mapping:
+    accessed_app: string
+    category: string
+    component: string
+
+  l1_bcp_usage_daily:
+    trx_date: string
+    msisdn: string
+    rat: string
+    volume_in: long
+    volume_out: long
+    external_latency: decimal(12,3)
+    internal_latency: decimal(12,3)
+    duration: double
+    accessed_app: string
+    component: string
+
+  l2_internet_app_usage_weekly:
+    4g_duration_weekday: long
+    4g_duration_weekend: long
+    4g_external_latency_count_weekday: long
+    4g_external_latency_count_weekend: long
+    4g_external_latency_weekday: decimal(22,3)
+    4g_external_latency_weekend: decimal(22,3)
+    4g_internal_latency_count_weekday: long
+    4g_internal_latency_count_weekend: long
+    4g_internal_latency_weekday: decimal(22,3)
+    4g_internal_latency_weekend: decimal(22,3)
+    4g_volume_in_weekday: long
+    4g_volume_in_weekend: long
+    4g_volume_out_weekday: long
+    4g_volume_out_weekend: long
+    accessed_app:
+      containsNull: true
+      elementType: string
+      type: array
+    category: string
+    max_trx_date: date
+    min_trx_date: date
+    msisdn: string
+    volume_in: long
+    volume_out: long
+    weekstart: date
+
+  l2_internet_connection_weekly:
+    2g_duration_weekday: long
+    2g_duration_weekend: long
+    2g_external_latency_count_weekday: long
+    2g_external_latency_count_weekend: long
+    2g_external_latency_weekday: decimal(22,3)
+    2g_external_latency_weekend: decimal(22,3)
+    2g_internal_latency_count_weekday: long
+    2g_internal_latency_count_weekend: long
+    2g_internal_latency_weekday: decimal(22,3)
+    2g_internal_latency_weekend: decimal(22,3)
+    2g_volume_in_weekday: long
+    2g_volume_in_weekend: long
+    2g_volume_out_weekday: long
+    2g_volume_out_weekend: long
+    3g_duration_weekday: long
+    3g_duration_weekend: long
+    3g_external_latency_count_weekday: long
+    3g_external_latency_count_weekend: long
+    3g_external_latency_weekday: decimal(22,3)
+    3g_external_latency_weekend: decimal(22,3)
+    3g_internal_latency_count_weekday: long
+    3g_internal_latency_count_weekend: long
+    3g_internal_latency_weekday: decimal(22,3)
+    3g_internal_latency_weekend: decimal(22,3)
+    3g_volume_in_weekday: long
+    3g_volume_in_weekend: long
+    3g_volume_out_weekday: long
+    3g_volume_out_weekend: long
+    4g_duration_weekday: long
+    4g_duration_weekend: long
+    4g_external_latency_count_weekday: long
+    4g_external_latency_count_weekend: long
+    4g_external_latency_weekday: decimal(22,3)
+    4g_external_latency_weekend: decimal(22,3)
+    4g_internal_latency_count_weekday: long
+    4g_internal_latency_count_weekend: long
+    4g_internal_latency_weekday: decimal(22,3)
+    4g_internal_latency_weekend: decimal(22,3)
+    4g_volume_in_weekday: long
+    4g_volume_in_weekend: long
+    4g_volume_out_weekday: long
+    4g_volume_out_weekend: long
+    msisdn: string
+    weekstart: date
+
+  # Customer LOS Domain
+  l1_t_profile_full_hist:
+    activation_date: string
+    event_date: string
+    msisdn: string
+    prepost_label: string
+
+  l1_prepaid_customers_data:
+    activation_date: string
+    ci: string
+    event_date: string
+    lac: string
+    msisdn: string
+    paychannel: integer
+
+  l1_postpaid_customers_data:
+    activation_date: string
+    ci: string
+    event_date: string
+    lac: string
+    msisdn: string
+
+  # Customer Profile Domain
+  l1_cb_multidim:
+    area_sales: string
+    arpu_segment_name: string
+    bill_cycle: string
+    bill_responsibility_type: string
+    brand: string
+    cust_subtype_desc: string
+    cust_type_desc: string
+    event_date: string
+    los: long
+    loyalty_tier: string
+    lte_usim_user_flag: string
+    msisdn: string
+    mytsel_user_flag: string
+    nik_age: byte
+    nik_gender: string
+    persona_los: integer
+    price_plan: string
+    prsna_quadrant: string
+    region_sales: string
+    segment_data_user: string
+    segment_hvc_m1: byte
+    segment_hvc_mtd: byte
+    status: string
+    trx_date: string
+
+  # Handset Domain
+  l1_handset_dim_lookup:
+    device_type: string
+    manufacturer: string
+    market_name: string
+    tac: string
+
+  l1_handset_dd:
+    card_type: string
+    event_date: string
+    imei: string
+    msisdn: string
+    trx_date: string
+
+  l1_device_dbi_imei_handset_full:
+    design_type: string
+    device_type: string
+    manufacture: string
+    # msisdn: string
+    multisim: string
+    network: string
+    os: string
+    tac: string
+    volte: string
+
+  # Internet Usage Domain
+  l1_usage_upcc_dd:
+    city: string
+    cnt_session_day: long
+    cnt_session_night: long
+    event_date: string
+    kb_day: long
+    kb_night: long
+    msisdn: string
+    tot_kb: long
+    tot_trx: long
+    trx_day: long
+    trx_night: long
+    vol_data_2g_kb: long
+    vol_data_3g_kb: long
+    vol_data_4g_kb: long
+
+  # Network Domain
+  l1_mck_sales_dnkm_dd:
+    2g_avail: string
+    3g_avail: string
+    4g_avail: string
+    azimuth: long
+    band: string
+    branch_name: string
+    broadband_revenue: decimal(18,2)
+    bsc_rnc_name: string
+    bts: long
+    bts_sign: string
+    cap_hr30_pct_frside_erl: string
+    capable_2g: string
+    capable_3g: string
+    capable_4g: string
+    ccsr_cs: string
+    ccsr_ps: string
+    cell_name: string
+    cell_sign: string
+    cluster_name: string
+    cssr_cs: string
+    cssr_ps: string
+    desa: string
+    dongle: string
+    downlink_traffic_volume_mb: string
+    edge_mbyte: string
+    event_date: string
+    gprs_mbyte: string
+    horizontal_beamwidth: long
+    hosr: string
+    hosr_denum_sum: string
+    hosr_num_sum: string
+    hsdpa_accesability: string
+    hsupa_accesability: string
+    hsupa_mean_user: string
+    id_area: long
+    id_branch: long
+    id_cluster: long
+    id_desa: long
+    id_kab: long
+    id_kec: long
+    id_pro: long
+    id_reg: long
+    id_subbranch: long
+    ifhosr: string
+    kabupaten: string
+    kecamatan: string
+    lac_ci: string
+    lat: string
+    lon: string
+    max_occupancy_pct: string
+    max_of_traffic_voice_erl: string
+    mc_class: string
+    ne_id: string
+    other_revenue: decimal(18,2)
+    payload_hspa_mbyte: string
+    payload_psr99_mbyte: string
+    province: string
+    region: string
+    resource_block_utilizing_rate: string
+    site: long
+    site_id: string
+    site_name: string
+    site_sign: string
+    sms_revenue: decimal(18,2)
+    tch_trafic_erl_daily: string
+    total_payload_mb: string
+    total_throughput_kbps: string
+    vendor: string
+    vertical_beamwidth: long
+    voice_revenue: decimal(18,2)
+    volume_voice_traffic_erl: string
+
+  # PayU Usage Domain
+  l1_itdaml_dd_cdr_payu_prchse_all:
+    event_date: string
+    msisdn: string
+    rev_data: decimal(18,2)
+    rev_dls: decimal(18,2)
+    rev_dls_mms_cnt: decimal(18,2)
+    rev_dls_mms_p2p: decimal(18,2)
+    rev_dls_music: decimal(18,2)
+    rev_dls_other_vas: decimal(18,2)
+    rev_dls_rbt: decimal(18,2)
+    rev_dls_sms_nonp2p: decimal(18,2)
+    rev_dls_tp: decimal(18,2)
+    rev_dls_ussd: decimal(18,2)
+    rev_dls_videocall: decimal(18,2)
+    rev_dls_voice_nonp2p: decimal(18,2)
+    rev_roaming: decimal(18,2)
+    rev_sms: decimal(18,2)
+    rev_total: decimal(18,2)
+    rev_voice: decimal(18,2)
+    vol_data_day_kb: long
+    vol_data_kb: long
+    vol_data_night_kb: long
+
+  # Product Domain
+  l1_smy_usage_ocs_chg_dd:
+    content_id: string
+    cp_name: string
+    event_date: string
+    msisdn: string
+    pack_id: string
+    rev: decimal(18,2)
+    service_filter: string
+    trx_c: integer
+
+  l1_mck_sku_bucket_pivot:
+    4g_data_pool: string
+    allowance_subtype: string
+    bid: string
+    content_flag: string
+    coupon: string
+    data_4g: string
+    data_4g_mds: string
+    data_4g_omg: string
+    data_allnet: string
+    data_allnet_local: string
+    data_allnet_siang: string
+    data_dpi: string
+    data_games: string
+    data_mds: string
+    data_music: string
+    data_onnet: string
+    data_roaming: string
+    data_video: string
+    data_wifi: string
+    default: string
+    games_voucher: string
+    knox_configure_dynamic: string
+    knox_configure_setup: string
+    knox_manage: string
+    loop_portal: string
+    monbal_monbal: string
+    monbal_onnet: string
+    monbal_siang: string
+    nbp: string
+    poin: string
+    sku: string
+    sms_allnet: string
+    sms_allopr: string
+    sms_offnet: string
+    sms_onnet: string
+    sms_onnet_siang: string
+    sms_roaming: string
+    subscription_bein: string
+    subscription_hooq: string
+    subscription_music: string
+    subscription_tribe: string
+    subscription_viu: string
+    tcash_balance: string
+    unlimited_data: string
+    upcc_dpi: string
+    upcc_unlimited: string
+    video: string
+    voice_allnet: string
+    voice_allopr: string
+    voice_idd: string
+    voice_offnet: string
+    voice_onnet: string
+    voice_onnet_malam: string
+    voice_onnet_siang: string
+    voice_roaming: string
+    voice_roaming_mo: string
+    voice_roaming_mt: string
+
+  l1_psm_sku_reff_tmp_v:
+    business_id: string
+    product_commercial_name: string
+    product_id: string
+    product_type: string
+    rate: string
+    rules_id: string
+    rules_name: string
+    sku: string
+    validity: string
+
+  # l1_macroproduct_map_base:
+  #   macroproduct: string
+
+  # l1_base_ifrs_c2p:
+  #   event_date: string
+  #   msisdn: string
+  #   sigma_business_id: string
+  #   transaction_id: string
+  #   validity_period: integer
+  #   validity_period_unit: string
+
+  # l1_base_ifrs_c2p_reject:
+  #   event_date: string
+  #   msisdn: string
+  #   sigma_business_id: string
+  #   transaction_id: string
+  #   validity_period: integer
+  #   validity_period_unit: string
+
+  # Recharge Domain
+  l1_abt_rech_daily_abt_dd:
+    event_date: string
+    msisdn: string
+    tot_amt: decimal(18,2)
+    tot_trx: long
+
+  l1_account_balance:
+    account_balance: decimal(10,2)
+    event_date: string
+    pay_channel: string
+
+  l1_itdaml_dd_cdr_pkg_prchse_all:
+    event_date: string
+    msisdn: string
+    rev_data_pkg_prchs: decimal(18,2)
+    rev_pkg_prchse: decimal(18,2)
+    rev_roam_pkg_prchs: decimal(18,2)
+    rev_sms_pkg_prchs: decimal(18,2)
+    rev_voice_pkg_prchs: decimal(18,2)
+    trx_data_pkg_prchs: long
+    trx_pkg_prchse: long
+    trx_roam_pkg_prchs: long
+    trx_sms_pkg_prchs: long
+    trx_voice_pkg_prchs: long
+
+  # Revenue Domain
+  l1_merge_revenue_dd:
+    event_date: string
+    l1_name: string
+    l2_name: string
+    l3_name: string
+    msisdn: string
+    rev: decimal(18,2)
+
+  # SMS & Voice Domains
+  l1_abt_usage_mss_abt_dd:
+    anumber: string
+    bnumber: string
+    calltype: string
+    duration_early_morning: long
+    event_date: string
+    total_duration: long
+    total_trx: long
+
+  l1_commercial_text_mapping:
+    category: string
+    evalueserve_comments: string
+    sender: string
+
+  l1_broken_bnumber:
+    bnumber: string
+    category: string
+    evalueserve_comments: string
+    sender: string

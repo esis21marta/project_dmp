@@ -1,0 +1,1147 @@
+_jdbc_oracle_qa_db: &jdbc_oracle_qa_db
+  type: spark.SparkJDBCDataSet
+  url: jdbc:oracle:thin:@10.53.71.164:1521:OPTOIPIMC2
+  credentials: qa_credentials_user_pass
+  load_args:
+    properties:
+      driver: "oracle.jdbc.driver.OracleDriver"
+  save_args:
+    mode: "append"
+    properties:
+      driver: "oracle.jdbc.driver.OracleDriver"
+
+_hive: &hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  write_mode: overwrite
+
+_hive_trx_date_1w: &hive_trx_date_1w
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_hive_event_date_1w: &hive_event_date_1w
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+_parquet_event_date_1w: &parquet_event_date_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: event_date
+  load_args:
+    partition_filter_period: 1w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_weekstart_1w: &parquet_weekstart_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  load_args:
+    partition_filter_period: 1w
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_weekstart_3m: &parquet_weekstart_3m
+  <<: *parquet_weekstart_1w
+  load_args:
+    partition_filter_period: 3m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_trx_date_1w: &parquet_trx_date_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: trx_date
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet_trx_date_3m: &parquet_trx_date_3m
+  <<: *parquet_trx_date_1w
+  load_args:
+    partition_filter_period: 3m
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+l1_prepaid_customers_data_5m:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_cb_pre_dd
+  load_args:
+    partition_filter_period: 5m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_postpaid_customers_data_5m:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_cb_post_dd
+  load_args:
+    partition_filter_period: 5m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+###########################################    QA Availability   ################################################
+
+l1_qa_availability_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_availability
+
+l1_qa_availability_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+# Partner MSISDNs
+partner_msisdns:
+  <<: *parquet
+  filepath: mck_dmp_training/02_primary/partner_msisdns.parquet
+  partitions: 1
+  create_versions: True
+
+partner_msisdns_old:
+  <<: *parquet
+  filepath: mck_dmp_training/02_primary/partner_msisdns.parquet
+  partitions: 1
+  create_versions: True
+  load_args:
+    version_index: 1
+
+########################################################################################################################
+############################################  Internet Apps Usage Features  ############################################
+########################################################################################################################
+
+# Mappings for BCP Data to Apps Categories
+l1_content_mapping:
+  <<: *parquet
+  filepath: hdfs:///data/landing/dmp_remote/mck_dmp_pipeline/01_aggregation/internet_apps_usage/content_mapping.parquet
+  partitions: 1
+
+l1_segment_mapping:
+  <<: *parquet
+  filepath: hdfs:///data/landing/dmp_remote/mck_dmp_pipeline/01_aggregation/internet_apps_usage/segment_mapping.parquet
+  partitions: 1
+
+l1_category_mapping:
+  <<: *parquet
+  filepath: hdfs:///data/landing/dmp_remote/mck_dmp_pipeline/01_aggregation/internet_apps_usage/category_mapping.parquet
+  partitions: 1
+
+l1_fintech_mapping:
+  <<: *parquet
+  filepath: hdfs:///data/landing/dmp_remote/mck_dmp_pipeline/01_aggregation/internet_apps_usage/fintech_mapping.parquet
+  partitions: 1
+
+l1_app_mapping:
+  <<: *parquet
+  filepath: hdfs:///data/landing/dmp_remote/mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_mapping.parquet
+  partitions: 1
+
+# Final Mapping of BCP Data to Features
+l1_internet_app_feature_mapping:
+  <<: *parquet
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_app_feature_category_mapping.parquet
+  partitions: 1
+
+## Original BCP Data
+l1_bcp_usage_daily:
+  <<: *hive_trx_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_smy_bcp_usage_dd
+
+# Weekly Aggregated Data for the Internet Usage for apps
+l2_internet_app_usage_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet
+  partitions: 1
+
+# Weekly Aggregated Data for the Internet Usage from bcp
+l2_internet_connection_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet
+  partitions: 1
+
+# Internet Apps Usage Features
+l5_fea_internet_connection:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/internet_apps_usage/fea_internet_connection.parquet
+  partitions: 10
+
+l5_internet_app_usage:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/internet_apps_usage/internet_app_usage.parquet
+  partitions: 10
+
+l5_pivoted_internet_app_usage:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/internet_apps_usage/pivoted_internet_app_usage.parquet
+  partitions: 10
+
+l5_fea_internet_app_usage:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/internet_apps_usage/fea_internet_app_usage.parquet
+  partitions: 10
+
+l5_fea_social_media:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/internet_apps_usage/fea_social_media.parquet
+  partitions: 10
+
+########################################################################################################################
+##################################################  Revenue Features  ##################################################
+########################################################################################################################
+
+# Original Revenue Data
+l1_itdaml_dd_cdr_pkg_prchse_all:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_usage_chg_pkg_prchse_abt_dd
+
+l1_itdaml_dd_cdr_payu_prchse_all:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_usage_chg_payu_abt_dd
+
+l1_merge_revenue_dd:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_merge_revenue_dd
+
+l1_mck_mytsel_pack:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: dmp_integration_test_dd_mytsel_pack
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 2
+    time: "09:00"
+    start_date: "2020-01-01"
+
+# Weekly Aggregated Revenue Data
+l2_revenue_weekly_data:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly.parquet
+  partitions: 1
+
+# Weekly MyTSel Revenue Aggregate
+l2_revenue_mytsel_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_mytsel_weekly.parquet
+  partitions: 1
+
+# Weekly MyTSel Revenue Aggregate
+l3_revenue_mytsel_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_training/02_primary/revenue/revenue_mytsel_weekly_filtered.parquet
+  partitions: 1
+
+# Weekly MyTSel Revenue Aggregate
+l3_revenue_mytsel_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_training/02_primary/revenue/revenue_mytsel_weekly_final.parquet
+  partitions: 1
+
+# Weekly MyTSel Revenue Features
+l4_fea_revenue_mytsel:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_mytsel.parquet
+  partitions: 1
+
+# Revenue Features
+l4_fea_revenue_weekend:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_weekend.parquet
+  partitions: 5
+
+l4_fea_revenue_base_payu_pkg:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_base_payu_pkg.parquet
+  partitions: 5
+
+l4_fea_revenue_spend_pattern:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_spend_pattern.parquet
+  partitions: 5
+
+l4_fea_revenue_monthly_spend:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_monthly_spend.parquet
+  partitions: 5
+
+l4_fea_revenue_salary:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_salary.parquet
+  partitions: 5
+
+l4_fea_revenue_threshold_voice_data:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_threshold_voice_data.parquet
+  partitions: 5
+
+l4_fea_revenue_threshold_sms_dls_roam:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/revenue/fea_revenue_threshold_sms_dls_roam.parquet
+  partitions: 5
+
+########################################################################################################################
+##################################################  Recharge Features  #################################################
+########################################################################################################################
+
+## MyTsel
+l1_mytsel_rech_dd:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: dmp_integration_test_dd_mytsel_rech
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 2
+    time: "09:00"
+    start_date: "2020-01-01"
+
+# Original Recharge Data
+l1_abt_rech_daily_abt_dd:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_rech_daily_abt_dd
+
+l1_account_balance:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_ocs_bal
+
+l1_prepaid_customers_data:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_cb_pre_dd
+
+# Weekly Aggregated Recharge Data
+l1_rech_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet
+  partitions: 1
+
+l2_account_balance_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly.parquet
+  partitions: 1
+
+l1_chg_pkg_prchse_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+  partitions: 1
+
+# Recharge Features
+l5_fea_recharge:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/recharge/fea_recharge.parquet
+  partitions: 5
+
+## MyTsel
+l1_mytsel_rech_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/mytsel_rech_weekly.parquet
+  partitions: 1
+
+## MyTsel
+l1_mytsel_rech_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_training/02_primary/recharge/mytsel_rech_weekly_partner.parquet
+  partitions: 1
+
+l1_mytsel_rech_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_training/02_primary/recharge/mytsel_rech_weekly_final.parquet
+  partitions: 1
+
+l5_fea_recharge_mytsel:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_training/04_features/recharge/fea_recharge_mytsel.parquet
+  partitions: 1
+
+
+
+########################################################################################################################
+##################################################    MyTSel Domain   ##################################################
+########################################################################################################################
+
+##################################
+#######  Source TSEL Data  #######
+##################################
+
+l1_mck_mytsel_daily_user:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: dmp_integration_test_dd_mytsel_daily_user
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+  sla_interval:
+    period: 1d
+    date: 2
+    time: "09:00"
+    start_date: "2020-01-01"
+
+###################################
+#######  AGGREGATION LAYER  #######
+###################################
+
+l2_mytsel_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mytsel/mytsel_weekly.parquet
+  partitions: 1
+
+###################################
+#########  PRIMARY LAYER  #########
+###################################
+
+# Partner MSISDNs MyTSel Data
+l3_mytsel_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_training/02_primary/mytsel/mytsel_weekly_filtered.parquet
+  partitions: 1
+
+# Partner MSISDNs MyTSel Data and filled missing weeks
+l3_mytsel_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_training/02_primary/mytsel/mytsel_weekly_final.parquet
+  partitions: 1
+
+###################################
+#########  FEATURE LAYER  #########
+###################################
+
+#  MyTSel Features
+l4_fea_mytsel:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_training/04_features/mytsel/fea_mytsel.parquet
+  partitions: 1
+
+########################################################################################################################
+##################################################  Handset Features  ##################################################
+########################################################################################################################
+
+# Original Handset Data
+l1_handset_dim_lookup:
+  <<: *hive
+  database: dmp_remote
+  table: device_dim
+
+l1_handset_dd:
+  <<: *hive
+  database: dmp_remote
+  table: dmp_integration_test_device_dd
+
+l1_handset_mm:
+  <<: *hive
+  database: dmp_remote
+  table: dmp_integration_test_device_mm
+
+# Filtered Data per IMEI
+l1_handset_lookup_data:
+  <<: *parquet
+  filepath: mck_dmp_pipeline/01_aggregation/handset/device_dim_single_rec_per_imei.parquet
+  partitions: 1
+
+# Weekly Aggregated Handset Data
+l2_handset_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet
+  partitions: 1
+
+# Handset Features
+l2_fea_handset:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/handset/fea_device.parquet
+  partitions: 5
+
+########################################################################################################################
+##################################################  Handset Features  - Internal #######################################
+########################################################################################################################
+l1_device_dbi_imei_handset_full:
+  <<: *hive
+  database: dmp_remote
+  table: dbi_imei_handset
+
+# Filtered Data per IMEI
+l1_device_dbi_imei_single_rec_per_imei:
+  <<: *parquet
+  filepath: mck_dmp_pipeline/01_aggregation/handset_internal/device_dbi_imei_single_rec_per_imei.parquet
+  partitions: 1
+
+# Weekly Aggregated Handset Data
+l2_device_internal_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/handset_internal/internal_device_data_weekly.parquet
+  partitions: 1
+
+# Device Features - Final Output
+l2_fea_device_internal:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/handset_internal/fea_device_internal.parquet
+  partitions: 5
+
+########################################################################################################################
+################################################  Voice Calls Features  ################################################
+########################################################################################################################
+
+# Weekly Aggregated Voice Calls Data
+l2_voice_calling_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+  partitions: 1
+
+# Voice Calls Features
+l4_fea_voice_calling:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/voice_calls/fea_inc_out_uniq_bnums.parquet
+  partitions: 5
+
+########################################################################################################################
+##############################################  Internet Usage Features  ###############################################
+########################################################################################################################
+
+# Original Internet Usage Data
+# After august 2019, abt table used
+# Before august 2019, smy.usage_upcc_dd
+l1_usage_upcc_dd:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_usage_upcc_abt_dd
+
+# Weekly Aggregated Internet Usage Data
+l1_internet_usage_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet
+  partitions: 1
+
+# Internet Usage Features
+l2_internet_usage:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/internet_usage/fea_internet_usage_consumption.parquet
+  partitions: 5
+
+l2_internet_usage_prep:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_training/04_features/internet_usage/fea_internet_usage_consumption_prep.parquet
+  partitions: 5
+
+########################################################################################################################
+################################################  Text Messaging Features ##############################################
+########################################################################################################################
+
+# Original ABT Usage MSS Data
+l1_abt_usage_mss_abt_dd:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_usage_mss_abt_dd
+
+# SMS A2P Mapping
+l1_commercial_text_mapping:
+  <<: *parquet
+  filepath: mck_dmp_pipeline/01_aggregation/sms/sms_sender_mapping.parquet
+  partitions: 1
+
+# Broken Bnumber mapping
+l1_broken_bnumber:
+  <<: *parquet
+  filepath: mck_dmp_pipeline/01_aggregation/sms/broken_bnumber.parquet
+  partitions: 1
+
+# Text Messaging Weekly Aggregation
+l2_text_messaging_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet
+  partitions: 1
+
+# Commercial Text Messaging Weekly Aggregation
+l2_commercial_text_messaging_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+  partitions: 1
+
+# Text Messaging Features
+l4_fea_text_messaging:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/sms/fea_text_messaging.parquet
+  partitions: 5
+
+# Commercial Text Messaging Features
+l4_fea_commercial_text_messaging:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/sms/fea_commercial_text_messaging.parquet
+  partitions: 5
+
+########################################################################################################################
+##################################################  Customer Profile  ##################################################
+########################################################################################################################
+
+l1_cb_multidim:
+  <<: *hive
+  database: dmp_remote
+  table: dmp_integration_test_cb_multidim
+
+# Weekly Aggregated Customer Profile data
+l2_customer_profile_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet
+  partitions: 1
+
+l5_fea_customer_profile:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/customer_profile/fea_customer_profile.parquet
+  partitions: 5
+
+########################################################################################################################
+##################################################  Network  ###########################################################
+########################################################################################################################
+
+l1_mck_sales_dnkm_dd:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_sales_dnkm_dd
+
+# lacci to msisdn mapping Jan 2019 - Oct 2019
+l1_lacci_msisdn_mapping_jan_oct_2019:
+  <<: *parquet
+  filepath: mck_dmp_common/kedro/02_primary/network_mapping/msisdn_to_lacci_jan_oct_2019.parquet
+  partitions: 1
+
+# Weekly Aggregated Network Lac_ci data
+l1_network_lacci_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_lacci_weekly.parquet
+  partitions: 1
+
+# Weekly Aggregated Network Lac data
+l1_network_lac_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_lac_weekly.parquet
+  partitions: 1
+
+# Weekly Aggregated Network MSISDN data
+l1_network_msisdn_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet
+  partitions: 1
+
+l4_fea_network_msisdn:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/network/fea_network_msisdn.parquet
+  partitions: 5
+
+l4_fea_network_lacci:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/network/fea_network_lacci.parquet
+  partitions: 1
+
+l4_fea_network_lac:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/network/fea_network_lac.parquet
+  partitions: 1
+
+########################################################################################################################
+##################################################  PAYU Usage  ########################################################
+########################################################################################################################
+
+# Weekly Aggregated Customer Profile data
+l2_payu_usage_weekly_aggregation:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet
+  partitions: 1
+
+# PAYU Usage Features
+l4_fea_payu_usage:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/payu_usage/fea_payu_usage.parquet
+  partitions: 5
+
+########################################################################################################################
+##################################################  Customer LOS #######################################################
+########################################################################################################################
+
+l1_t_profile_full_hist:
+  <<: *hive
+  database: dmp_remote
+  table: dmp_integration_test_t_profile_full_hist
+
+l1_pre_paid_mck_customer_base_dd_3m:
+  <<: *hive
+  database: dmp_remote
+  table: dmp_integration_test_cb_pre_dd
+  load_args:
+    partition_filter_period: 3m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_post_paid_mck_customer_base_dd_3m:
+  <<: *hive
+  database: dmp_remote
+  table: dmp_integration_test_cb_post_dd
+  load_args:
+    partition_filter_period: 3m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_postpaid_customers_data:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_cb_post_dd
+
+l1_customer_los_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet
+  partitions: 1
+
+l4_fea_customer_los:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/customer_los/fea_customer_los.parquet
+  partitions: 5
+
+########################################################################################################################
+##################################################### Product ##########################################################
+########################################################################################################################
+
+l1_smy_usage_ocs_chg_dd:
+  <<: *hive_event_date_1w
+  database: dmp_remote
+  table: dmp_integration_test_usage_ocs_chg_dd
+
+l1_mck_sku_bucket_pivot:
+  <<: *hive
+  database: dmp_remote
+  table: sku_bucket_pivot
+
+# Weekly Aggregated Product Data
+l1_psm_sku_reff_tmp_v:
+  <<: *hive
+  database: dmp_remote
+  table: sku_reff_tmp_v
+
+# l1_macroproduct_map_base:
+#   <<: *parquet
+#   filepath: mck_dmp_pipeline/01_aggregation/product/bid_macroproduct_mapping.parquet
+#   partitions: 1
+
+# l1_macroproduct_map_new:
+#   <<: *parquet_weekstart_3m
+#   filepath: mck_dmp_pipeline/01_aggregation/product/bid_macroproduct_mapping_new.parquet
+#   partitions: 1
+
+# l1_base_ifrs_c2p:
+#   <<: *hive_event_date_1w
+#   database: dmp_remote
+#   table: dmp_integration_test_ifrs_c2p
+
+# l1_base_ifrs_c2p_reject:
+#   <<: *hive_event_date_1w
+#   database: dmp_remote
+#   table: ifrs_c2p_reject
+
+l2_macroproduct_weekly:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/product/product_macro_weekly.parquet
+  partitions: 1
+
+# Weekly Aggregated Non-Macro Product Data
+l1_nonmacro_product_weekly_data:
+  <<: *parquet_weekstart_3m
+  filepath: mck_dmp_pipeline/01_aggregation/product/nonmacro_product_weekly.parquet
+  partitions: 1
+
+#  Non-Macro Product Features
+l4_fea_nonmacro_product:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/product/fea_nonmacro_product.parquet
+  partitions: 5
+
+# Macroproduct Features
+l4_fea_macroproduct:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/04_features/product/fea_product_macro.parquet
+  partitions: 5
+
+########################################################################################################################
+####################################################  Master Table  ####################################################
+########################################################################################################################
+
+l6_master:
+  <<: *parquet_weekstart_1w
+  filepath: mck_dmp_training/05_model_input/master.parquet
+  partitions: 50
+  create_versions: True
+  save_args:
+    mode: overwrite
+    partitionBy:
+      - weekstart
+
+
+########################################################################################################################
+###############################################    Data Quality   ######################################################
+########################################################################################################################
+
+
+###############################################    MSISDN SAMPLE   #####################################################
+
+l4_qa_sample_unique_msisdn:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/sample/sample_unique_msisdn.parquet
+
+###############################################    OUTLET QA TABLE   #####################################################
+
+l4_qa_master_outlet_geo_metrics:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/master/master_outlet_geo/metrics.parquet
+
+l4_qa_master_outlet_geo_outliers:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/master/master_outlet_geo/outliers.parquet
+
+
+l4_qa_master_outlet_revenue_metrics:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/master/master_outlet_revenue/metrics.parquet
+
+l4_qa_master_outlet_revenue_outliers:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/master/master_outlet_revenue/outliers.parquet
+
+
+###########################################    OUTLET QA TABLE UNION   ##################################################
+
+l4_qa_master_outlet_metrics:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/master/outlet/metrics.parquet
+
+l4_qa_master_outlet_outliers:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/master/outlet/outliers.parquet
+
+################################################    OUTLET QA DB   #######################################################
+
+l4_qa_outlet_master_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_outlet_master_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+#########################################    QA Result DB - Aggregation   ###############################################
+
+l4_qa_aggregation_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_aggregation_monthly_unique_msisdn_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_monthly_unique_msisdn
+
+l4_qa_aggregation_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+###########################################    QA Result DB - Feature   #################################################
+
+l4_qa_feature_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_feature_monthly_unique_msisdn_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_monthly_unique_msisdn
+
+l4_qa_feature_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+############################################    QA Result DB - Master   ##################################################
+
+l4_qa_master_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_master_monthly_unique_msisdn_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_monthly_unique_msisdn
+
+l4_qa_master_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+############################################    QA Result DB   ##################################################
+
+l4_qa_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+#######################################    QA Thresolding  - Aggregation - Parquet   ############################################
+
+l4_qa_score_aggregation_accuracy_completeness:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/aggregation/accuracy_completeness.parquet
+
+l4_qa_score_aggregation_accuracy_completeness_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/aggregation/accuracy_completeness_aggregate.parquet
+
+l4_qa_score_aggregation_consistency:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/aggregation/consistency.parquet
+
+l4_qa_score_aggregation_consistency_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/aggregation/consistency_aggregate.parquet
+
+#######################################    QA Thresolding  - Feature - Parquet   ############################################
+
+l4_qa_score_feature_accuracy_completeness:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/feature/accuracy_completeness.parquet
+
+l4_qa_score_feature_accuracy_completeness_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/feature/accuracy_completeness_aggregate.parquet
+
+l4_qa_score_feature_consistency:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/feature/consistency.parquet
+
+l4_qa_score_feature_consistency_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/feature/consistency_aggregate.parquet
+
+#######################################    QA Thresolding  - Master - Parquet   ############################################
+
+l4_qa_score_master_master_accuracy_completeness:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/master/accuracy_completeness.parquet
+
+l4_qa_score_master_master_accuracy_completeness_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/master/accuracy_completeness_aggregate.parquet
+
+l4_qa_score_master_master_consistency:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master_master/consistency.parquet
+
+l4_qa_score_master_master_consistency_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master_master/consistency_aggregate.parquet
+
+#######################################    QA Thresolding  - Master Outlet Geo - Parquet   ############################################
+
+l4_qa_score_master_outlet_geo_accuracy_completeness:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_geo/accuracy_completeness.parquet
+
+l4_qa_score_master_outlet_geo_accuracy_completeness_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_geo/accuracy_completeness_aggregate.parquet
+
+l4_qa_score_master_outlet_geo_consistency:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_geo/consistency.parquet
+
+l4_qa_score_master_outlet_geo_consistency_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_geo/consistency_aggregate.parquet
+
+#######################################    QA Thresolding  - Master Outlet Revenue - Parquet   ############################################
+
+l4_qa_score_master_outlet_revenue_accuracy_completeness:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_revenue/accuracy_completeness.parquet
+
+l4_qa_score_master_outlet_revenue_accuracy_completeness_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_revenue/accuracy_completeness_aggregate.parquet
+
+l4_qa_score_master_outlet_revenue_consistency:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_revenue/consistency.parquet
+
+l4_qa_score_master_outlet_revenue_consistency_aggregate:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_training/06_qa_check/threshold/master/outlet_revenue/consistency_aggregate.parquet
+
+###########################################    QA Thresolding - Aggregation - Database   ################################################
+
+l4_qa_score_aggregation_accuracy_completeness_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_aggregation_accuracy_completeness_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+l4_qa_score_aggregation_consistency_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_aggregation_consistency_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+###########################################    QA Thresolding - Feature - Database   ################################################
+
+l4_qa_score_feature_accuracy_completeness_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_feature_accuracy_completeness_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+l4_qa_score_feature_consistency_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_feature_consistency_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+###########################################    QA Thresolding - Master - Database   ################################################
+
+l4_qa_score_master_master_accuracy_completeness_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_master_master_accuracy_completeness_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+l4_qa_score_master_master_consistency_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_master_master_consistency_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+###########################################    QA Thresolding - Master Outlet Geo - Database   ################################################
+
+l4_qa_score_master_outlet_geo_accuracy_completeness_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_master_outlet_geo_accuracy_completeness_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+l4_qa_score_master_outlet_geo_consistency_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_master_outlet_geo_consistency_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+###########################################    QA Thresolding - Master Outlet Revenue - Database   ################################################
+
+l4_qa_score_master_outlet_revenue_accuracy_completeness_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_master_outlet_revenue_accuracy_completeness_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+l4_qa_score_master_outlet_revenue_consistency_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold
+
+l4_qa_score_master_outlet_revenue_consistency_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+#####################################################    QA Timeliness   ##########################################################
+l7_qa_timeliness_master_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_timeliness
+
+l7_qa_timeliness_master_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+l7_qa_timeliness_outlet_geo_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_timeliness
+
+l7_qa_timeliness_outlet_geo_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg
+
+l7_qa_timeliness_outlet_revenue_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_timeliness
+
+l7_qa_timeliness_outlet_revenue_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: test_qa_threshold_agg

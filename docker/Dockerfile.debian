@@ -1,0 +1,35 @@
+FROM docker.cicd-jfrog.telkomsel.co.id/python:3.6.10-slim-stretch
+
+RUN mkdir -p /usr/src/app /var/log/app /etc/app /data
+WORKDIR /usr/src/app
+VOLUME /var/log/app /etc/app /data
+
+COPY src/requirements.txt /usr/src/app
+
+ENV http_proxy 'http://10.251.36.250:8080'
+ENV https_proxy 'http://10.251.36.250:8080'
+
+ENV HTTP_PROXY 'http://10.251.36.250:8080'
+ENV HTTPS_PROXY 'http://10.251.36.250:8080'
+
+RUN mkdir -p /usr/share/man/man1 \
+    && apt-get update \
+    && apt-get install -y --no-install-recommends openjdk-8-jdk build-essential gcc \
+    && rm -rf /var/lib/apt/lists/* \
+    && pip3 install --no-cache-dir pip==20.0.2 \
+    && pip3 install --no-cache-dir pypandoc==1.4 \
+    && pip3 install --no-cache-dir -r requirements.txt \
+    && pip3 install --no-cache-dir -r requirements.txt
+
+# note that if the distribution of PAI is changed, we need to modify the line below
+ENV HTTP_PROXY ''
+ENV HTTPS_PROXY ''
+ENV http_proxy ''
+ENV https_proxy ''
+RUN pip3 install --trusted-host cicd-jfrog.telkomsel.co.id https://cicd-jfrog.telkomsel.co.id/artifactory/api/pypi/tsel-python-local/pai-0.37.4-py3-none-any.whl 
+
+ENV JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
+ENV GIT_PYTHON_REFRESH quiet
+
+ENTRYPOINT [ "kedro" ]
+

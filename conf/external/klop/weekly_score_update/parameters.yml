@@ -1,0 +1,34 @@
+columns_to_include:
+  default_probability_table:
+    - msisdn
+    - default_probability_score
+  income_prediction_table:
+    - msisdn
+    - income_prediction
+  propensity_table:
+    - msisdn
+    - loan_propensity
+
+default_postgres_columns:
+  incorrectotptrials: 0
+  otpcount: 0
+  otptimestamp: None
+  blacklistreason: None
+
+score_columns:
+  default_probability_score: pdscore
+  loan_propensity: similarityscore
+  income_prediction: predictedincome
+
+columns_to_klop_db:
+  - msisdn
+  - pdscore
+  - similarityscore
+  - predictedincome
+  - incorrectotptrials
+  - otpcount
+  - otptimestamp
+  - blacklistreason
+  - refresh_date
+
+hdfs_base_path: hdfs:///data/landing/dmp_staging/pilot/external/ # HDFS Base Path

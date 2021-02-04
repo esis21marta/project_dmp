@@ -1,0 +1,4 @@
+context_path: dmp.run.ProjectContext
+project_name: "project_darwin"
+project_version: "0.16.4"
+package_name: "dmp"

@@ -1,0 +1,726 @@
+#####################################################################################################################################
+############################################## 4G Stimulation ##############################################################
+#####################################################################################################################################
+################################################## Preprocessing ##################################################
+########## dynamic ##########
+imei_db:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet   
+  database: dbi_bb
+  table: imei_handset_202010 ##changes the date ex: 202010 -> 202011
+lte_map:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  database: dbi_bb
+  table: lte_map_202010 ##changes the date ex: 202010 -> 202011
+cb_prepaid_postpaid:
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  database: dbi_cr
+  table: cb_prepaid_postpaid_202010 ##changes the date ex: 202010 -> 202011
+dmp_master_table_all_partners:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  #filepath: hdfs:///data/landing/gx_pnt/mck_dmp_score/05_model_input/master_20200225.parquet/weekstart=2020-02-10 ### training
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_score/05_model_input/master.parquet/created_at=2020-11-23/weekstart=2020-11-16 ### scoring
+  file_format: parquet
+  save_args:
+    mode: overwrite
+dmp_lacci_level_master_table:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_training/05_model_input/master_lacci.parquet/created_at=2020-11-06/
+  save_args:
+    mode: overwrite
+4g_master_complete:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/01_permanent/20201026/4g_master_complete.parquet
+  save_args:
+    mode: overwrite
+################################################## Training ##################################################
+############## local ##############
+4g_local_pandas_master_table:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_local_pandas_master_table_202001.parquet
+4g_local_pandas_master_table__:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_local_pandas_master_table__no_4g_users_202001.pickle
+4g_local_pandas_master_table_:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_local_pandas_master_table__202001.pickle
+4g_local_pandas_master_table_no_unit_of_analysis:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_local_pandas_master_table_no_unit_of_analysis_202001.pickle
+4g_table_cleaned:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_cleaned_202001.pickle
+4g_table_numerical:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_numerical_202001.pickle
+4g_table_categorical:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_categorical_202001.pickle
+4g_table_pca_mca:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_pca_mca_202001.pickle
+4g_table_pca_components:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_pca_components_202001.pickle
+4g_table_mca:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_mca_202001.pickle
+4g_table_famd:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_famd_202001.pickle
+4g_pca_explained_inertia:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_pca_explained_inertia_202001.pickle
+4g_mca_explained_inertia:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_mca_explained_inertia_202001.pickle
+4g_famd_explained_inertia:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_famd_explained_inertia_202001.pickle
+4g_skpca_explained_inertia:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_skpca_explained_inertia_202001.pickle
+4g_pca_correlations:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_pca_correlations_202001.pickle
+4g_mca_coordinates:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_mca_coordinates_202001.pickle
+4g_famd_correlation:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_famd_correlation_202001.pickle
+4g_skpca_ct_trans:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_skpca_ct_trans_202001.pickle
+4g_table_famd_cluster:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_famd_cluster_202001.pickle
+4g_table_pca_cluster:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_pca_cluster_202001.pickle
+4g_table_pca_mca_cluster:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_table_pca_mca_cluster_202001.pickle
+4g_pca_table_and_clusters:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/train_table/4g_pca_table_and_clusters_202001.pickle
+4g_local_pandas_original_table_pca_components_and_kmeans_components:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/train_table/4g_local_pandas_original_table_pca_components_and_kmeans_components_202001.parquet
+4g_master_table_pca_components_and_kmeans_components_pre_pos_feautes_downsampled_pandas:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/train_table/4g_master_table_pca_components_and_kmeans_components_pre_pos_feautes_downsampled_pandas_202001.parquet
+4g_statistics_profile:
+  type: kedro.io.CSVLocalDataSet
+  filepath: data/4g/train_table/4g_statistics_profile_202001.csv
+4g_cols_above_null:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cols_above_null_202001.pickle
+4g_cols_under_null:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cols_under_null_202001.pickle
+4g_cols_above_zeros:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cols_above_zeros_202001.pickle
+4g_cols_under_zeros:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cols_under_zeros_202001.pickle
+4g_cols_above_minus1:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cols_above_minus1_202001.pickle
+4g_cols_under_minus1:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cols_under_minus1_202001.pickle
+4g_cat_cols:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cat_cols_202001.pickle
+4g_num_cols:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_num_cols_202001.pickle
+4g_cat_cols_1:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_cat_cols_202001.pickle
+4g_num_cols_1:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_num_cols_202001.pickle
+4g_clustering_scaler:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_clustering_scaler_202001.pickle
+4g_pca:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_pca_202001.pickle
+4g_kmeans_trained:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_kmeans_trained_202001.pickle  
+4g_mca:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_mca_202001.pickle
+4g_famd:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_famd_202001.pickle
+4g_skpca:
+  type: kedro.io.PickleLocalDataSet
+  filepath: data/4g/model/4g_skpca_202001.pickle
+############## hadoop ##############
+4g_master_complete_downsampled:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/03_training/4g_master_complete_downsampled.parquet
+  save_args:
+    mode: overwrite
+4g_master_table_segment:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/03_training/4g_master_table_segment.parquet
+  save_args:
+    mode: overwrite
+4g_original_table_pca_components_and_kmeans_components_hdfs:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/03_training/4g_original_table_pca_components_and_kmeans_components_hdfs.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_master_table_pca_components_and_kmeans_components:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/03_training/4g_master_table_pca_components_and_kmeans_components.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_master_table_pca_components_and_kmeans_components_pre_pos_feautes_downsampled:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/03_training/4g_master_table_pca_components_and_kmeans_components_pre_pos_feautes_downsampled.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+############## memory data set ##############
+4g_master_table_random_samples:
+  type: kedro.io.MemoryDataSet
+4g_master_added_month:
+  type: kedro.io.MemoryDataSet
+4g_master_added_month_:
+  type: kedro.io.MemoryDataSet
+4g_master_added_month_1:
+  type: kedro.io.MemoryDataSet
+4g_master_added_month_2:
+  type: kedro.io.MemoryDataSet
+4g_master_added_month_3:
+  type: kedro.io.MemoryDataSet
+4g_lacci_level_master_table_:
+  type: kedro.io.MemoryDataSet
+lte_map_selected_cols:
+  type: kedro.io.MemoryDataSet
+cb_prepaid_postpaid_selected_cols:
+  type: kedro.io.MemoryDataSet
+cb_prepaid_postpaid_selected_cols_:
+  type: kedro.io.MemoryDataSet
+imei_db_selected_cols:
+  type: kedro.io.MemoryDataSet
+4g_master_table_casted:
+  type: kedro.io.MemoryDataSet
+4g_table_feature_subset:
+  type: kedro.io.MemoryDataSet
+4g_table_feature_subset_:
+  type: kedro.io.MemoryDataSet
+4g_master_table_pca_components_and_kmeans_components_pre_pos_features:
+  type: kedro.io.MemoryDataSet
+prepaid_postpaid_features:
+  type: kedro.io.MemoryDataSet
+############## psi baseline ##############
+dmp_baseline:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/01_permanent/20200127/4g_master_complete.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+dmp_baseline_bining:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/05_psi/20200127/bining_baseline.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+psi_baseline:
+  type: kedro.extras.datasets.yaml.YAMLDataSet
+  filepath: /home/cdsw/psi_baseline.yml
+################################################## Scoring ##################################################
+########## dynamic ##########
+4g_mapping_msisdn_segment_scoring:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/01_permanent/20201026/4g_mapping_msisdn_segment_scoring.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+dmp_master:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/01_permanent/20201026/4g_master_complete.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+dmp_master_bining:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/05_psi/20201026/bining_scoring.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+with_psi_master:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/05_psi/20201026/psi_master_reporting.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+with_psi_master_send:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/05_psi/20201026/psi_master_reporting_send.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+########## static ##########
+######################## 4G scoring input ########################
+4g_clustering_scoring_small_table_input0:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input0.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input1:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input1.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input2:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input2.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input3:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input3.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input4:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input4.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input5:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input5.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input6:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input6.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input7:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input7.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input8:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input8.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input9:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input9.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input10:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input10.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input11:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input11.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input12:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input12.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input13:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input13.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input14:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input14.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input15:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input15.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input16:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input16.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input17:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input17.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input18:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input18.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input19:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input19.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input20:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input20.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input21:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input21.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input22:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input22.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input23:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input23.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_input24:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_input24.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+######################## 4G scoring output ########################
+4g_clustering_scoring_small_table_output0:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output0.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output1:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output1.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output2:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output2.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output3:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output3.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output4:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output4.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output5:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output5.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output6:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output6.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output7:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output7.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output8:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output8.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output9:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output9.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output10:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output10.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output11:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output11.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output12:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output12.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output13:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output13.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output14:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output14.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output15:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output15.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output16:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output16.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output17:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output17.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output18:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output18.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output19:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output19.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output20:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output20.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output21:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output21.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output22:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output22.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output23:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output23.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+4g_clustering_scoring_small_table_output24:
+  type: kedro.contrib.io.pyspark.SparkDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_int/data_science/4gs/02_temp/4g_clustering_scoring_small_table_output24.parquet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+######################## 4G local pandas dataset ########################
+4g_local_pandas_master_table0:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table0.parquet
+4g_local_pandas_master_table1:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table1.parquet
+4g_local_pandas_master_table2:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table2.parquet
+4g_local_pandas_master_table3:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table3.parquet
+4g_local_pandas_master_table4:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table4.parquet
+4g_local_pandas_master_table5:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table5.parquet
+4g_local_pandas_master_table6:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table6.parquet
+4g_local_pandas_master_table7:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table7.parquet
+4g_local_pandas_master_table8:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table8.parquet
+4g_local_pandas_master_table9:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table9.parquet
+4g_local_pandas_master_table10:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table10.parquet
+4g_local_pandas_master_table11:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table11.parquet
+4g_local_pandas_master_table12:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table12.parquet
+4g_local_pandas_master_table13:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table13.parquet
+4g_local_pandas_master_table14:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table14.parquet
+4g_local_pandas_master_table15:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table15.parquet
+4g_local_pandas_master_table16:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table16.parquet
+4g_local_pandas_master_table17:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table17.parquet
+4g_local_pandas_master_table18:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table18.parquet
+4g_local_pandas_master_table19:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table19.parquet
+4g_local_pandas_master_table20:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table20.parquet
+4g_local_pandas_master_table21:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table21.parquet
+4g_local_pandas_master_table22:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table22.parquet
+4g_local_pandas_master_table23:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table23.parquet
+4g_local_pandas_master_table24:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_local_pandas_master_table24.parquet
+4g_kmeans_result_and_original_table0:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table0.parquet
+4g_kmeans_result_and_original_table1:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table1.parquet
+4g_kmeans_result_and_original_table2:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table2.parquet
+4g_kmeans_result_and_original_table3:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table3.parquet
+4g_kmeans_result_and_original_table4:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table4.parquet
+4g_kmeans_result_and_original_table5:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table5.parquet
+4g_kmeans_result_and_original_table6:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table6.parquet
+4g_kmeans_result_and_original_table7:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table7.parquet
+4g_kmeans_result_and_original_table8:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table8.parquet
+4g_kmeans_result_and_original_table9:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table9.parquet
+4g_kmeans_result_and_original_table10:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table10.parquet
+4g_kmeans_result_and_original_table11:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table11.parquet
+4g_kmeans_result_and_original_table12:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table12.parquet
+4g_kmeans_result_and_original_table13:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table13.parquet
+4g_kmeans_result_and_original_table14:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table14.parquet
+4g_kmeans_result_and_original_table15:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table15.parquet
+4g_kmeans_result_and_original_table16:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table16.parquet
+4g_kmeans_result_and_original_table17:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table17.parquet
+4g_kmeans_result_and_original_table18:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table18.parquet
+4g_kmeans_result_and_original_table19:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table19.parquet
+4g_kmeans_result_and_original_table20:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table20.parquet
+4g_kmeans_result_and_original_table21:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table21.parquet
+4g_kmeans_result_and_original_table22:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table22.parquet
+4g_kmeans_result_and_original_table23:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table23.parquet
+4g_kmeans_result_and_original_table24:
+  type: kedro.io.ParquetLocalDataSet
+  filepath: data/4g/temp/4g_kmeans_result_and_original_table24.parquet

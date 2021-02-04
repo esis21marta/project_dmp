@@ -1,0 +1,8 @@
+master:
+    type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+    database: dmp_remote
+    table: may_500k_churn_20200831
+
+pandas_df:
+    filepath: data/churn/05_model_input/brand_kartuhalo/pandas_df.parquet
+    type: pandas.ParquetDataSet

@@ -1,0 +1,3114 @@
+config_feature:
+    recharge:
+        fea_rech_tot_amt_sum:
+            feature_name: "fea_rech_tot_amt_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_trx_sum:
+            feature_name: "fea_rech_tot_trx_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_amt_avg:
+            feature_name: "fea_rech_tot_amt_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_amt_covid_avg:
+            feature_name: "fea_rech_tot_amt_covid_avg_{period_string}"
+            periods:
+                - 03m
+        fea_rech_tot_amt_pre_with_covid_avg_ratio:
+            feature_name: "fea_rech_tot_amt_pre_with_covid_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_tot_amt_pre_post_covid_avg_ratio:
+            feature_name: "fea_rech_tot_amt_pre_post_covid_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_amt_weekly_avg:
+            feature_name: "fea_rech_amt_weekly_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_amt_covid_weekly_avg:
+            feature_name: "fea_rech_amt_covid_weekly_avg_{period_string}"
+            periods:
+                - 03m
+        fea_rech_amt_pre_with_covid_weekly_avg_ratio:
+            feature_name: "fea_rech_amt_pre_with_covid_weekly_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_amt_pre_post_covid_weekly_avg_ratio:
+            feature_name: "fea_rech_amt_pre_post_covid_weekly_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_amt_monthly_avg:
+            feature_name: "fea_rech_amt_monthly_avg_{period_string}"
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_amt_covid_monthly_avg:
+            feature_name: "fea_rech_amt_covid_monthly_avg_{period_string}"
+            periods:
+                - 03m
+        fea_rech_amt_pre_with_covid_monthly_avg_ratio:
+            feature_name: "fea_rech_amt_pre_with_covid_monthly_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_amt_pre_post_covid_monthly_avg_ratio:
+            feature_name: "fea_rech_amt_pre_post_covid_monthly_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_tot_amt_covid_sum:
+            feature_name: "fea_rech_tot_amt_covid_sum_{period_string}"
+            periods:
+                - 01w
+                - 03m
+        fea_rech_tot_trx_covid_sum:
+            feature_name: "fea_rech_tot_trx_covid_sum_{period_string}"
+            periods:
+                - 03m
+        fea_rech_tot_trx_pre_with_covid_ratio:
+            feature_name: "fea_rech_tot_trx_pre_with_covid_ratio"
+            periods:
+                - 03m
+        fea_rech_tot_trx_pre_post_covid_ratio:
+            feature_name: "fea_rech_tot_trx_pre_post_covid_ratio"
+            periods:
+                - 03m
+        fea_rech_tot_amt_digi_sum:
+            feature_name: "fea_rech_tot_amt_digi_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_amt_digi_ratio:
+            feature_name: "fea_rech_tot_amt_digi_ratio_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_amt_digi_covid_sum:
+            feature_name: "fea_rech_tot_amt_digi_covid_sum_{period_string}"
+            periods:
+                - 01w
+                - 03m
+        fea_rech_tot_amt_digi_covid_ratio:
+            feature_name: "fea_rech_tot_amt_digi_covid_ratio_{period_string}"
+            periods:
+                - 01w
+                - 03m
+        fea_rech_tot_amt_digi_pre_with_covid_ratio:
+            feature_name: "fea_rech_tot_amt_digi_pre_with_covid_ratio"
+            periods:
+                - 03m
+        fea_rech_tot_amt_digi_pre_post_covid_ratio:
+            feature_name: "fea_rech_tot_amt_digi_pre_post_covid_ratio"
+            periods:
+                - 03m
+        fea_rech_tot_amt_digi_trends:
+            feature_name: "fea_rech_tot_amt_digi_trends_{period_string}"
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_amt_digi_covid_trends:
+            feature_name: "fea_rech_tot_amt_digi_covid_trends_{period_string}"
+            periods:
+                - 03m
+        fea_rech_tot_amt_digi_pre_with_covid_trends:
+            feature_name: "fea_rech_tot_amt_digi_pre_with_covid_trends"
+            periods:
+                - 03m
+        fea_rech_tot_amt_digi_pre_post_covid_trends:
+            feature_name: "fea_rech_tot_amt_digi_pre_post_covid_trends"
+            periods:
+                - 03m
+        fea_rech_tot_days_no_bal_sum:
+            feature_name: "fea_rech_tot_days_no_bal_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_bal_min:
+            feature_name: "fea_rech_bal_min_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_bal_weekly_avg:
+            feature_name: "fea_rech_bal_weekly_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_bal_weekly_below_500:
+            feature_name: "fea_rech_bal_weekly_below_500_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_bal_monthly_avg:
+            feature_name: "fea_rech_bal_monthly_avg_{period_string}"
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_more_than_5000:
+            feature_name: "fea_rech_tot_days_bal_more_than_5000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_more_than_10000:
+            feature_name: "fea_rech_tot_days_bal_more_than_10000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_more_than_20000:
+            feature_name: "fea_rech_tot_days_bal_more_than_20000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_more_than_50000:
+            feature_name: "fea_rech_tot_days_bal_more_than_50000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_below_500:
+            feature_name: "fea_rech_tot_days_bal_below_500_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_more_than_20000_below_40000:
+            feature_name: "fea_rech_tot_days_bal_more_than_20000_below_40000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_more_than_40000_below_60000:
+            feature_name: "fea_rech_tot_days_bal_more_than_40000_below_60000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_days_bal_more_than_20000_below_60000:
+            feature_name: "fea_rech_tot_days_bal_more_than_20000_below_60000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_more_than_5000:
+            feature_name: "fea_rech_num_days_past_since_bal_more_than_5000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_more_than_10000:
+            feature_name: "fea_rech_num_days_past_since_bal_more_than_10000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_more_than_20000:
+            feature_name: "fea_rech_num_days_past_since_bal_more_than_20000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_more_than_50000:
+            feature_name: "fea_rech_num_days_past_since_bal_more_than_50000_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_5000_or_less:
+            feature_name: "fea_rech_num_days_past_since_bal_5000_or_less_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_10000_or_less:
+            feature_name: "fea_rech_num_days_past_since_bal_10000_or_less_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_20000_or_less:
+            feature_name: "fea_rech_num_days_past_since_bal_20000_or_less_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_num_days_past_since_bal_50000_or_less:
+            feature_name: "fea_rech_num_days_past_since_bal_50000_or_less_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_last_bal_before_rech_avg:
+            feature_name: "fea_rech_last_bal_before_rech_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_bal_covid_stddev:
+            feature_name: "fea_rech_bal_covid_stddev_{period_string}"
+            periods:
+                - 03m
+        fea_rech_bal_post_covid_stddev:
+            feature_name: "fea_rech_bal_post_covid_stddev_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_bal_pre_with_covid_stddev_ratio:
+            feature_name: "fea_rech_bal_pre_with_covid_stddev_ratio"
+            periods:
+                - 03m
+        fea_rech_bal_pre_post_covid_stddev_ratio:
+            feature_name: "fea_rech_bal_pre_post_covid_stddev_ratio"
+            periods:
+                - 03m
+        fea_rech_bal_covid_avg:
+            feature_name: "fea_rech_bal_covid_avg_{period_string}"
+            periods:
+                - 03m
+        fea_rech_bal_post_covid_avg:
+            feature_name: "fea_rech_bal_post_covid_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_bal_pre_with_covid_avg_ratio:
+            feature_name: "fea_rech_bal_pre_with_covid_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_bal_pre_post_covid_avg_ratio:
+            feature_name: "fea_rech_bal_pre_post_covid_avg_ratio"
+            periods:
+                - 03m
+        fea_rech_trx_pkg_prchse_sum:
+            feature_name: "fea_rech_trx_pkg_prchse_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_rev_pkg_prchse_sum:
+            feature_name: "fea_rech_rev_pkg_prchse_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_tot_amt_stddev:
+            feature_name: "fea_rech_tot_amt_stddev_{period_string}"
+            periods:
+                - 03m
+        fea_rech_tot_days_no_bal_avg:
+            feature_name: "fea_rech_tot_days_no_bal_avg_{period_string}"
+            periods:
+                - 02m
+                - 03m
+        fea_rech_trx_pkg_prchse_avg:
+            feature_name: "fea_rech_trx_pkg_prchse_avg_{period_string}"
+            periods:
+                - 02m
+                - 03m
+        fea_rech_rev_pkg_prchse_avg:
+            feature_name: "fea_rech_rev_pkg_prchse_avg_{period_string}"
+            periods:
+                - 02m
+                - 03m
+        fea_rech_trx_pkg_prchse_stddev:
+            feature_name: "fea_rech_trx_pkg_prchse_stddev_{period_string}"
+            periods:
+                - 03m
+        fea_rech_rev_pkg_prchse_stddev:
+            feature_name: "fea_rech_rev_pkg_prchse_stddev_{period_string}"
+            periods:
+                - 03m
+        fea_rech_rev_pkg_prchse_product_val:
+            feature_name: "fea_rech_rev_pkg_prchse_product_val_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_rev_pkg_prchse_covid_product_val:
+            feature_name: "fea_rech_rev_pkg_prchse_covid_product_val_{period_string}"
+            periods:
+                - 03m
+        fea_rech_rev_pkg_prchse_product_val_pre_with_covid_ratio:
+            feature_name: "fea_rech_rev_pkg_prchse_product_val_pre_with_covid_ratio"
+            periods:
+                - 03m
+        fea_rech_rev_pkg_prchse_product_val_pre_post_covid_ratio:
+            feature_name: "fea_rech_rev_pkg_prchse_product_val_pre_post_covid_ratio"
+            periods:
+                - 03m
+        fea_rech_tot_amt_trd:
+            feature_name: "fea_rech_tot_amt_trd_{period_string}"
+            periods:
+                - 03m
+        fea_rech_tot_trx_trd:
+            feature_name: "fea_rech_tot_trx_trd_{period_string}"
+            periods:
+                - 03m
+        fea_rech_mytsel_tot_amt_sum:
+            feature_name: "fea_rech_mytsel_tot_amt_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_mytsel_tot_trx_sum:
+            feature_name: "fea_rech_mytsel_tot_trx_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_mytsel_payment_mode_by_trx:
+            feature_name: "fea_rech_mytsel_payment_mode_by_trx_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rech_mytsel_payment_mode_by_value:
+            feature_name: "fea_rech_mytsel_payment_mode_by_value_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+    voice_calls:
+        fea_voice_inc_call_dur:
+            feature_name: "fea_voice_inc_call_dur_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_out_call_dur:
+            feature_name: "fea_voice_out_call_dur_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_tot_call_dur:
+            feature_name: "fea_voice_tot_call_dur_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_tot_inc_calls:
+            feature_name: "fea_voice_tot_inc_calls_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_tot_out_calls:
+            feature_name: "fea_voice_tot_out_calls_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_tot_calls:
+            feature_name: "fea_voice_tot_calls_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_tot_uniq_inc_calls:
+            feature_name: "fea_voice_tot_uniq_inc_calls_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_tot_uniq_out_calls:
+            feature_name: "fea_voice_tot_uniq_out_calls_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_voice_tot_uniq_calls:
+            feature_name: "fea_voice_tot_uniq_calls_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+    sms:
+        fea_txt_msg_incoming_count:
+            feature_name: "fea_txt_msg_incoming_count_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_txt_msg_outgoing_count:
+            feature_name: "fea_txt_msg_outgoing_count_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_txt_msg_count:
+            feature_name: "fea_txt_msg_count_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_txt_msg_voice_ratio:
+            feature_name: "fea_txt_msg_voice_ratio_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_txt_msg_voice_ratio_incoming:
+            feature_name: "fea_txt_msg_voice_ratio_incoming_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_txt_msg_voice_ratio_outgoing:
+            feature_name: "fea_txt_msg_voice_ratio_outgoing_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_txt_msg_government_tax_incoming_count:
+            feature_name: "fea_txt_msg_government_tax_incoming_count_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_txt_msg_kredivo_flag:
+            feature_name: "fea_txt_msg_kredivo_flag_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+    revenue:
+        fea_rev_dls_mms_cnt_payu_sum:
+            feature_name: "fea_rev_dls_mms_cnt_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_mms_p2p_payu_sum:
+            feature_name: "fea_rev_dls_mms_p2p_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_music_payu_sum:
+            feature_name: "fea_rev_dls_music_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_other_vas_payu_sum:
+            feature_name: "fea_rev_dls_other_vas_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_rbt_payu_sum:
+            feature_name: "fea_rev_dls_rbt_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_sms_nonp2p_payu_sum:
+            feature_name: "fea_rev_dls_sms_nonp2p_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_tp_payu_sum:
+            feature_name: "fea_rev_dls_tp_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_ussd_payu_sum:
+            feature_name: "fea_rev_dls_ussd_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_videocall_payu_sum:
+            feature_name: "fea_rev_dls_videocall_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_dls_voice_nonp2p_payu_sum:
+            feature_name: "fea_rev_dls_voice_nonp2p_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_voice_payu_sum:
+            feature_name: "fea_rev_voice_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_voice_pkg_sum:
+            feature_name: "fea_rev_voice_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_data_payu_sum:
+            feature_name: "fea_rev_data_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_data_pkg_sum:
+            feature_name: "fea_rev_data_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_sms_payu_sum:
+            feature_name: "fea_rev_sms_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_sms_pkg_sum:
+            feature_name: "fea_rev_sms_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_roam_payu_sum:
+            feature_name: "fea_rev_roam_payu_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_roam_pkg_sum:
+            feature_name: "fea_rev_roam_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_tot_sum:
+            feature_name: "fea_rev_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_voice_tot_sum:
+            feature_name: "fea_rev_voice_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_data_tot_sum:
+            feature_name: "fea_rev_data_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_sms_tot_sum:
+            feature_name: "fea_rev_sms_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_roam_tot_sum:
+            feature_name: "fea_rev_roam_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_data_sms_tot_sum:
+            feature_name: "fea_rev_data_sms_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_voice_weekend_tot_sum:
+            feature_name: "fea_rev_voice_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_data_weekend_tot_sum:
+            feature_name: "fea_rev_data_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_sms_weekend_tot_sum:
+            feature_name: "fea_rev_sms_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_data_sms_weekend_tot_sum:
+            feature_name: "fea_rev_data_sms_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_voice_sms_weekend_tot_sum:
+            feature_name: "fea_rev_voice_sms_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_voice_data_weekend_tot_sum:
+            feature_name: "fea_rev_voice_data_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_non_loan_tot_sum:
+            feature_name: "fea_rev_alt_non_loan_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_loan_tot_sum:
+            feature_name: "fea_rev_alt_loan_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_airtime_loan_repayment_transactions:
+            feature_name: "fea_rev_alt_airtime_loan_repayment_transactions_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_data_sms_tot_sum:
+            feature_name: "fea_rev_alt_data_sms_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_sms_weekend_tot_sum:
+            feature_name: "fea_rev_alt_sms_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_data_weekend_tot_sum:
+            feature_name: "fea_rev_alt_data_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_voice_weekend_tot_sum:
+            feature_name: "fea_rev_alt_voice_weekend_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_voice_payu_above_99_below_1000_sum:
+            feature_name: "fea_days_with_rev_voice_payu_above_99_below_1000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_voice_payu_above_999_below_5000_sum:
+            feature_name: "fea_days_with_rev_voice_payu_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_voice_payu_above_4999_below_10000_sum:
+            feature_name: "fea_days_with_rev_voice_payu_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_voice_payu_above_9999_below_50000_sum:
+            feature_name: "fea_days_with_rev_voice_payu_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_voice_payu_above_49999_sum:
+            feature_name: "fea_days_with_rev_voice_payu_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_data_payu_above_99_below_1000_sum:
+            feature_name: "fea_days_with_rev_data_payu_above_99_below_1000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_data_payu_above_999_below_5000_sum:
+            feature_name: "fea_days_with_rev_data_payu_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_data_payu_above_4999_below_10000_sum:
+            feature_name: "fea_days_with_rev_data_payu_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_data_payu_above_9999_below_50000_sum:
+            feature_name: "fea_days_with_rev_data_payu_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_data_payu_above_49999_sum:
+            feature_name: "fea_days_with_rev_data_payu_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_sms_payu_above_99_below_1000_sum:
+            feature_name: "fea_days_with_rev_sms_payu_above_99_below_1000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_sms_payu_above_999_below_5000_sum:
+            feature_name: "fea_days_with_rev_sms_payu_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_sms_payu_above_4999_below_10000_sum:
+            feature_name: "fea_days_with_rev_sms_payu_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_sms_payu_above_9999_below_50000_sum:
+            feature_name: "fea_days_with_rev_sms_payu_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_sms_payu_above_49999_sum:
+            feature_name: "fea_days_with_rev_sms_payu_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_dls_payu_above_99_below_1000_sum:
+            feature_name: "fea_days_with_rev_dls_payu_above_99_below_1000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_dls_payu_above_999_below_5000_sum:
+            feature_name: "fea_days_with_rev_dls_payu_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_dls_payu_above_4999_below_10000_sum:
+            feature_name: "fea_days_with_rev_dls_payu_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_dls_payu_above_9999_below_50000_sum:
+            feature_name: "fea_days_with_rev_dls_payu_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_dls_payu_above_49999_sum:
+            feature_name: "fea_days_with_rev_dls_payu_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_roam_payu_above_99_below_1000_sum:
+            feature_name: "fea_days_with_rev_roam_payu_above_99_below_1000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_roam_payu_above_999_below_5000_sum:
+            feature_name: "fea_days_with_rev_roam_payu_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_roam_payu_above_4999_below_10000_sum:
+            feature_name: "fea_days_with_rev_roam_payu_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_roam_payu_above_9999_below_50000_sum:
+            feature_name: "fea_days_with_rev_roam_payu_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_days_with_rev_roam_payu_above_49999_sum:
+            feature_name: "fea_days_with_rev_roam_payu_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_digital_above_999_below_5000_sum:
+            feature_name: "fea_rev_alt_days_with_digital_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_digital_above_4999_below_10000_sum:
+            feature_name: "fea_rev_alt_days_with_digital_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_digital_above_9999_below_50000_sum:
+            feature_name: "fea_rev_alt_days_with_digital_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_digital_above_49999_sum:
+            feature_name: "fea_rev_alt_days_with_digital_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_data_above_999_below_5000_sum:
+            feature_name: "fea_rev_alt_days_with_data_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_data_above_4999_below_10000_sum:
+            feature_name: "fea_rev_alt_days_with_data_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_data_above_9999_below_50000_sum:
+            feature_name: "fea_rev_alt_days_with_data_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_data_above_49999_sum:
+            feature_name: "fea_rev_alt_days_with_data_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_voice_above_999_below_5000_sum:
+            feature_name: "fea_rev_alt_days_with_voice_above_999_below_5000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_voice_above_4999_below_10000_sum:
+            feature_name: "fea_rev_alt_days_with_voice_above_4999_below_10000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_voice_above_9999_below_50000_sum:
+            feature_name: "fea_rev_alt_days_with_voice_above_9999_below_50000_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_days_with_voice_above_49999_sum:
+            feature_name: "fea_rev_alt_days_with_voice_above_49999_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_ratio_days_since_last_pkg_by_last_rech:
+            feature_name: "fea_ratio_days_since_last_pkg_by_last_rech_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_ratio_voice_payu_by_pkg_avg:
+            feature_name: "fea_ratio_voice_payu_by_pkg_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_ratio_data_payu_by_pkg_avg:
+            feature_name: "fea_ratio_data_payu_by_pkg_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_ratio_sms_payu_by_pkg_avg:
+            feature_name: "fea_ratio_sms_payu_by_pkg_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_ratio_roam_payu_by_pkg_avg:
+            feature_name: "fea_ratio_roam_payu_by_pkg_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_ratio_roam_by_tot_avg:
+            feature_name: "fea_ratio_roam_by_tot_avg_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_tot_sum:
+            feature_name: "fea_rev_alt_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_voice_tot_sum:
+            feature_name: "fea_rev_alt_voice_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_data_tot_sum:
+            feature_name: "fea_rev_alt_data_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_roam_tot_sum:
+            feature_name: "fea_rev_alt_roam_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_sms_tot_sum:
+            feature_name: "fea_rev_alt_sms_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_tot_sum:
+            feature_name: "fea_rev_alt_digital_tot_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_data_pkg_sum:
+            feature_name: "fea_rev_alt_data_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_voice_pkg_sum:
+            feature_name: "fea_rev_alt_voice_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_sms_pkg_sum:
+            feature_name: "fea_rev_alt_sms_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_roam_pkg_sum:
+            feature_name: "fea_rev_alt_roam_pkg_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_mms_cnt_sum:
+            feature_name: "fea_rev_alt_digital_mms_cnt_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_mms_p2p_sum:
+            feature_name: "fea_rev_alt_digital_mms_p2p_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_music_sum:
+            feature_name: "fea_rev_alt_digital_music_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_other_vas_sum:
+            feature_name: "fea_rev_alt_digital_other_vas_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_rbt_sum:
+            feature_name: "fea_rev_alt_digital_rbt_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_sms_nonp2p_sum:
+            feature_name: "fea_rev_alt_digital_sms_nonp2p_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_tp_sum:
+            feature_name: "fea_rev_alt_digital_tp_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_ussd_sum:
+            feature_name: "fea_rev_alt_digital_ussd_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_videocall_sum:
+            feature_name: "fea_rev_alt_digital_videocall_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_alt_digital_voice_nonp2p_sum:
+            feature_name: "fea_rev_alt_digital_voice_nonp2p_sum_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_mytsel_tot_rev:
+            feature_name: "fea_rev_mytsel_tot_rev_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_mytsel_tot_trx:
+            feature_name: "fea_rev_mytsel_tot_trx_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_mytsel_product_mode_by_trx:
+            feature_name: "fea_rev_mytsel_product_mode_by_trx_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_mytsel_product_mode_by_rev:
+            feature_name: "fea_rev_mytsel_product_mode_by_rev_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_mytsel_service_mode_by_trx:
+            feature_name: "fea_rev_mytsel_service_mode_by_trx_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_rev_mytsel_service_mode_by_rev:
+            feature_name: "fea_rev_mytsel_service_mode_by_rev_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+    internet_apps_usage:
+        fea_int_app_usage_total_download:
+            feature_name: fea_int_app_usage_total_download_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_total_upload:
+            feature_name: fea_int_app_usage_total_upload_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_4g_download_share:
+            feature_name: fea_int_app_usage_4g_download_share_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_3g_download_share:
+            feature_name: fea_int_app_usage_3g_download_share_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_4g_upload_share:
+            feature_name: fea_int_app_usage_4g_upload_share_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_3g_upload_share:
+            feature_name: fea_int_app_usage_3g_upload_share_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_ext_latency_4g_weekdays:
+            feature_name: fea_int_app_usage_ext_latency_4g_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_ext_latency_4g_weekends:
+            feature_name: fea_int_app_usage_ext_latency_4g_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_ext_latency_weekdays:
+            feature_name: fea_int_app_usage_ext_latency_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_ext_latency_weekends:
+            feature_name: fea_int_app_usage_ext_latency_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_latency_4g_weekdays:
+            feature_name: fea_int_app_usage_latency_4g_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_latency_4g_weekends:
+            feature_name: fea_int_app_usage_latency_4g_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_latency_weekdays:
+            feature_name: fea_int_app_usage_latency_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_latency_weekends:
+            feature_name: fea_int_app_usage_latency_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_download_speed_4g_weekdays:
+            feature_name: fea_int_app_usage_download_speed_4g_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_download_speed_4g_weekends:
+            feature_name: fea_int_app_usage_download_speed_4g_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_download_speed_weekdays:
+            feature_name: fea_int_app_usage_download_speed_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_download_speed_weekends:
+            feature_name: fea_int_app_usage_download_speed_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_speed_4g_weekdays:
+            feature_name: fea_int_app_usage_speed_4g_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_speed_4g_weekends:
+            feature_name: fea_int_app_usage_speed_4g_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_speed_weekdays:
+            feature_name: fea_int_app_usage_speed_weekdays_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_speed_weekends:
+            feature_name: fea_int_app_usage_speed_weekends_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_facebook_data_ratio:
+            feature_name: fea_int_app_usage_facebook_data_ratio_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_instagram_data_ratio:
+            feature_name: fea_int_app_usage_instagram_data_ratio_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_linkedin_data_ratio:
+            feature_name: fea_int_app_usage_linkedin_data_ratio_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_youtube_data_ratio:
+            feature_name: fea_int_app_usage_youtube_data_ratio_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+        fea_int_app_usage_covid_non_ecommerce_data_vol:
+            feature_name: fea_int_app_usage_covid_non_ecommerce_data_vol_{period_string}
+            periods:
+                - 03m
+        fea_int_app_usage_covid_ratio_ecommerce_to_non_data_vol:
+            feature_name: fea_int_app_usage_covid_ratio_ecommerce_to_non_data_vol_{period_string}
+            periods:
+                - 03m
+        fea_int_app_usage_covid_productivity_data_vol:
+            feature_name: fea_int_app_usage_covid_productivity_data_vol_{period_string}
+            periods:
+                - 03m
+        fea_int_app_usage_covid_entertainment_data_vol:
+            feature_name: fea_int_app_usage_covid_entertainment_data_vol_{period_string}
+            periods:
+                - 03m
+        fea_int_app_usage_ecommerce_accessed_apps_trend:
+            feature_name: fea_int_app_usage_ecommerce_accessed_apps_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_ecommerce_data_vol_trend:
+            feature_name: fea_int_app_usage_ecommerce_data_vol_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_ecommerce_accessed_apps_num_weeks_trend:
+            feature_name: fea_int_app_usage_ecommerce_accessed_apps_num_weeks_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_ecommerce_accessed_apps_ratio_pre_covid_with_last:
+            feature_name: fea_int_app_usage_ecommerce_accessed_apps_ratio_pre_covid_with_last_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_ecommerce_data_vol_ratio_pre_covid_with_last:
+            feature_name: fea_int_app_usage_ecommerce_data_vol_ratio_pre_covid_with_last_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_non_ecommerce_data_vol:
+            feature_name: fea_int_app_usage_non_ecommerce_data_vol_{period_string}
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_ecommerce_to_non_ecommerce_data_vol_ratio:
+            feature_name: fea_int_app_usage_ecommerce_to_non_ecommerce_data_vol_ratio_{period_string}
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_ecommerce_to_non_ecommerce_data_vol_trend:
+            feature_name: fea_int_app_usage_ecommerce_to_non_ecommerce_data_vol_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_ecommerce_duration_trend:
+            feature_name: fea_int_app_usage_ecommerce_duration_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_transportation_and_logistics_accessed_apps_num_weeks_trend:
+            feature_name: fea_int_app_usage_transportation_and_logistics_accessed_apps_num_weeks_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_transportation_and_logistics_data_vol_weekday_weekend_ratio:
+            feature_name: fea_int_app_usage_transportation_and_logistics_data_vol_weekday_weekend_ratio_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_transportation_and_logistics_data_vol_weekday_weekend_trend:
+            feature_name: fea_int_app_usage_transportation_and_logistics_data_vol_weekday_weekend_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_fitness_accessed_apps_trend:
+            feature_name: fea_int_app_usage_fitness_accessed_apps_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_fitness_data_vol_trend:
+            feature_name: fea_int_app_usage_fitness_data_vol_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_fitness_accessed_apps_num_weeks_trend:
+            feature_name: fea_int_app_usage_fitness_accessed_apps_num_weeks_trend_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_comp_websites_visits:
+            feature_name: fea_int_app_usage_comp_websites_visits_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_comp_websites_consumption:
+            feature_name: fea_int_app_usage_comp_websites_consumption_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_comp_websites_apps_visits:
+            feature_name: fea_int_app_usage_comp_websites_apps_visits_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_app_usage_comp_websites_apps_consumption:
+            feature_name: fea_int_app_usage_comp_websites_apps_consumption_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+    internet_usage:
+        fea_int_usage_tot_kb_data_usage:
+            feature_name: "fea_int_usage_tot_kb_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_2g_kb_data_usage:
+            feature_name: "fea_int_usage_2g_kb_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_3g_kb_data_usage:
+            feature_name: "fea_int_usage_3g_kb_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_4g_kb_data_usage:
+            feature_name: "fea_int_usage_4g_kb_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_stddev_4g_data_usage:
+            feature_name: "fea_int_usage_stddev_4g_data_usage_{period_string}"
+            dependencies:
+                - "fea_int_usage_daily_4g_avg_kb_data_usage_01w"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_min_total_data_usage:
+            feature_name: "fea_int_usage_min_total_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_med_total_data_usage:
+            feature_name: "fea_int_usage_med_total_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_max_total_data_usage:
+            feature_name: "fea_int_usage_max_total_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_min_4g_data_usage:
+            feature_name: "fea_int_usage_min_4g_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_med_4g_data_usage:
+            feature_name: "fea_int_usage_med_4g_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_stddev_total_data_usage:
+            feature_name: "fea_int_usage_stddev_total_data_usage_{period_string}"
+            dependencies:
+                - "fea_int_usage_daily_avg_kb_data_usage_01w"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_max_4g_data_usage:
+            feature_name: "fea_int_usage_max_4g_data_usage_{period_string}"
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_daily_4g_avg_kb_data_usage:
+            feature_name: "fea_int_usage_daily_4g_avg_kb_data_usage_{period_string}"
+            dependencies:
+                - "fea_int_usage_4g_kb_data_usage_{period_string}"
+            periods:
+                - 01w
+        fea_int_usage_daily_avg_kb_data_usage:
+            feature_name: "fea_int_usage_daily_avg_kb_data_usage_{period_string}"
+            dependencies:
+                - fea_int_usage_tot_kb_data_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_zero_usage_count_to_usage_count_ratio:
+            feature_name: "fea_int_usage_zero_usage_count_to_usage_count_ratio_{period_string}"
+            dependencies:
+                - fea_int_usage_zero_usage_days_{period_string}
+                - fea_int_usage_non_zero_usage_days_{period_string}
+            periods:
+                - 03m
+        fea_int_usage_zero_usage_days:
+            feature_name: "fea_int_usage_zero_usage_days_{period_string}"
+            periods:
+                - 03m
+        fea_int_usage_non_zero_usage_days:
+            feature_name: "fea_int_usage_non_zero_usage_days_{period_string}"
+            periods:
+                - 03m
+        fea_int_usage_weekday_kb_usage:
+            feature_name: fea_int_usage_weekday_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_weekend_kb_usage:
+            feature_name: fea_int_usage_weekend_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_data_usage_4g_weekend:
+            feature_name: fea_int_usage_tot_kb_data_usage_4g_weekend_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_data_usage_3g_weekend:
+            feature_name: fea_int_usage_tot_kb_data_usage_3g_weekend_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_data_usage_2g_weekend:
+            feature_name: fea_int_usage_tot_kb_data_usage_2g_weekend_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_data_usage_4g_weekday:
+            feature_name: fea_int_usage_tot_kb_data_usage_4g_weekday_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_data_usage_3g_weekday:
+            feature_name: fea_int_usage_tot_kb_data_usage_3g_weekday_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_data_usage_2g_weekday:
+            feature_name: fea_int_usage_tot_kb_data_usage_2g_weekday_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_num_days_with_total_data_usage_above_2mb:
+            feature_name: fea_int_usage_num_days_with_total_data_usage_above_2mb_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_num_days_with_total_data_usage_above_50mb:
+            feature_name: fea_int_usage_num_days_with_total_data_usage_above_50mb_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_num_days_with_total_data_usage_above_500mb:
+            feature_name: fea_int_usage_num_days_with_total_data_usage_above_500mb_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_num_days_with_4g_data_usage_above_2mb:
+            feature_name: fea_int_usage_num_days_with_4g_data_usage_above_2mb_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_num_days_with_4g_data_usage_above_50mb:
+            feature_name: fea_int_usage_num_days_with_4g_data_usage_above_50mb_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_num_days_with_4g_data_usage_above_500mb:
+            feature_name: fea_int_usage_num_days_with_4g_data_usage_above_500mb_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_num_unique_payload_sub_district:
+            feature_name: fea_int_usage_num_unique_payload_sub_district_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_day:
+            feature_name: fea_int_usage_tot_kb_day_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_int_usage_tot_trx_day:
+            feature_name: fea_int_usage_tot_trx_day_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_int_usage_count_day_sessions:
+            feature_name: fea_int_usage_count_day_sessions_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_int_usage_tot_kb_night:
+            feature_name: fea_int_usage_tot_kb_night_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_int_usage_tot_trx_night:
+            feature_name: fea_int_usage_tot_trx_night_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_int_usage_count_night_sessions:
+            feature_name: fea_int_usage_count_night_sessions_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_int_usage_avg_kb_data_usage:
+            feature_name: fea_int_usage_avg_kb_data_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_avg_kb_data_usage_weekend:
+            feature_name: fea_int_usage_avg_kb_data_usage_weekend_{period_string}
+            periods:
+                - 01w
+                - 03m
+        fea_int_usage_avg_kb_data_usage_weekday:
+            feature_name: fea_int_usage_avg_kb_data_usage_weekday_{period_string}
+            periods:
+                - 01w
+                - 03m
+        fea_int_usage_avg_kb_data_usage_weekend_weekday_ratio:
+            feature_name: fea_int_usage_avg_kb_data_usage_weekend_weekday_ratio_{period_string}
+            dependencies:
+                - fea_int_usage_avg_kb_data_usage_weekend_{period_string}
+                - fea_int_usage_avg_kb_data_usage_weekday_{period_string}
+            periods:
+                - 01w
+                - 03m
+        fea_int_usage_stddev_kb_data_usage:
+            feature_name: fea_int_usage_stddev_kb_data_usage_{period_string}
+            periods:
+                - 01w
+                - 03m
+        fea_int_usage_stddev_total_data_usage_trend:
+            feature_name: fea_int_usage_stddev_total_data_usage_trend_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_kb_data_usage_change:
+            feature_name: fea_int_usage_kb_data_usage_change_{period_string}
+            periods:
+                - 01w
+                - 03m
+        fea_int_usage_tot_kb_data_usage_prev:
+            feature_name: fea_int_usage_tot_kb_data_usage_prev_{period_string}
+            dependencies:
+                - fea_int_usage_tot_kb_data_usage_01w
+            periods:
+                - 01m
+                - 02m
+                - 03m
+        fea_int_usage_tot_kb_data_usage_trend:
+            feature_name: fea_int_usage_tot_kb_data_usage_trend_{period_string}
+            dependencies:
+                - fea_int_usage_daily_avg_kb_data_usage_{period_string}
+                - fea_int_usage_tot_kb_data_usage_prev_{period_string}
+            periods:
+                - 01m
+                - 02m
+                - 03m
+    handset:
+        fea_handset_make:
+            feature_name: "fea_handset_make_{period_string}"
+            periods:
+                - 01m
+                - 02m
+                - 03m
+                - 04m
+                - 05m
+        fea_handset_count:
+            feature_name: "fea_handset_count_{period_string}"
+            periods:
+                - 01m
+                - 02m
+                - 03m
+                - 04m
+                - 05m
+        fea_handset_changed_count:
+            feature_name: "fea_handset_changed_count_{period_string}"
+            periods:
+                - 01m
+                - 02m
+                - 03m
+                - 04m
+                - 05m
+    payu_usage:
+        fea_payu_usage_weekend_kb_usage:
+            feature_name: fea_payu_usage_weekend_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_weekday_kb_usage:
+            feature_name: fea_payu_usage_weekday_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_kb_usage:
+            feature_name: fea_payu_usage_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_day_time_kb_usage:
+            feature_name: fea_payu_usage_day_time_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_night_time_kb_usage:
+            feature_name: fea_payu_usage_night_time_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_weekend_day_time_kb_usage:
+            feature_name: fea_payu_usage_weekend_day_time_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_weekend_night_time_kb_usage:
+            feature_name: fea_payu_usage_weekend_night_time_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_weekday_day_time_kb_usage:
+            feature_name: fea_payu_usage_weekday_day_time_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_payu_usage_weekday_night_time_kb_usage:
+            feature_name: fea_payu_usage_weekday_night_time_kb_usage_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+    customer_profile:
+        fea_custprof_tsel_poin_avg:
+            feature_name: fea_custprof_tsel_poin_avg_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_custprof_tsel_poin_min:
+            feature_name: fea_custprof_tsel_poin_min_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_custprof_tsel_poin_max:
+            feature_name: fea_custprof_tsel_poin_max_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+        fea_custprof_is_nsb:
+            feature_name: "fea_custprof_is_nsb_{period_string}"
+            periods:
+                - 06m
+        fea_custprof_redeem_poin:
+            feature_name: fea_custprof_redeem_poin_{period_string}
+            periods:
+                - 01w
+                - 01m
+                - 03m
+    mytsel:
+        fea_mytsel_login_count_days:
+            feature_name: "fea_mytsel_login_count_days_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+        fea_mytsel_has_login:
+            dependencies:
+                - fea_mytsel_login_count_days
+            feature_name: "fea_mytsel_has_login_{period_string}"
+            periods:
+                - 01w
+                - 02w
+                - 03w
+                - 01m
+                - 02m
+                - 03m
+
+features_mode: feature_list # Can be all or feature_list
+reseller_features_mode: feature_list # Can be all or feature_list
+
+output_features:
+    # External Wave 1
+    - fea_handset_changed_count_04m
+    - fea_handset_changed_count_05m
+    - fea_handset_count_01m
+    - fea_handset_count_02m
+    - fea_handset_count_03m
+    - fea_handset_count_04m
+    - fea_handset_count_05m
+    - fea_int_app_usage_adult_sites_data_vol_03m
+    - fea_int_app_usage_credit_lending_company_accessed_apps_03m
+    - fea_int_app_usage_credit_lending_company_data_vol_03m
+    - fea_int_app_usage_ecommerce_data_vol_03m
+    - fea_int_app_usage_education_data_vol_03m
+    - fea_int_app_usage_expensive_hobby_data_vol_03m
+    - fea_int_app_usage_facebook_data_vol_03m
+    - fea_int_app_usage_gambling_data_vol_03m
+    - fea_int_app_usage_instagram_data_vol_03m
+    - fea_int_app_usage_mobile_wallets_accessed_apps_03m
+    - fea_int_app_usage_mobile_wallets_data_vol_03m
+    - fea_int_app_usage_multifinance_accessed_apps_03m
+    - fea_int_app_usage_multifinance_data_vol_03m
+    - fea_int_app_usage_music_data_vol_03m
+    - fea_int_app_usage_onlinebanking_data_vol_03m
+    - fea_int_app_usage_social_media_sites_data_vol_02m
+    - fea_int_app_usage_social_media_sites_data_vol_03m
+    - fea_int_app_usage_transportation_and_logistics_accessed_apps_03m
+    - fea_int_app_usage_transportation_and_logistics_data_vol_03m
+    - fea_int_usage_2g_kb_data_usage_03m
+    - fea_int_usage_3g_kb_data_usage_02w
+    - fea_int_usage_3g_kb_data_usage_03m
+    - fea_int_usage_4g_kb_data_usage_03m
+    - fea_int_usage_daily_avg_kb_data_usage_03m
+    - fea_int_usage_non_zero_usage_days_03m
+    - fea_int_usage_num_days_with_total_data_usage_above_2mb_03m
+    - fea_int_usage_stddev_total_data_usage_03m
+    - fea_int_usage_tot_kb_day_03m
+    - fea_int_usage_tot_trx_night_03m
+    - fea_int_usage_weekday_kb_usage_03m
+    - fea_int_usage_weekend_kb_usage_03m
+    - fea_int_usage_zero_usage_count_to_usage_count_ratio_03m
+    - fea_los
+    - fea_rech_tot_amt_avg_01m
+    - fea_rech_tot_amt_avg_02m
+    - fea_rech_tot_amt_avg_02w
+    - fea_rech_tot_amt_avg_03m
+    - fea_rech_tot_amt_avg_03w
+    - fea_rech_tot_amt_stddev_03m
+    - fea_rech_tot_amt_sum_02m
+    - fea_rech_tot_trx_sum_01m
+    - fea_rech_tot_trx_sum_02m
+    - fea_rech_tot_trx_sum_03m
+    - fea_rech_tot_trx_sum_03w
+    - fea_rech_tot_trx_trd_03m
+    - fea_rech_trx_pkg_prchse_avg_03m
+    - fea_rech_trx_pkg_prchse_stddev_03m
+    - fea_rech_trx_pkg_prchse_sum_03m
+    - fea_rev_sms_tot_sum_03m
+    - fea_rev_sms_weekend_tot_sum_03m
+    - fea_rev_tot_sum_02m
+    - fea_rev_voice_sms_weekend_tot_sum_03m
+    - fea_rev_voice_tot_sum_03m
+    - fea_txt_msg_banks_incoming_count_02m
+    - fea_txt_msg_banks_incoming_count_03m
+    - fea_txt_msg_banks_unique_senders_count_03m
+    - fea_txt_msg_count_01m
+    - fea_txt_msg_count_02m
+    - fea_txt_msg_count_03m
+    - fea_txt_msg_credit_lending_companies_incoming_count_02m
+    - fea_txt_msg_credit_lending_companies_incoming_count_03m
+    - fea_txt_msg_credit_lending_companies_unique_senders_count_02m
+    - fea_txt_msg_credit_lending_companies_unique_senders_count_03m
+    - fea_txt_msg_ecommerce_shopping_incoming_count_03m
+    - fea_txt_msg_ecommerce_shopping_unique_senders_count_03m
+    - fea_txt_msg_incoming_count_01m
+    - fea_txt_msg_incoming_count_01w
+    - fea_txt_msg_incoming_count_02m
+    - fea_txt_msg_incoming_count_02w
+    - fea_txt_msg_incoming_count_03m
+    - fea_txt_msg_incoming_count_03w
+    - fea_txt_msg_mobile_wallets_incoming_count_03m
+    - fea_txt_msg_mobile_wallets_unique_senders_count_03m
+    - fea_txt_msg_multifinance_incoming_count_01m
+    - fea_txt_msg_multifinance_incoming_count_02m
+    - fea_txt_msg_multifinance_incoming_count_03m
+    - fea_txt_msg_multifinance_unique_senders_count_02w
+    - fea_txt_msg_multifinance_unique_senders_count_03m
+    - fea_txt_msg_multifinance_unique_senders_count_03w
+    - fea_txt_msg_other_online_services_incoming_count_02m
+    - fea_txt_msg_outgoing_count_02m
+    - fea_txt_msg_outgoing_count_03m
+    - fea_txt_msg_travel_company_unique_senders_count_02m
+    - fea_txt_msg_voice_ratio_01m
+    - fea_txt_msg_voice_ratio_incoming_03m
+    - fea_voice_avg_uniq_out_call_03m
+    - fea_voice_inc_to_tot_calls_dur_03m
+    - fea_voice_tot_dur_12_5_am_03m
+    - fea_voice_tot_inc_calls_03m
+    - fea_voice_tot_uniq_inc_calls_03m
+    - fea_voice_tot_uniq_out_calls_02m
+    - fea_voice_tot_uniq_out_calls_03m
+    # Reseller
+    - fea_outlet_area
+    - fea_outlet_created_at
+    - fea_outlet_decimal_total_cashflow_mkios
+    - fea_outlet_decimal_total_recharge_modern_channel
+    - fea_outlet_integer_los
+    - fea_outlet_region
+    - fea_outlet_string_category
+    - fea_outlet_string_classification
+    - fea_outlet_string_location_latitude
+    - fea_outlet_string_location_longitude
+    - fea_outlet_string_type
+    - fea_outlet_to_outlet_min_dist
+    - fea_outlets_4g_share_indosat_share
+    - fea_outlets_4g_share_tsel_share
+    - fea_outlets_4g_share_tsel_value
+    - fea_outlets_4g_share_xl_share
+    - fea_outlets_admin_1
+    - fea_outlets_admin_2
+    - fea_outlets_admin_3
+    - fea_outlets_admin_4
+    - fea_outlets_big_pois_bridge_big_poi_under_5000m
+    - fea_outlets_big_pois_building_big_poi_under_1000m
+    - fea_outlets_big_pois_building_big_poi_under_2500m
+    - fea_outlets_big_pois_building_big_poi_under_5000m
+    - fea_outlets_big_pois_place_of_worship_big_poi_under_5000m
+    - fea_outlets_branch
+    - fea_outlets_bridge_big_poi_min_dist
+    - fea_outlets_building_big_poi_min_dist
+    - fea_outlets_closest_cdma_km
+    - fea_outlets_closest_gsm_km
+    - fea_outlets_closest_lte_km
+    - fea_outlets_closest_umts_km
+    - fea_outlets_commerce_big_poi_min_dist
+    - fea_outlets_count_outlet_typecounter_pulsa_under_1000m
+    - fea_outlets_count_outlet_typecounter_pulsa_under_2500m
+    - fea_outlets_count_outlet_typecounter_pulsa_under_5000m
+    - fea_outlets_count_outlet_typewarung_under_2500m
+    - fea_outlets_count_outlet_typewarung_under_5000m
+    - fea_outlets_cultural_heritage_big_poi_min_dist
+    - fea_outlets_dealer_cluster_name
+    - fea_outlets_dealer_company_name
+    - fea_outlets_education_big_poi_min_dist
+    - fea_outlets_elevation_m
+    - fea_outlets_fb_share_isat_share
+    - fea_outlets_fb_share_smartfren_share
+    - fea_outlets_fb_share_tsel_share
+    - fea_outlets_fb_share_xl_share
+    - fea_outlets_gdp_ppp_2015_usd
+    - fea_outlets_geohash
+    - fea_outlets_government_big_poi_min_dist
+    - fea_outlets_hospital_big_poi_min_dist
+    - fea_outlets_kabupaten
+    - fea_outlets_kecamatan
+    - fea_outlets_kelurahan
+    - fea_outlets_milestone_big_poi_min_dist
+    - fea_outlets_min_dist_to_lacci
+    - fea_outlets_min_dist_to_prm_or_sec_road
+    - fea_outlets_min_dist_to_prm_road
+    - fea_outlets_network_3g_throughput_kbps_avg
+    - fea_outlets_network_3g_throughput_kbps_sum
+    - fea_outlets_network_hsdpa_accesability_denum_sum
+    - fea_outlets_network_hsdpa_accesability_num_sum
+    - fea_outlets_network_hsdpa_retainability_denum_sum
+    - fea_outlets_network_hsdpa_retainability_num_sum
+    - fea_outlets_network_hsupa_accesability_denum_sum
+    - fea_outlets_network_hsupa_accesability_num_sum
+    - fea_outlets_network_hsupa_mean_user_avg
+    - fea_outlets_network_hsupa_retainability_denum_sum
+    - fea_outlets_network_hsupa_retainability_num_sum
+    - fea_outlets_network_payload_hspa_mbyte_avg
+    - fea_outlets_network_payload_hspa_mbyte_sum
+    - fea_outlets_network_payload_psr99_mbyte_avg
+    - fea_outlets_network_payload_psr99_mbyte_sum
+    - fea_outlets_ookla_51001_avg_download_kbps
+    - fea_outlets_ookla_51010_avg_download_kbps
+    - fea_outlets_ookla_51010_max_download_kbps
+    - fea_outlets_ookla_51011_avg_download_kbps
+    - fea_outlets_ookla_51089_avg_download_kbps
+    - fea_outlets_ookla_telkomsel_latency_ms
+    - fea_outlets_ookla_telkomsel_throughput_download_in_busy_hours_mbps
+    - fea_outlets_place_of_worship_big_poi_min_dist
+    - fea_outlets_public_health_center_big_poi_min_dist
+    - fea_outlets_pv_red_sum_nominal_by_rs_msisdn
+    - fea_outlets_rainfall_index
+    - fea_outlets_restaurant_osm_min_dist
+    - fea_outlets_school_osm_min_dist
+    - fea_outlets_sub_branch
+    - fea_outlets_tomb_big_poi_min_dist
+    - fea_outlets_tot_val
+    - fea_outlets_under_1000m
+    - fea_outlets_under_200m_elderly_60_plus
+    - fea_outlets_under_2500m
+    - fea_outlets_under_5000m
+    - fea_outlets_urp_channel_rech_bank
+    - fea_outlets_urp_channel_rech_bonus
+    - fea_outlets_urp_channel_rech_device
+    - fea_outlets_urp_channel_rech_direct
+    - fea_outlets_urp_channel_rech_e_kiosk
+    - fea_outlets_urp_channel_rech_international_partner
+    - fea_outlets_urp_channel_rech_null
+    - fea_outlets_urp_channel_rech_online
+    - fea_outlets_urp_channel_rech_retail_nasional
+    - fea_outlets_villages_mosque
+    # Inlife 4G
+    - fea_custprof_los
+    - fea_custprof_nik_age
+    - fea_custprof_persona_los
+    - fea_handset_changed_count_03m
+    - fea_handset_changed_count_04m
+    - fea_handset_changed_count_05m
+    - fea_handset_count_01m
+    - fea_handset_count_03m
+    - fea_handset_count_04m
+    - fea_handset_count_05m
+    - fea_int_app_usage_4g_download_share_01m
+    - fea_int_app_usage_adult_sites_data_vol_03m
+    - fea_int_app_usage_adult_sites_days_since_first_usage
+    - fea_int_app_usage_adult_sites_days_since_last_usage
+    - fea_int_app_usage_beauty_days_since_last_usage
+    - fea_int_app_usage_budget_hobby_data_vol_03m
+    - fea_int_app_usage_budget_hobby_days_since_first_usage
+    - fea_int_app_usage_budget_hobby_days_since_last_usage
+    - fea_int_app_usage_cooking_data_vol_03m
+    - fea_int_app_usage_cooking_days_since_first_usage
+    - fea_int_app_usage_cooking_days_since_last_usage
+    - fea_int_app_usage_ecommerce_data_vol_03m
+    - fea_int_app_usage_ecommerce_days_since_first_usage
+    - fea_int_app_usage_ecommerce_days_since_last_usage
+    - fea_int_app_usage_education_data_vol_03m
+    - fea_int_app_usage_education_days_since_first_usage
+    - fea_int_app_usage_education_days_since_last_usage
+    - fea_int_app_usage_expensive_hobby_days_since_first_usage
+    - fea_int_app_usage_expensive_hobby_days_since_last_usage
+    - fea_int_app_usage_ext_latency_4g_weekdays_01m
+    - fea_int_app_usage_facebook_data_vol_03m
+    - fea_int_app_usage_facebook_days_since_first_usage
+    - fea_int_app_usage_facebook_days_since_last_usage
+    - fea_int_app_usage_fitness_days_since_first_usage
+    - fea_int_app_usage_fitness_days_since_last_usage
+    - fea_int_app_usage_gambling_days_since_first_usage
+    - fea_int_app_usage_gambling_days_since_last_usage
+    - fea_int_app_usage_gaming_data_vol_03m
+    - fea_int_app_usage_gaming_days_since_first_usage
+    - fea_int_app_usage_gaming_days_since_last_usage
+    - fea_int_app_usage_instagram_data_vol_03m
+    - fea_int_app_usage_instagram_days_since_first_usage
+    - fea_int_app_usage_instagram_days_since_last_usage
+    - fea_int_app_usage_jobseeker_days_since_last_usage
+    - fea_int_app_usage_languages_data_vol_03m
+    - fea_int_app_usage_languages_days_since_first_usage
+    - fea_int_app_usage_languages_days_since_last_usage
+    - fea_int_app_usage_linkedin_days_since_first_usage
+    - fea_int_app_usage_linkedin_days_since_last_usage
+    - fea_int_app_usage_mobile_wallets_data_vol_03m
+    - fea_int_app_usage_mobile_wallets_days_since_first_usage
+    - fea_int_app_usage_mobile_wallets_days_since_last_usage
+    - fea_int_app_usage_music_data_vol_03m
+    - fea_int_app_usage_music_days_since_first_usage
+    - fea_int_app_usage_music_days_since_last_usage
+    - fea_int_app_usage_onlinebanking_data_vol_03m
+    - fea_int_app_usage_onlinebanking_days_since_first_usage
+    - fea_int_app_usage_onlinebanking_days_since_last_usage
+    - fea_int_app_usage_payments_data_vol_03m
+    - fea_int_app_usage_payments_days_since_first_usage
+    - fea_int_app_usage_payments_days_since_last_usage
+    - fea_int_app_usage_photography_days_since_last_usage
+    - fea_int_app_usage_promoseeker_days_since_first_usage
+    - fea_int_app_usage_religion_islam_days_since_first_usage
+    - fea_int_app_usage_religion_islam_days_since_last_usage
+    - fea_int_app_usage_social_media_sites_data_vol_03m
+    - fea_int_app_usage_social_media_sites_days_since_first_usage
+    - fea_int_app_usage_social_media_sites_days_since_last_usage
+    - fea_int_app_usage_sports_days_since_first_usage
+    - fea_int_app_usage_techie_gadget_data_vol_03m
+    - fea_int_app_usage_techie_gadget_days_since_first_usage
+    - fea_int_app_usage_techie_gadget_days_since_last_usage
+    - fea_int_app_usage_transportation_and_logistics_data_vol_03m
+    - fea_int_app_usage_transportation_and_logistics_days_since_first_usage
+    - fea_int_app_usage_transportation_and_logistics_days_since_last_usage
+    - fea_int_app_usage_travel_days_since_first_usage
+    - fea_int_app_usage_travel_days_since_last_usage
+    - fea_int_app_usage_video_data_vol_03m
+    - fea_int_app_usage_video_days_since_first_usage
+    - fea_int_app_usage_video_days_since_last_usage
+    - fea_int_app_usage_youtube_data_vol_03m
+    - fea_int_app_usage_youtube_days_since_first_usage
+    - fea_int_app_usage_youtube_days_since_last_usage
+    - fea_int_usage_2g_kb_data_usage_03m
+    - fea_int_usage_3g_kb_data_usage_03m
+    - fea_int_usage_4g_kb_data_usage_03m
+    - fea_int_usage_count_day_sessions_03m
+    - fea_int_usage_count_night_sessions_03m
+    - fea_int_usage_daily_avg_kb_data_usage_03m
+    - fea_int_usage_max_4g_data_usage_01m
+    - fea_int_usage_max_4g_data_usage_03m
+    - fea_int_usage_max_total_data_usage_01m
+    - fea_int_usage_max_total_data_usage_03m
+    - fea_int_usage_med_4g_data_usage_01m
+    - fea_int_usage_med_4g_data_usage_03m
+    - fea_int_usage_med_total_data_usage_01m
+    - fea_int_usage_med_total_data_usage_03m
+    - fea_int_usage_min_4g_data_usage_01m
+    - fea_int_usage_min_4g_data_usage_03m
+    - fea_int_usage_min_total_data_usage_01m
+    - fea_int_usage_min_total_data_usage_03m
+    - fea_int_usage_non_zero_usage_days_03m
+    - fea_int_usage_num_days_with_4g_data_usage_above_2mb_03m
+    - fea_int_usage_num_days_with_4g_data_usage_above_500mb_03m
+    - fea_int_usage_num_days_with_4g_data_usage_above_50mb_03m
+    - fea_int_usage_num_days_with_total_data_usage_above_50mb_03m
+    - fea_int_usage_stddev_4g_data_usage_03m
+    - fea_int_usage_stddev_total_data_usage_01m
+    - fea_int_usage_stddev_total_data_usage_03m
+    - fea_int_usage_tot_kb_data_usage_03m
+    - fea_int_usage_tot_kb_data_usage_2g_weekday_03m
+    - fea_int_usage_tot_kb_data_usage_3g_weekday_03m
+    - fea_int_usage_tot_kb_data_usage_4g_weekday_03m
+    - fea_int_usage_tot_kb_data_usage_4g_weekend_03m
+    - fea_int_usage_tot_kb_day_03m
+    - fea_int_usage_tot_kb_night_01m
+    - fea_int_usage_tot_kb_night_03m
+    - fea_int_usage_tot_trx_day_03m
+    - fea_int_usage_tot_trx_night_03m
+    - fea_int_usage_weekday_kb_usage_03m
+    - fea_int_usage_weekend_kb_usage_03m
+    - fea_int_usage_weeks_since_last_internet_usage
+    - fea_int_usage_zero_usage_count_to_usage_count_ratio_03m
+    - fea_int_usage_zero_usage_days_03m
+    - fea_los
+    - fea_monthly_spend_data_max_03m
+    - fea_monthly_spend_data_min_03m
+    - fea_monthly_spend_data_pattern_01w_by_01m_over_03m
+    - fea_monthly_spend_data_pattern_02w_by_01m_over_03m
+    - fea_monthly_spend_data_pattern_03w_by_01m_over_03m
+    - fea_monthly_spend_data_pattern_04w_by_01m_over_03m
+    - fea_monthly_spend_sms_max_03m
+    - fea_monthly_spend_sms_min_03m
+    - fea_monthly_spend_sms_pattern_01w_by_01m_over_03m
+    - fea_monthly_spend_sms_pattern_02w_by_01m_over_03m
+    - fea_monthly_spend_sms_pattern_03w_by_01m_over_03m
+    - fea_monthly_spend_sms_pattern_04w_by_01m_over_03m
+    - fea_monthly_spend_sms_pattern_salary_1_5_over_03m
+    - fea_monthly_spend_voice_max_03m
+    - fea_monthly_spend_voice_min_03m
+    - fea_monthly_spend_voice_pattern_01w_by_01m_over_03m
+    - fea_monthly_spend_voice_pattern_02w_by_01m_over_03m
+    - fea_monthly_spend_voice_pattern_03w_by_01m_over_03m
+    - fea_monthly_spend_voice_pattern_04w_by_01m_over_03m
+    - fea_monthly_spend_voice_pattern_salary_1_5_over_03m
+    - fea_network_broadband_revenue_avg_1m
+    - fea_network_broadband_revenue_avg_1w
+    - fea_network_broadband_revenue_avg_2m
+    - fea_network_broadband_revenue_avg_2w
+    - fea_network_broadband_revenue_avg_3m
+    - fea_network_broadband_revenue_avg_3w
+    - fea_network_broadband_revenue_avg_6m
+    - fea_network_ccsr_cs_avg_6m
+    - fea_network_ccsr_ps_avg_1w
+    - fea_network_ccsr_ps_avg_6m
+    - fea_network_cssr_cs_avg_6m
+    - fea_network_cssr_ps_avg_1w
+    - fea_network_cssr_ps_avg_2w
+    - fea_network_cssr_ps_avg_3m
+    - fea_network_downlink_traffic_volume_mb_avg_3m
+    - fea_network_downlink_traffic_volume_mb_avg_6m
+    - fea_network_edge_mbyte_avg_1m
+    - fea_network_edge_mbyte_avg_1w
+    - fea_network_edge_mbyte_avg_2m
+    - fea_network_edge_mbyte_avg_2w
+    - fea_network_edge_mbyte_avg_3m
+    - fea_network_edge_mbyte_avg_3w
+    - fea_network_edge_mbyte_avg_6m
+    - fea_network_gprs_mbyte_avg_1m
+    - fea_network_gprs_mbyte_avg_1w
+    - fea_network_gprs_mbyte_avg_2m
+    - fea_network_gprs_mbyte_avg_2w
+    - fea_network_gprs_mbyte_avg_3m
+    - fea_network_gprs_mbyte_avg_3w
+    - fea_network_gprs_mbyte_avg_6m
+    - fea_network_hosr_avg_1m
+    - fea_network_hosr_avg_1w
+    - fea_network_hosr_avg_2m
+    - fea_network_hosr_avg_2w
+    - fea_network_hosr_avg_3m
+    - fea_network_hosr_avg_3w
+    - fea_network_hosr_avg_6m
+    - fea_network_hosr_denum_sum_avg_1m
+    - fea_network_hosr_denum_sum_avg_1w
+    - fea_network_hosr_denum_sum_avg_2m
+    - fea_network_hosr_denum_sum_avg_2w
+    - fea_network_hosr_denum_sum_avg_3m
+    - fea_network_hosr_denum_sum_avg_3w
+    - fea_network_hosr_denum_sum_avg_6m
+    - fea_network_hosr_num_sum_avg_1m
+    - fea_network_hosr_num_sum_avg_1w
+    - fea_network_hosr_num_sum_avg_2m
+    - fea_network_hosr_num_sum_avg_2w
+    - fea_network_hosr_num_sum_avg_3m
+    - fea_network_hosr_num_sum_avg_3w
+    - fea_network_hosr_num_sum_avg_6m
+    - fea_network_hsupa_mean_user_avg_6m
+    - fea_network_ifhosr_avg_1m
+    - fea_network_ifhosr_avg_1w
+    - fea_network_ifhosr_avg_2m
+    - fea_network_ifhosr_avg_3m
+    - fea_network_ifhosr_avg_6m
+    - fea_network_payload_hspa_mbyte_avg_2w
+    - fea_network_payload_hspa_mbyte_avg_3m
+    - fea_network_payload_hspa_mbyte_avg_6m
+    - fea_network_payload_psr99_mbyte_avg_2w
+    - fea_network_payload_psr99_mbyte_avg_6m
+    - fea_network_total_payload_mb_avg_6m
+    - fea_network_total_throughput_kbps_avg_3m
+    - fea_network_total_throughput_kbps_avg_6m
+    - fea_network_voice_revenue_avg_1m
+    - fea_network_voice_revenue_avg_1w
+    - fea_network_voice_revenue_avg_2m
+    - fea_network_voice_revenue_avg_2w
+    - fea_network_voice_revenue_avg_3m
+    - fea_network_voice_revenue_avg_3w
+    - fea_network_voice_revenue_avg_6m
+    - fea_network_volume_voice_traffic_erl_avg_2m
+    - fea_network_volume_voice_traffic_erl_avg_2w
+    - fea_network_volume_voice_traffic_erl_avg_3m
+    - fea_network_volume_voice_traffic_erl_avg_3w
+    - fea_network_volume_voice_traffic_erl_avg_6m
+    - fea_payu_usage_day_time_kb_usage_01m
+    - fea_payu_usage_day_time_kb_usage_03m
+    - fea_payu_usage_kb_usage_01m
+    - fea_payu_usage_kb_usage_03m
+    - fea_payu_usage_night_time_kb_usage_01m
+    - fea_payu_usage_night_time_kb_usage_03m
+    - fea_payu_usage_weekday_day_time_kb_usage_01m
+    - fea_payu_usage_weekday_day_time_kb_usage_03m
+    - fea_payu_usage_weekday_kb_usage_01m
+    - fea_payu_usage_weekday_kb_usage_03m
+    - fea_payu_usage_weekday_night_time_kb_usage_01m
+    - fea_payu_usage_weekday_night_time_kb_usage_03m
+    - fea_payu_usage_weekend_day_time_kb_usage_01m
+    - fea_payu_usage_weekend_day_time_kb_usage_03m
+    - fea_payu_usage_weekend_kb_usage_03m
+    - fea_payu_usage_weekend_night_time_kb_usage_01m
+    - fea_payu_usage_weekend_night_time_kb_usage_03m
+    - fea_rech_rev_pkg_prchse_avg_03m
+    - fea_rech_rev_pkg_prchse_product_val_01m
+    - fea_rech_rev_pkg_prchse_product_val_03m
+    - fea_rech_rev_pkg_prchse_stddev_03m
+    - fea_rech_rev_pkg_prchse_sum_01m
+    - fea_rech_rev_pkg_prchse_sum_02w
+    - fea_rech_rev_pkg_prchse_sum_03m
+    - fea_rech_tot_amt_avg_01m
+    - fea_rech_tot_amt_avg_01w
+    - fea_rech_tot_amt_avg_02w
+    - fea_rech_tot_amt_avg_03m
+    - fea_rech_tot_amt_stddev_03m
+    - fea_rech_tot_amt_sum_01m
+    - fea_rech_tot_amt_sum_01w
+    - fea_rech_tot_amt_sum_02w
+    - fea_rech_tot_amt_sum_03m
+    - fea_rech_tot_amt_trd_03m
+    - fea_rech_tot_days_no_bal_avg_03m
+    - fea_rech_tot_days_no_bal_sum_01m
+    - fea_rech_tot_days_no_bal_sum_01w
+    - fea_rech_tot_days_no_bal_sum_03m
+    - fea_rech_tot_trx_sum_01m
+    - fea_rech_tot_trx_sum_03m
+    - fea_rech_tot_trx_trd_03m
+    - fea_rech_trx_pkg_prchse_avg_03m
+    - fea_rech_trx_pkg_prchse_stddev_03m
+    - fea_rech_trx_pkg_prchse_sum_01m
+    - fea_rech_trx_pkg_prchse_sum_03m
+    - fea_recharge_weeks_since_last_recharge
+    - fea_rev_alt_data_pkg_sum_01m # DE name for fea_revnew_data_pkg_sum_01m
+    - fea_rev_alt_data_pkg_sum_02w # DE name for fea_revnew_data_pkg_sum_02w
+    - fea_rev_alt_data_pkg_sum_03m # DE name for fea_revnew_data_pkg_sum_03m
+    - fea_rev_alt_data_sms_tot_sum_01m # DE name for fea_revnew_data_sms_tot_sum_01m
+    - fea_rev_alt_data_sms_tot_sum_03m # DE name for fea_revnew_data_sms_tot_sum_03m
+    - fea_rev_alt_data_tot_sum_01m # DE name for fea_revnew_data_tot_sum_01m
+    - fea_rev_alt_data_tot_sum_03m # DE name for fea_revnew_data_tot_sum_03m
+    - fea_rev_alt_data_weekend_tot_sum_01m # DE name for fea_revnew_data_weekend_tot_sum_01m
+    - fea_rev_alt_data_weekend_tot_sum_03m # DE name for fea_revnew_data_weekend_tot_sum_03m
+    - fea_rev_alt_days_with_data_above_4999_below_10000_sum_01m # DE name for fea_revnew_days_with_data_above_4999_below_10000_sum_01m
+    - fea_rev_alt_days_with_data_above_999_below_5000_sum_01m # DE name for fea_revnew_days_with_data_above_999_below_5000_sum_01m
+    - fea_rev_alt_days_with_data_above_999_below_5000_sum_03m # DE name for fea_revnew_days_with_data_above_999_below_5000_sum_03m
+    - fea_rev_alt_days_with_digital_above_999_below_5000_sum_03m # DE name for fea_revnew_days_with_digital_above_999_below_5000_sum_03m
+    - fea_rev_alt_days_with_voice_above_9999_below_50000_sum_01m # DE name for fea_revnew_days_with_voice_above_9999_below_50000_sum_01m
+    - fea_rev_alt_days_with_voice_above_999_below_5000_sum_03m # DE name for fea_revnew_days_with_voice_above_999_below_5000_sum_03m
+    - fea_rev_alt_digital_other_vas_sum_01m # DE name for fea_revnew_digital_other_vas_sum_01m
+    - fea_rev_alt_digital_other_vas_sum_01w # DE name for fea_revnew_digital_other_vas_sum_01w
+    - fea_rev_alt_digital_other_vas_sum_02w # DE name for fea_revnew_digital_other_vas_sum_02w
+    - fea_rev_alt_digital_other_vas_sum_03m # DE name for fea_revnew_digital_other_vas_sum_03m
+    - fea_rev_alt_digital_rbt_sum_03m # DE name for fea_revnew_digital_rbt_sum_03m
+    - fea_rev_alt_digital_sms_nonp2p_sum_01m # DE name for fea_revnew_digital_sms_nonp2p_sum_01m
+    - fea_rev_alt_digital_sms_nonp2p_sum_01w # DE name for fea_revnew_digital_sms_nonp2p_sum_01w
+    - fea_rev_alt_digital_sms_nonp2p_sum_02w # DE name for fea_revnew_digital_sms_nonp2p_sum_02w
+    - fea_rev_alt_digital_sms_nonp2p_sum_03m # DE name for fea_revnew_digital_sms_nonp2p_sum_03m
+    - fea_rev_alt_digital_tot_sum_01m # DE name for fea_revnew_digital_tot_sum_01m
+    - fea_rev_alt_digital_tot_sum_01w # DE name for fea_revnew_digital_tot_sum_01w
+    - fea_rev_alt_digital_tot_sum_02w # DE name for fea_revnew_digital_tot_sum_02w
+    - fea_rev_alt_digital_tot_sum_03m # DE name for fea_revnew_digital_tot_sum_03m
+    - fea_rev_alt_digital_tp_sum_01m # DE name for fea_revnew_digital_tp_sum_01m
+    - fea_rev_alt_digital_tp_sum_02w # DE name for fea_revnew_digital_tp_sum_02w
+    - fea_rev_alt_digital_tp_sum_03m # DE name for fea_revnew_digital_tp_sum_03m
+    - fea_rev_alt_digital_ussd_sum_01m # DE name for fea_revnew_digital_ussd_sum_01m
+    - fea_rev_alt_digital_ussd_sum_01w # DE name for fea_revnew_digital_ussd_sum_01w
+    - fea_rev_alt_digital_ussd_sum_02w # DE name for fea_revnew_digital_ussd_sum_02w
+    - fea_rev_alt_digital_ussd_sum_03m # DE name for fea_revnew_digital_ussd_sum_03m
+    - fea_rev_alt_sms_pkg_sum_01m # DE name for fea_revnew_sms_pkg_sum_01m
+    - fea_rev_alt_sms_pkg_sum_03m # DE name for fea_revnew_sms_pkg_sum_03m
+    - fea_rev_alt_sms_tot_sum_01m # DE name for fea_revnew_sms_tot_sum_01m
+    - fea_rev_alt_sms_tot_sum_03m # DE name for fea_revnew_sms_tot_sum_03m
+    - fea_rev_alt_sms_weekend_tot_sum_01m # DE name for fea_revnew_sms_weekend_tot_sum_01m
+    - fea_rev_alt_sms_weekend_tot_sum_03m # DE name for fea_revnew_sms_weekend_tot_sum_03m
+    - fea_rev_alt_tot_sum_01m # DE name for fea_revnew_tot_sum_01m
+    - fea_rev_alt_tot_sum_01w # DE name for fea_revnew_tot_sum_01w
+    - fea_rev_alt_tot_sum_02w # DE name for fea_revnew_tot_sum_02w
+    - fea_rev_alt_tot_sum_03m # DE name for fea_revnew_tot_sum_03m
+    - fea_rev_alt_voice_pkg_sum_03m # DE name for fea_revnew_voice_pkg_sum_03m
+    - fea_rev_alt_voice_tot_sum_01m # DE name for fea_revnew_voice_tot_sum_01m
+    - fea_rev_alt_voice_tot_sum_03m # DE name for fea_revnew_voice_tot_sum_03m
+    - fea_rev_alt_voice_weekend_tot_sum_01m # DE name for fea_revnew_voice_weekend_tot_sum_01m
+    - fea_rev_alt_voice_weekend_tot_sum_03m # DE name for fea_revnew_voice_weekend_tot_sum_03m
+    - fea_revnew_data_pkg_sum_01m
+    - fea_revnew_data_pkg_sum_02w
+    - fea_revnew_data_pkg_sum_03m
+    - fea_revnew_data_sms_tot_sum_01m
+    - fea_revnew_data_sms_tot_sum_03m
+    - fea_revnew_data_tot_sum_01m
+    - fea_revnew_data_tot_sum_03m
+    - fea_revnew_data_weekend_tot_sum_01m
+    - fea_revnew_data_weekend_tot_sum_03m
+    - fea_revnew_days_with_data_above_4999_below_10000_sum_01m
+    - fea_revnew_days_with_data_above_999_below_5000_sum_01m
+    - fea_revnew_days_with_data_above_999_below_5000_sum_03m
+    - fea_revnew_days_with_digital_above_999_below_5000_sum_03m
+    - fea_revnew_days_with_voice_above_9999_below_50000_sum_01m
+    - fea_revnew_days_with_voice_above_999_below_5000_sum_03m
+    - fea_revnew_digital_other_vas_sum_01m
+    - fea_revnew_digital_other_vas_sum_01w
+    - fea_revnew_digital_other_vas_sum_02w
+    - fea_revnew_digital_other_vas_sum_03m
+    - fea_revnew_digital_rbt_sum_03m
+    - fea_revnew_digital_sms_nonp2p_sum_01m
+    - fea_revnew_digital_sms_nonp2p_sum_01w
+    - fea_revnew_digital_sms_nonp2p_sum_02w
+    - fea_revnew_digital_sms_nonp2p_sum_03m
+    - fea_revnew_digital_tot_sum_01m
+    - fea_revnew_digital_tot_sum_01w
+    - fea_revnew_digital_tot_sum_02w
+    - fea_revnew_digital_tot_sum_03m
+    - fea_revnew_digital_tp_sum_01m
+    - fea_revnew_digital_tp_sum_02w
+    - fea_revnew_digital_tp_sum_03m
+    - fea_revnew_digital_ussd_sum_01m
+    - fea_revnew_digital_ussd_sum_01w
+    - fea_revnew_digital_ussd_sum_02w
+    - fea_revnew_digital_ussd_sum_03m
+    - fea_revnew_sms_pkg_sum_01m
+    - fea_revnew_sms_pkg_sum_03m
+    - fea_revnew_sms_tot_sum_01m
+    - fea_revnew_sms_tot_sum_03m
+    - fea_revnew_sms_weekend_tot_sum_01m
+    - fea_revnew_sms_weekend_tot_sum_03m
+    - fea_revnew_tot_sum_01m
+    - fea_revnew_tot_sum_01w
+    - fea_revnew_tot_sum_02w
+    - fea_revnew_tot_sum_03m
+    - fea_revnew_voice_pkg_sum_03m
+    - fea_revnew_voice_tot_sum_01m
+    - fea_revnew_voice_tot_sum_03m
+    - fea_revnew_voice_weekend_tot_sum_01m
+    - fea_revnew_voice_weekend_tot_sum_03m
+    - fea_txt_msg_count_01m
+    - fea_txt_msg_count_01w
+    - fea_txt_msg_count_02w
+    - fea_txt_msg_count_03m
+    - fea_txt_msg_ecommerce_shopping_incoming_count_03m
+    - fea_txt_msg_ecommerce_shopping_unique_senders_count_03m
+    - fea_txt_msg_government_incoming_count_03m
+    - fea_txt_msg_incoming_count_01m
+    - fea_txt_msg_incoming_count_01w
+    - fea_txt_msg_incoming_count_02w
+    - fea_txt_msg_incoming_count_03m
+    - fea_txt_msg_information_technology_unique_senders_count_03m
+    - fea_txt_msg_media_incoming_count_03m
+    - fea_txt_msg_mobile_wallets_incoming_count_03m
+    - fea_txt_msg_mobile_wallets_unique_senders_count_03m
+    - fea_txt_msg_other_online_services_incoming_count_01m
+    - fea_txt_msg_other_online_services_incoming_count_01w
+    - fea_txt_msg_other_online_services_incoming_count_02w
+    - fea_txt_msg_other_online_services_incoming_count_03m
+    - fea_txt_msg_other_online_services_unique_senders_count_03m
+    - fea_txt_msg_outgoing_count_01m
+    - fea_txt_msg_outgoing_count_02w
+    - fea_txt_msg_outgoing_count_03m
+    - fea_txt_msg_restaurants_incoming_count_03m
+    - fea_txt_msg_restaurants_unique_senders_count_03m
+    - fea_txt_msg_telecommunication_incoming_count_01m
+    - fea_txt_msg_telecommunication_incoming_count_01w
+    - fea_txt_msg_telecommunication_incoming_count_02w
+    - fea_txt_msg_telecommunication_incoming_count_03m
+    - fea_txt_msg_telecommunication_unique_senders_count_01m
+    - fea_txt_msg_telecommunication_unique_senders_count_02w
+    - fea_txt_msg_telecommunication_unique_senders_count_03m
+    - fea_txt_msg_voice_ratio_01m
+    - fea_txt_msg_voice_ratio_01w
+    - fea_txt_msg_voice_ratio_02w
+    - fea_txt_msg_voice_ratio_03m
+    - fea_txt_msg_voice_ratio_incoming_01m
+    - fea_txt_msg_voice_ratio_incoming_01w
+    - fea_txt_msg_voice_ratio_incoming_02w
+    - fea_txt_msg_voice_ratio_incoming_03m
+    - fea_txt_msg_voice_ratio_outgoing_01m
+    - fea_txt_msg_voice_ratio_outgoing_01w
+    - fea_txt_msg_voice_ratio_outgoing_02w
+    - fea_txt_msg_voice_ratio_outgoing_03m
+    - fea_txt_msg_weeks_since_last_incoming_msg
+    - fea_txt_msg_weeks_since_last_outgoing_msg
+    - fea_voice_inc_call_dur_01m
+    - fea_voice_inc_call_dur_01w
+    - fea_voice_inc_call_dur_02w
+    - fea_voice_inc_call_dur_03m
+    - fea_voice_inc_to_tot_calls_dur_03m
+    - fea_voice_inc_to_tot_calls_num_03m
+    - fea_voice_out_call_dur_01m
+    - fea_voice_out_call_dur_01w
+    - fea_voice_out_call_dur_02w
+    - fea_voice_out_call_dur_03m
+    - fea_voice_tot_call_dur_01m
+    - fea_voice_tot_call_dur_02w
+    - fea_voice_tot_call_dur_03m
+    - fea_voice_tot_calls_03m
+    - fea_voice_tot_dur_12_5_am_03m
+    - fea_voice_tot_inc_calls_03m
+    - fea_voice_tot_out_calls_03m
+    - fea_voice_tot_uniq_inc_calls_01w
+    - fea_voice_tot_uniq_out_calls_01w
+    - fea_voice_weeks_since_last_incoming_call
+    - fea_voice_weeks_since_last_outgoing_call
+    # Churn
+    - fea_int_app_usage_comp_websites_consumption_01m
+    - fea_int_app_usage_comp_websites_consumption_02m
+    - fea_int_app_usage_comp_websites_consumption_03m
+    - fea_int_app_usage_comp_websites_apps_visits_01m
+    - fea_int_app_usage_comp_websites_apps_visits_02m
+    - fea_int_app_usage_comp_websites_apps_visits_03m
+    - fea_int_app_usage_comp_websites_apps_consumption_01m
+    - fea_int_app_usage_comp_websites_apps_consumption_02m
+    - fea_int_app_usage_comp_websites_apps_consumption_03m
+    - fea_custprof_tsel_poin_min_01w
+    - fea_custprof_tsel_poin_min_01m
+    - fea_custprof_tsel_poin_min_03m
+    - fea_custprof_tsel_poin_max_01w
+    - fea_custprof_tsel_poin_max_01m
+    - fea_custprof_tsel_poin_max_03m
+    - fea_custprof_activation_outlet_id_06m
+    - fea_custprof_activation_outlet_name_06m
+    - fea_custprof_activation_outlet_type_06m
+    - fea_custprof_activation_outlet_location_type_06m
+    - fea_custprof_activation_outlet_classification_06m
+    - fea_custprof_activation_outlet_kabupaten_06m
+    - fea_custprof_activation_outlet_kecamatan_06m
+    - fea_network_2g_3g_coverage_cell_bandwidth_gap_03m
+    - fea_network_4g_download_inflection_pctl_wrt_competitor_01m
+    - fea_network_4g_upload_inflection_pctl_wrt_competitor_01m
+    - fea_network_4g_latency_inflection_pctl_wrt_competitor_01m
+    - fea_network_2g_3g_download_inflection_pctl_wrt_competitor_01m
+    - fea_network_2g_3g_upload_inflection_pctl_wrt_competitor_01m
+    - fea_network_2g_3g_latency_inflection_pctl_wrt_competitor_01m
+    - fea_network_tsel_4g_avg_download_throughput_higher_than_competitor_01m
+    - fea_network_tsel_4g_avg_upload_throughput_higher_than_competitor_01m
+    - fea_network_tsel_4g_avg_latency_higher_than_competitor_01m
+    - fea_network_tsel_2g_3g_avg_download_throughput_higher_than_competitor_01m
+    - fea_network_tsel_2g_3g_avg_upload_throughput_higher_than_competitor_01m
+    - fea_network_tsel_2g_3g_avg_video_score_01m
+    - fea_voice_weeks_since_last_incoming_call
+    - fea_voice_weeks_since_last_outgoing_call
+    - fea_txt_msg_weeks_since_last_outgoing_msg
+    - fea_txt_msg_weeks_since_last_incoming_msg
+    - fea_int_usage_weeks_since_last_internet_usage
+    - fea_recharge_weeks_since_last_recharge
+    - fea_rev_weeks_since_last_rev_total
+    - fea_rev_weeks_since_last_rev_pkg_tot
+    - fea_rev_weeks_since_last_rev_payu_tot
+    - fea_network_2g_3g_coverage_km2_gap_03m
+    - fea_network_4g_coverage_cell_bandwidth_gap_03m
+    - fea_network_tsel_4g_device_share_03m
+    - fea_network_tsel_4g_enodeb_share_03m
+    - fea_network_tsel_2g_3g_device_share_03m
+    - fea_network_4g_avg_download_throughput_gap_01m
+    - fea_network_4g_avg_upload_throughput_gap_01m
+    - fea_network_tsel_4g_share_of_signal_good_01m
+    - fea_network_tsel_4g_avg_excellent_quality_01m
+    - fea_network_tsel_4g_avg_game_parameter_01m
+    - fea_int_app_usage_comp_websites_visits_01m
+    - fea_int_app_usage_comp_websites_visits_02m
+    - fea_int_app_usage_comp_websites_visits_03
+    - fea_custprof_kecamatan
+    - fea_custprof_kabupaten
+    - fea_custprof_redeem_poin_01w
+    - fea_custprof_redeem_poin_01m
+    - fea_custprof_redeem_poin_03m
+    - fea_custprof_tsel_poin_avg_01w
+    - fea_custprof_tsel_poin_avg_01m
+    - fea_custprof_tsel_poin_avg_03m
+    - fea_custprof_expected_expiry_date
+    - fea_custprof_is_nsb_06m
+    - fea_handset_uniq_msisdn_06m
+    - fea_handset_uniq_msisdn_03m
+    - fea_handset_uniq_msisdn_01m
+    - fea_int_app_usage_speed_weekends_01w
+    - fea_int_app_usage_download_speed_weekdays_01w
+    - fea_int_app_usage_download_speed_weekends_01w
+    - fea_int_app_usage_social_media_sites_speed_4g_weekdays_02m
+    - fea_int_app_usage_speed_4g_weekdays_02m
+    - fea_int_app_usage_download_speed_weekends_02m
+    - fea_int_app_usage_download_speed_weekends_01m
+    - fea_int_app_usage_speed_weekdays_01m
+    - fea_int_app_usage_youtube_speed_4g_weekdays_02m
+    - fea_int_app_usage_download_speed_weekdays_02m
+    - fea_int_app_usage_download_speed_weekdays_01m
+    - fea_int_app_usage_speed_weekdays_01w
+    - fea_int_app_usage_education_speed_4g_weekends_02m
+    - fea_int_app_usage_video_speed_4g_weekdays_02m
+    - fea_network_4g_device_share_gap_03m
+    - fea_network_2g_3g_device_share_gap_03m
+    - fea_network_4g_enodeb_share_gap_03m
+    - fea_network_4g_coverage_km2_gap_03m
+    - fea_network_2g_3g_avg_download_throughput_gap_01m
+    - fea_network_2g_3g_avg_upload_throughput_gap_01m
+    - fea_network_4g_avg_latency_gap_01m
+    - fea_network_2g_3g_avg_latency_gap_01m
+    - fea_network_tsel_4g_share_of_signal_fair_01m
+    - fea_network_tsel_4g_share_of_signal_bad_01m
+    - fea_network_tsel_2g_3g_share_of_signal_good_01m
+    - fea_network_tsel_2g_3g_share_of_signal_fair_01m
+    - fea_network_tsel_2g_3g_share_of_signal_bad_01m
+    - fea_network_tsel_2g_3g_avg_latency_higher_than_competitor_01m
+    - fea_network_tsel_4g_avg_hd_quality_01m
+    - fea_network_tsel_4g_avg_good_quality_01m
+    - fea_network_tsel_4g_avg_video_score_01m
+    - fea_network_tsel_2g_3g_avg_excellent_quality_01m
+    - fea_network_tsel_2g_3g_avg_hd_quality_01m
+    - fea_network_tsel_2g_3g_avg_good_quality_01m
+    - fea_network_tsel_2g_3g_avg_game_parameter_01m
+    - activation_date

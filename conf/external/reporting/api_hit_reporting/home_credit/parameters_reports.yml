@@ -1,0 +1,34 @@
+reporting_email_setup:
+  email_notif_enabled: true
+  email_notif_setup:
+    smtp_relay_host: "smtprelay.telkomsel.co.id"
+    smtp_relay_port: 25
+    from_email: "dmp@telkomsel.co.id"
+    to_emails:
+      - "hcid.extproject@homecredit.co.id"
+      - "fransiscus_au_w@telkomsel.co.id"
+      - "aryo_s_erlangga@telkomsel.co.id"
+      - "reza_a_permadi@telkomsel.co.id"
+      - "alief_nugraha@telkomsel.co.id"
+      - "johanes_g_siregar@telkomsel.co.id"
+  email_components:
+    subject: "Daily Telkomsel HCID Credit Scoring API Hit Summary Report"
+    subject_with_weekstart: false
+    body: |
+      Dear Home Credit,
+
+      Please find attached the daily Telkomsel Credit Scoring API Summary Report.
+
+      Thank you.
+    body_type: "plain"  # plain or html, pick html only if you want to use html tag on your body email
+    attachments:
+      - file_reference: "partner_api_hit_report" # can be either HDFS path or catalog name on catalog.yml
+        time_column: "weekstart"
+        only_pick_latest: false
+        attachment_format: "csv"  # csv or xlsx
+        attachment_name: "partner_api_hit_report" # without file extensions
+      - file_reference: "partner_api_hit_report" # can be either HDFS path or catalog name on catalog.yml
+        time_column: "weekstart"
+        only_pick_latest: false
+        attachment_format: "xlsx"  # csv or xlsx
+        attachment_name: "partner_api_hit_report_excel" # without file extensions

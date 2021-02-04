@@ -1,0 +1,3346 @@
+_jdbc_oracle_qa_db: &jdbc_oracle_qa_db
+  type: spark.SparkJDBCDataSet
+  url: jdbc:oracle:thin:@10.53.71.164:1521:OPTOIPIMC2
+  credentials: qa_credentials_user_pass
+  load_args:
+    properties:
+      driver: "oracle.jdbc.driver.OracleDriver"
+  save_args:
+    mode: "append"
+    properties:
+      driver: "oracle.jdbc.driver.OracleDriver"
+
+_hive: &hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  write_mode: overwrite
+
+_hive_trx_date_1w: &hive_trx_date_1w
+  <<: *hive
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_hive_event_date_1w: &hive_event_date_1w
+  <<: *hive
+  load_args:
+    partition_filter_period: 1w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_hive_event_date_1cm: &hive_event_date_1cm
+  <<: *hive_event_date_1w
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_hive_trx_date_1cm: &_hive_trx_date_1cm
+  <<: *hive_event_date_1w
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet: &parquet
+  type: src.dmp.io.spark_data_set.SparkDataSet
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+_parquet_weekstart_1w: &parquet_weekstart_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: weekstart
+  load_args:
+    partition_filter_period: 1w
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_weekstart_3m: &parquet_weekstart_3m
+  <<: *parquet_weekstart_1w
+  load_args: &parquet_weekstart_3m_load_args
+    partition_filter_period: 3m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_weekstart_6m: &parquet_weekstart_6m
+  <<: *parquet_weekstart_1w
+  load_args:
+    partition_filter_period: 6m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_event_date_1w: &parquet_event_date_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: event_date
+  load_args:
+    partition_filter_period: 1w
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_trx_date_1w: &parquet_trx_date_1w
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: trx_date
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet_trx_date_1cm: &parquet_trx_date_1cm
+  <<: *parquet_trx_date_1w
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet_event_date_1cm: &parquet_event_date_1cm
+  <<: *parquet_event_date_1w
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_trx_date_3m: &parquet_trx_date_3m
+  <<: *parquet_trx_date_1w
+  load_args:
+    partition_filter_period: 3m
+    partition_column: trx_date
+    partition_date_format: "%Y%m%d"
+
+_parquet_mo_id_6cm: &parquet_mo_id_6cm
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: mo_id
+  load_args:
+    partition_filter_period: 6cm
+    partition_column: mo_id
+    partition_date_format: "%Y-%m"
+
+_parquet_mo_id_3cm: &parquet_mo_id_3cm
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: mo_id
+  load_args:
+    partition_filter_period: 3cm
+    partition_column: mo_id
+    partition_date_format: "%Y-%m"
+
+_hive_month_6cm: &hive_month_6cm
+  <<: *hive
+  type: src.dmp.io.spark_hive_dataset.SparkHiveDataSet
+  load_args:
+    partition_filter_period: 6cm
+    partition_column: month
+    partition_date_format: "%Y%m"
+
+_parquet_trx_date_1w_format_2: &parquet_trx_date_1w_format_2
+  <<: *parquet
+  save_args:
+    mode: overwrite
+    partitionBy: trx_date
+  load_args:
+    partition_filter_period: 1w
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+_parquet_trx_date_1cm_format_2: &parquet_trx_date_1cm_format_2
+  <<: *parquet_trx_date_1w_format_2
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+########################################################################################################################
+########################################################################################################################
+########################################################################################################################
+
+# Weekly Scaffold - 3 Months
+l1_weekly_scaffold:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly.parquet
+  partitions: 50
+
+# Weekly Scaffold - 4 Months
+l1_weekly_scaffold_4m:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly_4m.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Weekly Scaffold - 5 Months
+l1_weekly_scaffold_5m:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly_5m.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 5m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Weekly Scaffold - 6 Months
+l1_weekly_scaffold_6m:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly_6m.parquet
+  partitions: 50
+
+# Weekly Scaffold Lac
+l1_weekly_scaffold_lac_6m:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_lac_weekly.parquet
+  partitions: 1
+
+# Weekly Scaffold Lacci
+l1_weekly_scaffold_lacci_6m:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_lacci_weekly.parquet
+  partitions: 2
+
+# Partner MSISDNs
+partner_msisdns:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/partner_msisdns.parquet
+  partitions: 10
+
+partner_msisdns_old:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/partner_msisdns.parquet
+  partitions: 10
+
+l1_prepaid_customers_data_5m:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_pre_dd
+  load_args:
+    partition_filter_period: 5m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_prepaid_customers_data_6m:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_pre_dd
+  load_args:
+    partition_filter_period: 6m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_postpaid_customers_data_5m:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_post_dd
+  load_args:
+    partition_filter_period: 5m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_postpaid_customers_data_6m:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_post_dd
+  load_args:
+    partition_filter_period: 6m
+    partition_column: event_date
+    partition_date_format: "%Y-%m-%d"
+
+# Prepaid Customer Data
+l1_prepaid_customers_data:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_pre_dd
+  sla_interval:
+    start_date: "2019-01-01"
+
+l1_postpaid_customers_data:
+  <<: *hive_event_date_1w
+  layer: raw
+  database: cb
+  table: cb_post_dd
+  sla_interval:
+    start_date: "2019-01-01"
+
+## PRE_COVID-19 Scaffold ##
+l1_prepaid_customers_data_all:
+  <<: *hive
+  layer: raw
+  database: cb
+  table: cb_pre_dd
+
+l1_postpaid_customers_data_all:
+  <<: *hive
+  layer: raw
+  database: cb
+  table: cb_post_dd
+
+l1_weekly_scaffold_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly_pre_covid.parquet
+  partitions: 50
+
+l1_weekly_scaffold_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly_covid.parquet
+  partitions: 50
+
+l1_weekly_scaffold_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly_post_covid.parquet
+  partitions: 50
+
+l1_weekly_scaffold_pre_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/scaffold_weekly_pre_post_covid.parquet
+  partitions: 50
+
+########################################################################################################################
+############################################  Internet Apps Usage Features  ############################################
+########################################################################################################################
+
+# Final Mapping of BCP Data to Features
+l1_internet_app_feature_mapping:
+  <<: *parquet
+  layer: static
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_app_feature_category_mapping.parquet
+  partitions: 1
+
+# Weekly Aggregated Data for the Internet Usage for apps
+l2_internet_app_usage_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet
+  partitions: 600
+
+# Weekly Aggregated Data for the Internet Usage from bcp
+l2_internet_connection_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/internet_usage_weekly.parquet
+  partitions: 100
+
+###################################
+#########  PRIMARY LAYER  #########
+###################################
+
+# Partner MSISDNs Internet Usage Data for apps
+l3_internet_app_usage_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_partner.parquet
+  partitions: 2000
+
+# Weekly Aggregated Internet Usage for Apps Data and filled missing weeks
+l4_internet_app_usage_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_final.parquet
+  partitions: 2000
+
+# Partner MSISDNs Internet Usage Data from BCP
+l3_internet_connection_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/internet_app_usage_weekly_partner.parquet
+  partitions: 200
+
+# Weekly Aggregated Internet Usage Data from BCP and filled missing weeks
+l4_internet_connection_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/internet_app_usage_weekly_final.parquet
+  partitions: 200
+
+###################################
+#########  FEATURE LAYER  #########
+###################################
+
+# Internet Apps Usage Features
+l5_fea_internet_connection:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_connection.parquet
+  partitions: 500
+
+# Internet App Usage Features
+l5_internet_app_usage:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/internet_app_usage.parquet
+  partitions: 1000
+
+# Internet App Usage Features Pivoted
+l5_pivoted_internet_app_usage:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/pivoted_internet_app_usage.parquet
+  partitions: 1000
+
+# Internet App Usage Features Final Files
+l5_fea_internet_app_usage:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_app_usage.parquet
+  partitions: 1000
+
+l5_fea_social_media:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_social_media.parquet
+  partitions: 150
+
+l2_internet_app_usage_competitor_monthly:
+  <<: *parquet_mo_id_3cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_competitor_monthly.parquet
+  partitions: 20
+
+l3_internet_app_usage_competitor_monthly_filtered:
+  <<: *parquet_mo_id_3cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_competitor_monthly_partner.parquet
+  partitions: 2
+
+l4_internet_app_usage_competitor_monthly_final:
+  <<: *parquet_mo_id_3cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_competitor_monthly_final.parquet
+  partitions: 2
+
+l5_fea_internet_app_usage_competitor:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/internet_app_usage_competitor.parquet
+  partitions: 20
+
+##############
+## COVID-19 ##
+##############
+
+# This catalog has the same parquet path with l2_internet_app_usage_weekly
+# but this one will scan all partition data to make sure we can get Jan 2020 - Aug 2020 data
+l2_internet_app_usage_weekly_all:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_apps_usage/app_usage_weekly.parquet
+  partitions: 600
+
+l3_internet_app_usage_weekly_filtered_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_partner_pre_covid.parquet
+  partitions: 1000
+
+l4_internet_app_usage_weekly_pre_covid_final:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_final_pre_covid.parquet
+  partitions: 2000
+
+l3_internet_app_usage_weekly_filtered_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_partner_covid.parquet
+  partitions: 1000
+
+l4_internet_app_usage_weekly_covid_final:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_final_covid.parquet
+  partitions: 2000
+
+l3_internet_app_usage_weekly_filtered_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_partner_post_covid.parquet
+  partitions: 1000
+
+l4_internet_app_usage_weekly_post_covid_final:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_apps_usage/app_usage_weekly_final_post_covid.parquet
+  partitions: 2000
+
+l5_internet_app_usage_pre_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/internet_app_usage_pre_covid.parquet
+  partitions: 1000
+
+l5_pivoted_internet_app_usage_pre_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/pivoted_internet_app_usage_pre_covid.parquet
+  partitions: 1000
+
+l5_fea_internet_app_usage_pre_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_app_usage_pre_covid.parquet
+  partitions: 1000
+
+l5_internet_app_usage_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/internet_app_usage_covid.parquet
+  partitions: 1000
+
+l5_pivoted_internet_app_usage_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/pivoted_internet_app_usage_covid.parquet
+  partitions: 1000
+
+l5_fea_internet_app_usage_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_app_usage_covid.parquet
+  partitions: 1000
+
+l5_internet_app_usage_post_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/internet_app_usage_post_covid.parquet
+  partitions: 1000
+
+l5_pivoted_internet_app_usage_post_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/pivoted_internet_app_usage_post_covid.parquet
+  partitions: 1000
+
+l5_fea_internet_app_usage_post_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_app_usage_post_covid.parquet
+  partitions: 1000
+
+l5_fea_internet_app_usage_covid_fixed:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_app_usage_covid_fixed.parquet
+  partitions: 1000
+
+l5_fea_internet_app_usage_covid_trend:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_app_usage_covid_trend.parquet
+  partitions: 1000
+
+l5_fea_internet_app_usage_covid_final:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_apps_usage/fea_internet_app_usage_covid_final.parquet
+  partitions: 50
+
+
+########################################################################################################################
+##################################################  Revenue Features  ##################################################
+########################################################################################################################
+
+# Weekly Aggregated Revenue Data
+l2_revenue_weekly_data:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_weekly_v2.parquet
+  partitions: 50
+
+l2_revenue_alt_weekly_data:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_alt_weekly_v2.parquet
+  partitions: 50
+
+# Partner MSISDNs Revenue Data
+l3_revenue_weekly_data_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/revenue/revenue_weekly_partner.parquet
+  partitions: 50
+
+l3_revenue_alt_weekly_data_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/revenue/revenue_alt_weekly_partner.parquet
+  partitions: 50
+
+# Weekly Aggregated Revenue Data and filled missing weeks
+l4_revenue_weekly_data_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/revenue/revenue_weekly_final.parquet
+  partitions: 50
+
+l4_revenue_alt_weekly_data_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/revenue/revenue_alt_weekly_final.parquet
+  partitions: 50
+
+# Revenue Features
+l4_fea_revenue_weekend:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_weekend.parquet
+  partitions: 100
+
+l4_fea_revenue_base_payu_pkg:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_base_payu_pkg.parquet
+  partitions: 100
+
+l4_fea_revenue_spend_pattern:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_spend_pattern.parquet
+  partitions: 100
+
+l4_fea_revenue_monthly_spend:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_monthly_spend.parquet
+  partitions: 100
+
+l4_fea_revenue_salary:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_salary.parquet
+  partitions: 100
+
+l4_fea_revenue_threshold_voice_data:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_threshold_voice_data.parquet
+  partitions: 100
+
+l4_fea_revenue_threshold_sms_dls_roam:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_threshold_sms_dls_roam.parquet
+  partitions: 100
+
+# Weekly MyTSel Revenue Aggregate
+l2_revenue_mytsel_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/revenue/revenue_mytsel_weekly.parquet
+  partitions: 1
+
+# Weekly MyTSel Revenue Aggregate
+l3_revenue_mytsel_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/revenue/revenue_mytsel_weekly_filtered.parquet
+  partitions: 10 # TODO: To be updated
+
+# Weekly MyTSel Revenue Aggregate
+l3_revenue_mytsel_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/revenue/revenue_mytsel_weekly_final.parquet
+  partitions: 10 # TODO: To be updated
+
+# Weekly MyTSel Revenue Features
+l4_fea_revenue_mytsel:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/revenue/fea_revenue_mytsel.parquet
+  partitions: 10 # TODO: To be updated
+
+########################################################################################################################
+##################################################  Recharge Features  #################################################
+########################################################################################################################
+
+# Weekly Aggregated Recharge Data
+l1_rech_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet
+  partitions: 10
+
+l2_account_balance_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v3.parquet
+  partitions: 25
+
+l1_chg_pkg_prchse_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+  partitions: 10
+
+l1_digi_rech_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet
+  partitions: 10
+
+## MyTsel
+l1_mytsel_rech_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/mytsel_rech_weekly.parquet
+  partitions: 10 # TODO: Update Partition
+
+# Partner MSISDNs Recharge Data
+l1_rech_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_partner.parquet
+  partitions: 10
+
+l1_acc_bal_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_partner.parquet
+  partitions: 25
+
+l1_chg_pkg_prchse_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_partner.parquet
+  partitions: 10
+
+l1_digi_rech_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_partner.parquet
+  partitions: 5
+
+## MyTsel
+l1_mytsel_rech_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/mytsel_rech_weekly_partner.parquet
+  partitions: 10 # TODO: Update Partition
+
+# Weekly Aggregated Recharge Data and filled missing weeks
+l1_rech_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_final.parquet
+  partitions: 20
+
+l1_acc_bal_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_final.parquet
+  partitions: 20
+
+l1_chg_pkg_prchse_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_final.parquet
+  partitions: 25
+
+l1_digi_rech_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_final.parquet
+  partitions: 20
+
+## MyTsel
+l1_mytsel_rech_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/mytsel_rech_weekly_final.parquet
+  partitions: 10 # TODO: Update Partition
+
+# Recharge Features
+l5_fea_recharge:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/recharge/fea_recharge.parquet
+  partitions: 150
+
+l5_fea_recharge_mytsel:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/recharge/fea_recharge_mytsel.parquet
+  partitions: 10 # TODO: Update Partition
+
+##############
+## COVID-19 ##
+##############
+
+# This catalog has the same parquet path with l1_rech_weekly
+# but this one will scan all partition data to make sure we can get Jan 2020 - Aug 2020 data
+l2_rech_weekly_all:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/rech_weekly.parquet
+  partitions: 10
+
+# This catalog has the same parquet path with l2_account_balance_weekly
+# but this one will scan all partition data to make sure we can get Jan 2020 - Aug 2020 data
+l2_account_balance_weekly_all:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/acc_bal_weekly_v2.parquet
+  partitions: 25
+
+# This catalog has the same parquet path with l1_chg_pkg_prchse_weekly
+# but this one will scan all partition data to make sure we can get Jan 2020 - Aug 2020 data
+l2_chg_pkg_prchse_weekly_all:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/chg_pkg_prchse_weekly.parquet
+  partitions: 10
+
+# This catalog has the same parquet path with l1_digi_rech_weekly
+# but this one will scan all partition data to make sure we can get Jan 2020 - Aug 2020 data
+l2_digi_rech_weekly_all:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/recharge/digi_rech_weekly.parquet
+  partitions: 10
+
+l3_acc_bal_weekly_filtered_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_pre_covid_partner.parquet
+  partitions: 20
+
+l4_acc_bal_weekly_final_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_final_pre_covid.parquet
+  partitions: 20
+
+l3_rech_weekly_filtered_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_pre_covid_partner.parquet
+  partitions: 5
+
+l4_rech_weekly_final_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_final_pre_covid.parquet
+  partitions: 20
+
+l3_digi_rech_weekly_filtered_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_pre_covid_partner.parquet
+  partitions: 5
+
+l4_digi_rech_weekly_final_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_final_pre_covid.parquet
+  partitions: 20
+
+l3_chg_pkg_prchse_weekly_filtered_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_pre_covid_partner.parquet
+  partitions: 5
+
+l4_chg_pkg_prchse_weekly_final_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_final_pre_covid.parquet
+  partitions: 25
+
+l3_acc_bal_weekly_filtered_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_covid_partner.parquet
+  partitions: 20
+
+l4_acc_bal_weekly_final_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_final_covid.parquet
+  partitions: 20
+
+l3_rech_weekly_filtered_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_covid_partner.parquet
+  partitions: 5
+
+l4_rech_weekly_final_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_final_covid.parquet
+  partitions: 20
+
+l3_digi_rech_weekly_filtered_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_covid_partner.parquet
+  partitions: 5
+
+l4_digi_rech_weekly_final_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_final_covid.parquet
+  partitions: 20
+
+l3_chg_pkg_prchse_weekly_filtered_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_covid_partner.parquet
+  partitions: 5
+
+l4_chg_pkg_prchse_weekly_final_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_final_covid.parquet
+  partitions: 25
+
+l3_acc_bal_weekly_filtered_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_post_covid_partner.parquet
+  partitions: 20
+
+l4_acc_bal_weekly_final_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/acc_bal_weekly_final_post_covid.parquet
+  partitions: 20
+
+l3_rech_weekly_filtered_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_post_covid_partner.parquet
+  partitions: 5
+
+l4_rech_weekly_final_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/rech_weekly_final_post_covid.parquet
+  partitions: 20
+
+l3_digi_rech_weekly_filtered_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_post_covid_partner.parquet
+  partitions: 5
+
+l4_digi_rech_weekly_final_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/digi_rech_weekly_final_post_covid.parquet
+  partitions: 20
+
+l3_chg_pkg_prchse_weekly_filtered_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_post_covid_partner.parquet
+  partitions: 5
+
+l4_chg_pkg_prchse_weekly_final_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/recharge/chg_pkg_prchse_weekly_final_post_covid.parquet
+  partitions: 25
+
+l5_fea_recharge_pre_covid_fixed:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/recharge/fea_recharge_pre_covid_fixed.parquet
+  partitions: 25
+
+l5_fea_recharge_covid_fixed:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/recharge/fea_recharge_covid_fixed.parquet
+  partitions: 25
+
+l5_fea_recharge_post_covid_fixed:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/recharge/fea_recharge_post_covid_fixed.parquet
+  partitions: 25
+
+l5_fea_recharge_covid_fixed_all:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/recharge/fea_recharge_covid_fixed_all.parquet
+  partitions: 25
+
+l5_fea_recharge_covid_final:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/recharge/fea_recharge_covid_final.parquet
+  partitions: 25
+
+########################################################################################################################
+####################################################  Outlet Features  #################################################
+########################################################################################################################
+
+l1_ext_WP_demographics:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_wp_demographics_20200714 # ext_wp_demographics
+
+l1_fb_share:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_fb_share
+
+l1_4g_bts_share:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_4g_bts_share
+
+l1_archetype:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: city_archetypes_2020
+
+l1_dealer:
+  <<: *hive
+  layer: raw
+  database: sch
+  table: outlet_dealer_reff
+
+l1_ext_ookla:
+  <<: *hive
+  layer: raw
+  database: nwa
+  table: nwa_exr_ookla
+
+l1_ext_opensignal:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_opensignal
+
+l1_digistar_sellthru_det:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: digistar_sellthru_det
+
+l1_salesforce:
+  <<: *hive
+  layer: raw
+  database: sch
+  table: digipos_sf_journey_dd
+
+l1_ext_GHS_urbanicity:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_ghs_urbanicity_20200713 # ext_ghs_urbanicity
+
+l1_ext_GAR_demographics:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_gar_demographics
+
+l1_ext_WP_elevation:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_wp_elevation
+
+l1_ext_NEO_rainfall_index:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_neo_rainfall_index
+
+l1_ext_ocid_cell_towers:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_ocid_cell_towers_20200713 # ext_ocid_cell_towers
+
+l1_ext_Dryad_HDI:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_dryad_hdi_20200714 # ext_dryad_hdi
+
+l1_ext_Dryad_GDP_per_capita:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_dryad_gdp_per_capita_20200714 # ext_dryad_gdp_per_capita
+
+l1_ext_Dryad_GDP:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_dryad_gdp_20200714 # ext_dryad_gdp
+
+l1_ext_HDX_administrative_divisions:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_hdx_administrative_divisions_20200714 # ext_hdx_administrative_divisions
+
+l1_ext_BPS_extreme_poverty_percentages:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_bps_extreme_poverty_percentages
+
+l1_zone_pricing:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: zone_pricing
+
+l1_ext_bps_susenas:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_bps_susenas
+
+l1_ext_bps_podes:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_bps_podes
+
+l1_ext_bps_sakernas:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: ext_bps_sakernas
+
+l1_mkios_neighb_uniq:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_neighb_uniq.parquet
+
+l1_urp_neighb_uniq:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/urp_neighb_uniq.parquet
+
+l1_unique_outlets:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_outlets.parquet
+
+l1_unique_ext_HDX_coast_points:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_HDX_coast_points.parquet
+
+l1_unique_ext_OSM_primary_roads:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_OSM_primary_roads.parquet
+
+l1_unique_ext_OSM_primary_and_secondary_roads:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_OSM_primary_and_secondary_roads.parquet
+
+l1_unique_ext_OSM_railways:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/unique_ext_OSM_railways.parquet
+
+l1_dfj_outlet_fb_pop:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_outlet_fb_pop.parquet
+
+l1_dfj_big_poi_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_big_poi_outlet.parquet
+
+l1_dfj_osm_poi_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_osm_poi_outlet.parquet
+
+l1_dfj_conflict_poi_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_conflict_poi_outlet.parquet
+
+l1_dfj_outlets_near_outlet:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_outlets_near_outlet.parquet
+
+l1_outlets_with_neighbours:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/outlets_with_neighbours.parquet
+
+l2_outlet_geospatial_pick_nearest_and_assign:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_geospatial_pick_nearest_and_assign.parquet
+
+l2_closest_big_pois_to_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_closest_big_pois_to_outlet.parquet
+
+l2_closest_osm_pois_to_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_closest_osm_pois_to_outlet.parquet
+
+l2_total_big_pois_count_for_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_total_big_pois_count_for_outlet.parquet
+
+l2_total_conflict_count_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_total_conflict_count_outlet.parquet
+
+l2_outlet_to_outlet_min_dist:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_to_outlet_min_dist.parquet
+
+l2_outlet_counts_per_outlet_in_radius:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_counts_per_outlet_in_radius.parquet
+
+l2_fb_pop_for_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_fb_pop_for_outlet.parquet
+  partitions: 5000
+
+l2_fb_share_for_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_fb_share_for_outlet.parquet
+
+l2_4g_bts_share_for_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_4g_bts_share_for_outlet.parquet
+
+l2_outlet_archetype:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_archetype.parquet
+
+l2_outlet_dealer:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_dealer.parquet
+
+l2_outlet_ookla:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_ookla.parquet
+
+l2_outlet_opensignal:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_opensignal.parquet
+
+l2_outlet_digistar_sellthru_det:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_digistar_sellthru_det.parquet
+
+l2_outlet_salesforce:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_salesforce.parquet
+
+l2_types_of_outlets_near_an_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_types_of_outlets_near_an_outlet.parquet
+
+l2_outlets_in_radiuses_based_on_classf:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlets_in_radiuses_based_on_classf.parquet
+
+l2_outlets_cashflow_in_radiuses_based_on_classf:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlets_cashflow_in_radiuses_based_on_classf.parquet
+
+l2_min_dist_to_lacci_from_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_min_dist_to_lacci_from_outlet.parquet
+
+l2_mkios_channel_rech:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_mkios_channel_rech.parquet
+
+l2_urp_channel_rech:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_urp_channel_rech.parquet
+
+l1_pv_inj_lacci_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_inj_lacci_outlet_stats.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_inj_city_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_inj_city_stats.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_inj_rs_msisdn_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_inj_rs_msisdn_outlet_stats.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_red_lacci_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_red_lacci_outlet_stats.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_red_city_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_red_city_stats.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_pv_red_rs_msisdn_outlet_stats:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/pv_red_rs_msisdn_outlet_stats.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_outlets_with_most_recent_classf:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/outlets_with_most_recent_classf.parquet
+
+l2_outlet_geospatial_nearest_poi_dist_from_outlet:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_outlet_geospatial_nearest_poi_dist_from_outlet.parquet
+
+l3_outlet_master_static:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_geo.parquet
+  save_args:
+    mode: append
+    partitionBy: month
+  create_versions: True
+  sla_interval:
+    period: monthly
+    date_partitioned_column: month
+    date_partitioned_column_format: "%Y-%m-%d"
+    date: 11
+
+l3_outlet_master_static_old:
+  <<: *parquet
+  layer: master
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_geo.parquet
+  save_args:
+    mode: append
+    partitionBy: month
+  create_versions: True
+  load_args:
+    version_index: 1
+
+l3_outlet_geospatial_master_static_hive:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: master_outlet_geo
+
+##################################### Daily Level Aggregation For Outlet Revenue #######################################
+
+l1_outlet_digipos_daily_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/outlet_digipos_daily_agg.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_mkios_recharge_daily_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_recharge_daily_agg.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_mkios_recharge_daily_mode_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/mkios_recharge_daily_mode_agg.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_modern_daily_aggregated:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/modern_daily_agg.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_total_modern_channel_recharges:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/total_modern_channel_recharges.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_dnkm_agg_by_lacci:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dnkm_agg_by_lacci.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l1_dfj_digipos_mkios:
+  <<: *parquet_trx_date_1cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/outlets/dfj_mkios_outlet_id_to_rs_msisdn.parquet
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l2_fea_hsupa:
+  <<: *parquet_trx_date_1cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_hsupa.parquet
+  save_args:
+    mode: overwrite
+    partitionBy: trx_date
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l2_fea_3g_and_payload:
+  <<: *parquet_trx_date_1cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/outlets/fea_3g_and_payload.parquet
+  save_args:
+    mode: overwrite
+    partitionBy: trx_date
+  load_args:
+    partition_filter_period: 1cm
+    partition_column: trx_date
+    partition_date_format: "%Y-%m-%d"
+
+l3_outlet_master_revenue_daily:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_revenue_daily_scoring.parquet
+  create_versions: True
+  partitions: 1
+  save_args:
+    mode: append
+    partitionBy:
+      - month
+      - trx_date
+  sla_interval:
+    period: monthly
+    date_partitioned_column: month
+    date_partitioned_column_format: "%Y-%m-%d"
+    date: 11
+
+l3_outlet_master_revenue_daily_old:
+  <<: *parquet
+  layer: master
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_revenue_daily_scoring.parquet
+  create_versions: True
+  partitions: 1
+  save_args:
+    mode: append
+    partitionBy:
+      - month
+      - trx_date
+  load_args:
+    version_index: 1
+
+l3_outlet_master_revenue_daily_tsf:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/outlets/master_outlet_revenue_daily_scoring_tsf.parquet
+  create_versions: True
+  partitions: 10
+  save_args:
+    mode: append
+    partitionBy:
+      - month
+      - trx_date
+
+l3_outlet_revenue_master_hive:
+  <<: *hive
+  layer: raw
+  database: mck
+  table: master_outlet_rev
+
+########################################################################################################################
+##################################################  Handset Features  ##################################################
+########################################################################################################################
+
+# Filtered Data per IMEI
+l1_handset_lookup_data:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/handset/device_dim_single_rec_per_imei.parquet
+  partitions: 1
+
+# Weekly Aggregated Handset Data
+l2_handset_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/handset/device_data_weekly.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 5m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+###################################
+#########  PRIMARY LAYER  #########
+###################################
+
+# Partner MSISDNs Handset Data
+l2_handset_weekly_aggregated_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/handset/device_data_weekly_partner.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 5m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Weekly Aggregated Handset Data and filled missing weeks
+l2_handset_time_series_filled:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/handset/handset_time_series_filled.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 5m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+###################################
+#########  FEATURE LAYER  #########
+###################################
+
+# Device Features
+l2_fea_handset:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset/fea_device.parquet
+  partitions: 50
+
+l1_imei_user_count:
+  <<: *hive_month_6cm
+  layer: feature
+  database: dbi_bb
+  table: imei_user_count
+
+l4_fea_handset_imei:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset/fea_device_imei.parquet
+  partitions: 5
+
+########################################################################################################################
+################################################  Voice Calls Features  ################################################
+########################################################################################################################
+
+###################################
+#######  AGGREGATION LAYER  #######
+###################################
+
+# Weekly Aggregated Voice Calls Data
+l2_voice_calling_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/voice_calls/voice_calls_weekly_agg.parquet
+  partitions: 500
+
+###################################
+#########  PRIMARY LAYER  #########
+###################################
+
+# Partner MSISDNs Voice Calls Data
+l2_voice_calling_weekly_aggregated_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/usage_mss_dd_subselected_partner_partner.parquet
+  partitions: 500
+
+# Weekly Aggregated Voice Calls Data and filled missing weeks
+l2_voice_calling_time_series_filled:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/voice_calling_time_series_filled.parquet
+  partitions: 500
+
+###################################
+#########  FEATURE LAYER  #########
+###################################
+
+# Voice Calls Features
+l4_fea_voice_calling:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/voice_calls/fea_inc_out_uniq_bnums.parquet
+  partitions: 250
+
+########################################################################################################################
+################################################  Airtime Loan Features  ################################################
+########################################################################################################################
+
+# Weekly Aggregated Airtime Loan Data
+l2_airtime_loan_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/airtime/airtime_loan_weekly.parquet
+  partitions: 50
+
+# Partner MSISDNs Airtime Loan Data
+l3_airtime_loan_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/airtime/airtime_loan_weekly_partner.parquet
+  partitions: 50
+
+# Weekly Aggregated Airtime Loan Data and filled missing weeks
+l4_airtime_loan_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/airtime/airtime_loan_weekly_final.parquet
+  partitions: 50
+
+# Airtime Loan Features
+l5_fea_airtime_loan:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/airtime/fea_airtime_loan.parquet
+  partitions: 50
+
+l5_fea_airtime_loan_offer_n_revenue:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_training/04_features/airtime/fea_airtime_loan_offer_n_revenue.parquet
+  partitions: 50
+
+l5_airtime_loan_target_variable:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/airtime/airtime_loan_target_variable.parquet
+  partitions: 50
+
+########################################################################################################################
+##############################################  Internet Usage Features  ###############################################
+########################################################################################################################
+
+# Weekly Aggregated Internet Usage Data
+l1_internet_usage_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet
+  partitions: 100
+
+###################################
+#########  PRIMARY LAYER  #########
+###################################
+
+# Partner MSISDNs Internet Usage Data
+l1_internet_usage_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_weekly_partner_data.parquet
+  partitions: 125
+
+# Weekly Aggregated Internet Usage Data and filled missing weeks
+l1_internet_usage_scaffold_weekly:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_weekly_time_series_filled.parquet
+  partitions: 125
+
+###################################
+#########  FEATURE LAYER  #########
+###################################
+
+# Internet Usage Features Intermediate Files
+l2_internet_usage_prep:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_consumption_prep.parquet
+  partitions: 300
+
+# Internet Usage Features
+l2_internet_usage:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_consumption.parquet
+  partitions: 600
+
+##############
+## COVID-19 ##
+##############
+
+# This catalog has the same parquet path with l1_internet_usage_weekly
+# but this one will scan all partition data to make sure we can get Jan 2020 - Aug 2020 data
+l2_internet_usage_weekly_all:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/internet_usage/internet_usage_weekly.parquet
+  partitions: 100
+
+l3_internet_usage_weekly_filtered_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_pre_covid_weekly_partner_data.parquet
+  partitions: 100
+
+l3_internet_usage_weekly_filtered_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_covid_weekly_partner_data.parquet
+  partitions: 100
+
+l3_internet_usage_weekly_filtered_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_post_covid_weekly_partner_data.parquet
+  partitions: 100
+
+l4_internet_usage_scaffold_weekly_pre_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_pre_covid_weekly_time_series_filled.parquet
+  partitions: 125
+
+l4_internet_usage_scaffold_weekly_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_covid_weekly_time_series_filled.parquet
+  partitions: 125
+
+l4_internet_usage_scaffold_weekly_post_covid:
+  <<: *parquet
+  layer: primary
+  filepath: mck_dmp_score/02_primary/internet_usage/internet_usage_post_covid_weekly_time_series_filled.parquet
+  partitions: 125
+
+l5_fea_internet_usage_covid_trend:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_covid_trend.parquet
+  partitions: 50
+
+l5_fea_internet_usage_covid_final:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_covid_final.parquet
+  partitions: 50
+
+l5_fea_internet_usage_pre_covid_fixed:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_pre_covid_fixed.parquet
+  partitions: 50
+
+l5_fea_internet_usage_covid_fixed:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_covid_fixed.parquet
+  partitions: 50
+
+l5_fea_internet_usage_post_covid_fixed:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_post_covid_fixed.parquet
+  partitions: 50
+
+l5_fea_internet_usage_covid_fixed_joined:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/internet_usage/fea_internet_usage_covid_fixed_joined.parquet
+  partitions: 50
+
+
+########################################################################################################################
+##################################################    MyTSel Domain   ##################################################
+########################################################################################################################
+
+###################################
+#######  AGGREGATION LAYER  #######
+###################################
+
+# Weekly Aggregated Non-Macro Product Data --master_master
+l2_mytsel_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mytsel/mytsel_weekly.parquet
+  partitions: 1
+
+###################################
+#########  PRIMARY LAYER  #########
+###################################
+
+# Partner MSISDNs MyTSel Data
+l3_mytsel_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mytsel/mytsel_weekly_filtered.parquet
+  partitions: 10 # TODO: Update Partition
+
+# Partner MSISDNs MyTSel Data and filled missing weeks
+l3_mytsel_weekly_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mytsel/mytsel_weekly_final.parquet
+  partitions: 10 # TODO: Update Partition
+
+###################################
+#########  FEATURE LAYER  #########
+###################################
+
+#  MyTSel Features
+l4_fea_mytsel:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/mytsel/fea_mytsel.parquet
+  partitions: 10 # TODO: Update Partition
+
+
+########################################################################################################################
+#########################################################  LOS  ########################################################
+########################################################################################################################
+
+l1_customer_los_weekly:
+  <<: *parquet_weekstart_1w
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_los/customer_los_weekly.parquet
+  partitions: 20
+
+l2_customer_los_weekly_data_final:
+  <<: *parquet_weekstart_1w
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_los/customer_los_weekly_final.parquet
+  partitions: 25
+
+l3_customer_los_msisdn_weekstart:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_los/customer_los_msisdn_weekstart.parquet
+  partitions: 25
+
+l4_fea_customer_los:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_los/fea_customer_los.parquet
+  partitions: 25
+
+########################################################################################################################
+##################################################  Customer Profile  ##################################################
+########################################################################################################################
+
+# Weekly Aggregated Customer Profile data
+l2_customer_profile_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_weekly.parquet
+  partitions: 40
+
+## Partner MSISDNs Customer Profile Data
+l3_customer_profile_partner:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_profile_partner.parquet
+  partitions: 40
+
+l5_fea_customer_profile:
+  <<: *parquet_weekstart_6m
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_profile/fea_customer_profile.parquet
+  partitions: 40
+
+l2_customer_expiry_weekly:
+  <<: *parquet_weekstart_1w
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_expiry_weekly.parquet
+  partitions: 40
+
+l3_customer_expiry_partner:
+  <<: *parquet_weekstart_1w
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_expiry_partner.parquet
+  partitions: 40
+
+l5_fea_customer_expiry:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_profile/fea_customer_expiry.parquet
+  partitions: 40
+
+l4_customer_profile_scaffold_weekly:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_profile_scaffold_weekly.parquet
+  partitions: 25
+
+l5_fea_customer_points:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_profile/fea_customer_points.parquet
+  partitions: 40
+
+l5_fea_customer_nsb:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_profile/fea_customer_nsb.parquet
+  partitions: 40
+
+l2_customer_profile_nsb_weekly:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_nsb_weekly.parquet
+  partitions: 60
+
+l3_customer_profile_nsb_partner:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/fea_customer_profile_nsb_partner.parquet
+  partitions: 40
+
+l4_customer_profile_nsb_scaffold_weekly:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_profile_points_nsb_scaffold.parquet
+  partitions: 40
+
+l2_customer_profile_points_redeemed_weekly:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_points_redeemed_weekly.parquet
+  partitions: 2
+
+l3_customer_profile_redeemed_points_partner:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_profile_points_reedemed_partner.parquet
+  partitions: 2
+
+l4_customer_profile_redeemed_points_scaffold_weekly:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_profile_points_reedemed_scaffold.parquet
+  partitions: 2
+
+l2_customer_profile_sellthru_weekly:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/customer_profile_sellthru_weekly.parquet
+  partitions: 1
+
+l2_outlet_weekly:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/customer_profile/outlet_weekly.parquet
+  partitions: 1
+
+l4_customer_profile_sellthru_scaffold_weekly:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_profile_sellthru_scaffold_weekly.parquet
+  partitions: 2
+
+l3_customer_profile_sellthru_partner:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/customer_profile/customer_profile_sellthru_partner.parquet
+  partitions: 2
+
+l5_fea_customer_activation_outlet:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_profile/customer_profile_activation_outlet.parquet
+  partitions: 2
+
+########################################################################################################################
+####################################################  Master Table  ####################################################
+########################################################################################################################
+
+l6_master_dimension:
+  <<: *parquet_weekstart_1w
+  layer: score
+  filepath: mck_dmp_score/05_model_input/master_dimension.parquet
+  partitions: 100
+
+l6_master:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/master.parquet
+  partitions: 1500
+  create_versions: True
+  save_args:
+    mode: overwrite
+    partitionBy:
+      - weekstart
+  sla_interval:
+    period: weekly
+    date_partitioned_column: weekstart
+    date_partitioned_column_format: "%Y-%m-%d"
+    date: 6
+
+l6_master_metadata:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/master_metadata.parquet
+  partitions: 1
+  save_args:
+    mode: overwrite
+    partitionBy: created_at
+
+l6_master_hive:
+  <<: *hive
+  layer: raw
+  database: dmp_production
+  table: master_dmp
+
+l6_master_old:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/master.parquet
+  partitions: 1500
+  create_versions: True
+  save_args:
+    mode: overwrite
+    partitionBy:
+      - weekstart
+  load_args:
+    partition_filter_period: 1w
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+    version_index: 1
+
+l2_mck_customer_demography_lynx:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_demography_lynx.parquet
+  partitions: 100
+
+l2_mck_customer_loyalty:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/customer_loyalty.parquet
+  partitions: 100
+
+l6_lacci_master_static:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/master_lacci.parquet
+  partitions: 150
+  create_versions: True
+
+l6_lac_master_static:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/master_lac.parquet
+  partitions: 10
+  create_versions: True
+
+l6_master_msisdn_only:
+  <<: *parquet
+  layer: score
+  filepath: mck_dmp_score/05_model_input/master_msisdn_only.parquet
+  partitions: 10
+  create_versions: True
+
+########################################################################################################################
+############################################  Text Messaging Features  #################################################
+########################################################################################################################
+l1_commercial_text_mapping:
+  <<: *parquet
+  layer: mapping
+  filepath: mck_dmp_common/kedro/02_primary/text_messaging_mapping/sms_sender_mapping.parquet
+  partitions: 1
+
+l2_kredivo_sms_recipients:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/sms/kredivo_sms_recipients.parquet
+  partitions: 1
+
+# Text Messaging Weekly Aggregation
+l2_text_messaging_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/sms/text_messaging_weekly.parquet
+  partitions: 25
+
+# Commercial Text Messaging Weekly Aggregation
+l2_commercial_text_messaging_weekly:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/sms/commercial_text_messaging_weekly.parquet
+  partitions: 25
+
+# Partner MSISDNs Text Messaging Data
+l2_text_messaging_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/text_messaging_weekly_partner.parquet
+  partitions: 150
+
+# Partner MSISDNs Commercial Text Messaging Data
+l2_commercial_text_messaging_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/commercial_text_messaging_weekly_partner.parquet
+  partitions: 200
+
+# Weekly Aggregated Text Messaging Data and filled missing weeks
+l2_text_messaging_scaffold_weekly:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/text_messaging_weekly_final.parquet
+  partitions: 150
+
+# Weekly Aggregated Commercial Text Messaging Data and filled missing weeks
+l2_commercial_text_messaging_scaffold_weekly:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/commercial_text_messaging_weekly_final.parquet
+  partitions: 200
+
+# Text Messaging Features
+l4_fea_text_messaging:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/sms/fea_text_messaging.parquet
+  partitions: 150
+
+# Commercial Text Messaging Features
+l4_fea_commercial_text_messaging:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/sms/fea_commercial_text_messaging.parquet
+  partitions: 100
+
+########################################################################################################################
+############################################  Network Features  ########################################################
+########################################################################################################################
+
+# Weekly Aggregated Network Lac_ci data
+l1_network_lacci_weekly_aggregated:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_lacci_weekly.parquet
+  partitions: 5
+
+# Weekly Aggregated Network Lac data
+l1_network_lac_weekly_aggregated:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_lac_weekly.parquet
+  partitions: 1
+
+# Weekly Aggregated Network MSISDN data
+l1_network_msisdn_weekly_aggregated:
+  <<: *parquet_weekstart_6m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_msisdn_weekly.parquet
+  partitions: 500
+
+l2_network_msisdn_weekly_filtered:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/network/network_msisdn_weekly_partner.parquet
+  partitions: 1000
+
+l2_network_msisdn_scaffold_weekly:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/network/scaffolding_network_msisdn_weekly.parquet
+  partitions: 1000
+
+l2_network_lacci_scaffold_weekly:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/network/scaffolding_network_lacci_weekly.parquet
+  partitions: 50
+
+l2_network_lac_scaffold_weekly:
+  <<: *parquet_weekstart_6m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/network/scaffolding_network_lac_weekly.parquet
+  partitions: 5
+
+l4_fea_network_msisdn:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/network/fea_network_msisdn.parquet
+  partitions: 1000
+
+l4_fea_network_lacci:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/network/fea_network_lacci.parquet
+  partitions: 150
+
+l4_fea_network_lac:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/network/fea_network_lac.parquet
+
+l2_network_tutela_location_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/network/network_tutela_weekly.parquet
+  partitions: 1
+
+l4_fea_network_tutela:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/network/fea_network_tutela.parquet
+  partitions: 1
+
+l5_fea_map_msisdn_to_tutela_network:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/network/fea_map_msisdn_to_tutela_network.parquet
+  partitions: 80
+
+########################################################################################################################
+##################################################  Handset Features - Internal ########################################
+########################################################################################################################
+
+# Weekly Aggregated Handset Data
+l2_device_internal_weekly_aggregated:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/handset_internal/internal_device_data_weekly.parquet
+  partitions: 25
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Partner MSISDNs Handset Data
+l2_device_internal_weekly_aggregated_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/handset_internal/internal_device_data_weekly_partner.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Weekly Aggregated Handset Data and filled missing weeks
+l2_internal_handset_time_series_filled:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/handset_internal/internal_handset_time_series_filled.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Rolling window features - WEEKLY
+l2_device_internal_rolling_windows_weekly:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset_internal/device_internal_weekly_rolling_windows_weekly.parquet
+  partitions: 75
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Rolling window features - MONTHLY
+l2_device_internal_rolling_windows_monthly:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset_internal/device_internal_weekly_rolling_windows_monthly.parquet
+  partitions: 75
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Mode - WEEKLY
+l2_device_internal_mode_weekly:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset_internal/device_internal_weekly_mode_weekly.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Mode - MONTHLY
+l2_device_internal_mode_monthly:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset_internal/device_internal_weekly_mode_monthly.parquet
+  partitions: 50
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# TAC COUNT
+l2_device_internal_tac_counts:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset_internal/tac_counts.parquet
+  partitions: 1
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# MANUFACTURE COUNT
+l2_device_internal_man_counts:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset_internal/man_counts.parquet
+  partitions: 1
+  load_args:
+    partition_filter_period: 4m
+    partition_column: weekstart
+    partition_date_format: "%Y-%m-%d"
+
+# Device Features - Final Output
+l2_fea_device_internal:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/handset_internal/fea_device_internal.parquet
+  partitions: 75
+
+########################################################################################################################
+##################################################  PAYU Usage  ########################################################
+########################################################################################################################
+
+# Weekly Aggregated PAYU Usage data
+l2_payu_usage_weekly_aggregation:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/payu_usage/payu_usage_weekly.parquet
+  partitions: 10
+
+# Partner MSISDNs PAYU Usage data
+l2_payu_usage_weekly_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/payu_usage/payu_usage_weekly_partner_data.parquet
+  partitions: 50
+
+# Weekly Aggregated PAYU Usage and filled missing weeks
+l2_payu_usage_scaffold_weekly:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/payu_usage/payu_usage_weekly_time_series_filled.parquet
+  partitions: 50
+
+# PAYU Usage Features
+l4_fea_payu_usage:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/payu_usage/fea_payu_usage.parquet
+  partitions: 75
+
+########################################################################################################################
+##################################################  Product Features ###################################################
+########################################################################################################################
+
+###################################
+#######  AGGREGATION LAYER  #######
+###################################
+
+# Weekly Aggregated Non-Macro Product Data
+l1_nonmacro_product_weekly_data:
+  <<: *parquet_weekstart_3m
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/product/nonmacro_product_weekly.parquet
+  partitions: 100
+
+###################################
+#########  PRIMARY LAYER  #########
+###################################
+
+# Partner MSISDNs Non-Macro Product Data
+l1_nonmacro_product_weekly_data_filtered:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/product/nonmacro_product_weekly_partner.parquet
+  partitions: 250
+
+# Weekly Aggregated Non-Macro Product Data and filled missing weeks
+l1_nonmacro_product_weekly_data_final:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/product/nonmacro_product_weekly_final.parquet
+  partitions: 250
+
+###################################
+#########  FEATURE LAYER  #########
+###################################
+
+#  Non-Macro Product Features
+l4_fea_nonmacro_product:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/product/fea_nonmacro_product.parquet
+  partitions: 250
+
+##############
+# Deprecated #
+##############
+
+# # Weekly Aggregated Macroproduct data
+# l2_macroproduct_weekly:
+#   <<: *parquet_weekstart_3m
+#   layer: aggregation
+#   filepath: mck_dmp_pipeline/01_aggregation/product/product_macro_weekly.parquet
+#   partitions: 100
+
+# # Partner MSISDNs Macroproduct data
+# l2_macroproduct_weekly_filtered:
+#   <<: *parquet_weekstart_3m
+#   layer: primary
+#   filepath: mck_dmp_score/02_primary/product/product_macro_weekly_partner_data.parquet
+#   partitions: 250
+
+# # Weekly Aggregated Macroproduct and filled missing weeks
+# l2_macroproduct_scaffold_weekly:
+#   <<: *parquet_weekstart_3m
+#   layer: primary
+#   filepath: mck_dmp_score/02_primary/product/product_macro_weekly_time_series_filled.parquet
+#   partitions: 250
+
+# # Macroproduct Features
+# l4_fea_macroproduct_monthly:
+#   <<: *parquet_weekstart_1w
+#   layer: feature
+#   filepath: mck_dmp_score/04_features/product/fea_product_macro_monthly.parquet
+#   partitions: 150
+
+# # Macroproduct Features
+# l4_fea_macroproduct_quarterly:
+#   <<: *parquet_weekstart_1w
+#   layer: feature
+#   filepath: mck_dmp_score/04_features/product/fea_product_macro_quarterly.parquet
+#   partitions: 150
+
+# # Macroproduct Features
+# l4_fea_macroproduct_explode:
+#   <<: *parquet_weekstart_1w
+#   layer: feature
+#   filepath: mck_dmp_score/04_features/product/fea_product_macro_explode.parquet
+#   partitions: 150
+
+# # Macroproduct Features
+# l4_fea_macroproduct:
+#   <<: *parquet_weekstart_1w
+#   layer: feature
+#   filepath: mck_dmp_score/04_features/product/fea_product_macro.parquet
+#   partitions: 200
+
+##############
+# Deprecated #
+##############
+
+########################################################################################################################
+##################################################  COVID-19 Features  #################################################
+########################################################################################################################
+
+###############################
+#######  Text Messaging #######
+###############################
+
+l5_fea_text_messaging_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/sms/covid/fea_text_messaging_pre_covid.parquet
+  partitions: 150
+
+l5_fea_commercial_text_messaging_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/sms/covid/fea_commercial_text_messaging_pre_covid.parquet
+  partitions: 100
+
+l5_fea_text_messaging_covid_final:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/sms/covid/fea_text_messaging_covid_final.parquet
+  partitions: 150
+
+l5_fea_commercial_text_messaging_covid_final:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/sms/covid/fea_commercial_text_messaging_covid_final.parquet
+  partitions: 100
+
+# Pre COVID-19
+l3_text_messaging_weekly_filtered_pre_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/text_messaging_weekly_partner_pre_covid.parquet
+  partitions: 50
+
+l4_text_messaging_scaffold_weekly_pre_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/text_messaging_weekly_final_pre_covid.parquet
+  partitions: 75
+
+l3_commercial_text_messaging_weekly_filtered_pre_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/commercial_text_messaging_weekly_partner_pre_covid.parquet
+  partitions: 50
+
+l4_commercial_text_messaging_scaffold_weekly_pre_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/commercial_text_messaging_weekly_final_pre_covid.parquet
+  partitions: 200
+
+# COVID-19
+l3_text_messaging_weekly_filtered_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/text_messaging_weekly_partner_covid.parquet
+  partitions: 50
+
+l4_text_messaging_scaffold_weekly_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/text_messaging_weekly_final_covid.parquet
+  partitions: 75
+
+l3_commercial_text_messaging_weekly_filtered_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/commercial_text_messaging_weekly_partner_covid.parquet
+  partitions: 50
+
+l4_commercial_text_messaging_scaffold_weekly_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/commercial_text_messaging_weekly_final_covid.parquet
+  partitions: 200
+
+# Post COVID-19
+l3_text_messaging_weekly_filtered_post_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/text_messaging_weekly_partner_post_covid.parquet
+  partitions: 50
+
+l4_text_messaging_scaffold_weekly_post_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/text_messaging_weekly_final_post_covid.parquet
+  partitions: 75
+
+l3_commercial_text_messaging_weekly_filtered_post_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/commercial_text_messaging_weekly_partner_post_covid.parquet
+  partitions: 50
+
+l4_commercial_text_messaging_scaffold_weekly_post_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/sms/covid/commercial_text_messaging_weekly_final_post_covid.parquet
+  partitions: 200
+
+###############################
+#######  Voicce Calling #######
+###############################
+
+l5_fea_voice_calling_covid:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/voice_calls/covid/fea_inc_out_uniq_bnums_covid.parquet
+  partitions: 250
+
+l5_fea_voice_calling_covid_final:
+  <<: *parquet_weekstart_3m
+  layer: feature
+  filepath: mck_dmp_score/04_features/voice_calls/covid/fea_inc_out_uniq_bnums_covid_final.parquet
+  partitions: 250
+
+# Pre COVID-19
+
+l3_voice_calling_weekly_aggregated_filtered_pre_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/covid/usage_mss_dd_subselected_partner_partner_pre_covid.parquet
+  partitions: 500
+
+l4_voice_calling_time_series_filled_pre_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/covid/voice_calling_time_series_filled_pre_covid.parquet
+  partitions: 500
+
+# COVID-19
+
+l3_voice_calling_weekly_aggregated_filtered_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/covid/usage_mss_dd_subselected_partner_partner_covid.parquet
+  partitions: 500
+
+l4_voice_calling_time_series_filled_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/covid/voice_calling_time_series_filled_covid.parquet
+  partitions: 500
+
+# Post COVID-19
+
+l3_voice_calling_weekly_aggregated_filtered_post_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/covid/usage_mss_dd_subselected_partner_partner_post_covid.parquet
+  partitions: 500
+
+l4_voice_calling_time_series_filled_post_covid:
+  <<: *parquet_weekstart_3m
+  layer: primary
+  filepath: mck_dmp_score/02_primary/voice_calls/covid/voice_calling_time_series_filled_post_covid.parquet
+  partitions: 500
+
+
+########################################################################################################################
+###############################################    Data Quality   ######################################################
+########################################################################################################################
+
+###############################################    MSISDN SAMPLE   #####################################################
+
+l4_qa_sample_unique_msisdn:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/sample/sample_unique_msisdn.parquet
+
+###############################################    OUTLET QA TABLE   #####################################################
+
+l4_qa_master_outlet_geo_metrics:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/master/master_outlet_geo/metrics.parquet
+
+l4_qa_master_outlet_geo_outliers:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/master/master_outlet_geo/outliers.parquet
+
+l4_qa_master_outlet_revenue_metrics:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/master/master_outlet_revenue/metrics.parquet
+
+l4_qa_master_outlet_revenue_outliers:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/master/master_outlet_revenue/outliers.parquet
+
+###########################################    OUTLET QA TABLE UNION   ##################################################
+
+l4_qa_master_outlet_metrics:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/master/outlet/metrics.parquet
+
+l4_qa_master_outlet_outliers:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/master/outlet/outliers.parquet
+
+################################################    OUTLET QA DB   #######################################################
+
+l4_qa_outlet_master_availability_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_availability
+
+l4_qa_outlet_master_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_outlet_master_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+#########################################    QA Result DB - Aggregation   ###############################################
+
+l4_qa_aggregation_availability_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_availability
+
+l4_qa_aggregation_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_aggregation_monthly_unique_msisdn_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_monthly_unique_msisdn
+
+l4_qa_aggregation_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+###########################################    QA Result DB - Feature   #################################################
+
+l4_qa_feature_availability_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_availability
+
+l4_qa_feature_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_feature_monthly_unique_msisdn_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_monthly_unique_msisdn
+
+l4_qa_feature_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+############################################    QA Result DB - Master   ##################################################
+
+l4_qa_master_availability_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_availability
+
+l4_qa_master_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+l4_qa_master_monthly_unique_msisdn_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_monthly_unique_msisdn
+
+l4_qa_master_outliers_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_outliers
+
+############################################    QA Result DB   ##################################################
+
+l4_qa_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: qa_metrics
+
+#######################################    QA Thresolding  - Aggregation - Parquet   ############################################
+
+l4_qa_aggregation_threshold:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/aggregation/threshold_outliers_raw_metrics.parquet
+  create_versions: True
+
+l4_qa_aggregation_threshold_pivoted:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/aggregation/threshold_outliers_pivoted.parquet
+  create_versions: True
+
+l4_qa_aggregation_threshold_metric_dimension_mapping:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/aggregation/threshold_metric_dimension_mapping.parquet
+  create_versions: True
+
+l4_qa_aggregation_threshold_aggregated:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/aggregation/threshold_aggregation.parquet
+  create_versions: True
+
+#######################################    QA Thresolding  - Feature - Parquet   ############################################
+
+l4_qa_feature_threshold:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/feature/threshold_outliers_raw_metrics.parquet
+  create_versions: True
+
+l4_qa_feature_threshold_pivoted:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/feature/threshold_outliers_pivoted.parquet
+  create_versions: True
+
+l4_qa_feature_threshold_metric_dimension_mapping:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/feature/threshold_metric_dimension_mapping.parquet
+  create_versions: True
+
+l4_qa_feature_threshold_aggregated:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/feature/threshold_aggregation.parquet
+  create_versions: True
+
+#######################################    QA Thresolding  - Master - Parquet   ############################################
+
+l4_qa_master_threshold:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/threshold_outliers_raw_metrics.parquet
+  create_versions: True
+
+l4_qa_master_threshold_pivoted:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/threshold_outliers_pivoted.parquet
+  create_versions: True
+
+l4_qa_master_threshold_metric_dimension_mapping:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/threshold_metric_dimension_mapping.parquet
+  create_versions: True
+
+l4_qa_master_threshold_aggregated:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/threshold_aggregation.parquet
+  create_versions: True
+
+#######################################    QA Thresolding  - Outlet Master - Parquet   ############################################
+
+l4_qa_outlet_master_threshold:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/outlet/threshold_outliers_raw_metrics.parquet
+  create_versions: True
+
+l4_qa_outlet_master_threshold_pivoted:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/outlet/threshold_outliers_pivoted.parquet
+  create_versions: True
+
+l4_qa_outlet_master_threshold_metric_dimension_mapping:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/outlet/threshold_metric_dimension_mapping.parquet
+  create_versions: True
+
+l4_qa_outlet_master_threshold_aggregated:
+  <<: *parquet
+  layer: data_quality
+  filepath: mck_dmp_score/06_qa_check/threshold/master/outlet/threshold_aggregation.parquet
+  create_versions: True
+
+###########################################    QA Thresolding - Aggregation - Database   ################################################
+
+l4_qa_aggregation_threshold_pivoted_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output
+
+l4_qa_aggregation_threshold_metric_dimension_mapping_db:
+  <<: *jdbc_oracle_qa_db
+  table: metric_dimension_mapping
+
+l4_qa_aggregation_threshold_aggregated_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output_aggregate
+
+###########################################    QA Thresolding - Feature - Database   ################################################
+
+l4_qa_feature_threshold_pivoted_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output
+
+l4_qa_feature_threshold_metric_dimension_mapping_db:
+  <<: *jdbc_oracle_qa_db
+  table: metric_dimension_mapping
+
+l4_qa_feature_threshold_aggregated_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output_aggregate
+
+###########################################    QA Thresolding - Master - Database   ################################################
+
+l4_qa_master_threshold_pivoted_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output
+
+l4_qa_master_threshold_metric_dimension_mapping_db:
+  <<: *jdbc_oracle_qa_db
+  table: metric_dimension_mapping
+
+l4_qa_master_threshold_aggregated_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output_aggregate
+
+###########################################    QA Thresolding - Outlet Master - Database   ################################################
+
+l4_qa_outlet_master_threshold_pivoted_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output
+
+l4_qa_outlet_master_threshold_metric_dimension_mapping_db:
+  <<: *jdbc_oracle_qa_db
+  table: metric_dimension_mapping
+
+l4_qa_outlet_master_threshold_aggregated_db:
+  <<: *jdbc_oracle_qa_db
+  table: threshold_output_aggregate
+
+###########################################    QA Thresolding - Master Outlet Geo - Database   ###########################################
+
+l4_qa_score_master_outlet_geo_accuracy_completeness_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold
+
+l4_qa_score_master_outlet_geo_accuracy_completeness_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg
+
+l4_qa_score_master_outlet_geo_consistency_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold
+
+l4_qa_score_master_outlet_geo_consistency_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg
+
+############################################# QA Thresolding - Master Outlet Revenue - Database##########################################
+
+l4_qa_score_master_outlet_revenue_accuracy_completeness_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold
+
+l4_qa_score_master_outlet_revenue_accuracy_completeness_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg
+
+l4_qa_score_master_outlet_revenue_consistency_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold
+
+l4_qa_score_master_outlet_revenue_consistency_aggregate_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg
+
+
+#####################################################    QA Timeliness   ##########################################################
+l7_qa_timeliness_master_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_timeliness
+
+l7_qa_timeliness_master_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg
+
+l7_qa_timeliness_outlet_geo_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_timeliness
+
+l7_qa_timeliness_outlet_geo_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg
+
+l7_qa_timeliness_outlet_revenue_metrics_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_timeliness
+
+l7_qa_timeliness_outlet_revenue_score_db:
+  <<: *jdbc_oracle_qa_db
+  table: dev_qa_threshold_agg
+
+########################################################################################################################
+############################################ Mobility features  ############################################
+########################################################################################################################
+l1_monthly_scaffold:
+  <<: *parquet_mo_id_6cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/monthly_scaffold.parquet
+  partitions: 20
+  # layer: primary
+
+l2_home_stay:
+  <<: *parquet_mo_id_6cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/home_stay.parquet
+  partitions: 100
+  # layer: aggregation
+
+l2_work_stay:
+  <<: *parquet_mo_id_6cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/work_stay.parquet
+  partitions: 100
+  # layer: aggregation
+
+l2_staypoint:
+  <<: *parquet_mo_id_6cm
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/staypoint.parquet
+  partitions: 150
+  # layer: aggregation
+
+l3_home_stay_filtered:
+  <<: *parquet_mo_id_6cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mobility/home_stay_filtered.parquet
+  partitions: 75
+  # layer: primary
+
+l4_home_stay_filtered:
+  <<: *parquet_mo_id_6cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mobility/home_stay_filtered_fill_time.parquet
+  partitions: 150
+  # layer: primary
+
+l3_work_stay_filtered:
+  <<: *parquet_mo_id_6cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mobility/work_stay_filtered.parquet
+  partitions: 75
+  # layer: primary
+
+l4_work_stay_filtered:
+  <<: *parquet_mo_id_6cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mobility/work_stay_filtered_fill_time.parquet
+  partitions: 150
+  # layer: primary
+
+l3_staypoint_filtered:
+  <<: *parquet_mo_id_6cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mobility/staypoint_filtered.parquet
+  partitions: 100
+  # layer: primary
+
+l4_staypoint_filtered:
+  <<: *parquet_mo_id_6cm
+  layer: primary
+  filepath: mck_dmp_score/02_primary/mobility/staypoint_filtered_fill_time.parquet
+  partitions: 200
+  # layer: primary
+
+l5_poi_freq:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/poi_freq.parquet
+  partitions: 100
+  # layer: feature
+
+l5_home_stay:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/home_stay.parquet
+  partitions: 100
+  # layer: feature
+
+l5_home_covid_stay_cnt:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/home_stay_cnt.parquet
+  partitions: 50
+  # layer: feature
+
+l5_home_stay_covid_distance:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/home_stay_covid_distance.parquet
+  partitions: 100
+  # layer: feature
+
+l5_home_stay_covid_monthly_stats:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/home_stay_covid_monthly_stats.parquet
+  partitions: 100
+  # layer: feature
+
+l5_home_stay_unique_count:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/home_stay_unique_count.parquet
+  partitions: 50
+  # layer: feature
+
+l5_home_stay_freq:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/home_stay_freq.parquet
+  partitions: 100
+  # layer: feature
+
+l5_home_stay_customer_profile:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/home_stay_customer_profile.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_stay:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_stay.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_covid_stay_cnt:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_stay_cnt.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_stay_covid_monthly_stats:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_stay_covid_monthly_stats.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_stay_covid_distance:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_stay_covid_distance.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_stay_unique_count:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_stay_unique_count.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_stay_freq:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_stay_freq.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_stay_customer_profile:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_stay_customer_profile.parquet
+  partitions: 100
+  # layer: feature
+
+l5_staypoint:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/staypoint.parquet
+  partitions: 150
+  # layer: feature
+
+l5_staypoint_unique_count:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/staypoint_unique_count.parquet
+  partitions: 100
+  # layer: feature
+
+l5_staypoint_freq:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/staypoint_freq.parquet
+  partitions: 150
+  # layer: feature
+
+l5_staypoint_covid_monthly_stats:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/staypoint_covid_monthly_stats.parquet
+  partitions: 100
+  # layer: feature
+
+l5_staypoint_covid_distance:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/staypoint_covid_distance.parquet
+  partitions: 100
+  # layer: feature
+
+l5_staypoint_customer_profile:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/staypoint_customer_profile.parquet
+  partitions: 100
+  # layer: feature
+
+l5_covid_work_home_distance:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/covid_work_home_distance.parquet
+  partitions: 100
+  # layer: feature
+
+l5_work_home_same:
+  <<: *parquet_mo_id_6cm
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/work_home_same.parquet
+  partitions: 100
+  # layer: feature
+
+l5_covid_work_home_not_same:
+  <<: *parquet
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/covid_work_home_not_same.parquet
+  partitions: 100
+  # layer: feature
+
+l5_fea_mobility:
+  <<: *parquet_weekstart_1w
+  layer: feature
+  filepath: mck_dmp_score/04_features/mobility/features_master.parquet
+  partitions: 200
+  # layer: feature
+
+l1_external_bps:
+  <<: *hive
+  layer: raw
+  database: dmp_remote
+  table: ext_bps_extreme_poverty_percentages
+  # layer: raw
+
+l2_external_covid:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/covid.parquet
+  partitions: 1
+  # layer: static
+
+l2_external_poi:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/poi.parquet
+  partitions: 5
+  # layer: static
+
+l2_external_gar_demographics:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_gar_demographics.parquet
+  partitions: 1
+  # layer: static
+
+l2_external_ghs_urbancity:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_ghs_urbancity.parquet
+  partitions: 1
+  # layer: static
+
+l2_external_fb_pop:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_fb_pop.parquet
+  partitions: 1
+  # layer: static
+
+l2_external_dryad_gdp_per_capita:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_dryad_gdp_per_capita.parquet
+  partitions: 1
+  # layer: static
+
+l2_external_dryad_gdp:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_dryad_gdp.parquet
+  partitions: 1
+  # layer: static
+
+l2_external_dryad_hdi:
+  <<: *parquet
+  layer: aggregation
+  filepath: mck_dmp_pipeline/01_aggregation/mobility/ext_dryad_hdi.parquet
+  partitions: 1
+  # layer: static

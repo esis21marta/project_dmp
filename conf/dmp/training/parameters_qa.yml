@@ -1,0 +1,134 @@
+qa_aggregation:
+    catalog:
+        internet_app_usage:
+            - app_usage_weekly: l2_internet_app_usage_weekly
+            - internet_app_usage_weekly: l2_internet_connection_weekly
+        customer_los:
+            - customer_los_weekly: l1_customer_los_weekly
+        customer_profile:
+            - cb_multidim_weekly: l2_customer_profile_weekly
+        handset:
+            - handset_weekly_aggregated: l2_handset_weekly_aggregated
+        handset_internal:
+            - device_internal_weekly: l2_device_internal_weekly_aggregated
+        internet_usage:
+            - internet_usage_weekly: l1_internet_usage_weekly
+            - payu_usage_weekly_aggregation: l2_payu_usage_weekly_aggregation
+        network:
+            - network_msisdn_weekly_aggregated: l1_network_msisdn_weekly_aggregated
+        recharge:
+            - rech_weekly: l1_rech_weekly
+            - account_balance_weekly: l2_account_balance_weekly
+            - chg_pkg_prchse_weekly: l1_chg_pkg_prchse_weekly
+        revenue:
+            - revenue_weekly_data: l2_revenue_weekly_data
+            - revenue_mytsel: l2_revenue_mytsel_weekly
+        text_messaging:
+            - text_messaging_weekly: l2_text_messaging_weekly
+            - commercial_text_messaging_weekly: l2_commercial_text_messaging_weekly
+        voice_calling:
+            - voice_calling_weekly_aggregated: l2_voice_calling_weekly_aggregated
+        product:
+            - nonmacro_product_weekly: l1_nonmacro_product_weekly_data
+            # - macroproduct_weekly: l2_macroproduct_weekly # Deprecated
+        mytsel:
+            - mytsel_weekly: l2_mytsel_weekly
+    percentile:
+        percentiles:
+            - 0.25
+            - 0.5
+            - 0.75
+        accuracy: 80
+qa_feature:
+    catalog:
+        internet_app_usage:
+            - fea_internet_connection: l5_fea_internet_connection
+            - fea_social_media: l5_fea_social_media
+            - fea_internet_app_usage: l5_fea_internet_app_usage
+        customer_los:
+            - fea_customer_los: l4_fea_customer_los
+        customer_profile:
+            - customer_profile: l5_fea_customer_profile
+        handset:
+            - handset: l2_fea_handset
+        handset_internal:
+            - device_internal: l2_fea_device_internal
+        internet_usage:
+            - internet_usage: l2_internet_usage
+            - fea_payu_usage: l4_fea_payu_usage
+        network:
+            - fea_network_msisdn: l4_fea_network_msisdn
+        recharge:
+            - recharge: l5_fea_recharge
+        revenue:
+            - fea_revenue_weekend: l4_fea_revenue_weekend
+            - fea_revenue_base_payu_pkg: l4_fea_revenue_base_payu_pkg
+            - fea_revenue_spend_pattern: l4_fea_revenue_spend_pattern
+            - fea_revenue_monthly_spend: l4_fea_revenue_monthly_spend
+            - fea_revenue_salary: l4_fea_revenue_salary
+            - fea_revenue_threshold_voice_data: l4_fea_revenue_threshold_voice_data
+            - fea_revenue_threshold_sms_dls_roam: l4_fea_revenue_threshold_sms_dls_roam
+            - fea_revenue_mytsel: l4_fea_revenue_mytsel
+        text_messaging:
+            - text_messaging: l4_fea_text_messaging
+            - commercial_text_messaging: l4_fea_commercial_text_messaging
+            - text_messaging_covid: l5_fea_text_messaging_covid_final
+            - commercial_text_messaging_covid: l5_fea_commercial_text_messaging_covid_final
+        voice_calling:
+            - voice_calling: l4_fea_voice_calling
+            - voice_calling_covid: l5_fea_voice_calling_covid_final
+        product:
+            - fea_nonmacro_product: l4_fea_nonmacro_product
+            # - fea_macroproduct: l4_fea_macroproduct # Deprecated
+        mytsel:
+            - fea_mytsel: l4_fea_mytsel
+    percentile:
+        percentiles:
+            - 0.25
+            - 0.5
+            - 0.75
+        accuracy: 80
+qa_master:
+    features_mode: all # `file_list` (will read 'features_used' from param file in paths) or `all` (no filtering)
+    catalog:
+        master: l6_master
+        outlet_geo: l3_outlet_master_static
+        outlet_revenue: l3_outlet_master_revenue_daily
+    percentile:
+        percentiles:
+            - 0.25
+            - 0.5
+            - 0.75
+        accuracy: 80
+
+sample_size: 100000
+iqr_lookback_days: 434 # 62 weeks by default
+
+metrics:
+    dimension_mapping:
+        accuracy:
+            - percentile_0_25
+            - percentile_0_5
+            - percentile_0_75
+            - max
+            - min
+            - negative_value_percentage
+            - mean
+        completeness:
+            - null_percentage
+        consistency:
+            - same_percent
+
+manual_threshold:
+#    Please follow format as below:
+#    column_a:
+#        metric_a:
+#            minimum_threshold:
+#            maximum_threshold:
+#        metric_b:
+#            minimum_threshold:
+#            maximum_threshold:
+#    column_b:
+#        metric_a:
+#            minimum_threshold:
+#            maximum_threshold:

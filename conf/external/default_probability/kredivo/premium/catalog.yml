@@ -1,0 +1,29 @@
+master:
+  type: pandas.ParquetDataSet
+  filepath: hdfs:///data/landing/gx_pnt/mck_dmp_pipeline/partner_msisdn/unpacked_tables/kredivo_june/kredivo_default_probability_june_update_handset_corrected.parquet
+  load_args:
+    columns:
+      - 'msisdn'
+      - 'weekstart'
+      - 'application_group'
+      - 'flag_bad_61'
+      - "fea_los"
+      - "fea_txt_msg_incoming_count_03m"
+      - "fea_txt_msg_credit_lending_companies_unique_senders_count_03m"
+      - "fea_int_app_usage_ecommerce_data_vol_03m"
+      - "fea_int_usage_non_zero_usage_days_03m"
+      - "fea_rech_tot_amt_avg_03m"
+      - "fea_handset_count_05m"
+      - "fea_int_app_usage_credit_lending_company_accessed_apps_03m"
+      - "fea_int_app_usage_gambling_data_vol_03m"
+      - "fea_voice_tot_uniq_out_calls_03m"
+      - "fea_rev_voice_tot_sum_03m"
+      - "fea_int_app_usage_facebook_data_vol_03m"
+      - "fea_int_app_usage_mobile_wallets_data_vol_03m"
+      - "fea_voice_tot_dur_12_5_am_03m"
+      - "fea_int_app_usage_credit_lending_company_data_vol_03m"
+      - "fea_voice_tot_uniq_inc_calls_03m"
+      - "fea_txt_msg_banks_unique_senders_count_03m"
+      - "fea_rech_tot_trx_sum_03m"
+      - "fea_txt_msg_ecommerce_shopping_incoming_count_03m"
+      - "fea_txt_msg_credit_lending_companies_incoming_count_03m"

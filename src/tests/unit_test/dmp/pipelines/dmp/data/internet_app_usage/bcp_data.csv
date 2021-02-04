@@ -1,0 +1,16 @@
+msisdn,cgi,rat,apn,protocol,os,vendor,device,browser,accessed_category,accessed_app,volume_in,volume_out,retransit_volume,total_hits,site,component,tether,imsi,imei,regional_network,duration,session_success_rate,connection_success_rate,avg_packet_loss,internal_latency,external_latency,tput_uplink,tput_downlink,trx_date
+1,5.10E+14,UTRAN,internet,SSL,unclassified,Xiaomi,Redmi Note 10,Chrome,Net,Netflix,51475,79550,878,1,A,General,0,10000000000,10000000000,null,551,1,1,0,0,0,144.374,93.421,20200310
+1,5.10E+14,E-UTRAN,internet,SSL,iOS,Apple,Iphone X,Safari,Net,Netflix,70471,77193,594,2,B,General,0,10000000001,10000000001,null,390,1,1,0.2,0.1,0,197.931,180.695,20200309
+1,5.10E+14,GERAN,internet,SSL,Android,Samsung,Galaxy S10,unclassified,Net,Netflix,94794,72754,399,3,C,General,0,10000000002,10000000002,null,456,1,1,0.3,0.2,0,159.548,207.882,20200308
+2,5.10E+14,UTRAN,internet,SSL,unclassified,Xiaomi,Redmi 8,unclassified,Net,Netflix,82955,8860,418,1,D,General,0,10000000003,10000000003,null,822,1,1,0,0.3,0,10.779,100.918,20200307
+2,5.10E+14,E-UTRAN,internet,SSL,iOS,Apple,iPhone XR Max,Chrome,B,Instagram,39505,30478,991,2,E,,0,10000000004,10000000004,null,266,1,1,0.4,0.4,0.1,114.579,148.515,20200306
+2,5.10E+14,GERAN,internet,SSL,Android,Samsung,Galaxy Note 10,Chrome,C,Netflix,76550,45512,858,3,F,General,0,10000000005,10000000005,null,398,1,1,0.2,0,0.2,114.352,192.337,20200305
+3,5.10E+14,UTRAN,internet,SSL,unclassified,Xiaomi,Redmi Note 10,unclassified,D,Netflix,33979,88861,607,1,A,General,0,10000000006,10000000006,null,212,1,1,0.3,0,0.3,419.156,160.278,20200304
+3,5.10E+14,E-UTRAN,internet,SSL,iOS,Apple,Iphone X,Safari,E,LinkedIn,16818,17590,565,2,B,,0,10000000007,10000000007,null,485,1,1,0,0,0.4,36.268,34.676,20200303
+3,5.10E+14,GERAN,internet,SSL,Android,Samsung,Galaxy S10,unclassified,C,Netflix,38524,40272,330,3,C,General,0,10000000008,10000000008,null,503,1,1,0.4,0.3,0,80.064,76.588,20200302
+4,5.10E+14,UTRAN,internet,SSL,unclassified,Xiaomi,Redmi 8,Chrome,C,Netflix,66745,43399,935,1,D,General,0,10000000009,10000000009,null,713,1,1,0,0.5,0,60.868,93.612,20200301
+4,5.10E+14,E-UTRAN,internet,SSL,iOS,Apple,iPhone XR Max,unclassified,H,Facebook,55945,81704,705,2,E,ForWebsites,0,10000000010,10000000010,null,710,1,1,0.4,0.1,0,115.076,78.796,20200229
+4,5.10E+14,GERAN,internet,SSL,Android,Samsung,Galaxy Note 10,Chrome,I,YouTube,5572,17089,662,3,F,,0,10000000011,10000000011,null,265,1,1,0.2,0,0.5,64.487,21.026,20200228
+5,5.10E+14,UTRAN,internet,SSL,unclassified,Oppo,S11,Chrome,J,YouTube,36864,39344,48,1,A,,0,10000000012,10000000012,null,139,1,1,0.1,0,0.1,283.05,265.209,20200227
+5,5.10E+14,E-UTRAN,internet,SSL,iOS,Apple,iPhone 6,unclassified,K,Facebook,37748,68222,111,2,A,,0,10000000013,10000000013,null,969,1,1,0.5,0,0,70.405,38.956,20200226
+5,5.10E+14,GERAN,internet,SSL,Android,Samsung,Galaxy J7,unclassified,L,Facebook,22684,3505,256,3,G,,0,10000000014,10000000014,null,422,1,1,0,0,0,8.306,53.754,20200225

@@ -1,0 +1,67 @@
+   #                                                               #
+   #              ####   #    #  #    #  #####   #    #            #
+   #             #    #  #    #  #    #  #    #  ##   #            #
+                 #       ######  #    #  #    #  # #  #
+   #             #       #    #  #    #  #####   #  # #            #
+   #             #    #  #    #  #    #  #   #   #   ##            #
+   #              ####   #    #   ####   #    #  #    #            #
+
+pai_run_name: "nuclear_pilot_clustering"
+pai_tags:
+    - "Churn"
+    - "Clustering"
+    - "Nuclear Pilot"
+
+clustering_parameters:
+  clustering_date: '2020-08-03'
+  n_clusters: 8
+  pca_components: 5
+  clustering_features:
+    - fea_int_app_usage_ecommerce_data_vol_01w
+    - fea_int_app_usage_social_media_sites_data_vol_01m
+    - fea_int_app_usage_video_days_since_last_usage
+    - fea_int_usage_med_4g_data_usage_03m
+    - fea_int_usage_tot_kb_data_usage_01w
+    - fea_los
+    - fea_rev_roam_payu_sum_03m
+    - fea_revenue_sum_01m
+    - fea_txt_msg_outgoing_count_01w
+    - fea_voice_tot_out_calls_01w
+    - fea_voice_tot_uniq_out_calls_03m
+    - fea_custprof_los
+    - fea_custprof_segment_hvc_m1
+    - fea_custprof_persona_los
+    - fea_custprof_segment_hvc_mtd
+    - fea_handset_changed_count_01m
+    - fea_custprof_brand
+  features_to_summarize:
+    - fea_int_app_usage_ecommerce_data_vol_01w
+    - fea_int_app_usage_social_media_sites_data_vol_01m
+    - fea_int_app_usage_video_days_since_last_usage
+    - fea_int_usage_med_4g_data_usage_03m
+    - fea_int_usage_tot_kb_data_usage_01w
+    - fea_los
+    - fea_rev_roam_payu_sum_03m
+    - fea_revenue_sum_01m
+    - fea_txt_msg_outgoing_count_01w
+    - fea_voice_tot_out_calls_01w
+    - fea_voice_tot_uniq_out_calls_03m
+    - fea_custprof_los
+    - fea_custprof_segment_hvc_m1
+    - fea_custprof_persona_los
+    - fea_custprof_segment_hvc_mtd
+    - fea_handset_changed_count_01m
+    - fea_custprof_brand
+
+# Sampling: empty value disables sampling
+n_rows_to_sample:
+n_features_to_sample: 60
+
+# Kedro/PAI settings
+use_spark: True
+use_pai_logging: True
+
+pai_experiment: "Model factory"
+pai_username: "Test"
+pai_personal_runs: "hdfs:///data/landing/dmp_remote/model-factory/{USER}"
+pai_scoring_run_id: "550df7055182453384c6c008a19b83f8"

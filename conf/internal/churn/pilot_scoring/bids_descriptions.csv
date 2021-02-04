@@ -1,0 +1,8 @@
+segment,bid,offer_name,target_flag
+1,30325,"40k Rp, 100GB All Net, 15 days",target
+2,30326,"8k Rp, 20All Net, 15 days",target
+3,30327,"4k Rp, 10GB All Net, 15 days",target
+4,DU_LCG,DU_LCG,control
+5,00025476,"10k Rp, UL voice+4G 4GB, 7 days",target
+6,00010959,"Recharge min. 20k, get 25k monetary balance for 3 days",target
+7,NDU_LCG,NDU_LCG,control

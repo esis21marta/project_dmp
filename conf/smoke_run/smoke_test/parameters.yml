@@ -1,0 +1,70 @@
+pipeline: scoring
+is_incremental: False
+
+partition_size_0: 1
+partition_size_1: 2
+partition_size_2: 3
+partition_size_3: 4
+partition_size_4: 5
+partition_size_5: 6
+partition_size_6: 7
+partition_size_7: 8
+partition_size_8: 9
+partition_size_9: 10
+partition_size_10: 11
+partition_size_11: 1000
+los_cb_start_date: "2019-03-01"
+los_cb_end_date: "2019-11-13"
+los_cb_prior_start_date: "2018-12-01"
+los_cb_prior_end_date: "2019-02-28"
+los_churn_period: 90
+
+ignored_parquet_checks:
+  - l1_content_mapping
+  - l1_segment_mapping
+  - l1_category_mapping
+  - l1_internet_app_feature_mapping
+  - l3_scaffolding_kredivo
+  - l1_commercial_text_mapping
+  - l1_handset_lookup_data
+  - l1_device_dbi_imei_single_rec_per_imei
+  - l2_kredivo_los
+  - l1_customer_prepost_migration_old
+  - l1_lacci_msisdn_mapping_jan_oct_2019
+  - l4_fea_network_msisdn_weekly1
+  - l4_fea_network_msisdn_weekly2
+  - l4_fea_network_msisdn_weekly3
+  - l4_fea_network_msisdn_weekly4
+  - l4_fea_network_msisdn_weekly5
+  - l4_fea_network_lacci_weekly1
+  - l4_fea_network_lacci_weekly2
+  - l4_fea_network_lacci_weekly3
+  - l4_fea_network_lacci_weekly4
+  - l4_fea_network_lacci_weekly5
+  - l4_fea_network_lac_weekly1
+  - l4_fea_network_lac_weekly2
+  - l4_fea_network_lac_weekly3
+  - l4_fea_network_lac_weekly4
+  - l4_fea_network_lac_weekly5
+  - partner_msisdns
+  - l1_broken_bnumber
+  - l1_macroproduct_map_new
+  - l4_master_dimension
+
+custom_start_date:
+  l2_account_balance_weekly: "2019-08-05"
+  l1_acc_bal_weekly_filtered: "2019-08-05"
+  l1_acc_bal_weekly_final: "2019-08-05"
+  l2_fea_rech_topup_behav_full_acc_bal_neg_or_zero: "2019-08-05"
+  l1_cb_multidim_weekly: "2019-06-03"
+  l2_device_internal_weekly_aggregated: "2019-07-08"
+  l2_device_internal_weekly_aggregated_filtered: "2019-07-08"
+  l2_internal_handset_time_series_filled: "2019-07-08"
+  l2_device_internal_rolling_windows_weekly: "2019-07-08"
+  l2_device_internal_rolling_windows_monthly: "2019-07-08"
+  l2_device_internal_mode_weekly: "2019-07-08"
+  l2_device_internal_mode_monthly: "2019-07-08"
+  l2_fea_device_internal: "2019-07-08"
+
+first_weekstart: 2019-01-07 # should be a monday
+last_weekstart: 2019-12-30

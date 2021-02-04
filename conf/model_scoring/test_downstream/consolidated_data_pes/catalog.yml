@@ -1,0 +1,25 @@
+to_score:
+  type: kedro.extras.datasets.spark.SparkDataSet
+  filepath: hdfs:///data/landing/dmp_remote/model_factory/inlife/scoring/dmp_inlife_test_score_20200818_20200824.parquet
+  file_format: parquet
+
+pivoted_predicted_scores:
+  type: kedro.extras.datasets.spark.SparkDataSet
+  filepath: hdfs:///data/landing/dmp_remote/users/siangang/scoring_config_integration/tests/test_scoring/pivoted_predicted_scores/
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+highest_score_above_threshold:
+  type: kedro.extras.datasets.spark.SparkDataSet
+  filepath: hdfs:///data/landing/dmp_remote/users/siangang/scoring_config_integration/tests/test_scoring/dummy_consolidated_pes/
+  file_format: parquet
+  save_args:
+    mode: overwrite
+
+highest_score_below_threshold:
+  type: kedro.extras.datasets.spark.SparkDataSet
+  filepath: hdfs:///data/landing/dmp_remote/users/siangang/scoring_config_integration/tests/test_scoring/highest_score_below_threshold/
+  file_format: parquet
+  save_args:
+    mode: overwrite

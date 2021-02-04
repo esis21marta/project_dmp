@@ -1,0 +1,439 @@
+hdfs_base_path: hdfs:///data/landing/dmp_production/
+
+ra_master_table:
+    static_columns:
+        - fea_outlet_to_outlet_min_dist
+#         - fea_outlets_4g_share_indosat_share
+#         - fea_outlets_4g_share_tsel_share
+#         - fea_outlets_4g_share_tsel_value
+#         - fea_outlets_4g_share_xl_share
+        - fea_outlets_admin_2
+        - fea_outlets_admin_3
+        - fea_outlets_admin_4
+        - fea_outlets_big_pois_bridge_big_poi_under_5000m
+        - fea_outlets_big_pois_building_big_poi_under_1000m
+        - fea_outlets_big_pois_building_big_poi_under_2500m
+        - fea_outlets_big_pois_building_big_poi_under_5000m
+        - fea_outlets_big_pois_place_of_worship_big_poi_under_5000m
+        - fea_outlets_bridge_big_poi_min_dist
+        - fea_outlets_building_big_poi_min_dist
+        - fea_outlets_closest_cdma_km
+        - fea_outlets_closest_gsm_km
+        - fea_outlets_closest_lte_km
+        - fea_outlets_closest_umts_km
+        - fea_outlets_commerce_big_poi_min_dist
+        - fea_outlets_count_outlet_typecounter_pulsa_under_1000m
+        - fea_outlets_count_outlet_typecounter_pulsa_under_2500m
+        - fea_outlets_count_outlet_typecounter_pulsa_under_5000m
+        - fea_outlets_count_outlet_typewarung_under_2500m
+        - fea_outlets_count_outlet_typewarung_under_5000m
+        - fea_outlets_cultural_heritage_big_poi_min_dist
+        - fea_outlets_education_big_poi_min_dist
+        - fea_outlets_elevation_m
+#         - fea_outlets_fb_share_isat_share
+#         - fea_outlets_fb_share_smartfren_share
+#         - fea_outlets_fb_share_tsel_share
+#         - fea_outlets_fb_share_xl_share
+        - fea_outlets_gdp_ppp_2015_usd
+        - fea_outlets_government_big_poi_min_dist
+        - fea_outlets_hospital_big_poi_min_dist
+        - fea_outlets_milestone_big_poi_min_dist
+        - fea_outlets_min_dist_to_lacci
+        - fea_outlets_min_dist_to_prm_or_sec_road
+        - fea_outlets_min_dist_to_prm_road
+#         - fea_outlets_ookla_51001_avg_download_kbps
+#         - fea_outlets_ookla_51010_avg_download_kbps
+#         - fea_outlets_ookla_51010_max_download_kbps
+#         - fea_outlets_ookla_51011_avg_download_kbps
+#         - fea_outlets_ookla_51089_avg_download_kbps
+#         - fea_outlets_ookla_telkomsel_latency_ms
+#         - fea_outlets_ookla_telkomsel_throughput_download_in_busy_hours_mbps
+        - fea_outlets_place_of_worship_big_poi_min_dist
+        - fea_outlets_public_health_center_big_poi_min_dist
+        - fea_outlets_rainfall_index
+        - fea_outlets_restaurant_osm_min_dist
+        - fea_outlets_school_osm_min_dist
+        - fea_outlets_tomb_big_poi_min_dist
+        - fea_outlets_tot_val
+        - fea_outlets_under_1000m
+        - fea_outlets_under_200m_elderly_60_plus
+        - fea_outlets_under_2500m
+        - fea_outlets_under_5000m
+        - fea_outlets_villages_mosque
+        - fea_outlets_dealer_company_name
+        - fea_outlets_dealer_cluster_name
+        - fea_outlets_geohash
+        - fea_outlets_branch
+        - fea_outlets_sub_branch
+        - fea_outlets_kabupaten
+        - fea_outlets_kecamatan
+        - fea_outlets_kelurahan
+    agg_numerical_columns:
+        - fea_outlet_decimal_total_cashflow_mkios
+        - fea_outlets_pv_red_sum_nominal_by_rs_msisdn
+        - fea_outlet_decimal_total_recharge_modern_channel
+        - fea_outlets_urp_channel_rech_bank
+        - fea_outlets_urp_channel_rech_bonus
+        - fea_outlets_urp_channel_rech_device
+        - fea_outlets_urp_channel_rech_direct
+        - fea_outlets_urp_channel_rech_e_kiosk
+        - fea_outlets_urp_channel_rech_international_partner
+        - fea_outlets_urp_channel_rech_null
+        - fea_outlets_urp_channel_rech_online
+        - fea_outlets_urp_channel_rech_retail_nasional
+        - fea_outlets_network_3g_throughput_kbps_avg
+        - fea_outlets_network_3g_throughput_kbps_sum
+        - fea_outlets_network_hsdpa_accesability_num_sum
+        - fea_outlets_network_hsdpa_accesability_denum_sum
+        - fea_outlets_network_hsdpa_retainability_num_sum
+        - fea_outlets_network_hsdpa_retainability_denum_sum
+        - fea_outlets_network_hsupa_accesability_num_sum
+        - fea_outlets_network_hsupa_accesability_denum_sum
+        - fea_outlets_network_hsupa_retainability_num_sum
+        - fea_outlets_network_hsupa_retainability_denum_sum
+        - fea_outlets_network_hsupa_mean_user_avg
+        - fea_outlets_network_payload_hspa_mbyte_avg
+        - fea_outlets_network_payload_hspa_mbyte_sum
+        - fea_outlets_network_payload_psr99_mbyte_avg
+        - fea_outlets_network_payload_psr99_mbyte_sum
+        - fea_outlet_decimal_total_cashflow_mkios_pv
+    agg_calc_percentages:
+        numerators:
+            - fea_outlets_network_hsdpa_accesability_num_sum_sum
+            - fea_outlets_network_hsdpa_retainability_num_sum_sum
+            - fea_outlets_network_hsupa_accesability_num_sum_sum
+            - fea_outlets_network_hsupa_retainability_num_sum_sum
+        denominators:
+            - fea_outlets_network_hsdpa_accesability_denum_sum_sum
+            - fea_outlets_network_hsdpa_retainability_denum_sum_sum
+            - fea_outlets_network_hsupa_accesability_denum_sum_sum
+            - fea_outlets_network_hsupa_retainability_denum_sum_sum
+    agg_mode_columns:
+        - fea_outlet_string_location_longitude
+        - fea_outlet_string_location_latitude
+        - fea_outlet_string_category
+        - fea_outlet_string_type
+        - fea_outlet_string_classification
+        - fea_outlet_area
+        - fea_outlet_region
+    agg_max_columns:
+        - fea_outlet_integer_los
+    agg_last_columns: []
+    lagged_numerical_features_months: 1
+    agg_date: trx_date
+    consecutive_days_zero_sale: 7
+    to_date_format: yyyy-MM-dd
+    agg_primary_columns:
+        - outlet_id
+        - month
+    target_variable: fea_outlet_decimal_total_cashflow_mkios_pv
+    target_variable_components:
+        - fea_outlet_decimal_total_cashflow_mkios
+        - fea_outlets_pv_red_sum_nominal_by_rs_msisdn
+    filter_month: null
+    save_filtered_outlets: True
+
+ra_numerical_features:
+    - fea_outlets_urp_channel_rech_bank_sum
+    - fea_outlet_decimal_total_recharge_modern_channel_sum
+    - fea_outlets_urp_channel_rech_online_sum
+    - fea_outlets_network_hsupa_mean_user_avg_sum
+    - fea_outlets_urp_channel_rech_retail_nasional_sum
+    - fea_outlets_network_3g_throughput_kbps_sum_sum
+    - fea_outlets_urp_channel_rech_e_kiosk_sum
+    - fea_outlets_network_3g_throughput_kbps_sum_mean
+    - fea_outlets_urp_channel_rech_bank_mean
+    - fea_outlet_decimal_total_recharge_modern_channel_mean
+    - fea_outlets_urp_channel_rech_device_sum
+    - fea_outlets_network_payload_hspa_mbyte_sum_sum
+    - fea_outlets_network_hsupa_mean_user_avg_mean
+    - fea_outlets_urp_channel_rech_online_mean
+    - fea_outlets_network_payload_hspa_mbyte_sum_mean
+    - fea_outlets_urp_channel_rech_retail_nasional_mean
+    - fea_outlets_urp_channel_rech_e_kiosk_mean
+    - fea_outlets_urp_channel_rech_direct_mean
+    - fea_outlets_urp_channel_rech_null_sum
+    - fea_outlets_network_payload_psr99_mbyte_sum_sum
+    - fea_outlets_network_hsupa_accesability
+    - fea_outlets_network_hsdpa_accesability
+    - fea_outlets_urp_channel_rech_direct_sum
+    - fea_outlets_urp_channel_rech_device_mean
+    - fea_outlets_network_payload_psr99_mbyte_sum_mean
+    - fea_outlets_min_dist_to_lacci
+    - fea_outlet_to_outlet_min_dist
+    - fea_outlet_integer_los_max
+    - fea_outlets_network_payload_hspa_mbyte_avg_mean
+    - fea_outlets_network_hsdpa_retainability
+    - fea_outlets_network_payload_hspa_mbyte_avg_sum
+    - fea_outlets_min_dist_to_prm_or_sec_road
+    - fea_outlets_urp_channel_rech_null_mean
+    - fea_outlets_network_3g_throughput_kbps_avg_sum
+    - fea_outlets_urp_channel_rech_international_partner_sum
+    - fea_outlets_network_hsupa_retainability
+    - fea_outlets_min_dist_to_prm_road
+    - fea_outlets_network_3g_throughput_kbps_avg_mean
+    - fea_outlets_government_big_poi_min_dist
+    - fea_outlets_urp_channel_rech_international_partner_mean
+    - fea_outlets_building_big_poi_min_dist
+    - fea_outlets_commerce_big_poi_min_dist
+    - fea_outlets_bridge_big_poi_min_dist
+    - fea_outlets_closest_gsm_km
+    - fea_outlets_education_big_poi_min_dist
+    - fea_outlets_place_of_worship_big_poi_min_dist
+    - fea_outlets_under_2500m
+    - fea_outlets_elevation_m
+    - fea_outlets_villages_mosque
+    - fea_outlets_closest_umts_km
+#     - fea_outlets_fb_share_tsel_share
+    - fea_outlets_cultural_heritage_big_poi_min_dist
+    - fea_outlets_big_pois_building_big_poi_under_5000m
+    - fea_outlets_big_pois_building_big_poi_under_2500m
+    - fea_outlets_milestone_big_poi_min_dist
+#     - fea_outlets_ookla_telkomsel_throughput_download_in_busy_hours_mbps
+    - fea_outlets_rainfall_index
+    - fea_outlets_gdp_ppp_2015_usd
+    - fea_outlets_under_5000m
+#     - fea_outlets_ookla_51010_avg_download_kbps
+    - fea_outlets_count_outlet_typewarung_under_5000m
+#     - fea_outlets_fb_share_isat_share
+    - fea_outlets_closest_lte_km
+    - fea_outlets_network_payload_psr99_mbyte_avg_mean
+    - fea_outlets_network_payload_psr99_mbyte_avg_sum
+    - fea_outlets_closest_cdma_km
+    - fea_outlets_count_outlet_typewarung_under_2500m
+#     - fea_outlets_ookla_51010_max_download_kbps
+    - fea_outlets_urp_channel_rech_bonus_mean
+    - fea_outlets_urp_channel_rech_bonus_sum
+#     - fea_outlets_fb_share_xl_share
+    - fea_outlets_big_pois_bridge_big_poi_under_5000m
+#     - fea_outlets_4g_share_xl_share
+    - fea_outlets_under_1000m
+#     - fea_outlets_ookla_telkomsel_latency_ms
+    - fea_outlets_school_osm_min_dist
+    - fea_outlets_restaurant_osm_min_dist
+    - fea_outlets_tomb_big_poi_min_dist
+#     - fea_outlets_ookla_51089_avg_download_kbps
+    - fea_outlets_big_pois_building_big_poi_under_1000m
+    - fea_outlets_under_200m_elderly_60_plus
+    - fea_outlets_tot_val
+    - fea_outlets_count_outlet_typecounter_pulsa_under_2500m
+#     - fea_outlets_4g_share_tsel_share
+#     - fea_outlets_ookla_51001_avg_download_kbps
+    - fea_outlets_hospital_big_poi_min_dist
+    - fea_outlets_public_health_center_big_poi_min_dist
+#     - fea_outlets_fb_share_smartfren_share
+#     - fea_outlets_ookla_51011_avg_download_kbps
+    - fea_outlets_big_pois_place_of_worship_big_poi_under_5000m
+#     - fea_outlets_4g_share_tsel_value
+    - fea_outlets_count_outlet_typecounter_pulsa_under_1000m
+    - fea_outlets_count_outlet_typecounter_pulsa_under_5000m
+#     - fea_outlets_4g_share_indosat_share
+
+ra_categorical_features:
+    - fea_outlet_string_category
+    - fea_outlet_string_type
+    - fea_outlets_admin_4
+    - fea_outlets_admin_3
+    - fea_outlets_admin_2
+    - fea_outlets_dealer_company_name
+
+ra_impute_values:
+    categorical: no_value
+    numerical: 0.0
+
+ra_return_threshold_filtered_outlets: True
+
+ra_model:
+    target_variable: fea_outlet_decimal_total_cashflow_mkios_pv_mean
+    drop_columns:
+        - fea_outlet_created_at
+        - outlet_id
+        - month
+        - fea_outlet_string_classification
+        - index
+        - level_0
+    random_state: 15
+    kfold:
+        n_splits: 5
+        shuffle: True
+        random_state: 15
+    split_ratio:
+        train: 0.8
+        validation: 0.2
+    model_type: classification
+    sklearn_params:
+        n_estimators: 96
+        max_features: 0.3
+        min_samples_split: 20
+        min_samples_leaf: 10
+        max_depth: 17
+        random_state: 15
+        n_jobs: 48
+        verbose: 2
+        oob_score: True
+    pandas_sample_frac:
+        frac: 1.0
+        random_state: 15
+    encode_features: True
+    scale_features: False
+    min_dist_max_value: 21000.0
+    filter_specific_outlets_for_full_dataset: False
+    include_specific_outlet_ids_in_test_set: False
+    remove_target_zero: True
+    remove_target_below_threshold: 0
+    remove_target_below_quantile: 0.05
+    remove_target_above_threshold: 0
+    remove_target_above_quantile: 0.95
+    classification_num_target_classes: 3
+
+ra_overall_performance_scatter:
+    scatter_percentiles:
+        - 0
+        - 25
+        - 50
+        - 75
+    background_colours:
+        - lightpink
+        - moccasin
+        - lightgreen
+
+ra_gridsearch_cv:
+    target_variable: fea_outlet_decimal_total_cashflow_mkios_pv_mean
+    model_type: classification
+    classification_num_target_classes: 3
+    param_grid:
+        n_estimators:
+            - 192
+        criterion:
+            - gini
+        min_samples_split:
+            - 20
+        min_samples_leaf:
+            - 10
+        max_features:
+            - 0.3
+        max_depth:
+            - 25
+        n_jobs:
+            - 48
+        bootstrap:
+            - True
+        verbose:
+            - 1
+        random_state:
+            - 15
+    cv: 4
+    scoring:
+        - roc_auc_ovo_weighted
+    refit: roc_auc_ovo_weighted
+    gridsearchcv_verbose: 10
+    gridsearchcv_n_jobs: -1
+    pandas_sample_frac:
+        frac: 0.2
+        random_state: 15
+    min_dist_max_value: 21000.0
+    filter_specific_outlets_for_full_dataset: False
+    include_specific_outlet_ids_in_test_set: False
+    remove_target_zero: True
+    remove_target_below_threshold: 0
+    remove_target_below_quantile: 0.0
+    remove_target_above_threshold: 0
+    remove_target_above_quantile: 0.0
+    encode_features: True
+    scale_features: False
+
+ra_dashboard_main_input_master_table_cols:
+    - fea_outlet_string_classification
+    - fea_outlet_string_type
+    - fea_outlet_string_location_latitude
+    - fea_outlet_string_location_longitude
+    - fea_outlets_geohash
+    - fea_outlet_area
+    - fea_outlet_region
+    - fea_outlets_branch
+    - fea_outlets_sub_branch
+    - fea_outlets_dealer_cluster_name
+    - fea_outlets_kabupaten
+    - fea_outlets_kecamatan
+    - fea_outlets_kelurahan
+    - fea_outlet_decimal_total_cashflow_mkios_pv_mean
+    - fea_outlet_decimal_total_cashflow_mkios_pv_mean_past_1m
+
+ra_dashboard_main_input_typecast:
+    str:
+        - month
+        - fea_outlet_string_classification
+        - fea_outlet_string_type
+        - fea_outlet_area
+        - fea_outlet_region
+        - fea_outlets_geohash
+        - fea_outlets_dealer_cluster_name
+        - fea_outlets_branch
+        - fea_outlets_sub_branch
+        - fea_outlets_kabupaten
+        - fea_outlets_kecamatan
+        - fea_outlets_kelurahan
+    int:
+        - outlet_id
+    float:
+        - fea_outlet_string_location_latitude
+        - fea_outlet_string_location_longitude
+        - performance_percentile
+        - fea_outlet_decimal_total_cashflow_mkios_pv_mean
+        - fea_outlet_decimal_total_cashflow_mkios_pv_mean_past_1m
+        - potential_cashflow_90th_percentile
+        - potential_cashflow_95th_percentile
+        - potential_cashflow_100th_percentile
+
+ra_dashboard_performance_plot_master_table_cols:
+    - fea_outlet_area
+    - fea_outlet_region
+    - fea_outlets_branch
+    - fea_outlets_sub_branch
+    - fea_outlets_dealer_cluster_name
+    - fea_outlets_kabupaten
+    - fea_outlets_kecamatan
+    - fea_outlets_kelurahan
+    - fea_outlet_decimal_total_cashflow_mkios_pv_mean
+
+ra_dashboard_performance_plot_typecast:
+    str:
+        - month
+        - fea_outlet_area
+        - fea_outlet_region
+        - fea_outlets_dealer_cluster_name
+        - fea_outlets_branch
+        - fea_outlets_sub_branch
+        - fea_outlets_kabupaten
+        - fea_outlets_kecamatan
+        - fea_outlets_kelurahan
+    int:
+        - outlet_id
+    float:
+        - performance_percentile
+        - fea_outlet_decimal_total_cashflow_mkios_pv_mean
+        - potential_cashflow_90th_percentile
+        - potential_cashflow_95th_percentile
+        - potential_cashflow_100th_percentile
+
+ra_dashboard_performance_plot_melt_id_vars:
+    - outlet_id
+    - month
+    - fea_outlet_area
+    - fea_outlet_region
+    - performance_percentile
+    - fea_outlets_dealer_cluster_name
+    - fea_outlets_branch
+    - fea_outlets_sub_branch
+    - fea_outlets_kabupaten
+    - fea_outlets_kecamatan
+    - fea_outlets_kelurahan
+    - potential_cashflow_90th_percentile
+    - potential_cashflow_95th_percentile
+    - potential_cashflow_100th_percentile
+
+ra_dashboard_performance_percentile_table_cols:
+    - performance_percentile
+    - potential_cashflow_90th_percentile
+    - potential_cashflow_95th_percentile
+    - potential_cashflow_100th_percentile

@@ -1,0 +1,140 @@
+   #                                                               #
+   #              ####   #    #  #    #  #####   #    #            #
+   #             #    #  #    #  #    #  #    #  ##   #            #
+                 #       ######  #    #  #    #  # #  #
+   #             #       #    #  #    #  #####   #  # #            #
+   #             #    #  #    #  #    #  #   #   #   ##            #
+   #              ####   #    #   ####   #    #  #    #            #
+
+pai_run_name: "churn_6_weeks_propensity"
+pai_tags:
+    - "Churn"
+    - "Propensity"
+
+# no campaign names implies every person is non taker
+campaign_names:
+    - "ANMAR_HVC_Path_to_Churn_8b_scaleup"
+    - "control_4gsd_path2churn_8b_scaleup"
+
+# Target definition
+use_case: "churn"
+target_source:
+       pai_workaround: >
+           case
+             when (fea_int_usage_weeks_since_last_internet_usage == 0)
+               or (fea_recharge_weeks_since_last_recharge == 0)
+               or (fea_rev_weeks_since_last_rev_total == 0)
+               or (fea_rev_weeks_since_last_rev_pkg_tot == 0)
+               or (fea_rev_weeks_since_last_rev_payu_tot == 0)
+               or (fea_txt_msg_weeks_since_last_outgoing_msg == 0)
+               or (fea_txt_msg_weeks_since_last_incoming_msg == 0)
+               or (fea_voice_weeks_since_last_outgoing_call == 0)
+               or (fea_voice_weeks_since_last_incoming_call == 0)
+             then 0
+             else 1
+           end
+
+target_window_weeks: 6
+train_offset_weeks: 3
+training_date: '2020-05-04'
+
+inactivity_length: 6
+
+column_selection:
+    required:
+    - fea_int_app_usage_ecommerce_data_vol_01w
+    - fea_int_app_usage_social_media_sites_data_vol_01m
+    - fea_int_app_usage_video_days_since_last_usage
+    - fea_int_usage_med_4g_data_usage_03m
+    - fea_int_usage_tot_kb_data_usage_01w
+    - fea_los
+    - fea_rev_roam_payu_sum_03m
+    - fea_revenue_sum_01m
+    - fea_txt_msg_outgoing_count_01w
+    - fea_voice_tot_out_calls_01w
+    - fea_voice_tot_uniq_out_calls_03m
+    - fea_custprof_los
+    - fea_custprof_segment_hvc_m1
+    - fea_custprof_persona_los
+    - fea_custprof_segment_hvc_mtd
+    - fea_handset_changed_count_01m
+    excluded: []
+    exclude_dtype_prefix:
+        - "string"
+        - "array"
+    exclude_suffix:
+        - "_03w"
+        - "_02m"
+    exclude_prefix: []
+
+# Model will be trained on all users
+extra_filter:
+
+# Sampling: empty value disables sampling
+n_rows_to_sample: 10_000
+n_features_to_sample: 40
+
+# Column names
+feature_column_prefix: "fea_"
+msisdn_column: "msisdn"
+campaign_start_date_column: "start_date"
+campaign_end_date_column: "end_date"
+weekstart_column: "weekstart"
+campaign_name_column: "campaign_name"
+is_control_column: "is_control"
+is_taker_column: "is_taker"
+
+# Kedro/PAI settings
+use_spark: True
+use_pai_logging: True
+
+pai_experiment: "Model factory"
+pai_username: "Test"
+pai_personal_runs: "hdfs:///data/landing/dmp_remote/model-factory/{USER}"
+
+# Plots labels
+plot_labels:
+    target_component_y_label: "Average component value"
+
+# PDP features to plot
+pdp_features:
+  - [fea_int_app_usage_ecommerce_data_vol_01w]
+  - [fea_int_app_usage_social_media_sites_data_vol_01m]
+  - [fea_int_app_usage_video_days_since_last_usage]
+  - [fea_int_usage_med_4g_data_usage_03m]
+  - [fea_int_usage_tot_kb_data_usage_01w]
+  - [fea_los]
+  - [fea_rev_roam_payu_sum_03m]
+  - [fea_revenue_sum_01m]
+  - [fea_txt_msg_outgoing_count_01w]
+  - [fea_voice_tot_out_calls_01w]
+  - [fea_voice_tot_uniq_out_calls_03m]
+  - [target_source]
+  - [fea_int_app_usage_ecommerce_data_vol_01w, fea_int_app_usage_social_media_sites_data_vol_01m]
+  - [fea_int_app_usage_social_media_sites_data_vol_01m, fea_los]
+  - [fea_int_app_usage_video_days_since_last_usage, fea_int_usage_tot_kb_data_usage_01w]
+
+# Churn comparison plots
+plot_churn_comparison_features:
+ - "fea_int_app_usage_social_media_sites_data_vol_01m"
+
+# Propensity model parameters
+propensity_preprocessing_blacklisted_columns:
+  - msisdn
+propensity_training_ratio: 0.8
+
+# SHAP treatment vs control parameters
+shap_treatment_vs_control:
+    n_folds: 5
+    n_iterations: 100
+    train_frac: 0.8
+    n_features: 15
+
+
+survival_plots:
+  - col: fea_custprof_nik_age
+  - col: fea_custprof_los
+  - col: fea_custprof_segment_hvc_m1
+  - col: fea_custprof_persona_los
+  - col: fea_custprof_segment_hvc_mtd
+  - col: fea_handset_changed_count_01m
