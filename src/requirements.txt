@@ -4,10 +4,10 @@
 #
 #    pip-compile src/requirements.in
 #
---index-url https://cicd-jfrog.telkomsel.co.id/artifactory/api/pypi/tsel-python-remote/simple
---extra-index-url https://cicd-jfrog.telkomsel.co.id/artifactory/api/pypi/tsel-python-local/simple
---trusted-host pypi.org
---trusted-host cicd-jfrog.telkomsel.co.id
+#--index-url https://cicd-jfrog.telkomsel.co.id/artifactory/api/pypi/tsel-python-remote/simple
+#--extra-index-url https://cicd-jfrog.telkomsel.co.id/artifactory/api/pypi/tsel-python-local/simple
+#--trusted-host pypi.org
+#--trusted-host cicd-jfrog.telkomsel.co.id
 
 absl-py==0.10.0           # via tensorboard, tensorflow
 alabaster==0.7.12         # via sphinx
@@ -109,7 +109,7 @@ jupyter-core==4.6.3       # via jupyter-client, nbconvert, nbformat, notebook, q
 jupyter==1.0.0            # via -r src/requirements.in
 jupyterlab-launcher==0.10.5  # via jupyterlab
 jupyterlab==0.31.1        # via -r src/requirements.in
-kedro-viz==3.1.0          # via -r src/requirements.in
+#kedro-viz==3.1.0          # via -r src/requirements.in
 kedro[docs,matplotlib,pandas.csvdataset,pandas.sqltabledataset,spark,yaml]==0.16.4  # via -r src/requirements.in, kedro-viz
 keras-preprocessing==1.1.2  # via tensorflow
 keras==2.4.3              # via causalml
@@ -140,7 +140,7 @@ optbinning==0.6.0         # via -r src/requirements.in
 ortools==7.8.7959         # via optbinning
 osqp==0.6.1               # via cvxpy
 packaging==20.4           # via bleach, causalml, sphinx
-pai==0.50.0               # via -r src/requirements.in
+#pai==0.50.0               # via -r src/requirements.in
 pandas==0.25.1            # via -r src/requirements.in, altair, catboost, category-encoders, causalml, great-expectations, kedro, lifelines, mlflow, optbinning, prince, seaborn, shap, statsmodels
 pandocfilters==1.4.2      # via nbconvert
 paramiko==2.7.2           # via pysftp

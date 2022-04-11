@@ -8,9 +8,7 @@ from pyspark.ml.feature import QuantileDiscretizer
 from pyspark.sql import SparkSession
 
 
-def psi_baseline_bining(
-    num_cols: List[str], *tables: pyspark.sql.DataFrame
-) -> List[pyspark.sql.DataFrame]:
+def psi_baseline_bining(num_cols: List[str], *tables: pyspark.sql.DataFrame) -> List[pyspark.sql.DataFrame]:
     res = []
     for table in tables:
         for col, type_ in table.dtypes:
